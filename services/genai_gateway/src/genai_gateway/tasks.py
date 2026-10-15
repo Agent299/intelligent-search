@@ -108,7 +108,7 @@ def _validate_nrt_segment(inp: s.NrtSegmentInput, out: s.NrtSegmentOutput) -> Va
 
 def _validate_discover(inp: s.DiscoverInput, out: s.DiscoverOutput) -> Validation:
     data = {"complements": _subset(out.complements, inp.co_purchase_data)[:5]}
-    if not data["complements"]:
+    if out.complements and not data["complements"]:  # an empty answer is allowed (v2): nothing fits
         return Validation(ok=False, output=data, reason="no complements from co_purchase_data")
     return Validation(ok=True, output=data)
 
@@ -129,6 +129,6 @@ TASKS: dict[str, TaskSpec] = {
     "rewrite": TaskSpec("rewrite.v1.j2", s.RewriteInput, s.RewriteOutput, _validate_rewrite, max_tokens=1024),
     "nrt_segment": TaskSpec("nrt_segment.v1.j2", s.NrtSegmentInput, s.NrtSegmentOutput, _validate_nrt_segment,
                             max_tokens=1024),
-    "discover": TaskSpec("discover.v1.j2", s.DiscoverInput, s.DiscoverOutput, _validate_discover),
+    "discover": TaskSpec("discover.v2.j2", s.DiscoverInput, s.DiscoverOutput, _validate_discover),
     "judge": TaskSpec("judge.v1.j2", s.JudgeInput, s.JudgeOutput, _validate_judge, max_tokens=4096),
 }

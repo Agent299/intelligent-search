@@ -2,6 +2,7 @@
 
     results cache (hot queries) -> exact cached query (L1 -> L2 -> warm) -> fast path
     -> [low confidence] similar warm-tier query -> LLM fallback
+    then 'pairs well with' for the results' primary category (Phase 7)
 
 The fast path (Phase 3):
 
@@ -38,6 +39,7 @@ from common.schemas import (
 )
 from search_service.cache import CachedResults, CacheEntry, QueryCache
 from search_service.compile import with_filters
+from search_service.discovery import Discovery
 from search_service.events import EventSink
 from search_service.fallback import FallbackPath, Rewrite
 from search_service.filters import SearchFilters
@@ -102,9 +104,10 @@ class FastPathResult:
 class SearchEngine:
     def __init__(self, retriever: Retriever, embeddings: EmbeddingService, spell: SpellCorrector,
                  sink: EventSink, settings: Settings, fallback: FallbackPath | None = None,
-                 cache: QueryCache | None = None):
+                 cache: QueryCache | None = None, discovery: Discovery | None = None):
         self.fallback = fallback
         self.cache = cache
+        self.discovery = discovery
         self.retriever = retriever
         self.embeddings = embeddings
         self.spell = spell
@@ -144,6 +147,10 @@ class SearchEngine:
                     confidence=served.confidence, related_searches=served.related,
                     rewritten_query=served.rewritten, cached_query=served.cached_query)))
 
+        page = [products[pid] for pid in page_ids]
+        pairs = await self.discovery.pairs_well_with(page, req.filters) if self.discovery else []
+        related = served.related or (self.cache.related(corrected) if hot else [])
+
         search_id = uuid.uuid4().hex
         self._in_background(self.sink.search(
             search_id=search_id, user_id=req.user_id, session_id=req.session_id, raw_query=req.q,
@@ -155,8 +162,9 @@ class SearchEngine:
         return SearchResponse(
             search_id=search_id,
             corrected_query=corrected if corrected != normalized else None,
-            results=[self._to_result(products[pid]) for pid in page_ids],
-            related_searches=served.related,
+            results=[self._to_result(p) for p in page],
+            related_searches=related,
+            pairs_well_with=[self._to_result(p) for p in pairs],
             pagination=Pagination(current_page=req.page, total_pages=max(1, math.ceil(len(ids) / req.page_size)),
                                   total_results=len(ids)),
             debug=SearchDebug(

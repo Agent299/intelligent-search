@@ -29,12 +29,13 @@ piece could be swapped for its production counterpart.
 11. [Phase 4: Fallback path](#phase-4-fallback-path-done)
 12. [Phase 5: Offline query pipeline](#phase-5-offline-query-pipeline-done)
 13. [Phase 6: Cache tiers](#phase-6-cache-tiers-done)
-14. [Remaining phases (roadmap)](#remaining-phases-roadmap)
-15. [Spend log](#spend-log)
-16. [Decision log](#decision-log)
-17. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
-18. [Testing](#testing)
-19. [Make targets](#make-targets)
+14. [Phase 7: Product discovery](#phase-7-product-discovery-done)
+15. [Remaining phases (roadmap)](#remaining-phases-roadmap)
+16. [Spend log](#spend-log)
+17. [Decision log](#decision-log)
+18. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
+19. [Testing](#testing)
+20. [Make targets](#make-targets)
 
 ---
 
@@ -51,8 +52,8 @@ Last updated: **2026-10-15** (after Phase 6)
 | 4. Fallback path | LLM rewrite on low confidence, retry, degrade gracefully | ✅ Done |
 | 5. Offline query pipeline | Log aggregation → enrichment → segmentation → expansion → cached ES queries | ✅ Done |
 | 6. Cache tiers | L1 in-process, L2 Redis, warm semantic tier, hot-list warming, invalidation | ✅ Done |
-| 7. Product discovery | Co-purchase mining + LLM complement selection → "Pairs well with" | ⬜ Next |
-| 8. Ranking | Offline static ranking + LightGBM personalized re-rank | ⬜ |
+| 7. Product discovery | Co-purchase mining + LLM complement selection → "Pairs well with" | ✅ Done |
+| 8. Ranking | Offline static ranking + LightGBM personalized re-rank | ⬜ Next |
 | 9. Near-real-time trends | Sliding-window trend detection + lite enrichment | ⬜ |
 | 10. Observability | Prometheus metrics, Grafana dashboards, alert rules | ⬜ |
 | 11. Testing & evaluation | Golden set, offline metrics, LLM-as-judge, load test | ⬜ |
@@ -61,11 +62,12 @@ Last updated: **2026-10-15** (after Phase 6)
 **Milestones:** M1 = Phases 0–3 (hybrid search working) · M2 = 4, 8-baseline, 12 (first demo) · M3 = 5–7 ·
 M4 = 8-ML, 9 · M5 = 10–11.
 
-**Where we are now:** Phases 0–6 are complete and verified against live infrastructure. Search now checks the
+**Where we are now:** Phases 0–7 are complete and verified against live infrastructure. Search now checks the
 cache tiers first: hot queries come back from the results cache in **~6 ms**, cached hard queries (L1 / L2 / warm)
 in **15–80 ms** without touching the fast path, and a low-confidence query similar to a cached one is answered
-from the warm tier in ~200 ms instead of a 2–4 s LLM call. Next is Phase 7, product discovery ("Pairs well
-with").
+from the warm tier in ~200 ms instead of a 2–4 s LLM call. Results now carry **"Pairs well with"**
+complements mined from co-purchases (163 categories, +3.6 ms), and hot queries carry related searches. **Milestone
+M3 (Phases 5–7) is reached.** Next is Phase 8, ranking.
 
 ---
 
@@ -598,11 +600,63 @@ types, because candidate types come from one k-NN search around the segmented en
 gets party supplies only, where Phase 4's fallback also found chips and soda, and "hill station outfits" gets
 two-piece outfits rather than sweaters. Fixing that means improving candidate retrieval and re-expanding (paid).
 
+## Phase 7: Product discovery (done)
+
+The case study's discovery flow (p.159–160, Fig 5.8): mine what customers buy together, let an LLM keep only the
+genuine complements, and show them next to the results as **"Pairs well with"** (the response's `pairsWellWith`).
+
+**Offline** (`pipelines/discovery/`, part of `make pipeline`, or `make discovery`)
+
+| Step | Tier | What happens |
+|---|---|---|
+| 1. Co-purchase mining | 0 | A basket is everything one session bought **or carted**. Pairs are counted between taxonomy categories, kept at support ≥ 2 sessions and lift ≥ 3, top 15 per category → `co_purchase`. Run 2026-10-15: 15,706 baskets → 1,335 pairs for 350 categories. |
+| 2. Complement selection | **1 (Haiku, batch)** | `discover` prompt v2: pick at most 5 genuine complements from the category's co-purchase list, best first; **none is a valid answer**. The guardrail drops anything not in the list. Only categories whose list (or the prompt version) changed are resubmitted. |
+| 3. Resolve + store | 0 | Each chosen category → its top 2 in-stock products by static score → Redis `discovery_products:{category}`. Every run re-resolves all entries and deletes categories that lost their co-purchase data. |
+
+**Online** (`search_service/discovery.py`): the primary category is the most common one among the top 5 results;
+one Redis GET plus one hydrate (stock-checked, ignoring the shopper's brand/category filters, which describe the
+primary product), interleaved one product per complement, products already in the results skipped, at most 6.
+It fails open: no complements, never an error. **Cost: 3.6 ms p50 / 5.9 ms p90 on a hit, 0.2 ms on a miss.**
+
+**Why categories, not queries** (decision 29): the plan keyed discovery by the segmented query, which would only
+cover the 3,555 queries the batch pipeline segmented. Keyed by the results' category, any query landing in one of
+the 163 categories with complements gets them, including confident head queries that never touch an LLM.
+
+**Prompt v1 vs v2 on the same 150 categories**
+
+| | v1 ("choose 3–5") | v2 ("at most 5, none is fine") |
+|---|---|---|
+| Picks per category | 3.5 avg; never fewer than 2 | 1.3 avg; **51 categories get none** |
+| Laptops | keyboards & mice, power strips, cables, laptop bags | same four |
+| Potholders & oven mitts | curtains, pillow covers, sheet sets, hangers | none |
+| Sauces | fresh fruit, nuts, herbal tea, tea samplers | none |
+| Cables | antennas, monitor accessories, earbuds, earpads | antennas |
+
+v1 filled its quota from session noise; v2 keeps the real pairings and says nothing otherwise. A few weak picks
+remain (over-ear headphones → camera straps) because the synthetic logs are thin: only 5 sessions bought pizza,
+so the case study's own "pizza → soda" pairing never reaches the support threshold.
+
+**Live results (2026-10-15)**
+
+| Query | Pairs well with |
+|---|---|
+| laptop | keyboard stickers, laptop bag, Bluetooth mouse, TSA laptop backpack |
+| maxi dress | comfort sandals, chain necklace, non-slip slippers, platform wedges |
+| fashion sneakers | slippers, fleece socks |
+| usb flash drive, shower curtain liner | none (Haiku found no genuine complement in their co-purchase lists) |
+
+**Related searches** now reach every hot query: the hot list carries `query_stats.related_searches` (session
+pairs with lift ≥ 3) for all 1,435 hot queries, not only cached ones, so fast-path answers include them too. On
+synthetic logs these are noisy ("laptop" → "lens adapter", "ipad case"), which is why cached queries prefer
+their expansion's own suggestions (Phase 5).
+
+**Cost:** $0.034 for all of discovery (two 150-category pilots at $0.0125 and $0.0124, then 200 categories at
+$0.0089), about **$0.00008 per category**. Daily runs only pay for categories whose co-purchase list changed.
+
 ## Remaining phases (roadmap)
 
 | Phase | Plan |
 |---|---|
-| **7. Discovery** | Mine co-purchase support/lift from the lake (code) → `discover` (Haiku batch) → Redis `discovery_products:{product}` → parallel lookup at search time. |
 | **8. Ranking** | Offline static score (purchase > cart > click, text relevance, popularity); LightGBM LambdaMART re-rank of the top ~500 using brand/category affinity, session intent, price band, context. |
 | **9. NRT trends** | 5-minute window sliding every 10 s over `query_logs`; trending + uncached → `nrt_segment` → warm tier; batch results overwrite later. |
 | **10. Observability** | Grafana dashboards (latency per path, cache hit ratios, fallback rate, LLM cost, CTR, conversion, zero-result rate) and alert rules. |
@@ -627,7 +681,9 @@ All Anthropic API spend so far, measured from API usage (Batch API prices where 
 | 2026-10-14 | Phase 5 pipeline pilot, 100 queries (segment + expand) | Haiku 5.5 / Sonnet 5.5 (batch) | $0.126 |
 | 2026-10-15 | Phase 5 segmentation, 3,616 queries (115 escalated to Sonnet) | Haiku 5.5 / Sonnet 5.5 (batch) | $0.398 |
 | 2026-10-15 | Phase 5 expansion, 3,649 queries (465 escalated to Sonnet, 155 fixed) | Haiku 5.5 / Sonnet 5.5 (batch) | $1.104 |
-| | **Total** | | **≈ $2.58** |
+| 2026-10-15 | Phase 6 live testing (3 first-time fallback rewrites) | Haiku 5.5 | ≈ $0.0005 |
+| 2026-10-15 | Phase 7 discovery: two 150-category pilots (prompt v1, v2) + 200 remaining categories | Haiku 5.5 (batch) | $0.034 |
+| | **Total** | | **≈ $2.61** |
 
 Measured unit costs: catalog enrichment **$1.08 / 1k products on Sonnet vs $0.069 / 1k on Haiku** (~16× cheaper,
 comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per first-time query**, then memoized.
@@ -666,6 +722,10 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 | 26 | 2026-10-15 | Expansion must-attributes **boost** instead of filter (doc: `must`); cached queries recompiled | As filters they left 38% of cached queries with 1–4 products; boosting cut that to 21% at no LLM cost. Same reasoning as decision 18 |
 | 27 | 2026-10-15 | Warm-tier similarity threshold **0.91** (plan: 0.88) | Measured on bge-small: "usb c cable" ~ "usb c charger" 0.900, "small pez candy" → "small candy" 0.905; ≥ 0.91 kept the product on sampled logs |
 | 28 | 2026-10-15 | Results cache only for hot-list queries; stores ids, re-hydrates each page | Doc: small hot subset; re-hydrating keeps price and stock live between purges |
+| 29 | 2026-10-15 | Discovery keyed by the results' **category** (plan: by segmented query); co-purchases mined between categories | Query keys would cover only the 3,555 segmented queries; 3,385 purchased product types were too sparse to pair (1,751 multi-item sessions), 1,171 categories were not |
+| 30 | 2026-10-15 | Baskets include add-to-cart, not only purchases | 9,073 purchase-only baskets gave 152 categories with pairs; with carts, 15,706 baskets gave 350 |
+| 31 | 2026-10-15 | `discover` prompt v2: "at most 5, none is valid" (v1: "choose 3–5"); prompt version is part of the change hash | v1 padded short noisy lists (potholders → curtains); v2 left 51 of 150 categories empty and kept the real pairings, for the same $0.012 |
+| 32 | 2026-10-15 | Linux resolves CPU-only torch (`[tool.uv.sources]`); GitHub Actions CI added | The CUDA build pulled 15 nvidia packages (several GB) onto every CI runner; embeddings run on CPU everywhere in this project |
 
 ---
 
@@ -694,9 +754,15 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 ## Testing
 
 ```bash
-make test     # 74 unit tests, no network, API calls or writes to real infrastructure
+make test     # 83 unit tests, no network, API calls or writes to real infrastructure
 make lint     # ruff
 ```
+
+**CI** (`.github/workflows/ci.yml`, GitHub Actions) runs on every push to `main`, every pull request, and on
+demand: ruff + a lockfile check, the unit tests, an Alembic upgrade → downgrade → upgrade round trip against a
+throwaway Postgres 16, and, on `main` only once those pass, a wheel + sdist uploaded as a workflow artifact. It
+needs no secrets. Linux resolves CPU-only torch (`[tool.uv.sources]` in `pyproject.toml`), which keeps the ~15
+CUDA packages off the runners.
 
 - `tests/test_common.py`: normalization, spell correction, semantic document format, response serialization.
 - `tests/test_ingestion.py`: taxonomy paths, attribute extraction, index documents, popularity prior, batch requests.
@@ -707,6 +773,9 @@ make lint     # ruff
   graceful degradation, the no-results floor, negations applied to fallback results.
 - `tests/test_offline.py`: aggregation, related searches by lift, alias folding, gate selection, expansion
   compile shape (types required, attributes boost), scheduler slots.
+- `tests/test_discovery.py`: baskets from purchases + carts, lift filtering, change hash, primary category,
+  interleaving, fresh hydration that ignores the shopper's brand filter, failing open, and the response's
+  `pairsWellWith` + hot related searches.
 - `tests/test_cache.py`: each tier (L1, L2, similar warm only below the confidence gate, never for negations),
   request filters applied to cached queries, results cache re-hydration and keying, purge on catalog updates,
   cache outage falling through to the fast path, hot-list and L2 contents.
@@ -735,6 +804,8 @@ write-back and gateway-outage behavior in [Phase 4](#phase-4-fallback-path-done)
 | `enrich-submit` / `enrich-status` / `enrich-collect` | LLM enrichment via Batch API (`LIMIT=n` for a pilot) |
 | `pipeline` / `pipeline-pilot` / `pipeline-dry` | Phase 5 offline pipeline: full run, pilot (`LIMIT=n`), or free dry run up to segmentation |
 | `pipeline-schedule` | Run the pipeline daily at 02:00 UTC (`HOURLY=1` for hourly) |
+| `hot-list` | Phase 6: hot list → S3 + `list_update`; warm L2 (last step of `pipeline`) |
+| `discovery` | Phase 7: co-purchase mining → complements (Haiku batch, `LIMIT=n` pilot) → Redis (also in `pipeline`) |
 | `synth` | synthetic users and logs (+ 2,000 events to Kafka) |
 | `catalog-consumer` | run the price/stock freshness consumer |
 | `gateway` / `search` | run the gateway (8001) / search service (8000) |

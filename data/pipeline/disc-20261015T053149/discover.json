@@ -1,0 +1,3864 @@
+{
+ "batches": [
+  {
+   "id": "msgbatch_01TFPhGk4wQnTCTSegY1FnHj",
+   "submitted_at": 1792042311,
+   "n": 200,
+   "collected": true
+  }
+ ],
+ "items": {
+  "disc-65bbfff1fb815e45": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Baby > Baby Girls > Clothing",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Shoes > Sandals"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Baby > Baby Girls > Clothing",
+    "input_hash": "a1755193757469ee"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-b7d664a959daa0d6": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Baby > Baby Girls > Shoes",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Swimsuits & Cover Ups",
+     "Clothing, Shoes & Jewelry > Women > Shoes > Athletic"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Baby > Baby Girls > Shoes",
+    "input_hash": "34a2f2f6d4b190bc"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c05943fc1e98bb14": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Boot Shop > Boys > Outdoor & Work",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Active"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Boot Shop > Boys > Outdoor & Work",
+    "input_hash": "ec51a87b4873f28b"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Active"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-969175ecde857bbf": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Boot Shop > Men > Fashion",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Active"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Boot Shop > Men > Fashion",
+    "input_hash": "569dd3379512ea2e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Active"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c0c261db4fe6f4a0": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Boot Shop > Women > Fashion",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Boot Shop > Women > Fashion",
+    "input_hash": "39bf42f657b7bab5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-d54eb6a4fc89cb11": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Boys > Clothing > Fashion Hoodies & Sweatshirts",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Boys > Clothing > Fashion Hoodies & Sweatshirts",
+    "input_hash": "39bf42f657b7bab5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-1e4eb22a24223afa": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Boys > Clothing > Pants",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Boys > Clothing > Pants",
+    "input_hash": "8be602ec4c80fcd6"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-12c2567b6726cb88": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Boys > Clothing > Suits & Sport Coats",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Boys > Clothing > Suits & Sport Coats",
+    "input_hash": "8be602ec4c80fcd6"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-bf0b324034f73351": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Boys > Clothing > Tops, Tees & Shirts",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Shoes > Sandals",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Boys > Clothing > Tops, Tees & Shirts",
+    "input_hash": "13c12a62511d5b56"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-8607128dc3cd3a54": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Boys > Shoes > Slippers",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Active"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Boys > Shoes > Slippers",
+    "input_hash": "ec51a87b4873f28b"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-41e392593c654984": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Costumes & Accessories > Women > Costumes & Cosplay Apparel",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Costumes & Accessories > Women > Costumes & Cosplay Apparel",
+    "input_hash": "39bf42f657b7bab5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-21e9baab93739917": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Girls > Clothing > Active",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Girls > Clothing > Socks & Tights",
+     "Clothing, Shoes & Jewelry > Women > Shoes > Athletic",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Girls > Clothing > Active",
+    "input_hash": "8cbc8e863b3692c5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Girls > Clothing > Socks & Tights",
+     "Clothing, Shoes & Jewelry > Women > Shoes > Athletic"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c67e2b2c87da4dfd": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Girls > Clothing > Dresses",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Fashion Hoodies & Sweatshirts",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Girls > Clothing > Dresses",
+    "input_hash": "7c58cc5ad4614674"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-ba8b7e04e5789f28": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Girls > Clothing > Jackets & Coats",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Shoes > Sandals"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Girls > Clothing > Jackets & Coats",
+    "input_hash": "a1755193757469ee"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-23263a327acd4db0": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Girls > Clothing > Swim",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Girls > Clothing > Swim",
+    "input_hash": "39bf42f657b7bab5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-478a9d37df76c138": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Girls > Shoes > Athletic",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses",
+     "Clothing, Shoes & Jewelry > Women > Shoes > Athletic"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Girls > Shoes > Athletic",
+    "input_hash": "0ecccefe8b0ccaee"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-265f3827975d19ad": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Girls > Shoes > Boots",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Girls > Shoes > Boots",
+    "input_hash": "39bf42f657b7bab5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-2204d13f50f55ad1": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Girls > Shoes > Outdoor",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Girls > Shoes > Outdoor",
+    "input_hash": "8be602ec4c80fcd6"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-4ca5fc6347076091": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Girls > Shoes > Sneakers",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Active",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Girls > Shoes > Sneakers",
+    "input_hash": "54aa27cf1b5b53ab"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-7455accdc3d4d60c": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Luggage & Travel Gear > Luggage > Carry-Ons",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Shoe, Jewelry & Watch Accessories > Shoe Care & Accessories > Shoelaces",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Luggage & Travel Gear > Luggage > Carry-Ons",
+    "input_hash": "643de84ccc61ad8c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-59d8b77add4f893c": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Luggage & Travel Gear > Travel Accessories > Passport Wallets",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Luggage & Travel Gear > Travel Accessories > Passport Wallets",
+    "input_hash": "39bf42f657b7bab5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-1f7e2b5c6877d1d8": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Accessories > Belts",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Pants",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Socks & Hosiery"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Accessories > Belts",
+    "input_hash": "8d780446b80b7751"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Pants"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-15f058b860636c7e": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Accessories > Gloves & Mittens",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Accessories > Gloves & Mittens",
+    "input_hash": "39bf42f657b7bab5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-3e70e664cfb6a4cd": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Accessories > Hats & Caps",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Novelty & More > Clothing > Novelty",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Accessories > Hats & Caps",
+    "input_hash": "10b309827064cd21"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-72d582be5e23e409": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Accessories > Sunglasses & Eyewear Accessories",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Active"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Accessories > Sunglasses & Eyewear Accessories",
+    "input_hash": "ec51a87b4873f28b"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c9f715008b2bc30f": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Clothing > Suits & Sport Coats",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Girls > Clothing > Socks & Tights",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Active"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Clothing > Suits & Sport Coats",
+    "input_hash": "8822a7eae8a1ace9"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e79785207b7ad6f7": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Clothing > Swim",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Novelty & More > Clothing > Novelty",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Clothing > Swim",
+    "input_hash": "10b309827064cd21"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c1c783ac8597b38e": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Jewelry > Bracelets",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Jewelry > Bracelets",
+    "input_hash": "8be602ec4c80fcd6"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-b0e58ec64a16c3bd": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Jewelry > Necklaces",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Dresses",
+     "Clothing, Shoes & Jewelry > Men > Clothing > Shirts"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Jewelry > Necklaces",
+    "input_hash": "438306641d7cd83d"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Shirts"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-608361b787e0c75d": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Shoes > Boots",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Shirts",
+     "Clothing, Shoes & Jewelry > Novelty & More > Clothing > Novelty"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Shoes > Boots",
+    "input_hash": "3979aab671187cfb"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Shirts"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-ea802e25487b3167": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Shoes > Mules & Clogs",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Active"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Shoes > Mules & Clogs",
+    "input_hash": "ec51a87b4873f28b"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-cfae0254fa2f7707": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Shoes > Outdoor",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Shoes > Athletic",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Shoes > Outdoor",
+    "input_hash": "f28c4ac392856edf"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-db15f489221bc42f": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Men > Shoes > Slippers",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Swimsuits & Cover Ups",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Men > Shoes > Slippers",
+    "input_hash": "7dcd1a21b1f81f3b"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-84d01a56cd358a03": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Shoe, Jewelry & Watch Accessories > Jewelry Accessories > Jewelry Boxes & Organizers",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Jackets & Coats"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Shoe, Jewelry & Watch Accessories > Jewelry Accessories > Jewelry Boxes & Organizers",
+    "input_hash": "c94980d1a9903d37"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-43babb2b1284bad8": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Shoe, Jewelry & Watch Accessories > Shoe Care & Accessories > Shoe Decoration Charms",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Active",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Shoe, Jewelry & Watch Accessories > Shoe Care & Accessories > Shoe Decoration Charms",
+    "input_hash": "0ff0c1f7a055878b"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-5ce129b88a68d509": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Sport Specific Clothing > Cycling > Men",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Swimsuits & Cover Ups",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Sport Specific Clothing > Cycling > Men",
+    "input_hash": "9271dd5f665d7d8c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-dc1febcce250eea2": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Sport Specific Clothing > Cycling > Women",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Sport Specific Clothing > Cycling > Women",
+    "input_hash": "8be602ec4c80fcd6"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-b37aa5352aeada11": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Accessories > Belts",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Active"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Accessories > Belts",
+    "input_hash": "ec51a87b4873f28b"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Active"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-4836b865a8e5ec2d": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Accessories > Scarves & Wraps",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Socks & Hosiery",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Accessories > Scarves & Wraps",
+    "input_hash": "dfd4e1dcc56e090c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-454da0c40e67cb77": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Accessories > Wallets, Card Cases & Money Organizers",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Jeans"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Accessories > Wallets, Card Cases & Money Organizers",
+    "input_hash": "c7c69bbcdf8bfabf"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-2a785ad141f13335": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Clothing",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Jewelry > Necklaces"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Clothing",
+    "input_hash": "36252e14a90b0466"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Women > Jewelry > Necklaces"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-723d895cf84d6700": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Clothing > Jumpsuits, Rompers & Overalls",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Clothing > Jumpsuits, Rompers & Overalls",
+    "input_hash": "8be602ec4c80fcd6"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-a9fe643537921512": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Clothing > Shorts",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Swimsuits & Cover Ups",
+     "Clothing, Shoes & Jewelry > Novelty & More > Clothing > Novelty",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Clothing > Shorts",
+    "input_hash": "6b479455189b9cfb"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Swimsuits & Cover Ups"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-be3baf7096b67b86": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Clothing > Skirts",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Jeans"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Clothing > Skirts",
+    "input_hash": "c7c69bbcdf8bfabf"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-69ce765e241c137a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Jewelry > Body Jewelry",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Men > Shoes > Athletic"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Jewelry > Body Jewelry",
+    "input_hash": "cc29c4c1864ba38d"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e041a0436eb9eee4": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Jewelry > Bracelets",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Shoes > Sandals",
+     "Clothing, Shoes & Jewelry > Women > Shoes > Athletic"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Jewelry > Bracelets",
+    "input_hash": "951c7e4726695366"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Women > Shoes > Sandals"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-348736372bdccdf1": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Jewelry > Earrings",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Men > Clothing > Shirts",
+     "Clothing, Shoes & Jewelry > Women > Clothing > Swimsuits & Cover Ups"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Jewelry > Earrings",
+    "input_hash": "296494b677295439"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-6478a71e3e4e99c4": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Maternity > Intimates",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Novelty & More > Clothing > Novelty",
+     "Clothing, Shoes & Jewelry > Women > Shoes > Athletic"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Maternity > Intimates",
+    "input_hash": "2934953de772fe04"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-b7bdb563bb491a32": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Clothing, Shoes & Jewelry > Women > Shoes > Flats",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Jeans",
+     "Clothing, Shoes & Jewelry > Women > Shoes > Athletic"
+    ]
+   },
+   "meta": {
+    "category": "Clothing, Shoes & Jewelry > Women > Shoes > Flats",
+    "input_hash": "fc886f3449f12020"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Jeans"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-f728fc615e5571bd": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Accessories & Supplies > Cord Management > Cable Sleeves",
+    "co_purchase_data": [
+     "Electronics > Wearable Technology > Smartwatches",
+     "Electronics > Computers & Accessories > Data Storage > USB Flash Drives",
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Accessories & Supplies > Cord Management > Cable Sleeves",
+    "input_hash": "5f38a606b919fcec"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-f80a9b39a50d4ee0": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Accessories & Supplies > Cord Management > Cable Straps",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Monitor Accessories",
+     "Electronics > Accessories & Supplies > Power Strips & Surge Protectors > Power Strips",
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Accessories & Supplies > Cord Management > Cable Straps",
+    "input_hash": "09c9d6ca57193903"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Accessories & Supplies > Power Strips & Surge Protectors > Power Strips"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-43f8b8aebf41e5a1": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Accessories & Supplies > Cord Management > Cord Reels",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computers & Tablets > Desktops",
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Accessories & Supplies > Cord Management > Cord Reels",
+    "input_hash": "be75b1fb88b8b651"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-eddc26094499322a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Accessories & Supplies > Mounts > Speaker Mounts",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computers & Tablets > Desktops",
+     "Electronics > Power Accessories > AC Adapters",
+     "Electronics > Computers & Accessories > Computers & Tablets > Laptops"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Accessories & Supplies > Mounts > Speaker Mounts",
+    "input_hash": "055f817d585f9f57"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-7bfe5e3b0db846d6": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Accessories & Supplies > Power Strips & Surge Protectors > Surge Protectors",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Accessories & Supplies > Power Strips & Surge Protectors > Surge Protectors",
+    "input_hash": "3e0769e89faf6181"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-073ce69be1fe786a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Accessories & Supplies > Telephone Accessories > Telephone Cords",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Accessories & Supplies > Telephone Accessories > Telephone Cords",
+    "input_hash": "dd617c9a3e224a0f"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-085d4215712eea0b": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Camera & Photo > Accessories > Digital Camera Accessories",
+    "co_purchase_data": [
+     "Electronics > Portable Audio & Video > Portable Speakers & Docks > Portable Bluetooth Speakers"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Camera & Photo > Accessories > Digital Camera Accessories",
+    "input_hash": "87012166c765a655"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-80b3fbcf3c3ae204": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Camera & Photo > Bags & Cases > Camera Cases",
+    "co_purchase_data": [
+     "Electronics > Wearable Technology > Arm & Wristband Accessories",
+     "Electronics > Computers & Accessories > Data Storage > USB Flash Drives"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Camera & Photo > Bags & Cases > Camera Cases",
+    "input_hash": "b0995b2dd73ec920"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Data Storage > USB Flash Drives"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-5bcd8f7a07d8a694": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Camera & Photo > Binoculars & Scopes > Binoculars",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Camera & Photo > Binoculars & Scopes > Binoculars",
+    "input_hash": "3e0769e89faf6181"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-1a5111e2b311a4d5": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Camera & Photo > Digital Cameras > Point & Shoot Digital Cameras",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Camera & Photo > Digital Cameras > Point & Shoot Digital Cameras",
+    "input_hash": "1f7034fe46486f00"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-12e0cf9411f6f192": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Car & Vehicle Electronics > Car Electronics",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Car & Vehicle Electronics > Car Electronics",
+    "input_hash": "1f7034fe46486f00"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-ddc1b59e4ef16211": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Car & Vehicle Electronics > Car Electronics > Car Video",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves",
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Car & Vehicle Electronics > Car Electronics > Car Video",
+    "input_hash": "6c6d31e055466ece"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e4d171356363fe6a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Car & Vehicle Electronics > Vehicle Electronics Accessories > Vehicle Audio & Video Installation",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Car & Vehicle Electronics > Vehicle Electronics Accessories > Vehicle Audio & Video Installation",
+    "input_hash": "1f7034fe46486f00"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-906c71ddc3b67fef": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Hard Drive Accessories",
+    "co_purchase_data": [
+     "Electronics > Wearable Technology > Arm & Wristband Accessories",
+     "Electronics > Accessories & Supplies > Power Strips & Surge Protectors > Power Strips"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Hard Drive Accessories",
+    "input_hash": "2d0df87bf54aeba4"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-3da4ceb16486ee27": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Monitor Accessories",
+    "co_purchase_data": [
+     "Electronics > Accessories & Supplies > Cord Management > Cable Straps",
+     "Electronics > Television & Video > Accessories > Cables",
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Monitor Accessories",
+    "input_hash": "715920cfb82758d2"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories",
+     "Electronics > Accessories & Supplies > Cord Management > Cable Straps"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-461496e3f6071a8e": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > USB Gadgets",
+    "co_purchase_data": [
+     "Electronics > Wearable Technology > Smartwatches",
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories",
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > USB Gadgets",
+    "input_hash": "0677e4b135e513ef"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c1ccb767d3bb3e64": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Computer Components > External Components",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computer Components > Internal Components",
+     "Electronics > Computers & Accessories > Data Storage > USB Flash Drives",
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Computer Components > External Components",
+    "input_hash": "3c1937c303597ade"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-4e4d2fa98827918c": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Computer Components > Laptop Replacement Parts",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Computer Components > Laptop Replacement Parts",
+    "input_hash": "3e0769e89faf6181"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c126a959b45775e2": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Computers & Tablets > Desktops",
+    "co_purchase_data": [
+     "Electronics > Accessories & Supplies > Cord Management > Cord Reels",
+     "Electronics > Accessories & Supplies > Mounts > Speaker Mounts"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Computers & Tablets > Desktops",
+    "input_hash": "fd5ce79664ba74a5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e1348ece038332cc": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Computers & Tablets > Tablets",
+    "co_purchase_data": [
+     "Electronics > Headphones, Earbuds & Accessories > Cases"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Computers & Tablets > Tablets",
+    "input_hash": "b9fe54c6d9c42647"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Headphones, Earbuds & Accessories > Cases"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-596924c8efb54c36": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Data Storage > External Hard Drives",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Data Storage > External Hard Drives",
+    "input_hash": "3e0769e89faf6181"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e30a1bf34f25dc4b": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Laptop Accessories > Batteries",
+    "co_purchase_data": [
+     "Electronics > Portable Audio & Video > Portable Speakers & Docks > Portable Bluetooth Speakers",
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Laptop Accessories > Batteries",
+    "input_hash": "66fdb6bdc51334cb"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-a4a3471588d8f7be": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Laptop Accessories > Docking Stations",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Memory Card Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Laptop Accessories > Docking Stations",
+    "input_hash": "e9bc4eae9200eb0e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Memory Card Accessories"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-89d37a1be57d6054": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Laptop Accessories > Screen Filters",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Laptop Accessories > Screen Filters",
+    "input_hash": "dd617c9a3e224a0f"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-339f3234c7d1a8bf": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Laptop Accessories > Stands",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories",
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Laptop Accessories > Stands",
+    "input_hash": "544ea980a1371fd6"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories",
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e91ed0d49f5a3260": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Monitors",
+    "co_purchase_data": [
+     "Electronics > Portable Audio & Video > MP3 & MP4 Players",
+     "Electronics > Camera & Photo > Lighting & Studio > Photo Studio",
+     "Electronics > Computers & Accessories > Data Storage > USB Flash Drives"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Monitors",
+    "input_hash": "119fbd9049ac81a2"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-f9300b67e853cc75": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Networking Products > Hubs",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Networking Products > Hubs",
+    "input_hash": "5083bb716e9bc679"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e47f031b0ac80ac0": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Networking Products > Network Adapters",
+    "co_purchase_data": [
+     "Electronics > Headphones, Earbuds & Accessories > Headphones & Earbuds > Earbud Headphones",
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Networking Products > Network Adapters",
+    "input_hash": "839a804dc8687195"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-4762f7f6b4e72838": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Networking Products > Routers",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves",
+     "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Networking Products > Routers",
+    "input_hash": "1c82188e65c3be7a"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e0f3ad3b26377f10": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Tablet Accessories > Chargers & Adapters",
+    "co_purchase_data": [
+     "Electronics > Headphones, Earbuds & Accessories > Headphones & Earbuds > Earbud Headphones"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Tablet Accessories > Chargers & Adapters",
+    "input_hash": "830e688368be9aa6"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-011a3c1327bb1060": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Computers & Accessories > Tablet Accessories > Stands",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computers & Tablets > Laptops"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Computers & Accessories > Tablet Accessories > Stands",
+    "input_hash": "80fb7d764f01d815"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-7742edda6c096ccb": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > GPS, Finders & Accessories > GPS System Accessories > Screen Protector Foils",
+    "co_purchase_data": [
+     "Electronics > Camera & Photo > Lighting & Studio > Photo Studio",
+     "Electronics > Computers & Accessories > Data Storage > USB Flash Drives"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > GPS, Finders & Accessories > GPS System Accessories > Screen Protector Foils",
+    "input_hash": "e01d241067e9f891"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-643ca54c85de82d4": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Headphones, Earbuds & Accessories > Extension Cords",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Headphones, Earbuds & Accessories > Extension Cords",
+    "input_hash": "5083bb716e9bc679"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e90770c0daf3df38": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Home Audio > Compact Radios & Stereos > Clock Radios",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories",
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Home Audio > Compact Radios & Stereos > Clock Radios",
+    "input_hash": "ab2854228930c185"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-d7b2bf63dce3db6a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Home Audio > Home Audio Accessories > Connectors & Adapters",
+    "co_purchase_data": [
+     "Electronics > Headphones, Earbuds & Accessories > Headphones & Earbuds > Earbud Headphones",
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Home Audio > Home Audio Accessories > Connectors & Adapters",
+    "input_hash": "0afb920b814fd018"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-f44d050da70912b1": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Home Audio > Home Audio Accessories > Distribution",
+    "co_purchase_data": [
+     "Electronics > Camera & Photo > Video > Camcorder Bundles",
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Home Audio > Home Audio Accessories > Distribution",
+    "input_hash": "2252e9cdecb8b3f2"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-4a0decf5ff8642b9": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Home Audio > Home Audio Accessories > Speaker Parts & Components",
+    "co_purchase_data": [
+     "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Home Audio > Home Audio Accessories > Speaker Parts & Components",
+    "input_hash": "053e001456935dbe"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-31cf50692265448f": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Portable Audio & Video > Boomboxes",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Portable Audio & Video > Boomboxes",
+    "input_hash": "dd617c9a3e224a0f"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e43fa79fc1a41f84": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Portable Audio & Video > MP3 & MP4 Player Accessories > Cases",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Portable Audio & Video > MP3 & MP4 Player Accessories > Cases",
+    "input_hash": "dd617c9a3e224a0f"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-15a531a5f04d9b87": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Portable Audio & Video > MP3 & MP4 Players",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Monitors"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Portable Audio & Video > MP3 & MP4 Players",
+    "input_hash": "e91ed0d49f5a3260"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Computers & Accessories > Monitors"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-4d8534ae399eec60": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Portable Audio & Video > Radios > Weather Radios",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Portable Audio & Video > Radios > Weather Radios",
+    "input_hash": "dd617c9a3e224a0f"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-83021f4e70f1a227": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Power Accessories > Power Converters",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Data Storage > USB Flash Drives"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Power Accessories > Power Converters",
+    "input_hash": "3e8f91c559d7e939"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-ea2c358240e32edb": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Television & Video > Accessories > Antennas",
+    "co_purchase_data": [
+     "Electronics > Wearable Technology > Smartwatches",
+     "Electronics > Television & Video > Accessories > Cables",
+     "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Television & Video > Accessories > Antennas",
+    "input_hash": "662aaaa3d4d5eb0a"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Electronics > Television & Video > Accessories > Cables"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-52cd682ffc2a4a20": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Television & Video > Accessories > CD & DVD Racks",
+    "co_purchase_data": [
+     "Electronics > Headphones, Earbuds & Accessories > Cases"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Television & Video > Accessories > CD & DVD Racks",
+    "input_hash": "b9fe54c6d9c42647"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-6b2e2ebb10514dfd": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Television & Video > Accessories > Cleaning",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Television & Video > Accessories > Cleaning",
+    "input_hash": "dd617c9a3e224a0f"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-26ae0741ff61df82": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Television & Video > Accessories > TV Mounts, Stands & Turntables",
+    "co_purchase_data": [
+     "Electronics > Camera & Photo > Video > Camcorder Bundles",
+     "Electronics > Computers & Accessories > Tablet Accessories > Bags, Cases & Sleeves"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Television & Video > Accessories > TV Mounts, Stands & Turntables",
+    "input_hash": "85cee69109c2d447"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-6535f647f344ba93": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Television & Video > Blu-ray Players & Recorders > Blu-ray Players",
+    "co_purchase_data": [
+     "Electronics > Car & Vehicle Electronics > Vehicle Electronics Accessories > Audio & Video Accessories",
+     "Electronics > Wearable Technology > Arm & Wristband Accessories",
+     "Electronics > Portable Audio & Video > Portable Speakers & Docks > Portable Bluetooth Speakers"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Television & Video > Blu-ray Players & Recorders > Blu-ray Players",
+    "input_hash": "b6e8ce78de550fb1"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-1540c7de9fd6c2b6": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Electronics > Television & Video > Televisions > LED & LCD TVs",
+    "co_purchase_data": [
+     "Electronics > Computers & Accessories > Data Storage > USB Flash Drives"
+    ]
+   },
+   "meta": {
+    "category": "Electronics > Television & Video > Televisions > LED & LCD TVs",
+    "input_hash": "3e8f91c559d7e939"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-3587ea17125bf944": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Energy Drinks",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Beverages > Hot Chocolate & Malted Drinks > Cocoa",
+     "Grocery & Gourmet Food > Beverages > Tea > Fruit & Herbal Tea",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Energy Drinks",
+    "input_hash": "1e6f8d1f5dd801d8"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-7254b308bbf97234": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Meal Replacement & Protein Drinks",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Mixed Spices & Seasonings",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Frosting, Icing & Decorations",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Meal Replacement & Protein Drinks",
+    "input_hash": "5204abf1a7d0d4fb"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-0e28d090e5e619dd": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Beverages > Coffee > Instant Coffee",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Hard Candy",
+     "Grocery & Gourmet Food > Snacks & Sweets > Chocolate > Candy & Chocolate Bars",
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Bars"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Beverages > Coffee > Instant Coffee",
+    "input_hash": "bcbd847c9e4646f4"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-4c096ce6494b7e09": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Beverages > Coffee > Whole Coffee Beans",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Salt & Salt Substitutes",
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Crackers"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Beverages > Coffee > Whole Coffee Beans",
+    "input_hash": "5b6840b68d40dfbd"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-de28e2a982c27b61": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Beverages > Coffee Substitutes",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Bars"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Beverages > Coffee Substitutes",
+    "input_hash": "386d500278ed1ca1"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Bars"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-49bc190c3dbb1a0e": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Beverages > Hot Chocolate & Malted Drinks > Cocoa",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Energy Drinks",
+     "Grocery & Gourmet Food > Beverages > Tea > Fruit & Herbal Tea"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Beverages > Hot Chocolate & Malted Drinks > Cocoa",
+    "input_hash": "5ade1fdf2326d9dc"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-8998009afe65f21a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Beverages > Tea > Green",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Beverages > Tea > Green",
+    "input_hash": "5ea881c0c0cda102"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-849a0e74079a382f": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Beverages > Tea > Oolong",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Pasta & Noodles > Pasta",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Baking Mixes",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Beverages > Tea > Oolong",
+    "input_hash": "7b1f8730fd1defdc"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e89ab76170677156": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Breads & Bakery > Cookies > Cookie Assortments",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Salt & Salt Substitutes",
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Crackers",
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Breads & Bakery > Cookies > Cookie Assortments",
+    "input_hash": "7c27b02af0209d29"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-0bdd2b72bd3de096": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Breads & Bakery > Pastries & Bakery > Bagels",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Canned, Jarred & Packaged Foods > Packaged Meals & Side Dishes",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Breads & Bakery > Pastries & Bakery > Bagels",
+    "input_hash": "78f24fc7abf22be2"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-18e9bef947fe82e9": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Dairy, Eggs & Plant-Based Alternatives > Butter, Margarine & Plant-Based Alternatives > Plant-Based Butter",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Mixed Spices & Seasonings",
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Bars"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Dairy, Eggs & Plant-Based Alternatives > Butter, Margarine & Plant-Based Alternatives > Plant-Based Butter",
+    "input_hash": "68a5949e0884d6ae"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-6851021aecb72662": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Dairy, Eggs & Plant-Based Alternatives > Cheese > Provolone",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Juices",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Dairy, Eggs & Plant-Based Alternatives > Cheese > Provolone",
+    "input_hash": "ef52e425179be0a6"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Juices",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-a72309a49234b27c": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Deli & Prepared Foods > Deli Meats & Cheeses > Deli-Sliced Cheeses",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Frozen > Ice Cream & Novelties > Ice Cream",
+     "Grocery & Gourmet Food > Beverages > Coffee > Single-Serve Capsules & Pods"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Deli & Prepared Foods > Deli Meats & Cheeses > Deli-Sliced Cheeses",
+    "input_hash": "b865f406d32e0fd3"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-90885ee4b0914aef": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Deli & Prepared Foods > Deli Meats & Cheeses > Prepackaged Deli Meats",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Hard Candy",
+     "Grocery & Gourmet Food > Beverages > Coffee > Ground Coffee"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Deli & Prepared Foods > Deli Meats & Cheeses > Prepackaged Deli Meats",
+    "input_hash": "db34e93a6d0cda63"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c6b70bc64e3aea5d": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Food & Beverage Gifts > Herb, Spice & Seasoning Gifts",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Meat Snacks",
+     "Grocery & Gourmet Food > Beverages > Coffee > Ground Coffee"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Food & Beverage Gifts > Herb, Spice & Seasoning Gifts",
+    "input_hash": "f7ca7e031a3eba47"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-bced2744aca8f1a1": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Frozen > Ice Cream & Novelties > Ice Cream",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Deli & Prepared Foods > Deli Meats & Cheeses > Deli-Sliced Cheeses"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Frozen > Ice Cream & Novelties > Ice Cream",
+    "input_hash": "a72309a49234b27c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-6b71b3b898ae54ca": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Home Brewing & Winemaking > Beer Brewing Ingredients",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Candy & Chocolate Gifts"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Home Brewing & Winemaking > Beer Brewing Ingredients",
+    "input_hash": "132a90729e9f84e1"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-3f21175c47a3b1d4": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Canned, Jarred & Packaged Foods",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Single Herbs & Spices"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Canned, Jarred & Packaged Foods",
+    "input_hash": "104cf3becdc6ad3e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Single Herbs & Spices"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-ee9d99f109baaaa7": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Canned, Jarred & Packaged Foods > Beans & Peas",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Canned, Jarred & Packaged Foods > Beans & Peas",
+    "input_hash": "5ea881c0c0cda102"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-84e3120d48328f67": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Ketchup",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Ketchup",
+    "input_hash": "5ea881c0c0cda102"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-167201cf3be5a55e": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Mayonnaise",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Baking Mixes"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Mayonnaise",
+    "input_hash": "ce322ee9604cf7aa"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-dcff987c2c842e93": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Mustard",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Frosting, Icing & Decorations",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Mustard",
+    "input_hash": "3c6e2b68b44441cf"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-d79869c665451d4f": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Salad Dressings",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Beverages > Coffee > Single-Serve Capsules & Pods"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Salad Dressings",
+    "input_hash": "24a8ca99da2fbf6a"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-d5ce2be3a70bddc4": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Breadcrumbs & Seasoned Coatings",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Breadcrumbs & Seasoned Coatings",
+    "input_hash": "5ea881c0c0cda102"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-519f2e754a7781e6": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Dessert Syrups & Sauces",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Beverages > Beverage Syrups & Concentrates > Syrups"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Dessert Syrups & Sauces",
+    "input_hash": "a28e35d39f9b118e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-0f4adc4351d74344": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Food Coloring",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Mixed Spices & Seasonings",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Food Coloring",
+    "input_hash": "c121b88fd9c6a922"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-7b4176ffffc6d508": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Dried Beans, Lentils & Peas > Beans",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Beverages > Coffee > Ground Coffee"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Dried Beans, Lentils & Peas > Beans",
+    "input_hash": "7679601f401d9211"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-7fcb5f19918592be": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Dried Beans, Lentils & Peas > Lentils",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Dried Grains & Rice > White",
+     "Grocery & Gourmet Food > Beverages > Coffee > Single-Serve Capsules & Pods"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Dried Beans, Lentils & Peas > Lentils",
+    "input_hash": "4ffca4f4ed8f751c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Pantry Staples > Dried Grains & Rice > White"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-2ff1b076d6d92dcf": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Dried Grains & Rice > White",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Dried Beans, Lentils & Peas > Lentils",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Frosting, Icing & Decorations"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Dried Grains & Rice > White",
+    "input_hash": "fd2ef115bd1cb527"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Pantry Staples > Dried Beans, Lentils & Peas > Lentils"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-f4883e4a9ce5e6f2": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Jams, Jellies & Sweet Spreads > Jams, Jellies & Preserves",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Breads & Bakery > Cookies > Shortbread",
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Jams, Jellies & Sweet Spreads > Jams, Jellies & Preserves",
+    "input_hash": "9d5b99bf696a7255"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Breads & Bakery > Cookies > Shortbread"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e4b5361084d722c4": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Nut & Seed Butters > Cashew Butter",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Sauces, Gravies & Marinades > Hot Sauce"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Nut & Seed Butters > Cashew Butter",
+    "input_hash": "ce0ea05eee591b4c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Pantry Staples > Sauces, Gravies & Marinades > Hot Sauce"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-bb5061395a3ff0a0": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Nut & Seed Butters > Peanut Butter",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Popcorn",
+     "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Candy & Chocolate Gifts",
+     "Grocery & Gourmet Food > Pantry Staples > Sauces, Gravies & Marinades > Hot Sauce"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Nut & Seed Butters > Peanut Butter",
+    "input_hash": "c7881ee0e277c573"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Popcorn",
+     "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Candy & Chocolate Gifts",
+     "Grocery & Gourmet Food > Pantry Staples > Sauces, Gravies & Marinades > Hot Sauce"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-fe9e411cd5709d6d": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Olives, Pickles & Relishes > Pickles",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Cooking Oils, Vinegars & Sprays",
+     "Grocery & Gourmet Food > Beverages > Coffee > Single-Serve Capsules & Pods"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Olives, Pickles & Relishes > Pickles",
+    "input_hash": "3bd1d35a7b410e37"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-7b9163ef2ba3831a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Soups, Stocks & Broths > Broths",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Soups, Stocks & Broths > Broths",
+    "input_hash": "5ea881c0c0cda102"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-85c4047c47e84649": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Pantry Staples > Soups, Stocks & Broths > Vegetable Soups",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Produce > Dried Fruits & Vegetables > Dried Fruits",
+     "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Suckers & Lollipops",
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Bars"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Pantry Staples > Soups, Stocks & Broths > Vegetable Soups",
+    "input_hash": "15f65eba00b3a199"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-38c2df5277d7403b": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Produce > Dried Fruits & Vegetables > Dried Fruits",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Soups, Stocks & Broths > Vegetable Soups"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Produce > Dried Fruits & Vegetables > Dried Fruits",
+    "input_hash": "85c4047c47e84649"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-1e186ff351c880a7": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Produce > Fresh Fruits",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Sauces, Gravies & Marinades > Sauces",
+     "Grocery & Gourmet Food > Beverages > Coffee > Single-Serve Capsules & Pods",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Produce > Fresh Fruits",
+    "input_hash": "b79b9ca655eb0016"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Beverages > Coffee > Single-Serve Capsules & Pods",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-32c887d6e0ffd279": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Caramels",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Juices"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Caramels",
+    "input_hash": "02758f88a4e2679e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Juices"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-a30a10b56e3a98a8": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Chewing & Bubble Gum",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Salt & Salt Substitutes",
+     "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Chewing & Bubble Gum",
+    "input_hash": "97158fd647cf4fb3"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-5d6072d390830133": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Licorice",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Breads & Bakery > Cookies > Shortbread"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Licorice",
+    "input_hash": "dfedb53b45bcbc65"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-60893b674ecebfb9": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Mints",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Juices"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Mints",
+    "input_hash": "02758f88a4e2679e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Juices"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-9e55ebab8510aedd": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Sour Candy",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Pasta & Noodles > Pasta",
+     "Grocery & Gourmet Food > Beverages > Coffee > Single-Serve Capsules & Pods",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Frosting, Icing & Decorations"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Sour Candy",
+    "input_hash": "fdeeade8d301f892"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-ed4dda2177de2591": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Taffy",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Taffy",
+    "input_hash": "5ea881c0c0cda102"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-99418097c41398a9": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Chocolate > Candy & Chocolate Assortments",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Salsas, Dips & Spreads",
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Chips & Crisps",
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Frosting, Icing & Decorations"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Chocolate > Candy & Chocolate Assortments",
+    "input_hash": "09a23a8516dcb07b"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Chips & Crisps",
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Salsas, Dips & Spreads"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-b4c744a0b814c95f": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Chocolate > Fruit",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Chocolate > Fruit",
+    "input_hash": "5ea881c0c0cda102"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e1e399ac5cfaea80": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Chocolate Candy > Assortment Boxes",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Bars"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Chocolate Candy > Assortment Boxes",
+    "input_hash": "386d500278ed1ca1"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-bb450feda6a6ffa7": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Pretzels",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Baking Syrups, Sugars & Sweeteners",
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Bars"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Pretzels",
+    "input_hash": "b6bdb93ce962cda1"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Bars"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-76b1aff162464cbd": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Puffed Snacks",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Hard Candy"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Puffed Snacks",
+    "input_hash": "3ef0917b746ed2d9"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-7d0b886d68eafb9e": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Salsas, Dips & Spreads",
+    "co_purchase_data": [
+     "Grocery & Gourmet Food > Snacks & Sweets > Chocolate > Candy & Chocolate Assortments"
+    ]
+   },
+   "meta": {
+    "category": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Salsas, Dips & Spreads",
+    "input_hash": "99418097c41398a9"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-f7e037c406a4dc5a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bath > Bath Rugs",
+    "co_purchase_data": [
+     "Home & Kitchen > Wall Art > Posters & Prints"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bath > Bath Rugs",
+    "input_hash": "36fd8774f428423a"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-d994379ebb1637c8": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bath > Bathroom Accessories > Bathtub Accessories",
+    "co_purchase_data": [
+     "Home & Kitchen > Wall Art > Posters & Prints"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bath > Bathroom Accessories > Bathtub Accessories",
+    "input_hash": "36fd8774f428423a"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-230f2a714702bdd9": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bath > Bathroom Accessories > Holders & Dispensers",
+    "co_purchase_data": [
+     "Home & Kitchen > Wall Art > Posters & Prints"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bath > Bathroom Accessories > Holders & Dispensers",
+    "input_hash": "36fd8774f428423a"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-1ef555676327f81a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bath > Bathroom Accessories > Shower Accessories",
+    "co_purchase_data": [
+     "Home & Kitchen > Storage & Organization > Racks, Shelves & Drawers > Standing Shelf Units"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bath > Bathroom Accessories > Shower Accessories",
+    "input_hash": "dd18b18041983299"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-99448a51cc00fe25": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bath > Towels > Bath Towels",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Mattress Pads & Toppers > Mattress Pads"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bath > Towels > Bath Towels",
+    "input_hash": "855469e484e2df1c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-432c2f216bebb5b0": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bath > Towels > Towel Sets",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bath > Towels > Towel Sets",
+    "input_hash": "0e1ea45f4250924d"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Bedding > Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e600dd25473bd075": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bedding > Bed Skirts",
+    "co_purchase_data": [
+     "Home & Kitchen > Storage & Organization > Racks, Shelves & Drawers > Standing Shelf Units",
+     "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Clothes Hangers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bedding > Bed Skirts",
+    "input_hash": "0b98bfc049c96bce"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-9344f66226a50fdb": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bedding > Duvets & Down Comforters",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bedding > Duvets & Down Comforters",
+    "input_hash": "709b0f3ca4bc814e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-d128f14d28656b32": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bedding > Kids' Bedding > Comforters & Sets",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bedding > Kids' Bedding > Comforters & Sets",
+    "input_hash": "709b0f3ca4bc814e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-b5edd65af95632d7": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bedding > Mattress Pads & Toppers > Mattress Toppers",
+    "co_purchase_data": [
+     "Home & Kitchen > Wall Art > Posters & Prints"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bedding > Mattress Pads & Toppers > Mattress Toppers",
+    "input_hash": "36fd8774f428423a"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-577ba4a8d719d654": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bedding > Quilts & Sets > Quilt Sets",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bedding > Quilts & Sets > Quilt Sets",
+    "input_hash": "26987bf3e3b2976c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-b0ac4a073be2d706": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bedding > Quilts & Sets > Quilts",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bedding > Quilts & Sets > Quilts",
+    "input_hash": "709b0f3ca4bc814e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-9122fd7072d519ee": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bedding > Sheets & Pillowcases > Fitted Sheets",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Storage & Organization > Racks & Holders",
+     "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Curtains & Drapes"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bedding > Sheets & Pillowcases > Fitted Sheets",
+    "input_hash": "3f0313d462b7b98e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c42f938b05057d90": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bedding > Sheets & Pillowcases > Pillow Protectors",
+    "co_purchase_data": [
+     "Home & Kitchen > Bath > Bathroom Accessories > Shower Curtains, Hooks & Liners"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bedding > Sheets & Pillowcases > Pillow Protectors",
+    "input_hash": "7e705655f01ad46d"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Bath > Bathroom Accessories > Shower Curtains, Hooks & Liners"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c7b2ef4338bcc75a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Bedding > Sheets & Pillowcases > Pillow Shams",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets",
+     "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Curtains & Drapes"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Bedding > Sheets & Pillowcases > Pillow Shams",
+    "input_hash": "69046250c87b58dd"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-7656daefaadfb7b1": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Event & Party Supplies > Decorations > Banners",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Event & Party Supplies > Decorations > Banners",
+    "input_hash": "709b0f3ca4bc814e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-4f6bb804171a7d66": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Event & Party Supplies > Tableware > Napkins",
+    "co_purchase_data": [
+     "Home & Kitchen > Bath > Bathroom Accessories > Shower Curtains, Hooks & Liners",
+     "Clothing, Shoes & Jewelry > Women > Shoes > Athletic"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Event & Party Supplies > Tableware > Napkins",
+    "input_hash": "4b03ac651a75b9b0"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-509976e8cb4f06dc": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Furniture > Bedroom Furniture > Mattresses & Box Springs",
+    "co_purchase_data": [
+     "Home & Kitchen > Home D\u00e9cor Products > Photo Albums, Frames & Accessories > Picture Frames"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Furniture > Bedroom Furniture > Mattresses & Box Springs",
+    "input_hash": "1391b0ebb22e7317"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-ccb1bd6f048f9013": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Furniture > Home Office Furniture > Home Office Chairs",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Furniture > Home Office Furniture > Home Office Chairs",
+    "input_hash": "709b0f3ca4bc814e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-af57eea9d2eeafd3": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Furniture > Living Room Furniture > Ottomans",
+    "co_purchase_data": [
+     "Home & Kitchen > Bath > Bathroom Accessories > Shower Curtains, Hooks & Liners"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Furniture > Living Room Furniture > Ottomans",
+    "input_hash": "7e705655f01ad46d"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Bath > Bathroom Accessories > Shower Curtains, Hooks & Liners"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-174b2c4672480ee0": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Furniture > Living Room Furniture > Tables",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Furniture > Living Room Furniture > Tables",
+    "input_hash": "26987bf3e3b2976c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-24059998cb108e4b": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Furniture > Replacement Parts > Recliner Parts",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Storage & Organization > Thermoses"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Furniture > Replacement Parts > Recliner Parts",
+    "input_hash": "552577bfeffe6dfe"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-d428c0d789b54312": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Heating, Cooling & Air Quality > Parts & Accessories > Air Purifier Parts & Accessories",
+    "co_purchase_data": [
+     "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Curtains & Drapes"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Heating, Cooling & Air Quality > Parts & Accessories > Air Purifier Parts & Accessories",
+    "input_hash": "e267779c9c5a32d0"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-32dc16d22b725558": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Artificial Plants & Flowers > Artificial Flowers",
+    "co_purchase_data": [
+     "Home & Kitchen > Bath > Bathroom Accessories > Shower Curtains, Hooks & Liners"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Artificial Plants & Flowers > Artificial Flowers",
+    "input_hash": "7e705655f01ad46d"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-52d62028bcfcec66": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Artificial Plants & Flowers > Artificial Plants & Greenery",
+    "co_purchase_data": [
+     "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Clothes Hangers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Artificial Plants & Flowers > Artificial Plants & Greenery",
+    "input_hash": "30799d30c229a8e5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-ecf595b372f5a40b": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Clocks > Wall Clocks",
+    "co_purchase_data": [
+     "Home & Kitchen > Home D\u00e9cor Products > Slipcovers > Sofa Slipcovers",
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Clocks > Wall Clocks",
+    "input_hash": "90c2bb6c2b34c5a5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-b24fbcc503d2fe98": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Dried & Preserved Flora > Dried Plants",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Dried & Preserved Flora > Dried Plants",
+    "input_hash": "26987bf3e3b2976c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-c721ceffbb1f7cd2": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Home D\u00e9cor Accents > Display Stands",
+    "co_purchase_data": [
+     "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Curtains & Drapes"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Home D\u00e9cor Accents > Display Stands",
+    "input_hash": "e267779c9c5a32d0"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-edd74f2ab5136379": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Home D\u00e9cor Accents > Hanging Ornaments",
+    "co_purchase_data": [
+     "Home & Kitchen > Storage & Organization > Holiday D\u00e9cor Storage > Tree Storage",
+     "Home & Kitchen > Bath > Bathroom Accessories > Shower Curtains, Hooks & Liners"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Home D\u00e9cor Accents > Hanging Ornaments",
+    "input_hash": "605379546acd8225"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Storage & Organization > Holiday D\u00e9cor Storage > Tree Storage"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-7a0bacdf4058a9f3": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Mirrors > Wall-Mounted Mirrors",
+    "co_purchase_data": [
+     "Home & Kitchen > Bath > Bathroom Accessories > Shower Curtains, Hooks & Liners"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Mirrors > Wall-Mounted Mirrors",
+    "input_hash": "7e705655f01ad46d"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Bath > Bathroom Accessories > Shower Curtains, Hooks & Liners"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-1391b0ebb22e7317": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Photo Albums, Frames & Accessories > Picture Frames",
+    "co_purchase_data": [
+     "Home & Kitchen > Furniture > Bedroom Furniture > Mattresses & Box Springs",
+     "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Blinds & Shades"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Photo Albums, Frames & Accessories > Picture Frames",
+    "input_hash": "dd308ba0bcb67155"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Blinds & Shades"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-69bfe56e54dbf293": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Slipcovers > Dining Chair Slipcovers",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Storage & Organization > Racks & Holders",
+     "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Clothes Hangers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Slipcovers > Dining Chair Slipcovers",
+    "input_hash": "fe86c605192a65e9"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-cfbc3cbf5c127436": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Tapestries",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Storage & Organization > Travel & To-Go Food Containers",
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Tapestries",
+    "input_hash": "95b509e76747b2bb"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-f3eb85bd8ea22f7c": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Window Treatment Hardware > Clip Rings",
+    "co_purchase_data": [
+     "Home & Kitchen > Home D\u00e9cor Products > Rugs, Pads & Protectors > Area Rugs"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Window Treatment Hardware > Clip Rings",
+    "input_hash": "8a4c6c3b5566a184"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Home D\u00e9cor Products > Rugs, Pads & Protectors > Area Rugs"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-9f67e661e0cefad3": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Blinds & Shades",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Comforters & Sets > Comforter Sets",
+     "Home & Kitchen > Home D\u00e9cor Products > Photo Albums, Frames & Accessories > Picture Frames"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Blinds & Shades",
+    "input_hash": "243f119158a714ce"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-b32e361b0c15ac19": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Bakeware > Baking Tools & Accessories",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Storage & Organization > Travel & To-Go Food Containers",
+     "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Clothes Hangers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Bakeware > Baking Tools & Accessories",
+    "input_hash": "3ae6162bc5c8da58"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-5a24fc4c6c001e5b": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Bakeware > Mixing Bowls",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Dinnerware & Serveware",
+     "Home & Kitchen > Bedding > Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Bakeware > Mixing Bowls",
+    "input_hash": "d95255cccecf640e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-ce7b8859e4f6d26c": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Coffee, Tea & Espresso > Kettles & Tea Machines",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Coffee, Tea & Espresso > Kettles & Tea Machines",
+    "input_hash": "709b0f3ca4bc814e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-ab2a5abd208f0b1f": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Cookware > Pots & Pans",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Cookware > Pots & Pans",
+    "input_hash": "709b0f3ca4bc814e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-e2925712c89b3169": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Bar Tools & Drinkware",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Bar Tools & Drinkware",
+    "input_hash": "709b0f3ca4bc814e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-074c5cb1262df9bc": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Flatware",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Flatware",
+    "input_hash": "709b0f3ca4bc814e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-5170a679369b78f4": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Accessories",
+    "co_purchase_data": [
+     "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Curtains & Drapes",
+     "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Accessories",
+    "input_hash": "fff40c00e23c4fd6"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-1ef460d860a7a2fe": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Dish Cloths & Dish Towels",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Comforters & Sets > Comforter Sets",
+     "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Dish Cloths & Dish Towels",
+    "input_hash": "c37bff5d7921f444"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-730459f33d893af0": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Place Mats",
+    "co_purchase_data": [
+     "Home & Kitchen > Wall Art > Posters & Prints",
+     "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Curtains & Drapes"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Place Mats",
+    "input_hash": "bf1b9c47bd0d32e8"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Curtains & Drapes"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-25a9e39f123ecac8": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Table Runners",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Pillowcases",
+     "Home & Kitchen > Bedding > Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Table Runners",
+    "input_hash": "1581eb1fe35c2d52"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-508a08f47e394383": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Tablecloths",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Tablecloths",
+    "input_hash": "0e1ea45f4250924d"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-b2a1abb74c32bea5": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Bar & Wine Tools",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Cooking Utensils",
+     "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Bar & Wine Tools",
+    "input_hash": "2881f7d8785d8b7c"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-033eeaefbdd85bdc": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Cooking Utensils",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Bar & Wine Tools",
+     "Home & Kitchen > Bedding > Blankets & Throws > Throws",
+     "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Clothes Hangers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Cooking Utensils",
+    "input_hash": "692257bc0c9e4a32"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": [
+     "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Bar & Wine Tools"
+    ]
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-23b91d356e7db2ec": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Fruit & Vegetable Tools",
+    "co_purchase_data": [
+     "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Clothes Hangers",
+     "Home & Kitchen > Bedding > Decorative Pillows, Inserts & Covers > Throw Pillow Covers",
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Fruit & Vegetable Tools",
+    "input_hash": "bda45714a99f60fa"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-95636d87d703d4ff": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Kitchen Accessories",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Storage & Organization > Travel & To-Go Food Containers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Kitchen Accessories",
+    "input_hash": "46b98c8dc26c7a79"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-034d9282518ffcc9": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Thermometers & Timers",
+    "co_purchase_data": [
+     "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Curtains & Drapes"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Thermometers & Timers",
+    "input_hash": "e267779c9c5a32d0"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-0f319da3360bfe49": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Seasonal D\u00e9cor > Seasonal Lighting",
+    "co_purchase_data": [
+     "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Clothes Hangers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Seasonal D\u00e9cor > Seasonal Lighting",
+    "input_hash": "30799d30c229a8e5"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-83e60b2128a64fe8": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Shoe Organizers",
+    "co_purchase_data": [
+     "Home & Kitchen > Kitchen & Dining > Storage & Organization > Travel & To-Go Food Containers"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Shoe Organizers",
+    "input_hash": "46b98c8dc26c7a79"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "disc-f144fa85dc8b2a6a": {
+   "task": "discover",
+   "inputs": {
+    "primary_product": "Home & Kitchen > Storage & Organization > Laundry Storage & Organization > Laundry Baskets",
+    "co_purchase_data": [
+     "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
+    ]
+   },
+   "meta": {
+    "category": "Home & Kitchen > Storage & Organization > Laundry Storage & Organization > Laundry Baskets",
+    "input_hash": "709b0f3ca4bc814e"
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "complements": []
+   },
+   "final_model": "claude-haiku-5-5"
+  }
+ },
+ "cost_usd": 0.008947349999999996
+}

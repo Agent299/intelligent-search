@@ -153,6 +153,16 @@ async def test_discover_keeps_only_supplied_items():
     assert res.output["complements"] == ["vanilla ice cream", "chocolate sauce"]
 
 
+async def test_discover_accepts_an_empty_answer_but_not_only_invented_items():
+    empty = await Gateway(caller=FakeCaller({HAIKU: [json.dumps({"complements": []})]})).run("discover", {
+        "primary_product": "cables", "co_purchase_data": ["smartwatches"]})
+    assert empty.output["complements"] == []
+    invented = FakeCaller({HAIKU: [json.dumps({"complements": ["caviar"]})] * 3})
+    res = await Gateway(caller=invented).run("discover", {"primary_product": "brownie",
+                                                          "co_purchase_data": ["ice cream"]})
+    assert not res.valid
+
+
 async def test_judge_winner_is_derived_from_scores():
     caller = FakeCaller({OPUS: [json.dumps({"reasoning": "B is on-intent", "score_a": 2, "score_b": 4,
                                             "winner": "a"})]})
