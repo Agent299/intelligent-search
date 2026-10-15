@@ -14,14 +14,16 @@ class GatewayClient:
 
     async def rewrite(self, query: str, candidate_categories: list[str]) -> dict | None:
         """Returns the gateway result ({"valid", "output", "model", "cost_usd", ...}) or None on any failure."""
+        return await self.run("rewrite", {"query": query, "candidate_categories": candidate_categories})
+
+    async def run(self, task: str, inputs: dict) -> dict | None:
         try:
-            resp = await self._client.post("/v1/llm/rewrite", json={"inputs": {
-                "query": query, "candidate_categories": candidate_categories}})
+            resp = await self._client.post(f"/v1/llm/{task}", json={"inputs": inputs})
         except httpx.HTTPError as e:
-            log.warning("gateway rewrite failed: %s", type(e).__name__)
+            log.warning("gateway %s failed: %s", task, type(e).__name__)
             return None
         if resp.status_code != 200:
-            log.warning("gateway rewrite returned HTTP %s", resp.status_code)
+            log.warning("gateway %s returned HTTP %s", task, resp.status_code)
             return None
         return resp.json()
 

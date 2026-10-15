@@ -76,7 +76,7 @@ class NrtSegmentInput(BaseModel):
 
 
 class NrtSegmentOutput(BaseModel):
-    product_type: str | None
+    product_types: list[str] = Field(description="1-4 generic product types, most likely first")
     attributes: list[str]
 
 

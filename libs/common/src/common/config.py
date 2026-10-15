@@ -25,6 +25,14 @@ class Settings(BaseSettings):
     results_cache_ttl_s: int = 600
     fallback_enabled: bool = True   # LLM rewrite for low-confidence queries (Phase 4)
 
+    # Near-real-time trends (Phase 9, doc p.169: > 100 searches in a 5-minute window sliding every 10 s)
+    nrt_threshold: int = 100
+    nrt_window_s: int = 300
+    nrt_slide_s: int = 10
+    nrt_max_llm_per_hour: int = 200   # hard cap on nrt_segment calls (cost guard)
+    nrt_recheck_s: int = 24 * 3600    # a query that got a decision is not looked at again for this long
+    nrt_metrics_port: int = 9102
+
 
 @lru_cache
 def get_settings() -> Settings:
