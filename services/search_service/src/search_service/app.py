@@ -22,6 +22,9 @@ from common.config import get_settings
 from common.embedding_service import EmbeddingService
 from common.embeddings import warm_up
 from common.schemas import EventType, SearchResponse, SortBy
+
+from ranking.model import load_ranker  # isort: skip  (loads LightGBM before torch, see ranking.model)
+from ranking.serving import Reranker
 from search_service import hot_list
 from search_service.cache import QueryCache
 from search_service.discovery import Discovery
@@ -77,7 +80,7 @@ def create_app(engine: SearchEngine | None = None) -> FastAPI:
             await hot_list.load(cache)
             follower = asyncio.create_task(hot_list.follow_updates(cache))
             app.state.engine = SearchEngine(retriever, embeddings, spell, EventSink(producer, redis), s, fallback,
-                                            cache, Discovery(redis, retriever))
+                                            cache, Discovery(redis, retriever), Reranker(redis, load_ranker()))
             resources = [os_client, redis, producer, gateway]
         else:
             app.state.engine = engine
@@ -121,8 +124,11 @@ def create_app(engine: SearchEngine | None = None) -> FastAPI:
     async def events(evt: InteractionEvent) -> dict:
         if evt.type is EventType.search:
             raise HTTPException(422, "search events are emitted by /v1/search")
-        if not await app.state.engine.sink.interaction(evt.search_id, evt.type, evt.product_id):
+        ctx = await app.state.engine.sink.interaction(evt.search_id, evt.type, evt.product_id)
+        if not ctx:
             raise HTTPException(404, "unknown or expired searchId")
+        if isinstance(ctx, dict):
+            await app.state.engine.on_interaction(ctx, evt.type, evt.product_id)
         return {"status": "accepted"}
 
     return app

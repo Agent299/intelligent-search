@@ -59,6 +59,7 @@ class SearchDebug(CamelModel):
     rewritten_query: str | None = None          # the LLM rewrite's keywords, when used
     cached_query: str | None = None             # the cached query that served this one (Phase 6)
     cache_similarity: float | None = None       # cosine to that query on a warm-tier similar hit
+    ranker: str | None = None                   # personalized re-rank applied: "lightgbm" | "linear" (Phase 8)
 
 
 class SearchResponse(CamelModel):

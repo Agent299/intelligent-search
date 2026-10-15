@@ -12,6 +12,7 @@
     uv run python -m pipelines.offline.run co-purchase            # 7. lake baskets -> co_purchase (lift)
     uv run python -m pipelines.offline.run discover RUN           #    complements per category (Haiku batch)
     uv run python -m pipelines.offline.run discover-collect RUN   #    validate -> discovery_products:* in Redis
+    uv run python -m pipelines.offline.run rank-publish           # 8. static scores + ranking features (no LLM)
     uv run python -m pipelines.offline.run all [--limit N]        # everything, waiting on batches
     uv run python -m pipelines.offline.run schedule [--hourly]    # `all` daily at 02:00 UTC (or every hour)
 
@@ -29,6 +30,7 @@ from pipelines.discovery import discover
 from pipelines.hot_list import build as hot_list_build
 from pipelines.offline import aggregate, enrich, expand, lake, segment
 from pipelines.offline.batches import BatchJob
+from pipelines.ranking import publish as ranking_publish
 
 POLL_S = 20
 
@@ -123,6 +125,12 @@ def cmd_discover_collect(run_id: str, wait: bool) -> None:
     print(f"[discover] wrote {written} discovery_products entries; removed {removed} stale")
 
 
+def cmd_rank_publish() -> None:
+    products, queries, users = ranking_publish.run()
+    print(f"[rank-publish] static_score for {products} products; engagement for {queries} queries; "
+          f"{users} user profiles")
+
+
 def cmd_recompile() -> None:
     print(f"[recompile] {asyncio.run(expand.recompile_caches())} cached queries recompiled (no LLM)")
 
@@ -159,6 +167,7 @@ def cmd_all(limit: int | None) -> None:
     cmd_co_purchase()
     cmd_discover(run_id)
     cmd_discover_collect(run_id, wait=True)
+    cmd_rank_publish()
     cost_report(run_id)
 
 
@@ -193,6 +202,7 @@ def main() -> None:
     sub.add_parser("hot-list")
     sub.add_parser("recompile")
     sub.add_parser("co-purchase")
+    sub.add_parser("rank-publish")
     d = sub.add_parser("discover")
     d.add_argument("run_id")
     d.add_argument("--limit", type=int)
@@ -218,6 +228,7 @@ def main() -> None:
         "hot-list": cmd_hot_list,
         "recompile": cmd_recompile,
         "co-purchase": cmd_co_purchase,
+        "rank-publish": cmd_rank_publish,
         "discover": lambda: cmd_discover(args.run_id, args.limit),
         "discover-collect": lambda: cmd_discover_collect(args.run_id, args.wait),
         "segment": lambda: cmd_segment(args.run_id, args.limit, args.dry_run),

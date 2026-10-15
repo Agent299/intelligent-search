@@ -66,6 +66,7 @@ class CachedResults:
     related_searches: list[str]
     rewritten_query: str | None
     cached_query: str | None
+    sims: dict[str, float] = field(default_factory=dict)  # re-rank feature for the retrieval head (Phase 8)
 
 
 class QueryCache:
