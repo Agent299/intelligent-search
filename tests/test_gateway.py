@@ -215,3 +215,12 @@ def test_http_returns_503_when_chain_exhausted():
     with TestClient(app) as client:
         r = client.post("/v1/llm/rewrite", json={"inputs": {"query": "x", "candidate_categories": []}})
         assert r.status_code == 503 and r.json()["detail"]["attempts"][0]["outcome"] == "error"
+
+
+async def test_nrt_segment_v2_returns_product_types_for_occasion_queries():
+    out = {"product_types": ["Folding Chairs", "cooler", "folding chairs", "snacks", "grill", "tent"],
+           "attributes": [" Portable "]}
+    res = await Gateway(caller=FakeCaller({HAIKU: [json.dumps(out)]})).run(
+        "nrt_segment", {"query": "tailgate party must haves"})
+    assert res.output == {"product_types": ["folding chairs", "cooler", "snacks", "grill"],
+                          "attributes": ["portable"]}

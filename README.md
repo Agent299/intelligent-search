@@ -31,12 +31,13 @@ piece could be swapped for its production counterpart.
 13. [Phase 6: Cache tiers](#phase-6-cache-tiers-done)
 14. [Phase 7: Product discovery](#phase-7-product-discovery-done)
 15. [Phase 8: Ranking](#phase-8-ranking-done)
-16. [Remaining phases (roadmap)](#remaining-phases-roadmap)
-17. [Spend log](#spend-log)
-18. [Decision log](#decision-log)
-19. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
-20. [Testing](#testing)
-21. [Make targets](#make-targets)
+16. [Phase 9: Near-real-time trends](#phase-9-near-real-time-trends-done)
+17. [Remaining phases (roadmap)](#remaining-phases-roadmap)
+18. [Spend log](#spend-log)
+19. [Decision log](#decision-log)
+20. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
+21. [Testing](#testing)
+22. [Make targets](#make-targets)
 
 ---
 
@@ -55,21 +56,22 @@ Last updated: **2026-10-15** (after Phase 6)
 | 6. Cache tiers | L1 in-process, L2 Redis, warm semantic tier, hot-list warming, invalidation | ✅ Done |
 | 7. Product discovery | Co-purchase mining + LLM complement selection → "Pairs well with" | ✅ Done |
 | 8. Ranking | Offline static ranking + LightGBM personalized re-rank | ✅ Done |
-| 9. Near-real-time trends | Sliding-window trend detection + lite enrichment | ⬜ Next |
-| 10. Observability | Prometheus metrics, Grafana dashboards, alert rules | ⬜ |
+| 9. Near-real-time trends | Sliding-window trend detection + lite enrichment | ✅ Done |
+| 10. Observability | Prometheus metrics, Grafana dashboards, alert rules | ⬜ Next |
 | 11. Testing & evaluation | Golden set, offline metrics, LLM-as-judge, load test | ⬜ |
 | 12. Frontend demo | Next.js storefront with a "which path served this" debug panel | ⬜ |
 
 **Milestones:** M1 = Phases 0–3 (hybrid search working) · M2 = 4, 8-baseline, 12 (first demo) · M3 = 5–7 ·
 M4 = 8-ML, 9 · M5 = 10–11.
 
-**Where we are now:** Phases 0–8 are complete and verified against live infrastructure. Search now checks the
+**Where we are now:** Phases 0–9 are complete and verified against live infrastructure. Search now checks the
 cache tiers first: hot queries come back from the results cache in **~6 ms**, cached hard queries (L1 / L2 / warm)
 in **15–80 ms** without touching the fast path, and a low-confidence query similar to a cached one is answered
 from the warm tier in ~200 ms instead of a 2–4 s LLM call. Results now carry **"Pairs well with"**
 complements mined from co-purchases (163 categories, +3.6 ms), and hot queries carry related searches. **Milestone
 M3 (Phases 5–7) is reached.** Results are now re-ranked by a LightGBM LambdaMART model (NDCG@10 0.557 → 0.766
-on held-out searches, < 2.5 ms per request). Next is Phase 9, near-real-time trends.
+on held-out searches, < 2.5 ms per request), and a near-real-time detector caches trending hard queries within
+seconds, off the request path. **Milestone M4 (Phases 8–9) is reached.** Next is Phase 10, observability.
 
 ---
 
@@ -716,11 +718,48 @@ results cache 10.5 ms, L1 7.7 ms with re-ranking included.
 
 **Cost:** $0. No LLM calls.
 
+## Phase 9: Near-real-time trends (done)
+
+The case study's NRT path (p.169–170, Fig 5.10): notice a query trending *now* and cache a usable query for it
+within seconds, instead of waiting for the next daily batch.
+
+**How it runs** (`pipelines/nrt_trends/`, `make nrt`, long-running)
+
+| Step | Tier | What happens |
+|---|---|---|
+| 1. Count | 0 | Consume `query_logs` (search events only), normalize + spell-correct, count per query in a 5-minute window of 10-second buckets (`window.py`). Every 10 s, queries at or above the threshold (doc: 100 / 5 min; `NRT_THRESHOLD`, `make nrt THRESHOLD=5` for a demo) are trending, also published to Redis `nrt:trending`. |
+| 2. Already decided? | 0 | Redis `nrt:seen:{hash}`: a query that got a final decision isn't looked at again for 24 h. |
+| 3. Already cached? | 0 | Exact L2 / warm entry of **any** source (batch, fallback, nrt) → skip. |
+| 4. Fast-path gate | 0 | The same 0.6 confidence gate as the batch pipeline: confident queries (most head queries) never cost an LLM call. |
+| 5. Budget | 0 | At most `NRT_MAX_LLM_PER_HOUR` (200) calls; over budget → retry next tick, not remembered. |
+| 6. Lite segmentation | **1 (Haiku)** | Gateway `nrt_segment` v2: 1–4 product types + attributes, short prompt, no RAG, ≈ $0.00007 per query. |
+| 7. Compile + check | 0 | Same compiler as batch expansions (types required, attributes boost); zero in-stock results → skip. |
+| 8. Write | 0 | Warm tier + L2 (`SET NX`) + `smart_query_cache`, `source=nrt`, versioned. Never over a batch or fallback entry; the next batch run overwrites it (doc p.170). |
+
+**Where NRT fits in this system.** The request path's LLM fallback (Phase 4) already caches a hard query on its first
+search, so a trending hard query is usually cached before it trends. NRT catches what the request path couldn't:
+searches while the gateway was down or slow (fallback failures aren't cached), or with the fallback switched off
+(`FALLBACK_ENABLED=false`, e.g. to cap online LLM spend). It does it in the background, off the request path.
+
+**Live demo (2026-10-15)**: search service with the fallback off, detector at threshold 5, 6 searches each:
+
+| Query | Fast path | NRT decision | Next search |
+|---|---|---|---|
+| beef jerky | 0.888 | **confident**, no LLM | fast path |
+| stuff for my dorm party | | **cached** (batch L1), no LLM | L1 |
+| cozy movie night essentials | 0.185 | **cached_nrt**: throw blankets, popcorn, candles, pajamas | **L2, 40 ms**: knit and fleece throws, BoomChickaPop popcorn |
+| tailgate party must haves | 0.257 | **cached_nrt**: folding chairs, coolers, portable grills, snacks | **L2, 21 ms**: beer can coolers, folding chairs, snacks |
+
+The first attempt used the case study's lite prompt ("the generic product sought"), and Haiku correctly answered
+`null` for both occasion queries, which have no single product. Prompt v2 asks for 1–4 product types (decision 37).
+Occasion queries ("valentine's day gifts", "back to school") are exactly what trends.
+
+**Cost:** ≈ $0.0003 for Phase 9 (4 `nrt_segment` calls, 2 per prompt version).
+
 ## Remaining phases (roadmap)
 
 | Phase | Plan |
 |---|---|
-| **9. NRT trends** | 5-minute window sliding every 10 s over `query_logs`; trending + uncached → `nrt_segment` → warm tier; batch results overwrite later. |
 | **10. Observability** | Grafana dashboards (latency per path, cache hit ratios, fallback rate, LLM cost, CTR, conversion, zero-result rate) and alert rules. |
 | **11. Evaluation** | Golden set (~150 queries incl. all case-study examples), NDCG@10 / Recall@50, LLM-as-judge (Opus, pairwise, 1–5), Locust load test against the P90/P99 targets. |
 | **12. Frontend** | Next.js storefront: search, facets, sort, corrected-query banner, related searches, "Pairs well with", and a debug panel. |
@@ -745,6 +784,7 @@ All Anthropic API spend so far, measured from API usage (Batch API prices where 
 | 2026-10-15 | Phase 5 expansion, 3,649 queries (465 escalated to Sonnet, 155 fixed) | Haiku 5.5 / Sonnet 5.5 (batch) | $1.104 |
 | 2026-10-15 | Phase 6 live testing (3 first-time fallback rewrites) | Haiku 5.5 | ≈ $0.0005 |
 | 2026-10-15 | Phase 7 discovery: two 150-category pilots (prompt v1, v2) + 200 remaining categories | Haiku 5.5 (batch) | $0.034 |
+| 2026-10-15 | Phase 9 NRT demo (4 `nrt_segment` calls, prompt v1 + v2) | Haiku 5.5 | ≈ $0.0003 |
 | | **Total** | | **≈ $2.61** |
 
 Measured unit costs: catalog enrichment **$1.08 / 1k products on Sonnet vs $0.069 / 1k on Haiku** (~16× cheaper,
@@ -792,6 +832,9 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 | 34 | 2026-10-15 | Re-rank the top 100 (plan: top ~500) for relevance order only; never price sorts or the LLM fallback | Candidate lists here are 100–200; price sort is explicit intent; the fallback's round-robin is what makes multi-intent pages work |
 | 35 | 2026-10-15 | Results cache stores the shared retrieval order + similarities and re-ranks each hit per user | Personalized order can't be shared across users; re-ranking a hit costs ~4 ms more (6 → 10.5 ms) |
 | 36 | 2026-10-15 | Ship LightGBM even though personal features add nothing on synthetic logs; don't regenerate the logs to manufacture a lift | +0.21 NDCG@10 over the logged order from relevance features alone; regenerating logs would invalidate every Phase 5–7 cache |
+| 37 | 2026-10-15 | `nrt_segment` v2 returns 1–4 product types (doc/v1: one product type) | v1 returned `null` for both trending occasion queries in the demo; with a list, both cached usable queries at the same cost |
+| 38 | 2026-10-15 | NRT skips anything already cached (any source) and anything the fast path answers (confidence ≥ 0.6); 24 h re-check memo; hourly LLM budget | Confident head queries trend every day and would otherwise pay an LLM call daily; the fallback already caches most hard queries |
+| 39 | 2026-10-15 | One in-process sliding window (plan: in-memory + Redis); Redis only for decisions, budget and the trending list | `query_logs` is keyed by session, so sharing a query's counts across consumers would need re-keying or Redis buckets; one consumer handles this traffic |
 
 ---
 
@@ -822,7 +865,7 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 ## Testing
 
 ```bash
-make test     # 99 unit tests, no network, API calls or writes to real infrastructure
+make test     # 107 unit tests, no network, API calls or writes to real infrastructure
 make lint     # ruff
 ```
 
@@ -841,6 +884,8 @@ CUDA packages off the runners.
   graceful degradation, the no-results floor, negations applied to fallback results.
 - `tests/test_offline.py`: aggregation, related searches by lift, alias folding, gate selection, expansion
   compile shape (types required, attributes boost), scheduler slots.
+- `tests/test_nrt.py`: window sliding and eviction, late events, the full decision chain (cached, confident,
+  budget and gateway errors retried, useless segments remembered), NRT never replacing an existing L2 entry.
 - `tests/test_ranking.py`: static score ordering and smoothing, query-engagement prior, every feature, profile round
   trip, point-in-time replay (features never include their own label), NDCG, both rankers (LightGBM feature-name
   check), re-rank by user and session brand, failing open, engine re-ranks relevance only, clicks feed the session.
@@ -877,6 +922,7 @@ write-back and gateway-outage behavior in [Phase 4](#phase-4-fallback-path-done)
 | `pipeline-schedule` | Run the pipeline daily at 02:00 UTC (`HOURLY=1` for hourly) |
 | `hot-list` | Phase 6: hot list → S3 + `list_update`; warm L2 (last step of `pipeline`) |
 | `discovery` | Phase 7: co-purchase mining → complements (Haiku batch, `LIMIT=n` pilot) → Redis (also in `pipeline`) |
+| `nrt` | Phase 9: near-real-time trend detector (long-running; `THRESHOLD=5` for a demo) |
 | `rank-publish` / `rank-train` | Phase 8: publish static scores + ranking features (also in `pipeline`) / retrain the LightGBM re-ranker |
 | `synth` | synthetic users and logs (+ 2,000 events to Kafka) |
 | `catalog-consumer` | run the price/stock freshness consumer |

@@ -100,10 +100,12 @@ def _validate_rewrite(inp: s.RewriteInput, out: s.RewriteOutput) -> Validation:
 
 
 def _validate_nrt_segment(inp: s.NrtSegmentInput, out: s.NrtSegmentOutput) -> Validation:
-    data = out.model_dump()
-    data["attributes"] = [a.strip().lower() for a in out.attributes if a.strip()]
-    ok = bool(out.product_type) or bool(data["attributes"])
-    return Validation(ok=ok, output=data, reason=None if ok else "nothing extracted")
+    # v2: a list, so occasion queries ("tailgate party must haves") get the products that serve them; v1's single
+    # product_type came back null for both trending occasion queries in the Phase 9 demo
+    types = list(dict.fromkeys(t.strip().lower() for t in out.product_types if t.strip()))[:4]
+    data = {"product_types": types, "attributes": [a.strip().lower() for a in out.attributes if a.strip()]}
+    ok = bool(types)
+    return Validation(ok=ok, output=data, reason=None if ok else "no product types")
 
 
 def _validate_discover(inp: s.DiscoverInput, out: s.DiscoverOutput) -> Validation:
@@ -127,7 +129,7 @@ TASKS: dict[str, TaskSpec] = {
     "expand_head": _EXPAND,
     "expand_tail": _EXPAND,
     "rewrite": TaskSpec("rewrite.v1.j2", s.RewriteInput, s.RewriteOutput, _validate_rewrite, max_tokens=1024),
-    "nrt_segment": TaskSpec("nrt_segment.v1.j2", s.NrtSegmentInput, s.NrtSegmentOutput, _validate_nrt_segment,
+    "nrt_segment": TaskSpec("nrt_segment.v2.j2", s.NrtSegmentInput, s.NrtSegmentOutput, _validate_nrt_segment,
                             max_tokens=1024),
     "discover": TaskSpec("discover.v2.j2", s.DiscoverInput, s.DiscoverOutput, _validate_discover),
     "judge": TaskSpec("judge.v1.j2", s.JudgeInput, s.JudgeOutput, _validate_judge, max_tokens=4096),
