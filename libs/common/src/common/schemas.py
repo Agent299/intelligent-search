@@ -53,10 +53,12 @@ class ServedBy(StrEnum):
 
 class SearchDebug(CamelModel):
     served_by: ServedBy
-    confidence: float
+    confidence: float | None                    # None when a cached query served the request (not re-scored)
     latency_ms: float
-    fast_path_confidence: float | None = None   # set when the fallback path ran
+    fast_path_confidence: float | None = None   # set when the fallback path or a similar-query hit ran
     rewritten_query: str | None = None          # the LLM rewrite's keywords, when used
+    cached_query: str | None = None             # the cached query that served this one (Phase 6)
+    cache_similarity: float | None = None       # cosine to that query on a warm-tier similar hit
 
 
 class SearchResponse(CamelModel):

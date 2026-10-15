@@ -4,8 +4,8 @@
    catalog products; their distinct product types are the alternatives that actually exist (poha, millet ...).
 2. Intelligent expansion (LLM via Batch API): `expand_head` (Sonnet) for L1 queries, `expand_tail` (Haiku) for
    the rest. The guardrail only accepts product types from the retrieved alternatives.
-3. Compile (Tier 0) the result into an OpenSearch query; if it returns zero in-stock results, the item is
-   escalated to the next model in its chain.
+3. Compile (Tier 0) the result into an OpenSearch query (product types required, attributes boost); if it
+   returns zero in-stock results, the item is escalated to the next model in its chain.
 4. Cache: `smart_query_cache` (source=batch, overwrites fallback/NRT entries, doc p.170) and the warm semantic
    tier `warm_query_cache`. Related searches: the expansion's own suggestions, else session-mined pairs.
 """
@@ -23,6 +23,7 @@ from common.embedding_service import EmbeddingService
 from common.normalize import query_hash
 from common.schemas import CachedQuerySource, SegmentedQuery
 from common.topics import PRODUCT_SEARCH_INDEX, SEGMENTED_QUERIES_QUEUE, WARM_QUERY_CACHE_INDEX
+from pipelines.offline import segment
 from pipelines.offline.batches import BatchJob, JobResult
 from pipelines.offline.enrich import _consume_all
 from search_service.compile import compile_expansion, with_filters
@@ -59,10 +60,13 @@ async def alternatives(retriever: Retriever, embeddings: EmbeddingService, texts
 
 
 async def submit(run_id: str) -> int:
+    # The topic keeps every run's segments; expand only this run's, so earlier runs are never paid for twice.
+    this_run = {it["inputs"]["query"] for it in BatchJob(run_id, segment.STAGE).items.values() if "output" in it}
     latest: dict[str, SegmentedQuery] = {}
     for p in await _consume_all(SEGMENTED_QUERIES_QUEUE, f"offline-expand-{run_id}"):
         seg = SegmentedQuery.model_validate(p)
-        latest[seg.canonical] = seg
+        if seg.canonical in this_run:
+            latest[seg.canonical] = seg
     segs = list(latest.values())
     if not segs:
         return 0
@@ -88,7 +92,9 @@ async def submit(run_id: str) -> int:
 
 
 async def _zero_result_ids(job: BatchJob, ids: list[str]) -> list[str]:
-    """Compiled queries that return nothing in stock: escalation candidates (routing: escalate_on_invalid)."""
+    """Compiled queries that return nothing in stock: the chosen product types don't exist in the catalog, so
+    they are escalation candidates (routing: escalate_on_invalid). Attributes only boost, so they never cause
+    this (decision 26)."""
     os_client = AsyncOpenSearch(get_settings().opensearch_url, timeout=30)
     stock = SearchFilters().product_index_clauses()
     try:
@@ -113,6 +119,8 @@ def collect(run_id: str) -> tuple[JobResult, str | None, list[str]]:
         res.ok.pop(cid)
         job.items[cid].pop("output", None)
         res.invalid[cid] = "compiled query returns zero results"
+    for cid, reason in res.invalid.items():
+        job.items[cid]["invalid_reason"] = reason
     job.save()
     esc_batch, exhausted = job.escalate(res.invalid) if res.invalid else (None, [])
     return res, esc_batch, exhausted
@@ -121,6 +129,9 @@ def collect(run_id: str) -> tuple[JobResult, str | None, list[str]]:
 async def write_caches(run_id: str) -> int:
     job = BatchJob(run_id, STAGE)
     done = [it for it in job.items.values() if "output" in it]
+    # Mark failures so segmentation skips them for REFRESH_DAYS instead of paying for a catalog gap again.
+    await asyncio.to_thread(_mark_failed, [it["meta"]["normalized_query"] for it in job.items.values()
+                                           if "output" not in it])
     if not done:
         return 0
     s = get_settings()
@@ -152,11 +163,41 @@ async def write_caches(run_id: str) -> int:
     return len(rows)
 
 
+async def recompile_caches() -> int:
+    """Re-run the compiler over every batch entry's stored expansion (no LLM), for when compile_expansion
+    changes. Rewrites smart_query_cache and the warm tier; run the hot-list job afterwards to refresh L1/L2."""
+    with connect() as conn, conn.cursor() as cur:
+        cur.execute("SELECT normalized_query, es_query FROM smart_query_cache WHERE source = 'batch'")
+        rows = cur.fetchall()
+    updated = []
+    for r in rows:
+        e = r["es_query"].get("expansion")
+        if e:
+            updated.append((r["normalized_query"], {**r["es_query"], "query": compile_expansion(
+                e["product_types"], e["must_attributes"], e["taxonomy_path"])}))
+    os_client = AsyncOpenSearch(get_settings().opensearch_url, timeout=30)
+    try:
+        for q, es_query in updated:
+            await os_client.update(index=WARM_QUERY_CACHE_INDEX, id=query_hash(q), body={"doc": {"es_query": es_query}})
+    finally:
+        await os_client.close()
+    with connect() as conn, conn.cursor() as cur:
+        cur.executemany("UPDATE smart_query_cache SET es_query = %s, updated_at = now() WHERE normalized_query = %s",
+                        [(Jsonb(es_query), q) for q, es_query in updated])
+    return len(updated)
+
+
 def _log_related(queries: list[str]) -> dict[str, list[str]]:
     with connect() as conn, conn.cursor() as cur:
         cur.execute("SELECT normalized_query, related_searches FROM query_stats WHERE normalized_query = ANY(%s)",
                     (queries,))
         return {r["normalized_query"]: r["related_searches"] for r in cur.fetchall() if r["related_searches"]}
+
+
+def _mark_failed(queries: list[str]) -> None:
+    with connect() as conn, conn.cursor() as cur:
+        cur.executemany("UPDATE query_stats SET status = 'failed', updated_at = now() WHERE normalized_query = %s",
+                        [(q,) for q in queries])
 
 
 def _store(rows: list[tuple]) -> None:

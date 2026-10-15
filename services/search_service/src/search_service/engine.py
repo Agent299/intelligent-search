@@ -1,4 +1,9 @@
-"""Search orchestration. Phase 3 implements the fast path (doc p.157):
+"""Search orchestration (doc p.156-157, p.170-173):
+
+    results cache (hot queries) -> exact cached query (L1 -> L2 -> warm) -> fast path
+    -> [low confidence] similar warm-tier query -> LLM fallback
+
+The fast path (Phase 3):
 
     normalize -> spell-correct -> strip negations -> [BM25 || embed -> k-NN] -> hydrate with filters
     -> drop negated products -> RRF fusion + prior
@@ -21,6 +26,7 @@ from common.config import Settings
 from common.embedding_service import EmbeddingService
 from common.normalize import SpellCorrector, normalize_query
 from common.schemas import (
+    CachedQuerySource,
     Pagination,
     Price,
     ProductResult,
@@ -30,8 +36,10 @@ from common.schemas import (
     ServedBy,
     SortBy,
 )
+from search_service.cache import CachedResults, CacheEntry, QueryCache
+from search_service.compile import with_filters
 from search_service.events import EventSink
-from search_service.fallback import FallbackPath
+from search_service.fallback import FallbackPath, Rewrite
 from search_service.filters import SearchFilters
 from search_service.fusion import SEM_FLOOR, Candidate, confidence, rrf_fuse
 from search_service.negation import ParsedQuery, parse_negations
@@ -68,6 +76,21 @@ class SearchRequest:
 
 
 @dataclass
+class Served:
+    """How a request was answered, before sorting and pagination."""
+    served_by: ServedBy
+    search_type: SearchType
+    ranked: list[Candidate] = field(default_factory=list)
+    products: dict[str, dict] = field(default_factory=dict)
+    confidence: float | None = None
+    fast_confidence: float | None = None
+    rewritten: str | None = None
+    related: list[str] = field(default_factory=list)
+    cached_query: str | None = None
+    cache_similarity: float | None = None
+
+
+@dataclass
 class FastPathResult:
     ranked: list[Candidate]
     products: dict[str, dict]
@@ -78,8 +101,10 @@ class FastPathResult:
 
 class SearchEngine:
     def __init__(self, retriever: Retriever, embeddings: EmbeddingService, spell: SpellCorrector,
-                 sink: EventSink, settings: Settings, fallback: FallbackPath | None = None):
+                 sink: EventSink, settings: Settings, fallback: FallbackPath | None = None,
+                 cache: QueryCache | None = None):
         self.fallback = fallback
+        self.cache = cache
         self.retriever = retriever
         self.embeddings = embeddings
         self.spell = spell
@@ -95,52 +120,119 @@ class SearchEngine:
         corrected = self.spell.correct(normalized)
         parsed = parse_negations(corrected)
 
-        fast = await self.fast_path(parsed, req.filters)
+        hot = self.cache is not None and self.cache.is_hot(corrected)
+        results_key = (self.cache.results_key(corrected, req.filters.as_log_map(), req.sort_by.value)
+                       if hot else None)
+        cached = await self.cache.get_results(results_key) if results_key else None
+        if cached is not None:
+            ids = cached.ids
+            start = (req.page - 1) * req.page_size
+            page_ids = ids[start:start + req.page_size]
+            products = await self.retriever.hydrate(page_ids, req.filters)  # current price; drops stock-outs
+            page_ids = [pid for pid in page_ids if pid in products]
+            served = Served(served_by=ServedBy.results_cache, search_type=SearchType.cached,
+                            confidence=cached.confidence, related=cached.related_searches,
+                            rewritten=cached.rewritten_query, cached_query=cached.cached_query)
+        else:
+            served = await self._serve(corrected, parsed, req.filters)
+            ids = [c.product_id for c in self._sort(served.ranked, served.products, req.sort_by)]
+            start = (req.page - 1) * req.page_size
+            page_ids, products = ids[start:start + req.page_size], served.products
+            if results_key:
+                self._in_background(self.cache.put_results(results_key, CachedResults(
+                    ids=ids, served_by=served.served_by.value,
+                    confidence=served.confidence, related_searches=served.related,
+                    rewritten_query=served.rewritten, cached_query=served.cached_query)))
+
+        search_id = uuid.uuid4().hex
+        self._in_background(self.sink.search(
+            search_id=search_id, user_id=req.user_id, session_id=req.session_id, raw_query=req.q,
+            filters=req.filters.as_log_map(), search_type=served.search_type, displayed=page_ids,
+            device_type=req.device_type))
+
+        elapsed = time.perf_counter() - started
+        LATENCY.labels(served.served_by.value).observe(elapsed)
+        return SearchResponse(
+            search_id=search_id,
+            corrected_query=corrected if corrected != normalized else None,
+            results=[self._to_result(products[pid]) for pid in page_ids],
+            related_searches=served.related,
+            pagination=Pagination(current_page=req.page, total_pages=max(1, math.ceil(len(ids) / req.page_size)),
+                                  total_results=len(ids)),
+            debug=SearchDebug(
+                served_by=served.served_by, confidence=served.confidence, latency_ms=round(elapsed * 1000, 1),
+                fast_path_confidence=served.fast_confidence, rewritten_query=served.rewritten,
+                cached_query=served.cached_query if served.cached_query != corrected else None,
+                cache_similarity=served.cache_similarity) if req.debug else None,
+        )
+
+    async def _serve(self, corrected: str, parsed: ParsedQuery, filters: SearchFilters) -> "Served":
+        """Doc lookup order, with one change (README decision 25): exact cache hits come before the fast path,
+        but a *similar* warm-tier hit is only used once the fast path is unsure, in place of the LLM fallback.
+        Batch-cached queries are exactly the low-confidence ones, so a confident query's nearest cached neighbour
+        is a harder variant of it ('canister vacuum' -> 'small canister vacuum') and would make it worse."""
+        if self.cache is not None:
+            exact = await self.cache.exact(corrected)
+            if exact is not None:
+                entry, tier = exact
+                ranked, products = await self._run_cached(entry, filters, parsed)
+                if ranked:
+                    return Served(served_by=tier, search_type=SearchType.cached, ranked=ranked, products=products,
+                                  related=entry.related_searches, cached_query=entry.query)
+
+        fast = await self.fast_path(parsed, filters)
         conf = confidence(fast.keyword, fast.semantic, fast.ranked)
         CONFIDENCE.observe(conf.score)
         outcome = ("zero_results" if not fast.ranked
                    else "low_confidence" if conf.score < self.settings.confidence_threshold else "ok")
         OUTCOMES.labels(outcome).inc()
+        served = Served(served_by=ServedBy.fast_path, search_type=SearchType.hybrid, ranked=fast.ranked,
+                        products=fast.products, confidence=conf.score)
+        if outcome == "ok":
+            return served
 
-        ranked, products, final_conf = fast.ranked, fast.products, conf.score
-        served_by, search_type, rewritten = ServedBy.fast_path, SearchType.hybrid, None
-        if outcome != "ok" and self.fallback is not None:
-            fb = await self.fallback.run(corrected, fast.vector, req.filters)
+        # Similar warm-tier entry: free, so it goes before the LLM. Negated queries are excluded: 'snacks with
+        # nuts' sits at 0.86 cosine from 'snacks without nuts'.
+        if self.cache is not None and not parsed.negated:
+            entry = await self.cache.similar(fast.vector)
+            if entry is not None:
+                ranked, products = await self._run_cached(entry, filters, parsed)
+                if ranked:
+                    return Served(served_by=ServedBy.warm, search_type=SearchType.cached, ranked=ranked,
+                                  products=products, fast_confidence=conf.score, related=entry.related_searches,
+                                  cached_query=entry.query, cache_similarity=entry.similarity)
+
+        if self.fallback is not None:
+            fb = await self.fallback.run(corrected, fast.vector, filters)
             if fb is not None:
                 fb_ranked = [c for c in fb.ranked if not parsed.excludes(_label(fb.products[c.product_id]))]
-                if fb_ranked and (not ranked or fb.confidence >= conf.score):
-                    ranked, products, final_conf = fb_ranked, fb.products, fb.confidence
-                    served_by, search_type = ServedBy.fallback, SearchType.semantic_fallback
-                    rewritten = fb.rewrite.as_text()
-            if served_by is ServedBy.fast_path and conf.score < NO_RESULTS_BELOW:
-                ranked = []  # nothing credible: an honest empty page beats noise
+                if fb_ranked and (not fast.ranked or fb.confidence >= conf.score):
+                    return Served(served_by=ServedBy.fallback, search_type=SearchType.semantic_fallback,
+                                  ranked=fb_ranked, products=fb.products, confidence=fb.confidence,
+                                  fast_confidence=conf.score, rewritten=fb.rewrite.as_text())
+            if conf.score < NO_RESULTS_BELOW:
+                served.ranked = []  # nothing credible: an honest empty page beats noise
                 OUTCOMES.labels("no_results").inc()
+        return served
 
-        ordered = self._sort(ranked, products, req.sort_by)
-        total = len(ordered)
-        start = (req.page - 1) * req.page_size
-        page_ids = [c.product_id for c in ordered[start:start + req.page_size]]
-        search_id = uuid.uuid4().hex
-
-        self._in_background(self.sink.search(
-            search_id=search_id, user_id=req.user_id, session_id=req.session_id, raw_query=req.q,
-            filters=req.filters.as_log_map(), search_type=search_type, displayed=page_ids,
-            device_type=req.device_type))
-
-        elapsed = time.perf_counter() - started
-        LATENCY.labels(served_by.value).observe(elapsed)
-        return SearchResponse(
-            search_id=search_id,
-            corrected_query=corrected if corrected != normalized else None,
-            results=[self._to_result(products[pid]) for pid in page_ids],
-            related_searches=[],  # mined from session logs in Phase 5
-            pagination=Pagination(current_page=req.page, total_pages=max(1, math.ceil(total / req.page_size)),
-                                  total_results=total),
-            debug=SearchDebug(
-                served_by=served_by, confidence=final_conf, latency_ms=round(elapsed * 1000, 1),
-                fast_path_confidence=conf.score if served_by is ServedBy.fallback else None,
-                rewritten_query=rewritten) if req.debug else None,
-        )
+    async def _run_cached(self, entry: CacheEntry, filters: SearchFilters,
+                          parsed: ParsedQuery) -> tuple[list[Candidate], dict[str, dict]]:
+        """Execute a cached query with this request's filters (filters are never baked into the cache).
+        Fallback write-backs replay their rewrite (per-keyword k-NN + interleave, as first served); batch
+        expansions run their compiled bool query."""
+        rewrite = entry.es_query.get("rewrite")
+        if entry.source == CachedQuerySource.fallback and rewrite and self.fallback is not None:
+            ranked, products, _ = await self.fallback.search_rewrite(Rewrite(**rewrite), filters)
+        else:
+            body = {"size": CANDIDATES_PER_RETRIEVER, "_source": False,
+                    "query": with_filters(entry.es_query["query"], filters.product_index_clauses())}
+            hits = await self.retriever.run_keyword_body(body)
+            products = await self.retriever.hydrate([h.product_id for h in hits], filters)
+            hits = [h for h in hits if h.product_id in products]
+            ranked = rrf_fuse(hits, [], {pid: p.get("static_score") or 0.0 for pid, p in products.items()})
+        if parsed.negated:
+            ranked = [c for c in ranked if not parsed.excludes(_label(products[c.product_id]))]
+        return ranked, products
 
     async def fast_path(self, parsed: ParsedQuery, filters: SearchFilters) -> FastPathResult:
         query = parsed.positive

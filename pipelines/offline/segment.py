@@ -77,6 +77,9 @@ def collect(run_id: str) -> tuple[JobResult, str | None, list[str]]:
     """Validate results, escalate rejects to the next model. Returns (result, escalation batch, exhausted)."""
     job = BatchJob(run_id, STAGE)
     res = job.collect()
+    for cid, reason in res.invalid.items():
+        job.items[cid]["invalid_reason"] = reason
+    job.save()
     esc_batch, exhausted = job.escalate(res.invalid) if res.invalid else (None, [])
     return res, esc_batch, exhausted
 

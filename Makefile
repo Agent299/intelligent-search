@@ -1,4 +1,4 @@
-.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry test lint gateway search
+.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list test lint gateway search
 
 install:
 	uv sync --all-extras
@@ -47,6 +47,14 @@ pipeline:
 
 pipeline-pilot:
 	uv run python -m pipelines.offline.run all --limit $(or $(LIMIT),100)
+
+# Phase 6: hot list -> S3 + list_update (search instances reload L1); warm L2 in Redis. Also the last step of `pipeline`
+hot-list:
+	uv run python -m pipelines.offline.run hot-list
+
+# Daily at 02:00 UTC; HOURLY=1 for every hour
+pipeline-schedule:
+	uv run python -m pipelines.offline.run schedule $(if $(HOURLY),--hourly)
 
 pipeline-dry:
 	uv run python -m pipelines.offline.run aggregate

@@ -8,8 +8,9 @@ from pipelines.offline.aggregate import aggregate, related_from_sessions
 from pipelines.offline.enrich import fold_aliases
 from pipelines.offline.expand import entity_text
 from pipelines.offline.lake import fold_live_events
+from pipelines.offline.run import next_run
 from pipelines.offline.segment import select
-from search_service.compile import BASE_BOOST, compile_expansion, required_attributes, with_filters
+from search_service.compile import ATTRIBUTE_BOOST, BASE_BOOST, compile_expansion, required_attributes, with_filters
 
 
 def _events(rows):
@@ -85,13 +86,13 @@ def test_select_takes_gated_queries_most_frequent_first():
 
 def test_compile_expansion_matches_doc_shape():
     q = compile_expansion(["basmati rice", "sona masoori rice", "poha"], ["organic"], "Grocery > Rice")
-    must = q["bool"]["must"]
-    assert must[0]["multi_match"]["query"] == "organic"
-    alts = must[1]["bool"]
+    [alts] = [m["bool"] for m in q["bool"]["must"]]  # product types required; attributes only boost
     assert alts["minimum_should_match"] == 1 and [s["multi_match"]["query"] for s in alts["should"]] == [
         "basmati rice", "sona masoori rice", "poha"]
     assert alts["should"][0]["multi_match"]["boost"] == BASE_BOOST > alts["should"][1]["multi_match"]["boost"]
-    assert q["bool"]["should"][0]["prefix"]["category_path"]["value"] == "Grocery > Rice"
+    attr, category = q["bool"]["should"]
+    assert attr["multi_match"]["query"] == "organic" and attr["multi_match"]["boost"] == ATTRIBUTE_BOOST
+    assert category["prefix"]["category_path"]["value"] == "Grocery > Rice"
     wrapped = with_filters(q, [{"term": {"in_stock": True}}])
     assert wrapped["bool"]["must"] == [q] and wrapped["bool"]["filter"] == [{"term": {"in_stock": True}}]
 
@@ -111,3 +112,10 @@ def test_must_attributes_already_in_the_base_type_are_dropped():
 def test_select_skips_recently_processed_queries():
     qs = [EnrichedQuery(original_query=n, normalized_query=n, frequency=5, fast_confidence=0.3) for n in "abc"]
     assert [q.normalized_query for q in select(qs, None, skip={"b"})] == ["a", "c"]
+
+
+def test_next_run_daily_and_hourly():
+    morning = datetime(2026, 10, 15, 1, 30, tzinfo=UTC)
+    assert next_run(morning, hourly=False) == datetime(2026, 10, 15, 2, tzinfo=UTC)
+    assert next_run(morning.replace(hour=2), hourly=False) == datetime(2026, 10, 16, 2, tzinfo=UTC)
+    assert next_run(morning, hourly=True) == datetime(2026, 10, 15, 2, tzinfo=UTC)

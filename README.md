@@ -27,18 +27,20 @@ piece could be swapped for its production counterpart.
 9. [Phase 2: GenAI gateway](#phase-2-genai-gateway-done)
 10. [Phase 3: Online search fast path](#phase-3-online-search-fast-path-done)
 11. [Phase 4: Fallback path](#phase-4-fallback-path-done)
-12. [Remaining phases (roadmap)](#remaining-phases-roadmap)
-13. [Spend log](#spend-log)
-14. [Decision log](#decision-log)
-15. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
-16. [Testing](#testing)
-17. [Make targets](#make-targets)
+12. [Phase 5: Offline query pipeline](#phase-5-offline-query-pipeline-done)
+13. [Phase 6: Cache tiers](#phase-6-cache-tiers-done)
+14. [Remaining phases (roadmap)](#remaining-phases-roadmap)
+15. [Spend log](#spend-log)
+16. [Decision log](#decision-log)
+17. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
+18. [Testing](#testing)
+19. [Make targets](#make-targets)
 
 ---
 
 ## Progress tracker
 
-Last updated: **2026-10-14** (after Phase 4)
+Last updated: **2026-10-15** (after Phase 6)
 
 | Phase | What it delivers | Status |
 |---|---|---|
@@ -47,9 +49,9 @@ Last updated: **2026-10-14** (after Phase 4)
 | 2. GenAI gateway | Task→model routing, circuit breakers, time budgets, guardrails, cost metrics, embedding service | ✅ Done |
 | 3. Online search: fast path | `GET /v1/search`, parallel BM25 + k-NN, fusion, confidence score, negation handling, event logging | ✅ Done |
 | 4. Fallback path | LLM rewrite on low confidence, retry, degrade gracefully | ✅ Done |
-| 5. Offline query pipeline | Log aggregation → enrichment → segmentation → expansion → cached ES queries | ⬜ Next |
-| 6. Cache tiers | L1 in-process, L2 Redis, warm semantic tier, hot-list warming, invalidation | ⬜ |
-| 7. Product discovery | Co-purchase mining + LLM complement selection → "Pairs well with" | ⬜ |
+| 5. Offline query pipeline | Log aggregation → enrichment → segmentation → expansion → cached ES queries | ✅ Done |
+| 6. Cache tiers | L1 in-process, L2 Redis, warm semantic tier, hot-list warming, invalidation | ✅ Done |
+| 7. Product discovery | Co-purchase mining + LLM complement selection → "Pairs well with" | ⬜ Next |
 | 8. Ranking | Offline static ranking + LightGBM personalized re-rank | ⬜ |
 | 9. Near-real-time trends | Sliding-window trend detection + lite enrichment | ⬜ |
 | 10. Observability | Prometheus metrics, Grafana dashboards, alert rules | ⬜ |
@@ -59,10 +61,11 @@ Last updated: **2026-10-14** (after Phase 4)
 **Milestones:** M1 = Phases 0–3 (hybrid search working) · M2 = 4, 8-baseline, 12 (first demo) · M3 = 5–7 ·
 M4 = 8-ML, 9 · M5 = 10–11.
 
-**Where we are now:** Phases 0–4 are complete and verified against live infrastructure. **Milestone M1 (hybrid
-search working) is reached**; the case study's hard queries ("stuff for my dorm party", "hill station outfits",
-"old people home footwear") now return on-intent results through the LLM fallback. Next is Phase 5, the offline
-query pipeline that pre-computes these rewrites in batch so most of them never reach the online LLM.
+**Where we are now:** Phases 0–6 are complete and verified against live infrastructure. Search now checks the
+cache tiers first: hot queries come back from the results cache in **~6 ms**, cached hard queries (L1 / L2 / warm)
+in **15–80 ms** without touching the fast path, and a low-confidence query similar to a cached one is answered
+from the warm tier in ~200 ms instead of a 2–4 s LLM call. Next is Phase 7, product discovery ("Pairs well
+with").
 
 ---
 
@@ -505,12 +508,100 @@ spent ≈ $0.0015. A re-run of the whole evaluation spent $0.00 (7/7 memo hits).
 with HTTP 200 in 0.09–0.14 s, the failure is not memoized, and the same query uses the fallback once the gateway
 is back.
 
+## Phase 5: Offline query pipeline (done)
+
+The case study's offline flow (p.148–155, Figs 5.2–5.6): mine the search logs, work out offline what the hard
+queries mean, and cache a ready-to-run search query for each, so the online path rarely needs an LLM.
+
+**Stages** (`pipelines/offline/`, driven by `run.py`; stages talk through the doc's Kafka topics)
+
+| Stage | Tier | What happens |
+|---|---|---|
+| 1. Aggregate | 0 | Read the S3 data lake (plus live events), sessionize, count query frequency and engagement, assign cache tier by rank (top 5% L1, top 20% L2, rest warm), mine related searches by lift → `query_stats` + `log_processing_queue`. |
+| 2. Enrich | 0 | Spell-correct and fold aliases ("beef jekry" → "beef jerky"), add user/context, and run each query through the fast path to get its confidence → `query_process_queue`. |
+| 3. Segment | **1 (Haiku)** → 2 | Only queries below the 0.6 confidence gate, seen at least twice, and not processed in the last 7 days. Haiku batch picks category, attributes, brand from ~20 embedding-preselected taxonomy paths; rejected outputs escalate to Sonnet → `segmented_queries_queue`. |
+| 4. Link + expand | 0 → **1 (Haiku)** / 2 | Code retrieves the product types that actually exist near the query (k-NN); the LLM picks which fit the intent (Sonnet for L1 head queries, Haiku for the rest). Only this run's segments are expanded. |
+| 5. Validate | 0 | Compile to an OpenSearch query (product types required, attributes boost, decision 26) and count in-stock matches; zero means the chosen types don't exist, so escalate to Sonnet. |
+| 6. Write | 0 | `smart_query_cache` (`source=batch`, overwrites fallback entries) + warm semantic tier; failures marked so they aren't paid for again within 7 days. |
+
+Runs are scheduled with `make pipeline-schedule` (daily 02:00 UTC; `HOURLY=1` for hourly).
+
+**Full run 20261015T035558 (measured)**
+
+| | Queries | Result | Cost |
+|---|---|---|---|
+| Segmentation | 3,616 submitted | 3,501 valid from Haiku (96.8%); 115 escalated, Sonnet fixed 54; **3,555 published**; 61 unsegmentable ("beach vacation", "hand wash only", garbled text) | $0.398 |
+| Expansion | 3,649 submitted (incl. 99 pilot repeats, bug since fixed) | 3,181 valid first pass; 468 escalated, Sonnet fixed 155; **3,336 cached** | $1.104 |
+| **Total** | | **$0.00042 per query** | **$1.50** |
+
+**What the run taught us.** Expansion cost 2.5× the estimate because escalation was mis-aimed. Re-checking
+the 465 escalated tail queries against the batch results (free):
+
+| First-pass failure | Escalated | Sonnet fixed | Fixed in code by attribute relaxation |
+|---|---|---|---|
+| Valid output, zero in-stock results ("cheap vital wheat gluten", "small lite salt") | 371 | 136 (37%) | **371 (100%)**, 102 keeping real attributes ("slotted", "baby") |
+| No valid product type (catalog gap: "sarong" → shrimp paste) | 94 | 19 (20%) | n/a, still escalates |
+
+With per-run scoping and attributes that no longer empty a query (decisions 22, 23 → 26), the same run would
+have cost **≈ $0.85** instead of $1.50.
+
+## Phase 6: Cache tiers (done)
+
+The case study's caching design (p.170–173): store *compiled queries*, not results, in tiers by query frequency,
+so the online path skips both the fast path and the LLM for known queries while prices and stock stay live.
+
+**Lookup order** (`search_service/engine.py`, `cache.py`)
+
+| Step | Tier | Store | Serves |
+|---|---|---|---|
+| 1. Results cache | 0 | Redis, key = query + filters + sort + hot-list version, 10 min TTL | Hot queries only. Stores ranked ids; the page is re-hydrated, so price is current and stock-outs drop out. |
+| 2. L1 | 0 | In-process dict = the hot list (top 5%, 1,435 queries) | Exact match with a cached query |
+| 3. L2 | 0 | Redis `qcache:v1:{hash}` (top 20% with a cached query, 417), 2-day TTL | Exact match |
+| 4. Warm, exact | 0 | OpenSearch `warm_query_cache` by id | Any batch- or fallback-cached query |
+| 5. Fast path | 0 | BM25 ∥ k-NN (Phase 3) | Done if confidence ≥ 0.6 |
+| 6. Warm, similar | 0 | k-NN over cached query embeddings, cosine ≥ 0.91 | Low-confidence queries near a cached one; never negated queries |
+| 7. LLM fallback | 1 | Gateway rewrite (Phase 4) | Everything else |
+
+A cached query runs with the request's filters added at execution time, so one entry serves every filter combination.
+Cached fallback rewrites replay their per-keyword k-NN and interleaving; batch expansions run their compiled
+bool query. Any cache error falls through to the next step.
+
+**Warming and invalidation**
+
+- **Hot-list job** (`pipelines/hot_list/build.py`, last step of `make pipeline`, or `make hot-list`): writes
+  `s3://hotlist/hot_list.json`, publishes `{bucket, key, version}` on `list_update`, and writes L2.
+- **Search instances** load the hot list at startup and reload it on each `list_update` (broadcast, no consumer
+  group). The version is part of every results-cache key, so a new list also retires stale results.
+- **Price/stock changes**: the `catalog_updates` consumer purges every cached result list containing the product
+  (reverse index `results:idx:{product}`). Cached queries need no purge since they run against the live index.
+- **Batch overwrites fallback** entries in `smart_query_cache` (doc p.170); `recompile` re-applies the compiler to
+  every stored expansion without LLM calls when compile rules change.
+
+**Live results (2026-10-15)**
+
+| Query | Served by | Latency | Notes |
+|---|---|---|---|
+| shower curtain liner (1st / 2nd) | fast path / **results cache** | 45–280 ms / **6–9 ms** | Hot, confident query |
+| conference speakerphone | **L1** | 15 ms | Batch expansion |
+| mineral water, wastebasket | **L2** | 21–37 ms | |
+| yellow pillow shams | **warm (exact)** | 31 ms | |
+| conference speaker phones | **warm (similar)** | 211 ms | Matched "conference speakerphone" at 0.955; fast path was 0.54. Before Phase 6 this went to the LLM (2–4 s) |
+| canister vacuum, winter drinks | fast path | 55–65 ms | Confident: warm-similar not consulted (decision 25) |
+| price change on a product in a hot result | fast path, then results cache | | Purged by the `catalog_updates` event, re-cached on the next request |
+| `make hot-list` while serving | fast path | | Service reloaded L1; old results-cache generation retired |
+
+**Cache quality.** Serving cached queries first exposed the batch expansions' weak spots. As hard requirements,
+must-attributes left 38% of cached queries (1,279) with 1–4 products ("old people home footwear": 1 product
+because of "elderly"). They now boost instead (decision 26), and **thin results fell to 690** (2,133 cached queries
+return 20+). The rest is mostly narrow catalog coverage. A known gap: some expansions chose the wrong product
+types, because candidate types come from one k-NN search around the segmented entity. "stuff for my dorm party"
+gets party supplies only, where Phase 4's fallback also found chips and soda, and "hill station outfits" gets
+two-piece outfits rather than sweaters. Fixing that means improving candidate retrieval and re-expanding (paid).
+
 ## Remaining phases (roadmap)
 
 | Phase | Plan |
 |---|---|
-| **5. Offline pipeline** | Aggregate the lake (sessions, query frequency) → enrich (profile, context) → segment (Haiku batch, Sonnet escalation) → link and expand (k-NN candidates; Sonnet for head queries, Haiku for the rest) → compile ES query → `smart_query_cache` + cache tier by frequency. |
-| **6. Cache tiers** | L1 in-process (top 5%), L2 Redis (top 20%), warm semantic tier (similarity ≥ 0.88); hot list to S3 + `list_update` event; results cache with 5–10 min TTL and event-based purge on price/stock changes. |
 | **7. Discovery** | Mine co-purchase support/lift from the lake (code) → `discover` (Haiku batch) → Redis `discovery_products:{product}` → parallel lookup at search time. |
 | **8. Ranking** | Offline static score (purchase > cart > click, text relevance, popularity); LightGBM LambdaMART re-rank of the top ~500 using brand/category affinity, session intent, price band, context. |
 | **9. NRT trends** | 5-minute window sliding every 10 s over `query_logs`; trending + uncached → `nrt_segment` → warm tier; batch results overwrite later. |
@@ -568,6 +659,13 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 | 19 | 2026-10-14 | One k-NN search per rewrite keyword + round-robin interleaving | A single blended vector, or plain RRF, let "string lights" fill the page; interleaving put cups, chips, soda and lights in the top 4 |
 | 20 | 2026-10-14 | Show fallback results only if they beat the fast path's confidence; empty page below 0.15 with no rewrite | Never make a decent answer worse; never show pure noise |
 | 21 | 2026-10-14 | Embedding model loads from local files only (download only if missing) and is warmed explicitly at startup | Root cause of the ~11 s outliers, see problems table |
+| 22 | 2026-10-15 | Expansion processes only the current run's segments | The segmented topic retains every run; re-reading it re-expanded the pilot's 99 queries (74 on Sonnet, ≈ $0.12) |
+| 23 | 2026-10-15 | ~~Zero-result expansions are repaired in code (greedily keep only must-attributes that still match) before escalating~~ Superseded by 26 | Vague modifiers ("cheap", "small", "brunch") emptied 371 queries; code fixed all 371 for free vs Sonnet fixing 37% for ≈ $0.54 |
+| 24 | 2026-10-15 | Scheduler is a plain loop in `run.py` (`schedule`, daily 02:00 UTC / `--hourly`), not APScheduler | One sleep-until-next-slot loop doesn't justify a dependency; a failed run is logged and retried next slot |
+| 25 | 2026-10-15 | **Exact** cache hits before the fast path, but a **similar** warm-tier hit only after the fast path is unsure (doc: warm tier before the fast path) | Only low-confidence queries are batch-cached, so a confident query's nearest cached neighbour is a harder variant of it ("canister vacuum" → "small canister vacuum") and would make it worse; after the fast path, the warm tier replaces an LLM call instead |
+| 26 | 2026-10-15 | Expansion must-attributes **boost** instead of filter (doc: `must`); cached queries recompiled | As filters they left 38% of cached queries with 1–4 products; boosting cut that to 21% at no LLM cost. Same reasoning as decision 18 |
+| 27 | 2026-10-15 | Warm-tier similarity threshold **0.91** (plan: 0.88) | Measured on bge-small: "usb c cable" ~ "usb c charger" 0.900, "small pez candy" → "small candy" 0.905; ≥ 0.91 kept the product on sampled logs |
+| 28 | 2026-10-15 | Results cache only for hot-list queries; stores ids, re-hydrates each page | Doc: small hot subset; re-hydrating keeps price and stock live between purges |
 
 ---
 
@@ -596,7 +694,7 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 ## Testing
 
 ```bash
-make test     # 53 unit tests, no network, API calls or writes to real infrastructure
+make test     # 74 unit tests, no network, API calls or writes to real infrastructure
 make lint     # ruff
 ```
 
@@ -607,6 +705,11 @@ make lint     # ruff
 - `tests/test_fallback.py`: compile (boost, not filter), keyword interleaving, rewrite confidence, memoization
   (including "no usable rewrite" and not memoizing gateway errors), fallback chosen over a weaker fast path,
   graceful degradation, the no-results floor, negations applied to fallback results.
+- `tests/test_offline.py`: aggregation, related searches by lift, alias folding, gate selection, expansion
+  compile shape (types required, attributes boost), scheduler slots.
+- `tests/test_cache.py`: each tier (L1, L2, similar warm only below the confidence gate, never for negations),
+  request filters applied to cached queries, results cache re-hydration and keying, purge on catalog updates,
+  cache outage falling through to the fast path, hot-list and L2 contents.
 - `tests/test_gateway.py`: routing and cost policy, strict schemas, circuit breaker states, escalation on
   hallucinated taxonomy paths, breaker-open skipping, refusals, guardrails, judge, batch helpers, HTTP endpoints
   (via a fake LLM caller).
@@ -630,6 +733,8 @@ write-back and gateway-outage behavior in [Phase 4](#phase-4-fallback-path-done)
 | `ingest` | download (SCALE, default 0.2 = 10k) → load → index |
 | `index` | (re)index the catalog |
 | `enrich-submit` / `enrich-status` / `enrich-collect` | LLM enrichment via Batch API (`LIMIT=n` for a pilot) |
+| `pipeline` / `pipeline-pilot` / `pipeline-dry` | Phase 5 offline pipeline: full run, pilot (`LIMIT=n`), or free dry run up to segmentation |
+| `pipeline-schedule` | Run the pipeline daily at 02:00 UTC (`HOURLY=1` for hourly) |
 | `synth` | synthetic users and logs (+ 2,000 events to Kafka) |
 | `catalog-consumer` | run the price/stock freshness consumer |
 | `gateway` / `search` | run the gateway (8001) / search service (8000) |

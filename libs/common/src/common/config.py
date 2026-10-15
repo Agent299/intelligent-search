@@ -20,7 +20,8 @@ class Settings(BaseSettings):
 
     # Search tuning (Fig 5.14: confidence > 0.6 skips the fallback path)
     confidence_threshold: float = 0.6
-    warm_tier_min_similarity: float = 0.88
+    # bge-small: 0.90 still merged 'usb c cable' with 'usb c charger'; >= 0.91 kept the product on sampled logs
+    warm_tier_min_similarity: float = 0.91
     results_cache_ttl_s: int = 600
     fallback_enabled: bool = True   # LLM rewrite for low-confidence queries (Phase 4)
 

@@ -89,7 +89,7 @@ class FallbackPath:
             if rewrite is None or not rewrite.usable:
                 OUTCOMES.labels("no_rewrite").inc()
                 return None
-            ranked, products, conf = await self._search(rewrite, filters)
+            ranked, products, conf = await self.search_rewrite(rewrite, filters)
             if not ranked:
                 OUTCOMES.labels("rewrite_no_results").inc()
                 return None
@@ -136,9 +136,10 @@ class FallbackPath:
         except Exception:
             log.warning("could not memoize rewrite", exc_info=True)
 
-    # -- retry search with the rewrite --
+    # -- retry search with the rewrite (also replays cached fallback rewrites, Phase 6) --
 
-    async def _search(self, rw: Rewrite, filters: SearchFilters) -> tuple[list[Candidate], dict[str, dict], float]:
+    async def search_rewrite(self, rw: Rewrite,
+                             filters: SearchFilters) -> tuple[list[Candidate], dict[str, dict], float]:
         body = structured_keyword_body(rw.keywords, rw.attributes, rw.categories, filters, size=100)
         vectors = await self.embeddings.embed(rw.keywords, "query")
         lists = await asyncio.gather(

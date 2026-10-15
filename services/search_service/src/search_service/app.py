@@ -22,6 +22,8 @@ from common.config import get_settings
 from common.embedding_service import EmbeddingService
 from common.embeddings import warm_up
 from common.schemas import EventType, SearchResponse, SortBy
+from search_service import hot_list
+from search_service.cache import QueryCache
 from search_service.engine import EmptyQuery, SearchEngine, SearchRequest
 from search_service.events import EventSink
 from search_service.fallback import FallbackPath, upsert_smart_cache
@@ -54,7 +56,7 @@ async def _start_producer(bootstrap: str) -> AIOKafkaProducer | None:
 def create_app(engine: SearchEngine | None = None) -> FastAPI:
     @asynccontextmanager
     async def lifespan(app: FastAPI):
-        resources = []
+        resources, follower = [], None
         if engine is None:
             s = get_settings()
             os_client = AsyncOpenSearch(s.opensearch_url, timeout=5)
@@ -70,11 +72,17 @@ def create_app(engine: SearchEngine | None = None) -> FastAPI:
                 taxonomy = await TaxonomyIndex.build(embeddings)
                 fallback = FallbackPath(retriever, embeddings, gateway, taxonomy, redis, os_client,
                                         persist=upsert_smart_cache)
-            app.state.engine = SearchEngine(retriever, embeddings, spell, EventSink(producer, redis), s, fallback)
+            cache = QueryCache(redis, os_client, s.warm_tier_min_similarity, s.results_cache_ttl_s)
+            await hot_list.load(cache)
+            follower = asyncio.create_task(hot_list.follow_updates(cache))
+            app.state.engine = SearchEngine(retriever, embeddings, spell, EventSink(producer, redis), s, fallback,
+                                            cache)
             resources = [os_client, redis, producer, gateway]
         else:
             app.state.engine = engine
         yield
+        if follower is not None:
+            follower.cancel()
         for r in resources:
             if r is None:
                 continue
