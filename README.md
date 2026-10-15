@@ -533,7 +533,10 @@ All Anthropic API spend so far, measured from API usage (Batch API prices where 
 | 2026-10-14 | Enrichment retry, 44 products the model skipped | Haiku 5.5 (batch) | $0.003 |
 | 2026-10-14 | Gateway live tests (~15 calls) | Haiku 5.5 | < $0.01 |
 | 2026-10-14 | Phase 4 fallback testing (~10 first-time rewrites; re-runs memoized) | Haiku 5.5 | ≈ $0.0015 |
-| | **Total** | | **≈ $0.95** |
+| 2026-10-14 | Phase 5 pipeline pilot, 100 queries (segment + expand) | Haiku 5.5 / Sonnet 5.5 (batch) | $0.126 |
+| 2026-10-15 | Phase 5 segmentation, 3,616 queries (115 escalated to Sonnet) | Haiku 5.5 / Sonnet 5.5 (batch) | $0.398 |
+| 2026-10-15 | Phase 5 expansion, 3,649 queries (465 escalated to Sonnet, 155 fixed) | Haiku 5.5 / Sonnet 5.5 (batch) | $1.104 |
+| | **Total** | | **≈ $2.58** |
 
 Measured unit costs: catalog enrichment **$1.08 / 1k products on Sonnet vs $0.069 / 1k on Haiku** (~16× cheaper,
 comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per first-time query**, then memoized.

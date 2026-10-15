@@ -10,7 +10,7 @@
    "id": "msgbatch_0118GeJtrpQz5h56mSXW2yyo",
    "submitted_at": 1792038590,
    "n": 465,
-   "collected": false
+   "collected": true
   }
  ],
  "items": {
@@ -5069,7 +5069,22 @@
      "taxonomy_path": "Electronics > Camera & Photo > Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "action camera accessory kit"
+    ],
+    "must_attributes": [
+     "action camera"
+    ],
+    "related_searches": [
+     "gopro accessory bundle",
+     "action camera mount kit",
+     "gopro hero 11 accessories",
+     "action camera case with accessories"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-42bf1727b4c7cc12": {
    "task": "expand_tail",
@@ -6683,7 +6698,24 @@
      "taxonomy_path": "Electronics > Camera & Photo > Video Surveillance > Surveillance Cameras"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "dash cam",
+     "video camera",
+     "security camera"
+    ],
+    "must_attributes": [
+     "backup"
+    ],
+    "related_searches": [
+     "wireless backup camera",
+     "backup camera for truck",
+     "dash cam front and rear",
+     "car rear view camera"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ad09a4d8f0e75a79": {
    "task": "expand_tail",
@@ -6782,7 +6814,8 @@
      "taxonomy_path": "Electronics > Wearable Technology > Smartwatches"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-32e849e0a7eca826": {
    "task": "expand_tail",
@@ -13308,7 +13341,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Shoes > Loafers & Slip-Ons"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b73b92ce4d8703e0": {
    "task": "expand_tail",
@@ -13407,7 +13441,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Shoes > Fashion Sneakers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8b4b08b84d6dfb32": {
    "task": "expand_tail",
@@ -15067,7 +15102,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Jewelry > Rings"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-2d58d0099529e7e1": {
    "task": "expand_tail",
@@ -21864,7 +21900,26 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Networking Products > Whole Home & Mesh Wi-Fi Systems"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "mesh wifi system",
+     "wifi router",
+     "wifi 6 router",
+     "wireless router"
+    ],
+    "must_attributes": [
+     "mesh",
+     "black"
+    ],
+    "related_searches": [
+     "black mesh wifi system",
+     "wifi 6 mesh system",
+     "whole home mesh wifi 3 pack",
+     "mesh wifi router"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-5154ac7c40fbffb1": {
    "task": "expand_tail",
@@ -22940,7 +22995,8 @@
      "taxonomy_path": "Electronics > Accessories & Supplies > Cord Management > Cable Sleeves"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-43d7526f9194521b": {
    "task": "expand_tail",
@@ -23039,7 +23095,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Coffee, Tea & Espresso > Coffee Makers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-dc976dc88ba888a3": {
    "task": "expand_tail",
@@ -23138,7 +23195,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breakfast Foods > Cereals > Oatmeal"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3fa92d8276d5a29c": {
    "task": "expand_tail",
@@ -23237,7 +23295,26 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Tablet Accessories > Screen Protectors"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "screen protector",
+     "tablet screen protector",
+     "laptop screen protector",
+     "smartwatch screen protector",
+     "privacy screen protector",
+     "blue light screen protector",
+     "tv screen protector"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "screen protector 3 pack",
+     "tempered glass screen protector",
+     "privacy screen protector",
+     "anti glare screen protector"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-0e721652f9d5843a": {
    "task": "expand_tail",
@@ -23336,7 +23413,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Tablecloths"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-bbb8b549262f5d38": {
    "task": "expand_tail",
@@ -23435,7 +23513,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Tapestries"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-20e1bf3f87fd784e": {
    "task": "expand_tail",
@@ -23534,7 +23613,8 @@
      "taxonomy_path": "Electronics > Television & Video > Accessories > TV Mounts, Stands & Turntables"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e19a081d42a67dad": {
    "task": "expand_tail",
@@ -23984,7 +24064,8 @@
      "taxonomy_path": "Home & Kitchen > Event & Party Supplies > Headwear"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a26c89cdff08bc39": {
    "task": "expand_tail",
@@ -26013,7 +26094,21 @@
      "taxonomy_path": "Home & Kitchen > Seasonal D\u00e9cor > Seasonal Lighting > Rope Lights"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "el wire",
+     "el wire driver"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "el wire kit",
+     "neon el wire",
+     "el wire with battery pack",
+     "el wire driver"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7b84c81c9fce6831": {
    "task": "expand_tail",
@@ -26240,7 +26335,21 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Novelty"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "lemon zester",
+     "kids cooking set"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "citrus zester grater",
+     "microplane zester",
+     "lemon zester gift set",
+     "cheese grater zester"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-74bcaa0eb962bae9": {
    "task": "expand_tail",
@@ -26341,7 +26450,8 @@
      "taxonomy_path": "Electronics > Accessories & Supplies > Telephone Accessories > Telephone Cords"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c027ea202db2a6e6": {
    "task": "expand_tail",
@@ -28622,7 +28732,8 @@
      "taxonomy_path": "Home & Kitchen > Storage & Organization > Laundry Storage & Organization"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b94808013a219cc7": {
    "task": "expand_tail",
@@ -31343,7 +31454,8 @@
      "taxonomy_path": "Home & Kitchen > Event & Party Supplies > Headwear"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9e1a4a60d3f96fd3": {
    "task": "expand_tail",
@@ -31442,7 +31554,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Jeans"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-5826da0695c718f4": {
    "task": "expand_tail",
@@ -31787,7 +31900,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Watches > Watch Bands"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ee73cebc125f41cf": {
    "task": "expand_tail",
@@ -37698,7 +37812,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Beverages"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-daa2675e5ba1b462": {
    "task": "expand_tail",
@@ -39471,7 +39586,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Components > Internal Components"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9648deb03b8670fc": {
    "task": "expand_tail",
@@ -40260,7 +40376,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Tablecloths"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c5d7ad887b8a3268": {
    "task": "expand_tail",
@@ -40818,7 +40935,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-6c46535eacc42fea": {
    "task": "expand_tail",
@@ -42354,7 +42472,23 @@
      "taxonomy_path": "Home & Kitchen > Event & Party Supplies > Decorations"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "cake banner topper"
+    ],
+    "must_attributes": [
+     "birthday",
+     "32nd birthday"
+    ],
+    "related_searches": [
+     "32nd birthday banner",
+     "32nd birthday cake topper",
+     "32nd birthday party supplies",
+     "32nd birthday balloons"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b7459544222dc5f4": {
    "task": "expand_tail",
@@ -47300,7 +47434,25 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Baby > Baby Boys > Clothing"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "toddler pajamas",
+     "boys pajama set"
+    ],
+    "must_attributes": [
+     "baby",
+     "boys",
+     "sleep and play"
+    ],
+    "related_searches": [
+     "baby boys footed sleeper",
+     "baby boys thermal pajamas",
+     "newborn sleep and play",
+     "baby boys cotton sleep and play"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-6b384549586de4c8": {
    "task": "expand_tail",
@@ -50016,7 +50168,21 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "shower curtain liner",
+     "shelf liner"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "shower curtain liner",
+     "shelf liner",
+     "drawer liner",
+     "waterproof shower liner"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-76a44605939fd20d": {
    "task": "expand_tail",
@@ -51951,7 +52117,24 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Shoes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "womens sneakers",
+     "women's sneakers",
+     "walking shoes",
+     "slip on sneakers",
+     "kids sneakers"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "cross training shoes",
+     "women's cross trainer shoes",
+     "men's cross training shoes",
+     "best gym training shoes"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a914e2e086a80577": {
    "task": "expand_tail",
@@ -61752,7 +61935,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Shoes > Boots"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-5eb1c6f525ca7e89": {
    "task": "expand_tail",
@@ -61851,7 +62035,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-72e59724db852d90": {
    "task": "expand_tail",
@@ -61952,7 +62137,27 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Soups, Stocks & Broths"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "soup mix",
+     "cup a soup",
+     "minestrone soup",
+     "butternut squash soup",
+     "french onion soup",
+     "dehydrated vegetable soup mix"
+    ],
+    "must_attributes": [
+     "broccoli cheddar"
+    ],
+    "related_searches": [
+     "broccoli cheddar soup mix",
+     "canned broccoli cheddar soup",
+     "cream of broccoli soup",
+     "cheddar cheese soup"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8eccf0d1b4765848": {
    "task": "expand_tail",
@@ -62167,7 +62372,22 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Olives, Pickles & Relishes > Chutneys"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "chutney",
+     "tamarind paste",
+     "sweet chili sauce"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "mango chutney",
+     "tamarind chutney",
+     "indian chutney",
+     "sweet chili sauce"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c8b97cec9cf64431": {
    "task": "expand_tail",
@@ -62389,7 +62609,24 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Components"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "cpu and motherboard bundle",
+     "motherboard",
+     "desktop processor",
+     "cpu processor",
+     "dual-core processor"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "ryzen cpu motherboard combo",
+     "intel cpu motherboard combo",
+     "budget gaming motherboard",
+     "am4 motherboard cpu bundle"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c426fedc68fd1f68": {
    "task": "expand_tail",
@@ -62848,7 +63085,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-f49cfa63324a034c": {
    "task": "expand_tail",
@@ -63191,7 +63429,24 @@
      "taxonomy_path": "Electronics > Television & Video > Accessories > CD & DVD Racks"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "media storage rack",
+     "vinyl record holder",
+     "shelving unit",
+     "4-tier shelf rack",
+     "magazine holder"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "cd dvd storage rack",
+     "dvd storage shelf",
+     "vinyl record storage",
+     "media storage tower"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-cb34e40997b0cf60": {
    "task": "expand_tail",
@@ -63290,7 +63545,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Components > Internal Components"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-320b14d048a94785": {
    "task": "expand_tail",
@@ -63622,7 +63878,25 @@
      "taxonomy_path": "Electronics > Accessories & Supplies > Power Strips & Surge Protectors > Power Strips"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "power cord",
+     "power extension cord",
+     "tv power cord",
+     "monitor power cord",
+     "ac adapter",
+     "power adapter"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "cheap extension cord",
+     "power cord 6ft",
+     "replacement tv power cord",
+     "3 prong power cord"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ab72450096418df0": {
    "task": "expand_tail",
@@ -63959,7 +64233,29 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Shoes > Pumps"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "retro pumps",
+     "pumps",
+     "dress pumps",
+     "kitten heel mary janes",
+     "chunky heel pumps",
+     "pointed toe pumps",
+     "wedge pumps",
+     "leather pumps"
+    ],
+    "must_attributes": [
+     "retro"
+    ],
+    "related_searches": [
+     "vintage style pumps",
+     "retro t-strap pumps",
+     "kitten heel pumps",
+     "affordable dress pumps"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3d82df2d7e0c5a21": {
    "task": "expand_tail",
@@ -64188,7 +64484,20 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Wine Accessories > Wine Accessory Sets"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "sake set"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "japanese sake cup set",
+     "porcelain sake set",
+     "sake bottle and cups",
+     "ceramic sake set"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-67f98e2e16bb1c19": {
    "task": "expand_tail",
@@ -64289,7 +64598,27 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "satin shawl",
+     "pashmina shawl",
+     "sequin shawl",
+     "fleece shawl",
+     "floral scarf wrap",
+     "pashmina scarf"
+    ],
+    "must_attributes": [
+     "satin"
+    ],
+    "related_searches": [
+     "satin wrap for evening dress",
+     "cheap wedding shawl",
+     "satin shawl for women",
+     "formal shawls and wraps"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-85cdb99d49b242b4": {
    "task": "expand_tail",
@@ -64388,7 +64717,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-6d7a5be681bde2ef": {
    "task": "expand_tail",
@@ -64487,7 +64817,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Coffee, Tea & Espresso > Tea Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-47cd2d1d7bc235f1": {
    "task": "expand_tail",
@@ -64706,7 +65037,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Window Treatment Hardware > Window Rods"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a61e8a09837fe6e6": {
    "task": "expand_tail",
@@ -64922,7 +65254,8 @@
      "taxonomy_path": "Electronics > Portable Audio & Video > CB & Two-Way Radios > Two-Way Radios"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-85fc985f3701b9f9": {
    "task": "expand_tail",
@@ -65145,7 +65478,23 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "walnuts",
+     "raw walnuts",
+     "in shell walnuts",
+     "walnut halves"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "bulk walnuts",
+     "raw walnut halves",
+     "in shell walnuts",
+     "walnut pieces"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-675560ddbe16fae8": {
    "task": "expand_tail",
@@ -65246,7 +65595,27 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Jeans"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "jeans",
+     "bootcut jeans",
+     "straight fit jeans",
+     "flare jeans",
+     "slim fit jeans",
+     "skinny jeans"
+    ],
+    "must_attributes": [
+     "western"
+    ],
+    "related_searches": [
+     "western bootcut jeans",
+     "cheap bootcut jeans",
+     "men's western jeans",
+     "women's western jeans"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-37f6c972be1a9528": {
    "task": "expand_tail",
@@ -65582,7 +65951,27 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Cutting Boards"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "cheese gift basket",
+     "meat and cheese gift box",
+     "spanish cheese gift box",
+     "french cheese gift box",
+     "cheddar cheese",
+     "swiss cheese"
+    ],
+    "must_attributes": [
+     "pickles"
+    ],
+    "related_searches": [
+     "charcuterie board with pickles",
+     "cheese and pickle gift box",
+     "cheese board accessories",
+     "gourmet cheese and meat gift set"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-73eee258b4ebf956": {
    "task": "expand_tail",
@@ -67017,7 +67406,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Bar Tools & Drinkware"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-1b30e138a83859f0": {
    "task": "expand_tail",
@@ -69171,7 +69561,23 @@
      "taxonomy_path": "Grocery & Gourmet Food > Beverages"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "protein hot chocolate",
+     "cold brew coffee",
+     "boba powder mix",
+     "fruit puree"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "hot chocolate",
+     "warm winter drinks",
+     "herbal tea",
+     "apple cider mix"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-1baed83ab963acf6": {
    "task": "expand_tail",
@@ -69270,7 +69676,27 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Bakeware > Candy Making Supplies"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "rock candy",
+     "hard candy",
+     "lollipops",
+     "lollipop",
+     "candy variety pack",
+     "salt water taffy"
+    ],
+    "must_attributes": [
+     "crafting"
+    ],
+    "related_searches": [
+     "rock candy sticks",
+     "hard candy for crafts",
+     "candy for gingerbread house decorating",
+     "lollipop making supplies"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-abe82e85f8c6cdd6": {
    "task": "expand_tail",
@@ -69722,7 +70148,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e767e4bbdb2e3f8c": {
    "task": "expand_tail",
@@ -69937,7 +70364,24 @@
      "taxonomy_path": "Electronics > Camera & Photo > Accessories > Remote Controls"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "remote control",
+     "page turner remote"
+    ],
+    "must_attributes": [
+     "cycling",
+     "bike"
+    ],
+    "related_searches": [
+     "bike turn signal remote",
+     "bicycle light with remote",
+     "wireless bike horn remote",
+     "bike remote control"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-62fc64330a99245f": {
    "task": "expand_tail",
@@ -76472,7 +76916,25 @@
      "taxonomy_path": "Electronics > Television & Video > Accessories > Antennas"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "antenna",
+     "tv antenna",
+     "outdoor antenna",
+     "handheld antenna",
+     "telescopic antenna",
+     "rv tv antenna"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "tv antenna",
+     "outdoor tv antenna",
+     "handheld radio antenna",
+     "amplified hdtv antenna"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-cbd71296c8e568cc": {
    "task": "expand_tail",
@@ -77429,7 +77891,23 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Components"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "cpu and motherboard bundle",
+     "motherboard",
+     "cpu processor",
+     "desktop processor"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "ryzen cpu motherboard combo",
+     "intel cpu motherboard bundle",
+     "gaming pc upgrade bundle",
+     "am4 motherboard and cpu combo"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-1aa29719e842a45c": {
    "task": "expand_tail",
@@ -77528,7 +78006,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breads & Bakery > Breads > Flatbreads"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-238bf5842c02866c": {
    "task": "expand_tail",
@@ -77627,7 +78106,23 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Components"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "desktop processor",
+     "cpu processor",
+     "dual-core processor",
+     "cpu and motherboard bundle"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "desktop cpu",
+     "gaming processor",
+     "intel core i7 processor",
+     "amd ryzen processor"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9d1c7e49351e540e": {
    "task": "expand_tail",
@@ -80406,7 +80901,26 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Sport Specific Clothing > Tennis"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "summer dress",
+     "swing dress",
+     "knit dress",
+     "girls dress",
+     "party dress"
+    ],
+    "must_attributes": [
+     "tennis"
+    ],
+    "related_searches": [
+     "tennis dress with shorts",
+     "women's athletic tennis dress",
+     "golf and tennis dress",
+     "tennis outfit gift"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-60e24defca4486b0": {
    "task": "expand_tail",
@@ -80509,7 +81023,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9fd15f1f9e5ade0f": {
    "task": "expand_tail",
@@ -81454,7 +81969,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9159f748fcb84df1": {
    "task": "expand_tail",
@@ -86055,7 +86571,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a8bced89710c6a65": {
    "task": "expand_tail",
@@ -88656,7 +89173,24 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "chili seasoning mix",
+     "chili",
+     "chili beans"
+    ],
+    "must_attributes": [
+     "kit"
+    ],
+    "related_searches": [
+     "chili seasoning kit",
+     "chili starter kit",
+     "chili cook off kit",
+     "chili seasoning mix bulk"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-58681eabc5df116a": {
    "task": "expand_tail",
@@ -88757,7 +89291,22 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "dark red cherries"
+    ],
+    "must_attributes": [
+     "dark red"
+    ],
+    "related_searches": [
+     "fresh dark sweet cherries",
+     "bing cherries",
+     "fresh red cherries 1 lb",
+     "rainier cherries"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-afa5ebb090f5a49f": {
    "task": "expand_tail",
@@ -89224,7 +89773,26 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Pasta & Noodles > Pasta"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "pasta",
+     "whole wheat pasta",
+     "einkorn pasta",
+     "farfalle pasta",
+     "gluten free spaghetti"
+    ],
+    "must_attributes": [
+     "fusilli"
+    ],
+    "related_searches": [
+     "fusilli pasta",
+     "rotini pasta",
+     "whole wheat fusilli",
+     "gluten free fusilli"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-2e93f450e40dd827": {
    "task": "expand_tail",
@@ -89440,7 +90008,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Canned, Jarred & Packaged Foods > Fruits"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-733ed4175406aca7": {
    "task": "expand_tail",
@@ -90978,7 +91547,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Bakeware > Ramekins & Souffl\u00e9 Dishes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e61cdfd20b582d30": {
    "task": "expand_tail",
@@ -94681,7 +95251,26 @@
      "taxonomy_path": "Grocery & Gourmet Food > Food & Beverage Gifts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "gourmet gift box",
+     "tea gift box",
+     "personalized cutting board",
+     "scented candle",
+     "sugar cookies"
+    ],
+    "must_attributes": [
+     "gift"
+    ],
+    "related_searches": [
+     "mail carrier appreciation gift",
+     "postal worker thank you gift",
+     "mailman gift basket",
+     "mail carrier holiday gift"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-14e40acd3cca620f": {
    "task": "expand_tail",
@@ -98113,7 +98702,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Beverages"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-92fbc1e655dedfca": {
    "task": "expand_tail",
@@ -99531,7 +100121,30 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "wild rice",
+     "cornmeal",
+     "rye crispbread",
+     "vegetable broth",
+     "crushed garlic",
+     "onion powder",
+     "fine flour salt",
+     "mixed nuts",
+     "preserved lemon paste"
+    ],
+    "must_attributes": [
+     "no preservatives"
+    ],
+    "related_searches": [
+     "organic pantry staples",
+     "no preservatives whole grains",
+     "no additives spices",
+     "preservative-free broth"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-46c3a0f989db1745": {
    "task": "expand_tail",
@@ -101075,7 +101688,24 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computers & Tablets > Desktops"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "all-in-one computer",
+     "desktop computer",
+     "mini desktop computer"
+    ],
+    "must_attributes": [
+     "all-in-one"
+    ],
+    "related_searches": [
+     "all-in-one desktop computer",
+     "touchscreen all-in-one computer",
+     "27 inch all-in-one computer",
+     "mini desktop computer"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-20a74c2bcc400b7c": {
    "task": "expand_tail",
@@ -101176,7 +101806,26 @@
      "taxonomy_path": "Home & Kitchen > Wall Art > Posters & Prints"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "poster",
+     "wall poster",
+     "art print poster",
+     "poster print",
+     "wall art print"
+    ],
+    "must_attributes": [
+     "blacklight"
+    ],
+    "related_searches": [
+     "blacklight poster",
+     "uv reactive poster",
+     "neon blacklight wall art",
+     "glow in the dark poster"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-6bce6a27f8599c28": {
    "task": "expand_tail",
@@ -101275,7 +101924,8 @@
      "taxonomy_path": "Electronics > Television & Video > Blu-ray Players & Recorders > Blu-ray Players"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-43d170b50be80937": {
    "task": "expand_tail",
@@ -101374,7 +102024,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-545cc06686d242ae": {
    "task": "expand_tail",
@@ -101473,7 +102124,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4d8610c3a1b705c0": {
    "task": "expand_tail",
@@ -101700,7 +102352,8 @@
      "taxonomy_path": "Home & Kitchen > Heating, Cooling & Air Quality > Household Fans"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7d1b1c024703e8e1": {
    "task": "expand_tail",
@@ -101801,7 +102454,22 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Baking Mixes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "easy-bake refill"
+    ],
+    "must_attributes": [
+     "refill"
+    ],
+    "related_searches": [
+     "easy-bake oven refill mix",
+     "organic cake mix",
+     "easy-bake oven mixes",
+     "organic baking mix"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8839565f167abed2": {
    "task": "expand_tail",
@@ -102030,7 +102698,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Shirts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a7a7c592a7ddf4e8": {
    "task": "expand_tail",
@@ -102131,7 +102800,26 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Thermometers & Timers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "hand washing timer",
+     "digital timer",
+     "kitchen timer",
+     "digital kitchen timer",
+     "sand timer"
+    ],
+    "must_attributes": [
+     "hand washing"
+    ],
+    "related_searches": [
+     "hand washing timer for kids",
+     "20 second hand wash timer",
+     "sink hand washing timer",
+     "toothbrush timer for kids"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-0c0e57d8da80b745": {
    "task": "expand_tail",
@@ -102230,7 +102918,8 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Bedroom Furniture > Beds, Frames & Bases"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-cde1c11e65137b52": {
    "task": "expand_tail",
@@ -102329,7 +103018,25 @@
      "taxonomy_path": "Electronics > Headphones, Earbuds & Accessories > Headphones & Earbuds"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "bluetooth headphones",
+     "on-ear headphones",
+     "noise cancelling headphones",
+     "wireless earbuds",
+     "wired earbuds",
+     "earbud headphones"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "eco-friendly headphones",
+     "bamboo headphones",
+     "sustainable wireless earbuds",
+     "recycled material headphones"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-10cc5fc1b1193d29": {
    "task": "expand_tail",
@@ -102558,7 +103265,8 @@
      "taxonomy_path": "Electronics > Camera & Photo > Flashes > Shoe Mount Flashes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-36523954b8c0b88a": {
    "task": "expand_tail",
@@ -102659,7 +103367,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Coats, Jackets & Vests"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a3baf7aeac513d8d": {
    "task": "expand_tail",
@@ -102758,7 +103467,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Active"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-cc4898ac699e5522": {
    "task": "expand_tail",
@@ -102859,7 +103569,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Suits & Sport Coats"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e3e27baf39b86dc9": {
    "task": "expand_tail",
@@ -102960,7 +103671,30 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Candles & Holders > Candles"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "candle",
+     "scented candle",
+     "soy candle",
+     "chakra candles",
+     "floating candles",
+     "st patricks day candle",
+     "spell candles",
+     "pillar candles",
+     "taper candles"
+    ],
+    "must_attributes": [
+     "organic"
+    ],
+    "related_searches": [
+     "organic soy candle",
+     "natural scented candle",
+     "novelty shaped candle",
+     "beeswax candle"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-55d59067c0bfa29a": {
    "task": "expand_tail",
@@ -103187,7 +103921,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Shoes > Slippers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4bad0761f49584bb": {
    "task": "expand_tail",
@@ -103414,7 +104149,8 @@
      "taxonomy_path": "Electronics > Home Audio > Speakers > Sound Bars"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-eb4d33d0654a8692": {
    "task": "expand_tail",
@@ -103513,7 +104249,8 @@
      "taxonomy_path": "Electronics > Headphones, Earbuds & Accessories > Cases"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-eb6fa3a71e091d63": {
    "task": "expand_tail",
@@ -103612,7 +104349,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Pants"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-f774b5f3ee15c064": {
    "task": "expand_tail",
@@ -103713,7 +104451,25 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "vpn firewall appliance",
+     "wireless router",
+     "4g lte router",
+     "wireless hotspot gateway"
+    ],
+    "must_attributes": [
+     "vpn"
+    ],
+    "related_searches": [
+     "vpn firewall router",
+     "hardware vpn firewall",
+     "small business firewall appliance",
+     "sonicwall firewall"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b64d6cb250abd8fc": {
    "task": "expand_tail",
@@ -103814,7 +104570,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Shirts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c4a7f5d267993042": {
    "task": "expand_tail",
@@ -103915,7 +104672,26 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Networking Products > Routers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "wireless router",
+     "wifi router",
+     "wifi 6 router",
+     "mesh wifi system",
+     "4g lte router"
+    ],
+    "must_attributes": [
+     "wireless"
+    ],
+    "related_searches": [
+     "wifi 6 router",
+     "wireless router dual band",
+     "mesh wifi system",
+     "gigabit wireless router"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-93ceab5e9b95dc2c": {
    "task": "expand_tail",
@@ -112648,7 +113424,26 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Shoes > Boots"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "duck boots",
+     "winter snow boots",
+     "snow boots",
+     "women's boots",
+     "ankle boots"
+    ],
+    "must_attributes": [
+     "puddle"
+    ],
+    "related_searches": [
+     "waterproof rain boots",
+     "duck boots women",
+     "waterproof ankle boots",
+     "mid calf waterproof boots"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a6068b9f42e67ef3": {
    "task": "expand_tail",
@@ -113576,7 +114371,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Frozen > Meals & Entrees"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-f99026ebd531954e": {
    "task": "expand_tail",
@@ -113677,7 +114473,30 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Luggage & Travel Gear > Umbrellas"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "rain poncho",
+     "rain suit",
+     "raincoat",
+     "rain jacket",
+     "women's rain jacket",
+     "men's rain jacket",
+     "folding umbrella",
+     "travel umbrella",
+     "mini umbrella"
+    ],
+    "must_attributes": [
+     "rain protection"
+    ],
+    "related_searches": [
+     "rain poncho with hood",
+     "waterproof rain jacket",
+     "compact travel umbrella",
+     "rain suit for adults"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7745087e9371ef00": {
    "task": "expand_tail",
@@ -115786,7 +116605,24 @@
      "taxonomy_path": "Electronics > Camera & Photo > Accessories > Remote Controls"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "page turner remote",
+     "wired remote shutter release",
+     "remote control"
+    ],
+    "must_attributes": [
+     "self portrait"
+    ],
+    "related_searches": [
+     "bluetooth camera shutter remote",
+     "selfie remote for phone",
+     "wireless camera remote",
+     "tripod with remote"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-25563775b0b0d30d": {
    "task": "expand_tail",
@@ -116486,7 +117322,8 @@
      "taxonomy_path": "Electronics > eBook Readers & Accessories > Covers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4a7e449aae11d4e9": {
    "task": "expand_tail",
@@ -117911,7 +118748,25 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Laptop Accessories > Bags, Cases & Sleeves"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "purse organizer insert",
+     "purse organizer",
+     "muslin bags",
+     "sweater storage bags"
+    ],
+    "must_attributes": [
+     "small"
+    ],
+    "related_searches": [
+     "small pouch bags",
+     "small zipper pouch",
+     "purse organizer insert",
+     "small drawstring bags"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4484899e28c3907a": {
    "task": "expand_tail",
@@ -118259,7 +119114,27 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "soda",
+     "fruit punch soda",
+     "kids soda",
+     "peach soda",
+     "mango soda",
+     "ramune soda"
+    ],
+    "must_attributes": [
+     "cotton candy"
+    ],
+    "related_searches": [
+     "cotton candy soda",
+     "mini cans cotton candy soda",
+     "cotton candy soda 7.5 oz",
+     "retro candy flavored soda"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-fa237f3aac01d3f6": {
    "task": "expand_tail",
@@ -118358,7 +119233,22 @@
      "taxonomy_path": "Grocery & Gourmet Food > Deli & Prepared Foods > Dips, Salsas & Spreads"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "dip mix",
+     "ranch dip mix",
+     "parmesan dip mix"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "ranch dip mix",
+     "dip seasoning packet",
+     "parmesan dip mix",
+     "party dip mix"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b5d2227e9510a755": {
    "task": "expand_tail",
@@ -119648,7 +120538,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Pants"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-964373a159f8ef98": {
    "task": "expand_tail",
@@ -122063,7 +122954,29 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Suckers & Lollipops"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "lollipops",
+     "lollipop",
+     "rainbow lollipops",
+     "twist lollipops",
+     "giant lollipop",
+     "zoo animal lollipops",
+     "sugar free lollipops",
+     "mango lollipops",
+     "caramel apple lollipops",
+     "valentine lollipops"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "bulk lollipops",
+     "assorted fruit lollipops",
+     "individually wrapped lollipops",
+     "sugar free lollipops"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-cb45024805204312": {
    "task": "expand_tail",
@@ -122757,7 +123670,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-82c49648fc7b112e": {
    "task": "expand_tail",
@@ -125130,7 +126044,28 @@
      "taxonomy_path": "Home & Kitchen > Bedding > Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "pillow cover",
+     "throw pillow covers",
+     "throw pillow cover",
+     "decorative pillow cover",
+     "boho pillow covers",
+     "lumbar pillow covers",
+     "throw pillow case"
+    ],
+    "must_attributes": [
+     "small"
+    ],
+    "related_searches": [
+     "small throw pillow covers",
+     "12x12 pillow covers",
+     "small decorative pillow covers",
+     "16x16 pillow covers"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-6f4048a186516238": {
    "task": "expand_tail",
@@ -126435,7 +127370,8 @@
      "taxonomy_path": "Home & Kitchen > Storage & Organization > Laundry Storage & Organization"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-62cddb3a946d0f58": {
    "task": "expand_tail",
@@ -127711,7 +128647,28 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Jewelry > Wedding Rings"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "cz wedding band",
+     "wedding band",
+     "diamond wedding band",
+     "spinner wedding band",
+     "wedding ring set",
+     "gold rings",
+     "sterling silver ring"
+    ],
+    "must_attributes": [
+     "cubic zirconia"
+    ],
+    "related_searches": [
+     "cubic zirconia wedding band",
+     "sterling silver cz wedding band",
+     "womens cz wedding ring set",
+     "mens cz wedding band"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3e538a5203b1b5f6": {
    "task": "expand_tail",
@@ -128153,7 +129110,28 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "swing dress",
+     "flapper dress",
+     "victorian dress",
+     "party dress",
+     "striped dress",
+     "knit dress",
+     "ruffle dress"
+    ],
+    "must_attributes": [
+     "rockabilly"
+    ],
+    "related_searches": [
+     "rockabilly swing dress",
+     "50s vintage polka dot dress",
+     "retro pin up dress",
+     "artistic print midi dress"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c6f138c15996821f": {
    "task": "expand_tail",
@@ -128376,7 +129354,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d60ed18de6ea90c5": {
    "task": "expand_tail",
@@ -133528,7 +134507,25 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Computer Cable Adapters"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "usb-c adapter",
+     "usb to ttl adapter",
+     "power adapter",
+     "ac adapter"
+    ],
+    "must_attributes": [
+     "usb"
+    ],
+    "related_searches": [
+     "usb to tesla charger adapter",
+     "usb-c to tesla adapter",
+     "tesla usb adapter",
+     "usb power adapter"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ab28b7ee58e31f26": {
    "task": "expand_tail",
@@ -134338,7 +135335,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Coats, Jackets & Vests"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-93f329cbd3de6475": {
    "task": "expand_tail",
@@ -135294,7 +136292,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breads & Bakery > Cakes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b80d45a1e17d513a": {
    "task": "expand_tail",
@@ -135636,7 +136635,24 @@
      "taxonomy_path": "Electronics > Home Audio > Home Audio Accessories > Connectors & Adapters"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "split bolt connector",
+     "voice grade connector",
+     "coax connector"
+    ],
+    "must_attributes": [
+     "pipe connector"
+    ],
+    "related_searches": [
+     "pvc pipe connector",
+     "white pvc coupling",
+     "pipe fitting connector",
+     "white pipe coupler"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-2e9164c917a6c6ac": {
    "task": "expand_tail",
@@ -137775,7 +138791,25 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cleaning & Repair"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "laptop keyboard",
+     "keyboard",
+     "keyboard stickers",
+     "wired keyboard",
+     "wireless keyboard",
+     "mechanical keyboard"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "replacement laptop keyboard",
+     "keyboard key stickers",
+     "keyboard keycap replacement",
+     "new wireless keyboard"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-edc11c3bba8de476": {
    "task": "expand_tail",
@@ -138353,7 +139387,24 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Tablet Accessories > Screen Protectors"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "screen protector",
+     "tablet screen protector",
+     "laptop screen protector",
+     "privacy screen protector",
+     "smartwatch screen protector"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "vibrio screen protector",
+     "tempered glass screen protector",
+     "tablet screen protector",
+     "laptop screen protector"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d54bdfa365a62494": {
    "task": "expand_tail",
@@ -138584,7 +139635,24 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "brass hand bell",
+     "boot bracelet",
+     "wall clock"
+    ],
+    "must_attributes": [
+     "western"
+    ],
+    "related_searches": [
+     "western cow bell",
+     "western hand bell",
+     "rustic cast iron bell",
+     "cowboy dinner bell"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-99bed29f63a08bc5": {
    "task": "expand_head",
@@ -142871,7 +143939,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Shoes > Sandals"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-cf8f6234c3a096b5": {
    "task": "expand_tail",
@@ -145072,7 +146141,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Shoes > Slippers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d7b42f55d5d72be4": {
    "task": "expand_tail",
@@ -145649,7 +146719,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Place Mats"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e1ebcabc6a49d658": {
    "task": "expand_tail",
@@ -145748,7 +146819,8 @@
      "taxonomy_path": "Electronics > Wearable Technology > Smartwatches"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a6d1cb33d974dd61": {
    "task": "expand_tail",
@@ -147852,7 +148924,22 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Sport Specific Clothing > American Football"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "football cleats"
+    ],
+    "must_attributes": [
+     "football"
+    ],
+    "related_searches": [
+     "adidas football cleats",
+     "adidas men's football cleats",
+     "adidas originals shoes",
+     "adidas soccer cleats"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-2ad27ec56291a116": {
    "task": "expand_tail",
@@ -148422,7 +149509,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Kitchen & Table Linens > Place Mats"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-36263b2e162bb736": {
    "task": "expand_tail",
@@ -149805,7 +150893,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Bar Tools & Drinkware"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-fdef193df9f4e78e": {
    "task": "expand_tail",
@@ -151779,7 +152868,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Baby > Baby Boys > Clothing"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-02d39029b7c7e2a7": {
    "task": "expand_tail",
@@ -152836,7 +153926,27 @@
      "taxonomy_path": "Electronics > Portable Audio & Video > Radios > Weather Radios"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "weather radio",
+     "shortwave radio",
+     "portable cd boombox",
+     "shower radio",
+     "clock radio",
+     "alarm clock radio"
+    ],
+    "must_attributes": [
+     "emergency"
+    ],
+    "related_searches": [
+     "hand crank emergency radio",
+     "noaa weather radio",
+     "solar emergency radio",
+     "portable am/fm radio"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-2df8f21b1ad7c569": {
    "task": "expand_tail",
@@ -155677,7 +156787,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Juices"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-503613a0a359f2ca": {
    "task": "expand_tail",
@@ -156246,7 +157357,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Home D\u00e9cor Accents > Display Stands"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a17ad3c7f5d61b18": {
    "task": "expand_tail",
@@ -156686,7 +157798,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Costumes & Accessories > Women > Wigs"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-feae93861f809500": {
    "task": "expand_tail",
@@ -157271,7 +158384,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c32b34d8ded23389": {
    "task": "expand_tail",
@@ -158762,7 +159876,24 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Salt & Pepper"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "salt and pepper shaker set",
+     "salt and pepper shakers",
+     "salt and pepper shaker"
+    ],
+    "must_attributes": [
+     "salt and pepper shaker set"
+    ],
+    "related_searches": [
+     "country style salt and pepper shakers",
+     "rustic salt and pepper shaker set",
+     "farmhouse salt and pepper shakers",
+     "magnetic salt and pepper shaker set"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d99c963faf3fc622": {
    "task": "expand_tail",
@@ -160157,7 +161288,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-0b0f8d3b936399f5": {
    "task": "expand_tail",
@@ -161083,7 +162215,26 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "swing dress",
+     "victorian dress",
+     "party dress",
+     "summer dress",
+     "flapper dress"
+    ],
+    "must_attributes": [
+     "50s"
+    ],
+    "related_searches": [
+     "50s swing dress",
+     "vintage 50s dress",
+     "retro polka dot dress",
+     "rockabilly dress"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9f5f3d61a6327405": {
    "task": "expand_tail",
@@ -161301,7 +162452,8 @@
      "taxonomy_path": "Electronics > Power Accessories > AC Adapters"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4c3ed0debd2beb3c": {
    "task": "expand_tail",
@@ -161400,7 +162552,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cleaning & Repair"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-daa14aff9036bfd8": {
    "task": "expand_tail",
@@ -162336,7 +163489,8 @@
      "taxonomy_path": "Home & Kitchen > Event & Party Supplies > Favors"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b9ba853695f132a2": {
    "task": "expand_tail",
@@ -163751,7 +164905,24 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Small Appliances > Juicers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "citrus juicer",
+     "manual lemon juicer",
+     "masticating juicer"
+    ],
+    "must_attributes": [
+     "citrus juicing"
+    ],
+    "related_searches": [
+     "electric citrus juicer",
+     "manual lemon squeezer",
+     "orange juicer gift set",
+     "cast iron citrus press"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ad4659df805b7a3a": {
    "task": "expand_tail",
@@ -164458,7 +165629,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Flavoring Powders"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-cc4df8855d872e9a": {
    "task": "expand_tail",
@@ -164557,7 +165729,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Components > Internal Components"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8e50891ffcc178f9": {
    "task": "expand_tail",
@@ -167002,7 +168175,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Ketchup"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a9dd8c3a6402203d": {
    "task": "expand_tail",
@@ -167103,7 +168277,25 @@
      "taxonomy_path": "Electronics > Portable Audio & Video > Boomboxes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "portable cd boombox",
+     "portable cd player",
+     "portable speaker",
+     "bluetooth speaker"
+    ],
+    "must_attributes": [
+     "portable"
+    ],
+    "related_searches": [
+     "portable cd boombox with bluetooth",
+     "large boombox with cd player and radio",
+     "portable cd player with speakers",
+     "retro boombox cd cassette"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-26e4fb87bd388b53": {
    "task": "expand_tail",
@@ -167204,7 +168396,27 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Puffed Snacks"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "protein puffs",
+     "chickpea puffs",
+     "puffed cereal",
+     "corn puffs",
+     "cheese puffs",
+     "makhana"
+    ],
+    "must_attributes": [
+     "high protein"
+    ],
+    "related_searches": [
+     "high protein puffed snacks",
+     "low carb protein puffs",
+     "chickpea protein puffs",
+     "gluten free protein puffs"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e0ca69edb907eda2": {
    "task": "expand_tail",
@@ -168848,7 +170060,8 @@
      "taxonomy_path": "Electronics > Camera & Photo > Lenses > Camera Lenses"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c13675e8187a13d1": {
    "task": "expand_tail",
@@ -168947,7 +170160,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Sweaters"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a9e42dd2fe413781": {
    "task": "expand_tail",
@@ -169046,7 +170260,23 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Components > Internal Components"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "cpu and motherboard bundle",
+     "motherboard",
+     "cpu processor",
+     "desktop processor"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "ryzen cpu motherboard combo",
+     "intel cpu motherboard bundle",
+     "am4 motherboard cpu combo",
+     "gaming cpu and motherboard bundle"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d23571456244bd61": {
    "task": "expand_tail",
@@ -169273,7 +170503,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-1ca6aca9903cd830": {
    "task": "expand_tail",
@@ -170796,7 +172027,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9c9055077712f54d": {
    "task": "expand_tail",
@@ -170895,7 +172127,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Frozen > Seafood > Frozen Fish"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c0cc756039530e6f": {
    "task": "expand_tail",
@@ -171238,7 +172471,25 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Flours & Meals"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "vital wheat gluten",
+     "dough enhancer",
+     "spelt flour",
+     "wheat bran"
+    ],
+    "must_attributes": [
+     "premium"
+    ],
+    "related_searches": [
+     "vital wheat gluten flour",
+     "high protein vital wheat gluten",
+     "seitan flour",
+     "dough enhancer for bread"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-84684d676b52b004": {
    "task": "expand_tail",
@@ -171337,7 +172588,8 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Kids' Furniture > Toy Bags & Nets"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-53c3fbafabb4cae8": {
    "task": "expand_tail",
@@ -172014,7 +173266,26 @@
      "taxonomy_path": "Grocery & Gourmet Food > Beverages > Beverage Syrups & Concentrates > Syrups"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "pancake syrup",
+     "sugar free maple syrup",
+     "apricot syrup",
+     "light corn syrup",
+     "syrup dispenser"
+    ],
+    "must_attributes": [
+     "restaurant"
+    ],
+    "related_searches": [
+     "restaurant pancake syrup",
+     "bulk maple syrup",
+     "syrup dispenser for restaurant",
+     "sugar free pancake syrup"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9798be30ef830e5e": {
    "task": "expand_tail",
@@ -173053,7 +174324,24 @@
      "taxonomy_path": "Grocery & Gourmet Food > Food & Beverage Gifts > Snack Gifts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "keto snacks",
+     "trail mix",
+     "party mix"
+    ],
+    "must_attributes": [
+     "coffee"
+    ],
+    "related_searches": [
+     "coffee flavored snacks",
+     "chocolate covered espresso beans",
+     "coffee almonds",
+     "coffee protein bars"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7c6bca9a20124a79": {
    "task": "expand_tail",
@@ -176346,7 +177634,27 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Shirts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "t-shirt",
+     "graphic t-shirt",
+     "graphic tee",
+     "graphic t shirt",
+     "polo shirt",
+     "long sleeve shirt"
+    ],
+    "must_attributes": [
+     "cotton"
+    ],
+    "related_searches": [
+     "100% cotton t-shirt",
+     "cotton military shirt",
+     "cotton ripstop bdu shirt",
+     "cotton long sleeve work shirt"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4c1f18685a709e69": {
    "task": "expand_tail",
@@ -181601,7 +182909,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Costumes & Accessories > Kids & Baby"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4041d24b94ff6116": {
    "task": "expand_tail",
@@ -184320,7 +185629,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Canned, Jarred & Packaged Foods > Packaged Meals & Side Dishes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-fd44d2831a7e53a6": {
    "task": "expand_tail",
@@ -184537,7 +185847,8 @@
      "taxonomy_path": "Home & Kitchen > Event & Party Supplies > Ceremony Supplies"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a7ffdc79317c09af": {
    "task": "expand_tail",
@@ -185944,7 +187255,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Salad Toppings"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-df97702b42ff81a7": {
    "task": "expand_tail",
@@ -189798,7 +191110,20 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cleaning & Repair"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "stylus cleaner"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "record stylus cleaning kit",
+     "turntable stylus brush",
+     "vinyl record cleaner",
+     "stylus cleaning fluid"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-0d01e032f3c1a8e4": {
    "task": "expand_tail",
@@ -197988,7 +199313,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Bars"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d6980cdb7d4c7ead": {
    "task": "expand_tail",
@@ -199419,7 +200745,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Maternity"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e9648dfaabf8854e": {
    "task": "expand_tail",
@@ -199520,7 +200847,26 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "stainless steel spoons",
+     "flatware set",
+     "dinner fork",
+     "travel flatware set",
+     "camping cutlery set"
+    ],
+    "must_attributes": [
+     "melamine"
+    ],
+    "related_searches": [
+     "melamine spoons",
+     "melamine soup spoon",
+     "melamine serving spoon",
+     "melamine dinnerware set"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-fb7e9e42c8bbc767": {
    "task": "expand_tail",
@@ -199738,7 +201084,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Coats, Jackets & Vests"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-0dab38b5ebdd6867": {
    "task": "expand_tail",
@@ -200194,7 +201541,26 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Jackets & Coats"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "utility anorak jacket",
+     "track jacket",
+     "puffer jacket",
+     "bomber jacket",
+     "zip-up hoodie",
+     "faux leather jacket",
+     "oversized denim jacket"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "rain jacket",
+     "waterproof rain jacket women",
+     "lightweight rain jacket",
+     "hooded rain jacket"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a7822a9829496a1e": {
    "task": "expand_tail",
@@ -204106,7 +205472,24 @@
      "taxonomy_path": "Electronics > Camera & Photo > Video Surveillance > Surveillance Cameras"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "dash cam",
+     "security camera",
+     "video camera"
+    ],
+    "must_attributes": [
+     "backup"
+    ],
+    "related_searches": [
+     "wireless backup camera for car",
+     "backup camera with monitor",
+     "dash cam front and rear",
+     "license plate backup camera"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e023fb87dd0eaff9": {
    "task": "expand_tail",
@@ -204205,7 +205588,23 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "bolero",
+     "bolero shrug",
+     "sequin shawl",
+     "cardigan sweater"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "bolero shrug",
+     "cheap bolero jacket",
+     "black bolero for dress",
+     "wedding bolero shawl"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7cf10099f249ff05": {
    "task": "expand_tail",
@@ -204536,7 +205935,25 @@
      "taxonomy_path": "Electronics > Accessories & Supplies > Office Electronics Accessories > Calculator Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "calculator case",
+     "hard case",
+     "laptop sleeve",
+     "card holder"
+    ],
+    "must_attributes": [
+     "cheap"
+    ],
+    "related_searches": [
+     "calculator case with zipper",
+     "graphing calculator hard case",
+     "ti-84 calculator case",
+     "scientific calculator pouch"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-0e69db2a09bc9fa3": {
    "task": "expand_tail",
@@ -204854,7 +206271,8 @@
      "taxonomy_path": "Home & Kitchen > Summer Products in Home > Outdoor Cushions & Pillows > Chair Pads"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-93473f55309d2be0": {
    "task": "expand_tail",
@@ -204955,7 +206373,28 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Sauces, Gravies & Marinades > Hot Sauce"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "hot sauce",
+     "hot pepper sauce",
+     "habanero hot sauce",
+     "green jalapeno hot sauce",
+     "cajun hot sauce",
+     "scotch bonnet hot sauce",
+     "hot sauce variety pack"
+    ],
+    "must_attributes": [
+     "chamoy"
+    ],
+    "related_searches": [
+     "chamoy sauce",
+     "chamoy hot sauce",
+     "chamoy candy sauce",
+     "mexican hot sauce"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-52caa29c24a143c4": {
    "task": "expand_tail",
@@ -205054,7 +206493,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-43c4c2225c912b8b": {
    "task": "expand_tail",
@@ -205153,7 +206593,8 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Living Room Furniture > Tables"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d6bd1e375303f5f5": {
    "task": "expand_tail",
@@ -205982,7 +207423,22 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "fruit squash"
+    ],
+    "must_attributes": [
+     "fruit"
+    ],
+    "related_searches": [
+     "fruit squash concentrate",
+     "robinsons fruit squash",
+     "no added sugar squash drink",
+     "apple pear squash"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ae284b6803c4aa37": {
    "task": "expand_tail",
@@ -206081,7 +207537,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breakfast Foods > Cereals > Muesli & Granola Cereals"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-5027221efbc8ac42": {
    "task": "expand_tail",
@@ -206426,7 +207883,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Kids Sleepwear & Robes > Total Sleepwear & Robes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ddb69bd2ef1dd0f3": {
    "task": "expand_tail",
@@ -206525,7 +207983,29 @@
      "taxonomy_path": "Home & Kitchen > Bedding > Sheets & Pillowcases > Pillowcases"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "pillowcase",
+     "pillowcases",
+     "pillow cases",
+     "pillow case",
+     "king pillowcases",
+     "satin pillowcase",
+     "velvet pillowcases",
+     "pillow shams"
+    ],
+    "must_attributes": [
+     "cheap"
+    ],
+    "related_searches": [
+     "cheap pillowcases set of 2",
+     "cheap satin pillowcase",
+     "cheap queen pillowcases",
+     "cheap cotton pillowcases"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8be123a5d712ca52": {
    "task": "expand_tail",
@@ -207232,7 +208712,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ab839ac7c8bb0f2b": {
    "task": "expand_tail",
@@ -207585,7 +209066,28 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Watches > Wrist Watches"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "digital sport watch",
+     "women's watch",
+     "smartwatch",
+     "automatic watch",
+     "solar watch",
+     "mechanical watch",
+     "crystal watch"
+    ],
+    "must_attributes": [
+     "talking"
+    ],
+    "related_searches": [
+     "talking watch for the blind",
+     "large print talking watch",
+     "atomic talking watch",
+     "talking alarm clock watch"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-cf2bec4bda04ff5e": {
    "task": "expand_tail",
@@ -207814,7 +209316,20 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Flours & Meals"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "vital wheat gluten"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "vital wheat gluten flour",
+     "vital wheat gluten bulk",
+     "vital wheat gluten for seitan",
+     "bob's red mill vital wheat gluten"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a8dcd5e594d05b28": {
    "task": "expand_tail",
@@ -210853,7 +212368,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Window Stickers & Films"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a0becb2f79542fa1": {
    "task": "expand_tail",
@@ -211797,7 +213313,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Home D\u00e9cor Accents > Collectible Figurines"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-59adccc2bb19e505": {
    "task": "expand_tail",
@@ -212342,7 +213859,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Beverages > Coffee"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4c3514a22df0d0bc": {
    "task": "expand_tail",
@@ -220133,7 +221651,8 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Living Room Furniture > Bean Bags, Covers & Refills"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-30026fbdbe924971": {
    "task": "expand_tail",
@@ -221078,7 +222597,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Food & Beverage Gifts > Snack Gifts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-aab8953d2d936e2b": {
    "task": "expand_tail",
@@ -221177,7 +222697,25 @@
      "taxonomy_path": "Electronics > Power Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "dc coupler",
+     "rca coupler",
+     "power adapter",
+     "dc power cable"
+    ],
+    "must_attributes": [
+     "gift"
+    ],
+    "related_searches": [
+     "dc coupler for camera",
+     "dc power adapter",
+     "dc barrel connector coupler",
+     "camera battery dc coupler"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-058152428a819b82": {
    "task": "expand_tail",
@@ -221896,7 +223434,29 @@
      "taxonomy_path": "Grocery & Gourmet Food > Beverages"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "soda",
+     "fruit punch soda",
+     "peach soda",
+     "mango soda",
+     "cherry soda",
+     "sparkling water",
+     "ramune soda",
+     "ginger ale"
+    ],
+    "must_attributes": [
+     "grapefruit"
+    ],
+    "related_searches": [
+     "grapefruit soda variety pack",
+     "citrus soda gift set",
+     "squirt grapefruit soda",
+     "sparkling grapefruit water"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-f71d96775b98fa38": {
    "task": "expand_tail",
@@ -223315,7 +224875,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Dried Grains & Rice > Millet"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-2018e240e4e0b1ee": {
    "task": "expand_tail",
@@ -223416,7 +224977,26 @@
      "taxonomy_path": "Grocery & Gourmet Food > Food & Beverage Gifts > Sauce, Gravy & Marinade Gifts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "sweet chili sauce",
+     "hot sauce",
+     "yuzu pepper sauce",
+     "chocolate sauce",
+     "barbecue sauce"
+    ],
+    "must_attributes": [
+     "orange"
+    ],
+    "related_searches": [
+     "orange sauce gift set",
+     "orange glaze sauce",
+     "sweet chili sauce gift",
+     "orange chicken sauce"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8386c72d3b414808": {
    "task": "expand_tail",
@@ -223761,7 +225341,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Food & Beverage Gifts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-86a91be9d6fc9867": {
    "task": "expand_tail",
@@ -223976,7 +225557,23 @@
      "taxonomy_path": "Electronics > Television & Video > Streaming Media Players"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "streaming media player",
+     "blu-ray player",
+     "dvd player",
+     "carplay ai box"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "roku streaming stick",
+     "4k streaming device",
+     "fire tv stick",
+     "blu-ray player with streaming"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-dcf65dcbe69cbfc4": {
    "task": "expand_tail",
@@ -224075,7 +225672,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Storage & Organization > Racks & Holders"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-45fb78aa7772a0c4": {
    "task": "expand_tail",
@@ -224174,7 +225772,27 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "thermal paste",
+     "thermal pad",
+     "m.2 ssd heatsink",
+     "computer fan",
+     "thermoelectric cooler",
+     "computer water cooling kit"
+    ],
+    "must_attributes": [
+     "gift"
+    ],
+    "related_searches": [
+     "thermal paste for cpu",
+     "arctic silver thermal paste",
+     "thermal pad for laptop",
+     "cpu cooler fan"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-aba0c1464801f0fa": {
    "task": "expand_tail",
@@ -224511,7 +226129,26 @@
      "taxonomy_path": "Electronics > Television & Video > VCRs"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "vcr",
+     "vhs vcr",
+     "dvd vcr combo",
+     "vhs tapes",
+     "vhs head cleaner",
+     "rca cable",
+     "av cable"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "vhs vcr player",
+     "dvd vcr combo",
+     "vhs tapes",
+     "vcr rca cable"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-60fd23de6b3ed181": {
    "task": "expand_tail",
@@ -225461,7 +227098,25 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "sheet set",
+     "bed sheet set",
+     "comforter set",
+     "cookware set",
+     "flatware set",
+     "kitchen knife set"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "great bay home sheet set",
+     "great bay home comforter set",
+     "great bay home bedding",
+     "great bay home duvet cover set"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-01e8ce9ba0769589": {
    "task": "expand_tail",
@@ -226850,7 +228505,25 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "hdmi cable",
+     "usb-c cable",
+     "micro usb cable",
+     "usb 3.0 cable",
+     "ethernet cable",
+     "optical audio cable"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "hdmi cable",
+     "usb-c cable",
+     "charging cable",
+     "ethernet cable"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-6b2e587e60df72a5": {
    "task": "expand_tail",
@@ -229219,7 +230892,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-120ad02a7b1ed1ad": {
    "task": "expand_tail",
@@ -230848,7 +232522,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Home D\u00e9cor Accents > Sculptures"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-de5fe260d7c90cec": {
    "task": "expand_tail",
@@ -233964,7 +235639,23 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "collagen casing",
+     "sausage casings"
+    ],
+    "must_attributes": [
+     "collagen"
+    ],
+    "related_searches": [
+     "large collagen sausage casings",
+     "collagen casings for smoked sausage",
+     "edible collagen casing 32mm",
+     "fibrous casings for sausage"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4e4bf2b93c8f5198": {
    "task": "expand_tail",
@@ -234441,7 +236132,8 @@
      "taxonomy_path": "Electronics > Headphones, Earbuds & Accessories > Earpads"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ab7e4b9cdc132ce5": {
    "task": "expand_tail",
@@ -235028,7 +236720,23 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "inkjet printable cd-r",
+     "dvd+r discs"
+    ],
+    "must_attributes": [
+     "inkjet printable"
+    ],
+    "related_searches": [
+     "inkjet printable cd-r spindle",
+     "white inkjet printable cd-r 700mb",
+     "printable dvd+r discs",
+     "water resistant printable cd-r"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-46eff3fca6c1de5e": {
    "task": "expand_tail",
@@ -235129,7 +236837,8 @@
      "taxonomy_path": "Electronics > Camera & Photo > Film Photography > Film"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-98cfced3f8c4aad1": {
    "task": "expand_tail",
@@ -235823,7 +237532,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-26011371089d1b8e": {
    "task": "expand_tail",
@@ -235922,7 +237632,24 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Pasta & Noodles > Pasta"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "pastina pasta",
+     "orzo pasta",
+     "macaroni pasta",
+     "farfalle pasta",
+     "fusilli pasta"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "pastina pasta",
+     "orzo pasta",
+     "acini di pepe pasta",
+     "small soup pasta"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-aa7abbc23c2e6f36": {
    "task": "expand_tail",
@@ -236386,7 +238113,8 @@
      "taxonomy_path": "Electronics > Television & Video > Accessories > Antennas"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ce1be5c7c66844d4": {
    "task": "expand_tail",
@@ -236603,7 +238331,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d70c81a44e1c4fcf": {
    "task": "expand_tail",
@@ -236832,7 +238561,8 @@
      "taxonomy_path": "Electronics > Household Batteries, Chargers & Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-92f635073d23bebd": {
    "task": "expand_tail",
@@ -237049,7 +238779,8 @@
      "taxonomy_path": "Electronics > Camera & Photo > Flashes > Shoe Mount Flashes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-5f57c9b182046b40": {
    "task": "expand_tail",
@@ -237148,7 +238879,8 @@
      "taxonomy_path": "Electronics > Home Audio > Speakers > Subwoofers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d7d57bfe3add57b3": {
    "task": "expand_tail",
@@ -237247,7 +238979,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Cocktail Sauce"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-50aa480b6bc98e84": {
    "task": "expand_tail",
@@ -237716,7 +239449,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Frozen > Desserts & Toppings"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-80cf76c23b215bdf": {
    "task": "expand_tail",
@@ -240302,7 +242036,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Bars"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-2c3fe8e353e1f3f7": {
    "task": "expand_tail",
@@ -241340,7 +243075,30 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "raw honey",
+     "wildflower honey",
+     "organic honey",
+     "orange blossom honey",
+     "manuka honey",
+     "flavored honey",
+     "greek fir honey",
+     "elderberry honey",
+     "whipped honey",
+     "honey spoons",
+     "honey sticks"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "raw honey",
+     "wildflower honey",
+     "organic honey",
+     "honey sticks"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-473e47c1584524ab": {
    "task": "expand_tail",
@@ -245103,7 +246861,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Shoes > Pumps"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d990c078b0238653": {
    "task": "expand_tail",
@@ -246395,7 +248154,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Nuts & Seeds"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-2ce9162ac2fb00bb": {
    "task": "expand_tail",
@@ -247475,7 +249235,26 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cables & Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "usb charging cable",
+     "iphone charging cable",
+     "usb cable",
+     "usb data cable"
+    ],
+    "must_attributes": [
+     "30 pin",
+     "charging"
+    ],
+    "related_searches": [
+     "30 pin to usb cable",
+     "apple 30 pin charger",
+     "30 pin iphone 4 charging cable",
+     "30 pin ipod charging cable"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-21767138110f7439": {
    "task": "expand_tail",
@@ -247576,7 +249355,24 @@
      "taxonomy_path": "Home & Kitchen > Heating, Cooling & Air Quality > Parts & Accessories > Air Purifier Parts & Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "air purifier case",
+     "air purifier",
+     "air purifier filter"
+    ],
+    "must_attributes": [
+     "case"
+    ],
+    "related_searches": [
+     "air purifier carrying case",
+     "hard shell case for personal air purifier",
+     "air purifier replacement filter",
+     "portable air purifier"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3c5b0f675fe33a26": {
    "task": "expand_tail",
@@ -247679,7 +249475,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Costumes & Accessories > Kids & Baby > Baby"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-51eec730caaffa1d": {
    "task": "expand_tail",
@@ -247778,7 +249575,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-fbd699c41ecf98c6": {
    "task": "expand_tail",
@@ -247879,7 +249677,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Boys > Clothing > Clothing Sets"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e7e8caa8e0d4ad78": {
    "task": "expand_tail",
@@ -247978,7 +249777,8 @@
      "taxonomy_path": "Electronics > Camera & Photo > Flashes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-52543c4488a015e8": {
    "task": "expand_tail",
@@ -248446,7 +250246,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Monitors"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-45b14e2e7b007c57": {
    "task": "expand_tail",
@@ -248545,7 +250346,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-cbd176a895cc102a": {
    "task": "expand_tail",
@@ -248644,7 +250446,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breads & Bakery > Breads > Flatbreads"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8d1853f9914f5609": {
    "task": "expand_tail",
@@ -248859,7 +250662,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Cookware > Pots & Pans"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-933fd71b1b9aeb64": {
    "task": "expand_tail",
@@ -248958,7 +250762,8 @@
      "taxonomy_path": "Electronics > Headphones, Earbuds & Accessories > Amplifiers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-327b3d5ab66a6a40": {
    "task": "expand_tail",
@@ -249282,7 +251087,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Ketchup"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8ec1e7daea01260e": {
    "task": "expand_tail",
@@ -249512,7 +251318,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Suckers & Lollipops"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9097b96f877d2218": {
    "task": "expand_tail",
@@ -249734,7 +251541,26 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "plastic wine glasses",
+     "wine glasses",
+     "wine glass",
+     "red wine glasses",
+     "stemless wine tumbler"
+    ],
+    "must_attributes": [
+     "plastic"
+    ],
+    "related_searches": [
+     "unbreakable plastic wine glasses",
+     "recyclable plastic wine glasses",
+     "disposable plastic wine glasses set",
+     "stemless plastic wine glasses"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-30b99da5319e51cb": {
    "task": "expand_tail",
@@ -249839,7 +251665,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Tops, Tees & Blouses"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9e6d4e2fb94ea1ff": {
    "task": "expand_tail",
@@ -250061,7 +251888,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Girls > Clothing > Snow & Rainwear"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-5938b35ab01fce52": {
    "task": "expand_tail",
@@ -250164,7 +251992,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Deli & Prepared Foods > Dips, Salsas & Spreads > Hummus"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-6e4aa5204d528239": {
    "task": "expand_tail",
@@ -250263,7 +252092,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Specialty Diets Storefront > Certified Organic Store"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a80d657816dcac26": {
    "task": "expand_tail",
@@ -250364,7 +252194,23 @@
      "taxonomy_path": "Electronics > Television & Video > Televisions"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "smart tv",
+     "outdoor tv"
+    ],
+    "must_attributes": [
+     "smart"
+    ],
+    "related_searches": [
+     "smart tv 4k",
+     "32 inch smart tv",
+     "55 inch smart tv",
+     "outdoor smart tv"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-bb29a444df0b8147": {
    "task": "expand_tail",
@@ -250705,7 +252551,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Oil Sprayers & Dispensers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-09f9a5737e4cc103": {
    "task": "expand_tail",
@@ -250804,7 +252651,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computers & Tablets > Tablets"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-19f0dc7a770ef007": {
    "task": "expand_tail",
@@ -250903,7 +252751,23 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "taramosalata",
+     "tahini"
+    ],
+    "must_attributes": [
+     "organic"
+    ],
+    "related_searches": [
+     "taramosalata dip",
+     "greek fish roe spread",
+     "organic tahini",
+     "organic hummus"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-5223cc64db6c2f83": {
    "task": "expand_tail",
@@ -251002,7 +252866,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Window Treatment Hardware > Window Rods"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-750b300b00c5a21b": {
    "task": "expand_tail",
@@ -251231,7 +253096,8 @@
      "taxonomy_path": "Home & Kitchen > Event & Party Supplies > Ceremony Supplies"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9b1a5b27f8c03281": {
    "task": "expand_tail",
@@ -251455,7 +253321,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-bf9909e10b0ea101": {
    "task": "expand_tail",
@@ -254699,7 +256566,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Photo Albums, Frames & Accessories > Picture Frames"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7ea2c847d69e7039": {
    "task": "expand_tail",
@@ -256332,7 +258200,8 @@
      "taxonomy_path": "Electronics > Accessories & Supplies > Cord Management > Cable Sleeves"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-1a03b1a274ef25d8": {
    "task": "expand_tail",
@@ -257390,7 +259259,26 @@
      "taxonomy_path": "Electronics > Home Audio > Speakers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "portable speaker",
+     "bookshelf speakers",
+     "car speakers",
+     "coaxial car speakers",
+     "car speaker"
+    ],
+    "must_attributes": [
+     "guitar amplification"
+    ],
+    "related_searches": [
+     "12 inch guitar speaker",
+     "guitar amp replacement speaker",
+     "guitar cabinet speaker 8 ohm",
+     "celestion guitar speaker"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-39f9aaa409281281": {
    "task": "expand_tail",
@@ -257489,7 +259377,8 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Entryway Furniture > Hall Trees"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-08be69a1ef53042e": {
    "task": "expand_tail",
@@ -257941,7 +259830,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7507ad96e8c73fe5": {
    "task": "expand_tail",
@@ -258616,7 +260506,23 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Artificial Plants & Flowers > Artificial Trees"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "pencil tree",
+     "artificial christmas tree"
+    ],
+    "must_attributes": [
+     "premium"
+    ],
+    "related_searches": [
+     "prelit pencil christmas tree",
+     "slim artificial christmas tree",
+     "7.5 ft pencil tree",
+     "flocked pencil christmas tree"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-1882e2b8e92f530d": {
    "task": "expand_tail",
@@ -259298,7 +261204,8 @@
      "taxonomy_path": "Electronics > Home Audio > Home Audio Accessories > Connectors & Adapters"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4e639eba9bf6c7ec": {
    "task": "expand_tail",
@@ -260309,7 +262216,27 @@
      "taxonomy_path": "Grocery & Gourmet Food > Food & Beverage Gifts > Assortments & Variety Gifts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "gourmet gift box",
+     "tea gift box",
+     "scented candle",
+     "birthday bracelet",
+     "throw blanket",
+     "couple keychain"
+    ],
+    "must_attributes": [
+     "gift"
+    ],
+    "related_searches": [
+     "gift cards for teens",
+     "teen gift box",
+     "gifts for teen girls",
+     "gifts for teen boys"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ebdeb28e64fb856c": {
    "task": "expand_tail",
@@ -260877,7 +262804,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ea1e10cd9bed4689": {
    "task": "expand_tail",
@@ -262903,7 +264831,27 @@
      "taxonomy_path": "Home & Kitchen > Storage & Organization > Baskets, Bins & Containers > Open Storage Bins"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "storage bins",
+     "storage bin",
+     "fabric storage baskets",
+     "fabric storage basket",
+     "storage box",
+     "closet storage bin"
+    ],
+    "must_attributes": [
+     "rattan"
+    ],
+    "related_searches": [
+     "rattan storage baskets",
+     "woven open storage bins",
+     "wicker storage baskets with handles",
+     "rattan basket for shelf"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b7829b83ab1e6269": {
    "task": "expand_tail",
@@ -263838,7 +265786,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Specialty Tools & Gadgets"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-367a914232b75b7a": {
    "task": "expand_tail",
@@ -265975,7 +267924,27 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Window Treatments > Blinds & Shades"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "cellular shades",
+     "cordless blackout roller shade",
+     "zebra roller blinds",
+     "cellular blinds",
+     "motorized blinds"
+    ],
+    "must_attributes": [
+     "sheer",
+     "solid"
+    ],
+    "related_searches": [
+     "sheer window shades",
+     "solid roller shades",
+     "light filtering cellular shades",
+     "sheer zebra blinds"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-84220624ee34636a": {
    "task": "expand_tail",
@@ -268128,7 +270097,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Shirts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a5aaf60f4a4350bd": {
    "task": "expand_tail",
@@ -268229,7 +270199,25 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods > Rice Cakes, Chips & Crackers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "brown rice crackers",
+     "rice crackers",
+     "rice cakes",
+     "mochi rice bites"
+    ],
+    "must_attributes": [
+     "brown rice"
+    ],
+    "related_searches": [
+     "gluten free brown rice crackers",
+     "mini rice crackers",
+     "brown rice snaps",
+     "organic brown rice crackers"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3ad09cc1fc2828ef": {
    "task": "expand_tail",
@@ -268555,7 +270543,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Frozen > Meals & Entrees > Chicken & Turkey"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-f589c2c96e8ce15b": {
    "task": "expand_tail",
@@ -268905,7 +270894,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breads & Bakery > Breads > Flatbreads"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-41275a30f7b154f0": {
    "task": "expand_tail",
@@ -269006,7 +270996,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Shoes > Boots"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-0c4b1eba7f6ae24f": {
    "task": "expand_tail",
@@ -269225,7 +271216,8 @@
      "taxonomy_path": "Electronics > Camera & Photo > Accessories > Telescope & Microscope Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-574a4f75cd1bb967": {
    "task": "expand_tail",
@@ -269693,7 +271685,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-84dd7ac8893ab343": {
    "task": "expand_tail",
@@ -269915,7 +271908,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Canned, Jarred & Packaged Foods > Sloppy Joe Mix"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-0d3b971d83588947": {
    "task": "expand_tail",
@@ -270733,7 +272727,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-54c76d4e79704b81": {
    "task": "expand_tail",
@@ -271071,7 +273066,8 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Dining Room Furniture > Buffets & Sideboards"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b1178f0c06130220": {
    "task": "expand_tail",
@@ -271172,7 +273168,25 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "slotted spatula",
+     "flexible spatula",
+     "silicone spatula set",
+     "wooden spatula"
+    ],
+    "must_attributes": [
+     "slotted"
+    ],
+    "related_searches": [
+     "mini slotted spatula",
+     "silicone slotted spatula",
+     "small slotted turner",
+     "heat resistant slotted spatula"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-620e790cf98e4f77": {
    "task": "expand_tail",
@@ -271273,7 +273287,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Shirts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ec4220c56527552b": {
    "task": "expand_tail",
@@ -271503,7 +273518,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Storage & Organization > Racks & Holders"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-27f89e6d15eee346": {
    "task": "expand_tail",
@@ -275610,7 +277626,23 @@
      "taxonomy_path": "Home & Kitchen > Bath > Bathroom Accessories > Holders & Dispensers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "card holder",
+     "memory card holder",
+     "palo santo holder",
+     "utensil holder"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "tack holder",
+     "horse tack rack",
+     "saddle rack",
+     "bridle holder"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-5331c2c380a7e109": {
    "task": "expand_tail",
@@ -278000,7 +280032,23 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "licorice candy",
+     "spice drops candy",
+     "chrysanthemum tea",
+     "rose bud tea"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "throat lozenges",
+     "cough drops",
+     "herbal throat tea",
+     "honey lemon lozenges"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ad6effbc15488f98": {
    "task": "expand_tail",
@@ -282440,7 +284488,26 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Pants"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "cargo pants",
+     "mens cargo pants",
+     "drawstring pants",
+     "joggers",
+     "jogger pants",
+     "wide leg pants",
+     "linen pants"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "volcom chino pants",
+     "volcom frickin chino pants",
+     "men's chino pants",
+     "volcom cargo pants"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d935a9483c43fe90": {
    "task": "expand_tail",
@@ -282669,7 +284736,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d7eb0e27729f3c7c": {
    "task": "expand_tail",
@@ -292211,7 +294279,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Sauces, Gravies & Marinades > Sauces"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-15310099779d6e21": {
    "task": "expand_tail",
@@ -294528,7 +296597,8 @@
      "taxonomy_path": "Home & Kitchen > Bedding > Sheets & Pillowcases > Sheet & Pillowcase Sets"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a3819bbd81cf8921": {
    "task": "expand_tail",
@@ -295084,7 +297154,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Soups, Stocks & Broths > Bouillon"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3d1617675b1f2cdf": {
    "task": "expand_tail",
@@ -297143,7 +299214,26 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Condiments & Salad Dressings > Salad Dressings"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "ranch dressing packets",
+     "ranch salad dressing",
+     "ranch dressing",
+     "ranch dressing mix",
+     "salad dressing"
+    ],
+    "must_attributes": [
+     "packets"
+    ],
+    "related_searches": [
+     "ranch dressing single serve packets",
+     "hidden valley ranch packets",
+     "ranch dressing mix packets",
+     "individual salad dressing packets"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b46422a84d3bbdc0": {
    "task": "expand_tail",
@@ -297583,7 +299673,21 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Accessories > Hats & Caps"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "fascinator hat",
+     "head scarf"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "wedding fascinator hat",
+     "fascinator hair clip",
+     "feather fascinator",
+     "tea party hat"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9cdd865ab3d19ad6": {
    "task": "expand_tail",
@@ -297682,7 +299786,23 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "pistachios",
+     "roasted salted pistachios",
+     "roasted pistachios",
+     "spicy pistachios"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "bulk pistachios",
+     "roasted salted pistachios",
+     "pistachios in shell",
+     "shelled pistachios"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b02b196677aa722c": {
    "task": "expand_tail",
@@ -299106,7 +301226,20 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "coverall"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "men's coveralls",
+     "work coveralls",
+     "insulated coveralls",
+     "short sleeve coverall"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8235db961332dcb3": {
    "task": "expand_tail",
@@ -299556,7 +301689,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ea52d135c39401c7": {
    "task": "expand_tail",
@@ -305261,7 +307395,20 @@
      "taxonomy_path": "Electronics > Household Batteries, Chargers & Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "aaa rechargeable battery"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "aaa rechargeable batteries",
+     "aa rechargeable batteries",
+     "aaa battery pack",
+     "aa battery holder"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a83ede421f1c5bed": {
    "task": "expand_tail",
@@ -307538,7 +309685,28 @@
      "taxonomy_path": "Home & Kitchen > Bedding > Sheets & Pillowcases > Pillowcases"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "pillowcases",
+     "pillowcase",
+     "pillow cases",
+     "king pillowcases",
+     "satin pillowcase",
+     "velvet pillowcases",
+     "pillow shams"
+    ],
+    "must_attributes": [
+     "cheap"
+    ],
+    "related_searches": [
+     "pillowcases set of 2",
+     "cheap satin pillowcases",
+     "queen size pillowcases",
+     "microfiber pillowcases"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4306b8a1ece1ba29": {
    "task": "expand_tail",
@@ -312661,7 +314829,24 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Bedroom Furniture > Beds, Frames & Bases"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "adjustable bed base",
+     "platform bed frame",
+     "platform bed"
+    ],
+    "must_attributes": [
+     "adjustable"
+    ],
+    "related_searches": [
+     "queen adjustable bed base",
+     "king adjustable bed base",
+     "split king adjustable bed frame",
+     "adjustable bed base with massage"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-dc14fe7b409be608": {
    "task": "expand_tail",
@@ -314173,7 +316358,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Chocolate > Chocolate Truffles"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d2dcd0ff2e61d131": {
    "task": "expand_tail",
@@ -314639,7 +316825,23 @@
      "taxonomy_path": "Home & Kitchen > Bedding > Bedding Accessories > Bed Risers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "monitor stand riser",
+     "monitor stand"
+    ],
+    "must_attributes": [
+     "acrylic"
+    ],
+    "related_searches": [
+     "acrylic monitor stand riser",
+     "clear acrylic display risers",
+     "acrylic desk shelf riser",
+     "acrylic cupcake stand risers"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-372404b116cdfd25": {
    "task": "expand_tail",
@@ -314858,7 +317060,8 @@
      "taxonomy_path": "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Shoe Organizers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8b52a70aba26f3ea": {
    "task": "expand_tail",
@@ -315995,7 +318198,28 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Dried Grains & Rice"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "rice side dish",
+     "spanish rice",
+     "long grain rice",
+     "white rice",
+     "jasmine rice",
+     "brown rice",
+     "parboiled rice"
+    ],
+    "must_attributes": [
+     "tandoori"
+    ],
+    "related_searches": [
+     "tandoori flavored rice mix",
+     "basmati rice",
+     "indian seasoned rice",
+     "premium basmati rice"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-889f06bad5923fad": {
    "task": "expand_tail",
@@ -316326,7 +318550,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7a228062076011b2": {
    "task": "expand_tail",
@@ -318451,7 +320676,25 @@
      "taxonomy_path": "Electronics > Television & Video > Streaming Media Players"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "streaming media player",
+     "blu-ray player",
+     "wireless audio receiver",
+     "carplay ai box"
+    ],
+    "must_attributes": [
+     "small"
+    ],
+    "related_searches": [
+     "mini streaming device",
+     "4k streaming stick",
+     "portable media player",
+     "hdmi streaming player"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-5af27e36e3543016": {
    "task": "expand_tail",
@@ -318550,7 +320793,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Bodysuits"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-5966a6ad9ab2466f": {
    "task": "expand_tail",
@@ -327781,7 +330025,26 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Sauces, Gravies & Marinades > Sauces"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "sweet chili sauce",
+     "brown sauce",
+     "barbecue sauce",
+     "yuzu pepper sauce",
+     "hot sauce"
+    ],
+    "must_attributes": [
+     "peach apricot"
+    ],
+    "related_searches": [
+     "peach apricot sauce",
+     "apricot preserves glaze",
+     "peach habanero sauce",
+     "sweet and sour sauce"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-bca2dd856e2bcfdb": {
    "task": "expand_tail",
@@ -328122,7 +330385,27 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Replacement Parts > Recliner Parts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "gaming recliner",
+     "accent chair",
+     "high back chair",
+     "executive chair",
+     "desk chair",
+     "office desk chair"
+    ],
+    "must_attributes": [
+     "pull handle"
+    ],
+    "related_searches": [
+     "recliner chair with pull handle",
+     "manual recliner chair",
+     "adjustable headrest recliner",
+     "gaming recliner with footrest"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-9093d99355fdd36d": {
    "task": "expand_tail",
@@ -328808,7 +331091,8 @@
      "taxonomy_path": "Electronics > Accessories & Supplies > Mounts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-402deceacf53bf34": {
    "task": "expand_tail",
@@ -331201,7 +333485,24 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breads & Bakery > Desserts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "creme brulee",
+     "freeze dried ice cream",
+     "sugar free cheesecake",
+     "turkish delight",
+     "whipped topping"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "summer picnic desserts",
+     "no bake dessert",
+     "cookout dessert ideas",
+     "freeze dried ice cream"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-cab12a667fff0426": {
    "task": "expand_tail",
@@ -331300,7 +333601,25 @@
      "taxonomy_path": "Home & Kitchen > Storage & Organization > Clothing & Closet Storage > Under-Bed Storage"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "canvas tote bag",
+     "shoulder bag",
+     "reusable shopping bag",
+     "drawstring bag",
+     "school backpack",
+     "laptop backpack"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "tote bag",
+     "canvas tote bag",
+     "shoulder bag",
+     "drawstring bag"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-aafe8ebe67735131": {
    "task": "expand_tail",
@@ -332805,7 +335124,20 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "bonito flakes"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "katsuobushi",
+     "dried bonito flakes",
+     "bonito flakes for dashi",
+     "japanese dashi ingredients"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ff1dc957deb81e47": {
    "task": "expand_tail",
@@ -334522,7 +336854,25 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "bras",
+     "t-shirt bra",
+     "wireless bra",
+     "sports bra",
+     "underwire bra",
+     "crop bralette"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "comfortable everyday bras",
+     "wireless bras for women",
+     "t-shirt bras",
+     "soft cotton bralettes"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3edd3d4da13c6dc1": {
    "task": "expand_tail",
@@ -337003,7 +339353,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Home D\u00e9cor Accents > Display Stands"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-ab56b600cd958030": {
    "task": "expand_tail",
@@ -337214,7 +339565,20 @@
      "taxonomy_path": "Electronics > Television & Video > Accessories > Cleaning"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "vhs head cleaner"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "vcr head cleaner tape",
+     "vhs head cleaner wet type",
+     "vcr cleaning kit",
+     "vhs vcr player"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-423a9b4b819aeba9": {
    "task": "expand_tail",
@@ -339466,7 +341830,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Boys > Clothing > Clothing Sets"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-2f16ae28c54d4fcb": {
    "task": "expand_tail",
@@ -340036,7 +342401,25 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Sauces, Gravies & Marinades > Sauces"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "hot sauce",
+     "chocolate sauce",
+     "alabama white bbq sauce",
+     "barbecue sauce",
+     "brown sauce",
+     "yum yum sauce"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "hollandaise sauce",
+     "hot sauce for eggs",
+     "maple syrup",
+     "brunch seasoning"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-044e89b6a6b20ef2": {
    "task": "expand_tail",
@@ -341822,7 +344205,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Leggings"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-1f396141c5cdc34d": {
    "task": "expand_tail",
@@ -344943,7 +347327,26 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Luggage & Travel Gear > Luggage > Carry-Ons"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "carry on luggage",
+     "carry-on luggage",
+     "luggage set",
+     "duffel bag",
+     "leather travel duffel bag"
+    ],
+    "must_attributes": [
+     "carry-on"
+    ],
+    "related_searches": [
+     "carry-on spinner luggage",
+     "eco-friendly carry-on suitcase",
+     "lightweight carry-on luggage",
+     "carry-on luggage set"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3868c80323abb064": {
    "task": "expand_tail",
@@ -345044,7 +347447,8 @@
      "taxonomy_path": "Electronics > Household Batteries, Chargers & Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3887cb0dd06c465f": {
    "task": "expand_tail",
@@ -345147,7 +347551,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Dairy, Eggs & Plant-Based Alternatives > Plant-Based Milk"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-2e6e8d58bccbd458": {
    "task": "expand_tail",
@@ -345489,7 +347894,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d7a7a8be631a588e": {
    "task": "expand_tail",
@@ -347125,7 +349531,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Swimsuits & Cover Ups"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3820413f740e5753": {
    "task": "expand_tail",
@@ -347348,7 +349755,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Baking Mixes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-29822d80a9f602d9": {
    "task": "expand_tail",
@@ -347685,7 +350093,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Kitchen Utensils & Gadgets > Cutting Boards"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-53796a6ad602dcae": {
    "task": "expand_tail",
@@ -347784,7 +350193,26 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Shoes > Mules & Clogs"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "clogs",
+     "womens clogs",
+     "leather clogs",
+     "mule clog",
+     "garden clogs",
+     "fur lined clogs",
+     "slip on mule sneakers"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "cheap women's clogs",
+     "affordable garden clogs",
+     "men's clogs under $30",
+     "slip on clogs"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-38bee9a26f78f7b5": {
    "task": "expand_tail",
@@ -347883,7 +350311,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Monitors"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d31796ee6be60a32": {
    "task": "expand_tail",
@@ -347982,7 +350411,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Window Treatment Hardware > Holdbacks"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8379ab9df2ab9cf5": {
    "task": "expand_tail",
@@ -348083,7 +350513,22 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breads & Bakery > Cakes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "keto cake mix"
+    ],
+    "must_attributes": [
+     "devil's food"
+    ],
+    "related_searches": [
+     "devil's food cake mix",
+     "chocolate cake mix",
+     "boxed chocolate cake",
+     "devil's food cupcakes"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7abf603741fac08d": {
    "task": "expand_tail",
@@ -348418,7 +350863,25 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Shoes > Outdoor"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "slip on walking shoes",
+     "mens slip on walking shoes",
+     "running shoes",
+     "mens running shoe"
+    ],
+    "must_attributes": [
+     "hiking"
+    ],
+    "related_searches": [
+     "men's hiking shoes",
+     "waterproof hiking shoes men",
+     "lightweight trail walking shoes",
+     "budget hiking boots"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-dee95deb18687e66": {
    "task": "expand_tail",
@@ -348770,7 +351233,8 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Entryway Furniture > Hall Trees"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-6d13ba2a4567c254": {
    "task": "expand_tail",
@@ -349458,7 +351922,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Shoes > Mules & Clogs"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-85967edc6dc26825": {
    "task": "expand_tail",
@@ -349557,7 +352022,24 @@
      "taxonomy_path": "Grocery & Gourmet Food > Beverages > Tea"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "herbal tea",
+     "tea",
+     "tea bags",
+     "loose leaf tea",
+     "fruit herbal tea"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "palo azul tea bags",
+     "palo azul herbal tea",
+     "kidney cleanse herbal tea",
+     "palo azul bark loose"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b3c57336e1adbac3": {
    "task": "expand_tail",
@@ -349772,7 +352254,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Shoes > Pumps"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-45b7a214786e4098": {
    "task": "expand_tail",
@@ -349871,7 +352354,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Bar Tools & Drinkware"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a5860f1903932062": {
    "task": "expand_tail",
@@ -349970,7 +352454,8 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Replacement Parts > Recliner Parts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-31c23ad3211a956f": {
    "task": "expand_tail",
@@ -350071,7 +352556,29 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "swiss dot dress",
+     "swing dress",
+     "summer dress",
+     "ruffle dress",
+     "striped dress",
+     "knit dress",
+     "cold shoulder dress",
+     "party dress"
+    ],
+    "must_attributes": [
+     "shift"
+    ],
+    "related_searches": [
+     "shift dress women",
+     "cheap summer dress",
+     "casual shift dress",
+     "swing dress"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-20b8ba51a65a10ad": {
    "task": "expand_tail",
@@ -350422,7 +352929,8 @@
      "taxonomy_path": "Electronics > Television & Video > Streaming Media Players"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-99c6e9b40de2d080": {
    "task": "expand_tail",
@@ -350521,7 +353029,8 @@
      "taxonomy_path": "Electronics > Home Audio > Speakers > Subwoofers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b21b521ebbcdf3dd": {
    "task": "expand_tail",
@@ -350620,7 +353129,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Storage & Organization > Racks & Holders"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-25e2c66b0554e655": {
    "task": "expand_tail",
@@ -350719,7 +353229,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Beverages > Tea"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b8d3c9083ce33ec2": {
    "task": "expand_tail",
@@ -351668,7 +354179,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-56763791a816d536": {
    "task": "expand_tail",
@@ -352501,7 +355013,21 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Jewelry > Pendants & Coins"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "coin purse",
+     "mini coin purse"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "coin purse",
+     "mini coin purse",
+     "small coin pouch",
+     "leather coin wallet"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-092762390b9e3092": {
    "task": "expand_tail",
@@ -352961,7 +355487,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Shorts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e564ed349a261fb6": {
    "task": "expand_tail",
@@ -356078,7 +358605,24 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "computer desk",
+     "writing desk",
+     "l shaped desk",
+     "l-shaped desk",
+     "folding computer desk"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "vanity desk with mirror",
+     "makeup vanity desk",
+     "small writing desk",
+     "desk chair for vanity"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b27b66f98418c4c7": {
    "task": "expand_tail",
@@ -362487,7 +365031,23 @@
      "taxonomy_path": "Home & Kitchen > Bedding > Bedding Accessories > Bed Risers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "monitor stand riser",
+     "monitor stand"
+    ],
+    "must_attributes": [
+     "acrylic"
+    ],
+    "related_searches": [
+     "acrylic monitor stand riser",
+     "clear acrylic display risers",
+     "acrylic riser for desk",
+     "acrylic display stand set"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-559574a591129fe9": {
    "task": "expand_tail",
@@ -362949,7 +365509,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Pasta & Noodles > Pasta"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-59fa1429594cb501": {
    "task": "expand_tail",
@@ -363655,7 +366216,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Meat & Seafood > Sausages > Chorizo"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8f5e2a477fd9b0ce": {
    "task": "expand_tail",
@@ -363754,7 +366316,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Dairy, Eggs & Plant-Based Alternatives > Milk & Cream > Coffee Creamers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8c38351bd1fd5da4": {
    "task": "expand_tail",
@@ -366540,7 +369103,27 @@
      "taxonomy_path": "Grocery & Gourmet Food > Beverages > Bottled Beverages, Water & Drink Mixes > Juices"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "organic juice",
+     "grape juice",
+     "vegetable juice",
+     "mango juice",
+     "green juice",
+     "white grape juice"
+    ],
+    "must_attributes": [
+     "gift"
+    ],
+    "related_searches": [
+     "orange juice gift basket",
+     "fresh orange juice gift set",
+     "citrus juice gift box",
+     "organic orange juice"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7f1dbba55867dd3e": {
    "task": "expand_tail",
@@ -367746,7 +370329,23 @@
      "taxonomy_path": "Electronics > Home Audio > Home Audio Accessories > Speaker Parts & Components"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "speaker grille",
+     "car speaker grill",
+     "speaker grille clips",
+     "speaker covers"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "car speaker grill",
+     "speaker grille clips",
+     "speaker covers pair",
+     "subwoofer grille"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-3d9c738794e7b0d0": {
    "task": "expand_tail",
@@ -368204,7 +370803,8 @@
      "taxonomy_path": "Home & Kitchen > Heating, Cooling & Air Quality > Parts & Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d326e7e4a8d01bff": {
    "task": "expand_tail",
@@ -369117,7 +371717,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Soups, Stocks & Broths > Bouillon"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-82e3a1d680afa6d8": {
    "task": "expand_tail",
@@ -372106,7 +374707,8 @@
      "taxonomy_path": "Electronics > Accessories & Supplies > Mounts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-efe1958162d38f64": {
    "task": "expand_tail",
@@ -375484,7 +378086,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Swimsuits & Cover Ups"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b375ba3abdafd068": {
    "task": "expand_tail",
@@ -375583,7 +378186,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Small Appliance Parts & Accessories > Blender Replacement Parts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-363bd17f96557039": {
    "task": "expand_tail",
@@ -376304,7 +378908,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breads & Bakery > Breads > Flatbreads"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7174752e952c3e13": {
    "task": "expand_tail",
@@ -376888,7 +379493,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Novelty & More > Clothing > Novelty"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b78dc520795db530": {
    "task": "expand_tail",
@@ -377344,7 +379950,8 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Home D\u00e9cor Accents > Tassels"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c893dba1f3c27363": {
    "task": "expand_tail",
@@ -377559,7 +380166,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Suckers & Lollipops"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-aca71b8e8424a23b": {
    "task": "expand_tail",
@@ -377779,7 +380387,23 @@
      "taxonomy_path": "Home & Kitchen > Home D\u00e9cor Products > Artificial Plants & Flowers > Artificial Trees"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "pencil tree",
+     "artificial christmas tree"
+    ],
+    "must_attributes": [
+     "large"
+    ],
+    "related_searches": [
+     "tall pencil christmas tree",
+     "prelit pencil tree",
+     "7.5 ft slim artificial christmas tree",
+     "pencil tree with lights"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b2ee1c3e907f16cc": {
    "task": "expand_tail",
@@ -377878,7 +380502,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Cooking & Baking > Nuts & Seeds"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-60584d5b14ef4aee": {
    "task": "expand_tail",
@@ -378336,7 +380961,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Frozen > Seafood > Frozen Fish"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b80d8e39bcd534cc": {
    "task": "expand_tail",
@@ -379886,7 +382512,26 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breads & Bakery > Cookies"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "chocolate chip cookies",
+     "oatmeal cookies",
+     "sugar cookies",
+     "chocolate cookies",
+     "butter cookies",
+     "shortbread cookies",
+     "oatmeal raisin cookies"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "chocolate chip cookies",
+     "assorted cookies variety pack",
+     "individually wrapped cookies",
+     "shortbread cookies"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e660f52d54d95953": {
    "task": "expand_tail",
@@ -382386,7 +385031,26 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Sauces, Gravies & Marinades > Sauces"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "sweet chili sauce",
+     "brown sauce",
+     "yuzu pepper sauce",
+     "barbecue sauce",
+     "black bean garlic sauce"
+    ],
+    "must_attributes": [
+     "plum"
+    ],
+    "related_searches": [
+     "plum sauce",
+     "georgian tkemali plum sauce",
+     "chinese duck sauce",
+     "sweet and sour sauce"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-f6e7d9fe3aa2d24b": {
    "task": "expand_tail",
@@ -388952,7 +391616,27 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Mints"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "chocolate mints",
+     "mint patties",
+     "peppermint mints",
+     "breath mints",
+     "butter mints",
+     "peppermint pastilles"
+    ],
+    "must_attributes": [
+     "chocolate"
+    ],
+    "related_searches": [
+     "chocolate mint candy",
+     "after dinner mints",
+     "international candy mints",
+     "dark chocolate peppermint patties"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-fc9e7d67d0ec7a74": {
    "task": "expand_tail",
@@ -389173,7 +391857,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computers & Tablets > Laptops"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c85c99fd670e2e4a": {
    "task": "expand_tail",
@@ -389274,7 +391959,22 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Networking Products"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "4g lte module"
+    ],
+    "must_attributes": [
+     "4g lte"
+    ],
+    "related_searches": [
+     "4g lte module",
+     "lte cat4 module",
+     "mini pcie 4g lte module",
+     "4g lte module with gps"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-aa6ca08eb24c719a": {
    "task": "expand_tail",
@@ -389373,7 +392073,21 @@
      "taxonomy_path": "Home & Kitchen > Heating, Cooling & Air Quality > Air Purifiers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "air fryer liner",
+     "parchment paper liners"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "air fryer silicone liner",
+     "air fryer parchment paper liners",
+     "organic parchment paper",
+     "disposable air fryer liners"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-fc2b87dc2bdf73bf": {
    "task": "expand_tail",
@@ -389708,7 +392422,8 @@
      "taxonomy_path": "Electronics > Accessories & Supplies > Cord Management > Cable Sleeves"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8a84ca2dd325b016": {
    "task": "expand_tail",
@@ -389811,7 +392526,27 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Luggage & Travel Gear > Luggage > Carry-Ons"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "carry on luggage",
+     "carry-on luggage",
+     "luggage set",
+     "luggage cover",
+     "luggage tag",
+     "packing cubes"
+    ],
+    "must_attributes": [
+     "carry-on"
+    ],
+    "related_searches": [
+     "carry on suitcase with spinner wheels",
+     "lightweight carry on luggage",
+     "hardside carry on luggage",
+     "carry on luggage set"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-c07fa2a9fbc33cfa": {
    "task": "expand_tail",
@@ -390152,7 +392887,23 @@
      "taxonomy_path": "Electronics > Accessories & Supplies > Telephone Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "conference speakerphone",
+     "telephone headset"
+    ],
+    "must_attributes": [
+     "conference"
+    ],
+    "related_searches": [
+     "conference speakerphone usb",
+     "bluetooth conference speakerphone",
+     "speakerphone for conference room",
+     "jabra speakerphone"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-1025c43422589804": {
    "task": "expand_tail",
@@ -390251,7 +393002,8 @@
      "taxonomy_path": "Electronics > Home Audio > Home Audio Accessories > Connectors & Adapters"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-76736a7da5a8dfbf": {
    "task": "expand_tail",
@@ -390469,7 +393221,8 @@
      "taxonomy_path": "Electronics > Home Audio > Speakers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-19d9354d8d0c54b7": {
    "task": "expand_tail",
@@ -390701,7 +393454,30 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Keyboards, Mice & Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "keyboard",
+     "wireless keyboard",
+     "wired keyboard",
+     "wireless keyboard and mouse",
+     "mechanical keyboard",
+     "bluetooth keyboard",
+     "foldable keyboard",
+     "travel keyboard",
+     "keyboard cover",
+     "keyboard dust cover",
+     "keyboard cleaning swabs"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "wireless keyboard and mouse combo",
+     "ergonomic keyboard",
+     "keyboard wrist rest",
+     "bamboo keyboard"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-33c00033496c1c01": {
    "task": "expand_tail",
@@ -390800,7 +393576,25 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computers & Tablets > Laptops"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "laptop",
+     "chromebook laptop",
+     "2-in-1 laptop",
+     "touchscreen laptop",
+     "business laptop",
+     "refurbished laptop"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "eco-friendly laptop",
+     "refurbished laptop",
+     "energy efficient laptop",
+     "laptop with recycled materials"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e4d74dba3d281d79": {
    "task": "expand_tail",
@@ -390899,7 +393693,8 @@
      "taxonomy_path": "Electronics > Camera & Photo > Accessories > Lens Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-976e7cea4a83aabd": {
    "task": "expand_tail",
@@ -391114,7 +393909,8 @@
      "taxonomy_path": "Electronics > Portable Audio & Video > MP3 & MP4 Players"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8061d6472ae5bd70": {
    "task": "expand_tail",
@@ -391213,7 +394009,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Lingerie, Sleep & Lounge"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d112bac869b5ed80": {
    "task": "expand_tail",
@@ -391312,7 +394109,8 @@
      "taxonomy_path": "Home & Kitchen > Furniture > Living Room Furniture > Ottomans"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-db62a6695f7a8e92": {
    "task": "expand_tail",
@@ -391531,7 +394329,8 @@
      "taxonomy_path": "Home & Kitchen > Heating, Cooling & Air Quality > Air Purifiers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-49e7403a18451370": {
    "task": "expand_tail",
@@ -391630,7 +394429,8 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Computer Accessories & Peripherals > Cleaning & Repair"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-d32c99f48a53c775": {
    "task": "expand_tail",
@@ -391985,7 +394785,26 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Tablet Accessories > Stands"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "tablet floor stand",
+     "tablet wall mount",
+     "laptop stand",
+     "monitor stand"
+    ],
+    "must_attributes": [
+     "tablet",
+     "floor stand"
+    ],
+    "related_searches": [
+     "tablet floor stand with gooseneck",
+     "adjustable tablet stand for floor",
+     "ipad floor stand holder",
+     "tablet mount stand heavy duty"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-0a84d49c022feddd": {
    "task": "expand_tail",
@@ -392205,7 +395024,8 @@
      "taxonomy_path": "Electronics > Television & Video > Accessories > Antennas"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7c15a5e2039aac13": {
    "task": "expand_tail",
@@ -392421,7 +395241,8 @@
      "taxonomy_path": "Electronics > Portable Audio & Video > Digital Voice Recorders"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-6894d549b2390d97": {
    "task": "expand_tail",
@@ -395223,7 +398044,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Breads & Bakery > Cookies"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-7df0eede1c28fe1c": {
    "task": "expand_tail",
@@ -396744,7 +399566,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Fresh Flowers & Live Indoor Plants > Fresh Cut Flowers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-89d897196c562d60": {
    "task": "expand_tail",
@@ -397694,7 +400517,23 @@
      "taxonomy_path": "Electronics > Computers & Accessories > Data Storage > External Hard Drives"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "laptop dvd drive",
+     "laptop optical drive cable"
+    ],
+    "must_attributes": [
+     "laptop"
+    ],
+    "related_searches": [
+     "laptop external dvd drive",
+     "usb dvd burner for laptop",
+     "internal laptop dvd rw drive",
+     "slim dvd drive replacement"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-dabcb8599401c1b1": {
    "task": "expand_tail",
@@ -398023,7 +400862,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Snacks & Sweets > Candy & Chocolate > Suckers & Lollipops"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-088dae60976dc9f2": {
    "task": "expand_tail",
@@ -400321,7 +403161,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Girls > Clothing > Snow & Rainwear"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-52f41a05e2bfb991": {
    "task": "expand_tail",
@@ -402107,7 +404948,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-810ea8a39741dc84": {
    "task": "expand_tail",
@@ -403845,7 +406687,28 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Clothing > Dresses"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "swing dress",
+     "summer dress",
+     "striped dress",
+     "knit dress",
+     "ruffle dress",
+     "swiss dot dress",
+     "boho maxi dress"
+    ],
+    "must_attributes": [
+     "shirt dress"
+    ],
+    "related_searches": [
+     "button down shirt dress",
+     "striped shirt dress",
+     "long sleeve shirt dress",
+     "belted shirt dress"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-25475e1eb803bd93": {
    "task": "expand_tail",
@@ -405468,7 +408331,22 @@
      "taxonomy_path": "Electronics > Television & Video > Accessories > Remote Controls"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "remote control"
+    ],
+    "must_attributes": [
+     "bike"
+    ],
+    "related_searches": [
+     "bike turn signal remote",
+     "bicycle wireless remote horn",
+     "handlebar remote control",
+     "bike light remote switch"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b3c479343fdb5184": {
    "task": "expand_tail",
@@ -406164,7 +409042,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Shirts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-fc4d0bc0c8980af5": {
    "task": "expand_tail",
@@ -406391,7 +409270,26 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Dining & Entertaining > Glassware & Drinkware"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "double old fashioned glass",
+     "whiskey glass",
+     "cocktail glasses",
+     "cognac glasses"
+    ],
+    "must_attributes": [
+     "double",
+     "old fashioned"
+    ],
+    "related_searches": [
+     "double old fashioned glasses set",
+     "small whiskey glasses",
+     "short tumbler glass",
+     "rocks glass 8 oz"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-f59325583f8dfd7c": {
    "task": "expand_tail",
@@ -406490,7 +409388,8 @@
      "taxonomy_path": "Home & Kitchen > Kitchen & Dining > Coffee, Tea & Espresso > Coffee Makers"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a26abf15858043b1": {
    "task": "expand_tail",
@@ -406593,7 +409492,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Jewelry > Rings"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b162b71916289a36": {
    "task": "expand_tail",
@@ -407060,7 +409960,8 @@
      "taxonomy_path": "Grocery & Gourmet Food > Pantry Staples > Herbs, Spices & Seasonings > Salt & Salt Substitutes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-4b91de5c5c303e60": {
    "task": "expand_tail",
@@ -408004,7 +410905,8 @@
      "taxonomy_path": "Electronics > Camera & Photo > Bags & Cases > Camera Cases"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-f9f698cf38a4557d": {
    "task": "expand_tail",
@@ -409192,7 +412094,27 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Clothing > Shirts"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "t-shirt",
+     "polo shirt",
+     "long sleeve shirt",
+     "graphic t-shirt",
+     "sleeveless t-shirt",
+     "baseball t-shirt"
+    ],
+    "must_attributes": [
+     "soccer"
+    ],
+    "related_searches": [
+     "soccer practice jersey",
+     "moisture wicking soccer shirt",
+     "youth soccer training shirt",
+     "long sleeve soccer practice shirt"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8de338ba1d34e0f5": {
    "task": "expand_tail",
@@ -415162,7 +418084,8 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-28ff30463ea137d4": {
    "task": "expand_tail",
@@ -415713,7 +418636,21 @@
      "taxonomy_path": "Home & Kitchen > Bath > Bathroom Accessories > Toilet Accessories"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "bath mat set",
+     "bath rug set"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "toilet seat cover",
+     "bathroom rug set with toilet lid cover",
+     "toilet tank lid cover",
+     "contour bath rug"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-a2d3cb7c9fc4cf76": {
    "task": "expand_tail",
@@ -416764,7 +419701,22 @@
      "taxonomy_path": "Electronics > Television & Video > Accessories > Cleaning"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "screen cleaner kit",
+     "microfiber cleaning cloths",
+     "keyboard cleaning swabs"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "screen cleaner spray",
+     "microfiber cleaning cloths",
+     "laptop screen cleaner kit",
+     "tv screen cleaner"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-b2f690ac249fb3be": {
    "task": "expand_tail",
@@ -417210,7 +420162,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Shoe, Jewelry & Watch Accessories > Shoe Care & Accessories > Shoelaces"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8bc344d61053e5b1": {
    "task": "expand_tail",
@@ -417311,7 +420264,21 @@
      "taxonomy_path": null
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "flour tortillas",
+     "low carb tortillas"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "flour tortillas",
+     "large flour tortillas",
+     "low carb tortillas",
+     "corn tortillas"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-f65aca9ea94034e6": {
    "task": "expand_tail",
@@ -420135,7 +423102,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Men > Shoes > Sandals"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-13ace9471317c775": {
    "task": "expand_tail",
@@ -424529,7 +427497,25 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Shoes > Outdoor"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "output": {
+    "product_types": [
+     "walking shoes",
+     "slip on walking shoes",
+     "mens slip on walking shoes",
+     "slip on sneakers",
+     "women's sneakers",
+     "womens sneakers"
+    ],
+    "must_attributes": [],
+    "related_searches": [
+     "water shoes",
+     "water shoes for women",
+     "water shoes for men",
+     "quick dry aqua shoes"
+    ]
+   },
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-e970b87075dff241": {
    "task": "expand_tail",
@@ -425947,7 +428933,8 @@
      "taxonomy_path": "Clothing, Shoes & Jewelry > Women > Shoes"
     }
    },
-   "model": "claude-sonnet-5-5"
+   "model": "claude-sonnet-5-5",
+   "final_model": "claude-sonnet-5-5"
   },
   "exp-8808c03d88097e6a": {
    "task": "expand_tail",
@@ -426774,5 +429761,5 @@
    "final_model": "claude-haiku-5-5"
   }
  },
- "cost_usd": 0.4245958425
+ "cost_usd": 1.1035756925000002
 }
