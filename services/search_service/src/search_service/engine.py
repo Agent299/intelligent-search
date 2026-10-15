@@ -61,6 +61,10 @@ LATENCY = Histogram("search_latency_seconds", "End-to-end search latency", ["ser
 CONFIDENCE = Histogram("search_confidence", "Fast-path confidence", buckets=(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7,
                                                                             0.8, 0.9, 1.0))
 OUTCOMES = Counter("search_outcomes_total", "Search outcomes", ["outcome"])  # ok | low_confidence | zero_results
+# Business metrics (doc p.180): every answered search, whether it showed anything, and whether it carried
+# "pairs well with". CTR / conversion divide search_interactions_total (events.py) by these.
+REQUESTS = Counter("search_requests_total", "Answered searches", ["served_by", "results"])  # results: some | none
+PAIRS_SHOWN = Counter("search_pairs_shown_total", "Searches whose response carried pairs-well-with products")
 
 
 class EmptyQuery(ValueError):
@@ -173,10 +177,13 @@ class SearchEngine:
         self._in_background(self.sink.search(
             search_id=search_id, user_id=req.user_id, session_id=req.session_id, raw_query=req.q,
             filters=req.filters.as_log_map(), search_type=served.search_type, displayed=page_ids,
-            device_type=req.device_type))
+            device_type=req.device_type, pairs=[p["product_id"] for p in pairs]))
 
         elapsed = time.perf_counter() - started
         LATENCY.labels(served.served_by.value).observe(elapsed)
+        REQUESTS.labels(served.served_by.value, "some" if ids else "none").inc()
+        if pairs:
+            PAIRS_SHOWN.inc()
         return SearchResponse(
             search_id=search_id,
             corrected_query=corrected if corrected != normalized else None,

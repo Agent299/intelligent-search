@@ -18,6 +18,9 @@ from common.topics import QUERY_LOGS
 
 log = logging.getLogger(__name__)
 EMIT_ERRORS = Counter("search_event_emit_errors_total", "Analytic events that could not be sent", ["sink"])
+# surface: where the product was shown (results | pairs = "pairs well with" | other). CTR = clicks / searches;
+# discovery CTR = pairs clicks / search_pairs_shown_total; conversion = purchases / searches.
+INTERACTIONS = Counter("search_interactions_total", "Clicks, add-to-carts and purchases", ["type", "surface"])
 CONTEXT_TTL_S = 3600
 
 
@@ -28,7 +31,7 @@ class EventSink:
 
     async def search(self, *, search_id: str, user_id: str | None, session_id: str | None, raw_query: str,
                      filters: dict[str, str], search_type: SearchType, displayed: list[str],
-                     device_type: str | None) -> None:
+                     device_type: str | None, pairs: list[str] | None = None) -> None:
         event = AnalyticEvent(
             event_id=uuid.uuid4().hex, event_type=EventType.search, search_id=search_id,
             event_timestamp=datetime.now(UTC), user_id=user_id, session_id=session_id, raw_query=raw_query,
@@ -38,7 +41,7 @@ class EventSink:
         await self._send(event)
         if self.redis is not None:
             ctx = {"user_id": user_id, "session_id": session_id, "raw_query": raw_query, "displayed": displayed,
-                   "device_type": device_type, "search_type": search_type.value}
+                   "device_type": device_type, "search_type": search_type.value, "pairs": pairs or []}
             try:
                 await self.redis.set(f"search:{search_id}", json.dumps(ctx), ex=CONTEXT_TTL_S)
             except Exception:
@@ -56,6 +59,9 @@ class EventSink:
                 EMIT_ERRORS.labels("redis").inc()
         if ctx is None:
             return None
+        surface = ("results" if product_id in ctx.get("displayed", [])
+                   else "pairs" if product_id in ctx.get("pairs", []) else "other")
+        INTERACTIONS.labels(event_type.value, surface).inc()
         event = AnalyticEvent(
             event_id=uuid.uuid4().hex, event_type=event_type, search_id=search_id,
             event_timestamp=datetime.now(UTC), user_id=ctx["user_id"], session_id=ctx["session_id"],

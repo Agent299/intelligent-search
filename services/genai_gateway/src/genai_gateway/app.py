@@ -18,6 +18,7 @@ from redis.asyncio import Redis
 
 from common.config import get_settings
 from common.embeddings import warm_up
+from common.metrics import register_process_metrics
 from genai_gateway.core import Gateway, GatewayResult, GatewayUnavailable, UnknownTask
 from genai_gateway.embed import EmbeddingService, Kind
 from genai_gateway.llm import AnthropicCaller
@@ -51,6 +52,7 @@ def create_app(gateway: Gateway | None = None, embeddings: EmbeddingService | No
             await redis.aclose()
 
     app = FastAPI(title="GenAI gateway", lifespan=lifespan)
+    register_process_metrics("genai_gateway")
     Instrumentator().instrument(app).expose(app)
 
     @app.get("/healthz")

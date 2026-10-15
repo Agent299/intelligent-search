@@ -1,4 +1,4 @@
-.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery rank-publish rank-train nrt test lint gateway search
+.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery rank-publish rank-train nrt dashboard test lint gateway search
 
 install:
 	uv sync --all-extras
@@ -71,6 +71,10 @@ rank-train:
 # Phase 9: near-real-time trend detector on query_logs (long-running). THRESHOLD=5 for a demo (default 100 / 5 min)
 nrt:
 	$(if $(THRESHOLD),NRT_THRESHOLD=$(THRESHOLD)) uv run python -m pipelines.nrt_trends.detector
+
+# Phase 10: regenerate the Grafana dashboard JSON from ops/grafana/dashboard.py (Grafana reloads provisioned files)
+dashboard:
+	uv run python ops/grafana/dashboard.py
 
 # Daily at 02:00 UTC; HOURLY=1 for every hour
 pipeline-schedule:

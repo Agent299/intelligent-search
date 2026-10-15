@@ -64,16 +64,30 @@ services:
 
   prometheus:
     image: prom/prometheus:v2.53.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-lifecycle          # POST /-/reload after editing rules
     volumes:
-      - ./ops/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./ops/prometheus:/etc/prometheus:ro   # prometheus.yml + alerts.yml
     ports: ["9090:9090"]
     extra_hosts: ["host.docker.internal:host-gateway"]
+
+  redis-exporter:                       # Redis has no Prometheus endpoint of its own
+    image: oliver006/redis_exporter:v1.62.0
+    environment:
+      REDIS_ADDR: redis://redis:6379
+    depends_on: [redis]
 
   grafana:
     image: grafana/grafana:11.1.0
     environment:
       GF_AUTH_ANONYMOUS_ENABLED: "true"
       GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /var/lib/grafana/dashboards/search.json
+    volumes:
+      - ./ops/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./ops/grafana/dashboards:/var/lib/grafana/dashboards:ro
     ports: ["3001:3000"]
     depends_on: [prometheus]
 

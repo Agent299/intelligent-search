@@ -1,5 +1,12 @@
 global:
   scrape_interval: 10s
+  evaluation_interval: 30s
+
+rule_files:
+  - /etc/prometheus/alerts.yml
+
+# Alerts are visible at http://localhost:9090/alerts. Routing them to Slack / PagerDuty needs an Alertmanager,
+# which this local stack doesn't run (see README, Phase 10).
 
 scrape_configs:
   - job_name: search_service
@@ -8,3 +15,16 @@ scrape_configs:
   - job_name: genai_gateway
     static_configs:
       - targets: ["host.docker.internal:8001"]
+  - job_name: nrt_detector          # opt-in process (make nrt); 'down' is normal when it isn't running
+    static_configs:
+      - targets: ["host.docker.internal:9102"]
+  - job_name: redpanda              # consumer lag, memory, disk
+    metrics_path: /public_metrics
+    static_configs:
+      - targets: ["redpanda:9644"]
+  - job_name: redis
+    static_configs:
+      - targets: ["redis-exporter:9121"]
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]
