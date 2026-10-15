@@ -1,0 +1,167 @@
+# Recording rules + alerts (doc p.180-181). Recording rules give the dashboard and the alerts one definition of each
+# ratio. Thresholds for latency come from the case study's NFRs (P90 < 1 s, P99 < 5 s); the rest are starting
+# points to tune on real traffic. Severity: critical = page, warning = ticket.
+#
+# Validate: docker run --rm -v "$PWD/ops/prometheus:/p" --entrypoint promtool prom/prometheus:v2.53.0 check rules /p/alerts.yml
+
+groups:
+  - name: search_recording
+    interval: 30s
+    rules:
+      - record: search:requests:rate5m
+        expr: sum(rate(search_requests_total[5m]))
+      - record: search:latency_seconds:p50_5m
+        expr: histogram_quantile(0.50, sum by (le) (rate(search_latency_seconds_bucket[5m])))
+      - record: search:latency_seconds:p90_5m
+        expr: histogram_quantile(0.90, sum by (le) (rate(search_latency_seconds_bucket[5m])))
+      - record: search:latency_seconds:p95_5m
+        expr: histogram_quantile(0.95, sum by (le) (rate(search_latency_seconds_bucket[5m])))
+      - record: search:latency_seconds:p99_5m
+        expr: histogram_quantile(0.99, sum by (le) (rate(search_latency_seconds_bucket[5m])))
+      - record: search:zero_result_ratio:5m
+        expr: sum(rate(search_requests_total{results="none"}[5m])) / sum(rate(search_requests_total[5m]))
+      - record: search:fallback_ratio:5m
+        expr: sum(rate(search_requests_total{served_by="fallback"}[5m])) / sum(rate(search_requests_total[5m]))
+      # Business metrics. 1 h windows: clicks and purchases are sparse, 5 min ratios would be noise.
+      - record: search:ctr:1h
+        expr: >
+          sum(rate(search_interactions_total{type="click", surface="results"}[1h]))
+          / sum(rate(search_requests_total{results="some"}[1h]))
+      - record: search:conversion:1h
+        expr: sum(rate(search_interactions_total{type="purchase"}[1h])) / sum(rate(search_requests_total[1h]))
+      - record: search:discovery_ctr:1h
+        expr: >
+          sum(rate(search_interactions_total{type="click", surface="pairs"}[1h]))
+          / sum(rate(search_pairs_shown_total[1h]))
+      - record: http:error_5xx_ratio:5m   # "or ... * 0": 0 rather than no data when there are no 5xx at all
+        expr: >
+          (sum by (job) (rate(http_requests_total{status="5xx"}[5m]))
+           or sum by (job) (rate(http_requests_total[5m])) * 0)
+          / sum by (job) (rate(http_requests_total[5m]))
+      - record: gateway:llm_cost_usd_per_hour:1h
+        expr: sum by (task) (rate(gateway_llm_cost_usd_total[1h])) * 3600
+      - record: gateway:llm_failure_ratio:5m
+        expr: >
+          sum by (task) (rate(gateway_llm_attempts_total{outcome=~"timeout|error"}[5m]))
+          / sum by (task) (rate(gateway_llm_attempts_total[5m]))
+      # Kafka lag per consumer group = newest offset - committed offset, from Redpanda's own metrics.
+      - record: kafka:consumer_lag:sum
+        expr: >
+          sum by (redpanda_group, redpanda_topic) (
+            redpanda_kafka_max_offset{redpanda_namespace="kafka"}
+            - on (redpanda_topic, redpanda_partition) group_right
+            redpanda_kafka_consumer_group_committed_offset)
+
+  - name: search_alerts
+    rules:
+      - alert: SearchLatencyP99High
+        expr: search:latency_seconds:p99_5m > 5
+        for: 5m
+        labels: {severity: critical}
+        annotations:
+          summary: "Search P99 latency {{ $value | humanizeDuration }} (NFR: < 5 s)"
+          runbook: "Check the 'Latency by path' panel: fallback (LLM) or a slow store? Gateway breaker state?"
+      - alert: SearchLatencyP90High
+        expr: search:latency_seconds:p90_5m > 1
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "Search P90 latency {{ $value | humanizeDuration }} (NFR: < 1 s)"
+      - alert: Http5xxRateHigh
+        expr: http:error_5xx_ratio:5m > 0.05 and on (job) sum by (job) (rate(http_requests_total[5m])) > 0.1
+        for: 5m
+        labels: {severity: critical}
+        annotations:
+          summary: "{{ $labels.job }}: {{ $value | humanizePercentage }} of requests are 5xx"
+      - alert: ZeroResultRateHigh
+        expr: search:zero_result_ratio:5m > 0.10 and search:requests:rate5m > 0.1
+        for: 15m
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $value | humanizePercentage }} of searches return nothing (catalog gap or broken index?)"
+      - alert: FallbackRateHigh
+        expr: search:fallback_ratio:5m > 0.20 and search:requests:rate5m > 0.1
+        for: 15m
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $value | humanizePercentage }} of searches need the LLM fallback (doc: ~1%); caches stale?"
+      - alert: SearchCTRDrop
+        expr: search:ctr:1h < 0.7 * (search:ctr:1h offset 1d) and search:requests:rate5m > 0.1
+        for: 30m
+        labels: {severity: warning}
+        annotations:
+          summary: "Search CTR {{ $value | humanizePercentage }} is > 30% below the same hour yesterday"
+      - alert: SearchConversionDrop
+        expr: search:conversion:1h < 0.7 * (search:conversion:1h offset 1d) and search:requests:rate5m > 0.1
+        for: 30m
+        labels: {severity: warning}
+        annotations:
+          summary: "Search conversion {{ $value | humanizePercentage }} is > 30% below the same hour yesterday"
+      - alert: AnalyticEventsFailing
+        expr: sum(rate(search_event_emit_errors_total[5m])) > 0
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "Analytic events are being dropped (Kafka or Redis): offline pipeline and metrics lose data"
+
+  - name: llm_alerts
+    rules:
+      - alert: LLMCircuitBreakerOpen
+        expr: max by (model) (gateway_breaker_state) == 2
+        for: 1m
+        labels: {severity: critical}
+        annotations:
+          summary: "Circuit breaker open for {{ $labels.model }}: its tasks are failing over or degrading"
+      - alert: LLMFailureRateHigh
+        expr: gateway:llm_failure_ratio:5m > 0.20
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $labels.task }}: {{ $value | humanizePercentage }} of LLM attempts time out or error"
+      - alert: LLMCostBurnHigh
+        expr: sum(gateway:llm_cost_usd_per_hour:1h) > 1
+        for: 15m
+        labels: {severity: warning}
+        annotations:
+          summary: "LLM spend ${{ $value | printf \"%.2f\" }}/h (project budget assumes cents per day)"
+
+  - name: platform_alerts
+    rules:
+      - alert: TargetDown
+        expr: up{job=~"search_service|genai_gateway|redis|redpanda"} == 0
+        for: 2m
+        labels: {severity: critical}
+        annotations:
+          summary: "{{ $labels.job }} is not reachable by Prometheus"
+      - alert: KafkaConsumerLagHigh
+        expr: kafka:consumer_lag:sum{redpanda_group=~"nrt-trends|catalog-indexer"} > 1000
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $labels.redpanda_group }} is {{ $value }} messages behind on {{ $labels.redpanda_topic }}"
+      - alert: ProcessCPUSaturated
+        expr: rate(app_process_cpu_seconds_total[5m]) > 0.9
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $labels.service }} uses {{ $value | humanizePercentage }} of a CPU (single event loop)"
+      - alert: RedisMemoryHigh
+        expr: redis_memory_used_bytes > 1.5e9
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "Redis uses {{ $value | humanize1024 }}B with no maxmemory set: caches will grow until the host is full"
+      - alert: RedpandaMemoryLow
+        expr: >
+          min(redpanda_memory_available_memory / (redpanda_memory_available_memory + redpanda_memory_allocated_memory))
+          < 0.10
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "Redpanda has {{ $value | humanizePercentage }} of its memory left"
+      - alert: RedpandaDiskLow
+        expr: max(redpanda_storage_disk_free_space_alert) > 0
+        for: 5m
+        labels: {severity: critical}
+        annotations:
+          summary: "Redpanda raised its low-disk alert"

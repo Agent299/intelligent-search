@@ -35,6 +35,7 @@ from redis.asyncio import Redis
 from common.config import Settings, get_settings
 from common.db import connect
 from common.embedding_service import EmbeddingService
+from common.metrics import register_process_metrics
 from common.normalize import normalize_query, query_hash
 from common.schemas import CachedQuerySource, EventType
 from common.topics import PRODUCT_SEARCH_INDEX, QUERY_LOGS, WARM_QUERY_CACHE_INDEX
@@ -151,6 +152,7 @@ def upsert_nrt(query: str, es_query: dict, version: int) -> None:
 
 async def run() -> None:
     s = get_settings()
+    register_process_metrics("nrt_detector")
     start_http_server(s.nrt_metrics_port)
     spell = await asyncio.to_thread(build_spell_corrector)
     os_client, redis = AsyncOpenSearch(s.opensearch_url, timeout=10), Redis.from_url(s.redis_url)

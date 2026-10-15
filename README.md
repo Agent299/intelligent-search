@@ -32,12 +32,13 @@ piece could be swapped for its production counterpart.
 14. [Phase 7: Product discovery](#phase-7-product-discovery-done)
 15. [Phase 8: Ranking](#phase-8-ranking-done)
 16. [Phase 9: Near-real-time trends](#phase-9-near-real-time-trends-done)
-17. [Remaining phases (roadmap)](#remaining-phases-roadmap)
-18. [Spend log](#spend-log)
-19. [Decision log](#decision-log)
-20. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
-21. [Testing](#testing)
-22. [Make targets](#make-targets)
+17. [Phase 10: Observability](#phase-10-observability-done)
+18. [Remaining phases (roadmap)](#remaining-phases-roadmap)
+19. [Spend log](#spend-log)
+20. [Decision log](#decision-log)
+21. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
+22. [Testing](#testing)
+23. [Make targets](#make-targets)
 
 ---
 
@@ -57,21 +58,23 @@ Last updated: **2026-10-15** (after Phase 6)
 | 7. Product discovery | Co-purchase mining + LLM complement selection → "Pairs well with" | ✅ Done |
 | 8. Ranking | Offline static ranking + LightGBM personalized re-rank | ✅ Done |
 | 9. Near-real-time trends | Sliding-window trend detection + lite enrichment | ✅ Done |
-| 10. Observability | Prometheus metrics, Grafana dashboards, alert rules | ⬜ Next |
-| 11. Testing & evaluation | Golden set, offline metrics, LLM-as-judge, load test | ⬜ |
+| 10. Observability | Prometheus metrics, Grafana dashboards, alert rules | ✅ Done |
+| 11. Testing & evaluation | Golden set, offline metrics, LLM-as-judge, load test | ⬜ Next |
 | 12. Frontend demo | Next.js storefront with a "which path served this" debug panel | ⬜ |
 
 **Milestones:** M1 = Phases 0–3 (hybrid search working) · M2 = 4, 8-baseline, 12 (first demo) · M3 = 5–7 ·
 M4 = 8-ML, 9 · M5 = 10–11.
 
-**Where we are now:** Phases 0–9 are complete and verified against live infrastructure. Search now checks the
+**Where we are now:** Phases 0–10 are complete and verified against live infrastructure. Search now checks the
 cache tiers first: hot queries come back from the results cache in **~6 ms**, cached hard queries (L1 / L2 / warm)
 in **15–80 ms** without touching the fast path, and a low-confidence query similar to a cached one is answered
 from the warm tier in ~200 ms instead of a 2–4 s LLM call. Results now carry **"Pairs well with"**
 complements mined from co-purchases (163 categories, +3.6 ms), and hot queries carry related searches. **Milestone
 M3 (Phases 5–7) is reached.** Results are now re-ranked by a LightGBM LambdaMART model (NDCG@10 0.557 → 0.766
 on held-out searches, < 2.5 ms per request), and a near-real-time detector caches trending hard queries within
-seconds, off the request path. **Milestone M4 (Phases 8–9) is reached.** Next is Phase 10, observability.
+seconds, off the request path. **Milestone M4 (Phases 8–9) is reached.** Everything is observable: a provisioned
+Grafana dashboard (business, latency, caches, LLM, ranking, platform) and 17 alert rules. Next is Phase 11,
+testing and evaluation.
 
 ---
 
@@ -756,11 +759,64 @@ Occasion queries ("valentine's day gifts", "back to school") are exactly what tr
 
 **Cost:** ≈ $0.0003 for Phase 9 (4 `nrt_segment` calls, 2 per prompt version).
 
+## Phase 10: Observability (done)
+
+The case study's monitoring (p.180–181): measure the system the way the business and the on-call engineer see it,
+and alert before shoppers notice. Open **http://localhost:3001** (Grafana's home dashboard is *Intelligent Search*);
+alerts are at **http://localhost:9090/alerts**.
+
+**What is measured**
+
+| Area | Metrics (source) |
+|---|---|
+| Business | searches, CTR on results, CTR on "pairs well with", conversion, zero-result rate (`search_requests_total{served_by,results}`, `search_interactions_total{type,surface}`, `search_pairs_shown_total`): new in this phase; interactions are attributed to the surface that showed the product |
+| Latency | P50 / P90 / P95 / P99 overall and P95 per serving path (`search_latency_seconds`), re-rank latency |
+| Caches | hit ratio per tier (results, L1, L2, warm exact, warm similar), searches per serving path, fallback rate |
+| LLM | spend per task ($/h), attempts by outcome, P95 latency per task, circuit-breaker state per model |
+| Pipelines | trending-query decisions (NRT), pairs-well-with lookups, Kafka consumer lag per group (from Redpanda's own metrics: newest offset − committed offset) |
+| Platform | HTTP 5xx ratio per service, process CPU and peak memory (`app_process_*`, stdlib `resource`: the default collector reads `/proc` and exports nothing on macOS), Redis memory (`redis_exporter`), Redpanda memory and disk, scrape targets |
+
+**How it is wired**
+
+- `ops/prometheus/prometheus.yml` scrapes the search service, gateway, NRT detector, Redpanda, Redis (exporter) and
+  itself; `ops/prometheus/alerts.yml` holds **14 recording rules** (one definition of every ratio, shared by the
+  dashboard and the alerts) and **17 alerts**, validated with `promtool`.
+- Grafana is provisioned from `ops/grafana/provisioning/` (data source + dashboard folder); the dashboard JSON is
+  generated by `ops/grafana/dashboard.py` (`make dashboard`). Firing alerts show as annotations on every panel.
+- Design: one y-axis per panel; each serving path and cache tier keeps the same color in every panel (pinned by
+  name from a palette validated for color-vision deficiency on the dark theme); percentiles use one blue ramp,
+  light → dark, because they are ordered; status colors appear only on thresholds (dashed lines at the P90 1 s and
+  P99 5 s targets).
+
+**Alerts**
+
+| Alert | Fires when | Severity |
+|---|---|---|
+| SearchLatencyP99High / P90High | P99 > 5 s for 5 min / P90 > 1 s for 10 min (the case study's NFRs) | critical / warning |
+| Http5xxRateHigh | > 5% of a service's requests are 5xx for 5 min | critical |
+| ZeroResultRateHigh, FallbackRateHigh | > 10% empty / > 20% LLM fallback for 15 min | warning |
+| SearchCTRDrop, SearchConversionDrop | 1 h rate > 30% below the same hour yesterday, for 30 min | warning |
+| AnalyticEventsFailing | events dropped (Kafka/Redis) for 10 min | warning |
+| LLMCircuitBreakerOpen, LLMFailureRateHigh, LLMCostBurnHigh | breaker open 1 min / > 20% timeouts+errors / > $1/h | critical / warning / warning |
+| TargetDown, KafkaConsumerLagHigh, ProcessCPUSaturated, RedisMemoryHigh, RedpandaMemoryLow, RedpandaDiskLow | the usual saturation signals | mixed |
+
+**Live check (2026-10-15)**, all six scrape targets up, 446 searches of demo traffic with clicks, carts and
+purchases: every one of the 29 panels returned data (CTR 38%, pairs-well-with CTR 16%, conversion 3.3%, zero-result
+rate 2%, fallback rate 0.3%; results cache served 98% of hot lookups; re-rank P95 4 ms; overall P99 98 ms, fallback
+P95 4.9 s). The 5xx ratio first came back *empty* rather than 0 because no request had failed; the rule now
+returns 0 when there are no errors. Stopping the gateway took `TargetDown` to **pending in 25 s and firing at
+146 s** (2-minute `for` window).
+
+**Not included:** an Alertmanager (routing alerts to Slack or PagerDuty needs one; Prometheus evaluates and shows
+them), OpenSearch and Postgres exporters, and container-level CPU and memory (cAdvisor). The dashboard's layout was
+checked through Grafana's API and per-panel queries, not by eye: no browser was available in this session.
+
+**Cost:** ≈ $0.001 (demo traffic: a few first-time fallback rewrites and NRT calls).
+
 ## Remaining phases (roadmap)
 
 | Phase | Plan |
 |---|---|
-| **10. Observability** | Grafana dashboards (latency per path, cache hit ratios, fallback rate, LLM cost, CTR, conversion, zero-result rate) and alert rules. |
 | **11. Evaluation** | Golden set (~150 queries incl. all case-study examples), NDCG@10 / Recall@50, LLM-as-judge (Opus, pairwise, 1–5), Locust load test against the P90/P99 targets. |
 | **12. Frontend** | Next.js storefront: search, facets, sort, corrected-query banner, related searches, "Pairs well with", and a debug panel. |
 
@@ -785,6 +841,7 @@ All Anthropic API spend so far, measured from API usage (Batch API prices where 
 | 2026-10-15 | Phase 6 live testing (3 first-time fallback rewrites) | Haiku 5.5 | ≈ $0.0005 |
 | 2026-10-15 | Phase 7 discovery: two 150-category pilots (prompt v1, v2) + 200 remaining categories | Haiku 5.5 (batch) | $0.034 |
 | 2026-10-15 | Phase 9 NRT demo (4 `nrt_segment` calls, prompt v1 + v2) | Haiku 5.5 | ≈ $0.0003 |
+| 2026-10-15 | Phase 10 demo traffic (first-time fallback rewrites, NRT) | Haiku 5.5 | ≈ $0.001 |
 | | **Total** | | **≈ $2.61** |
 
 Measured unit costs: catalog enrichment **$1.08 / 1k products on Sonnet vs $0.069 / 1k on Haiku** (~16× cheaper,
@@ -835,6 +892,10 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 | 37 | 2026-10-15 | `nrt_segment` v2 returns 1–4 product types (doc/v1: one product type) | v1 returned `null` for both trending occasion queries in the demo; with a list, both cached usable queries at the same cost |
 | 38 | 2026-10-15 | NRT skips anything already cached (any source) and anything the fast path answers (confidence ≥ 0.6); 24 h re-check memo; hourly LLM budget | Confident head queries trend every day and would otherwise pay an LLM call daily; the fallback already caches most hard queries |
 | 39 | 2026-10-15 | One in-process sliding window (plan: in-memory + Redis); Redis only for decisions, budget and the trending list | `query_logs` is keyed by session, so sharing a query's counts across consumers would need re-keying or Redis buckets; one consumer handles this traffic |
+| 40 | 2026-10-15 | Business metrics counted in the search service (searches by path and outcome, interactions by the surface that showed the product) | CTR / conversion / discovery CTR in real time without waiting for the batch; the surface label is what makes pairs-well-with CTR measurable |
+| 41 | 2026-10-15 | Process saturation from stdlib `resource` (`app_process_*`), not psutil or the default collector | The default collector reads `/proc` and is empty on macOS; one small collector works everywhere with no new dependency |
+| 42 | 2026-10-15 | Kafka lag from Redpanda's built-in metrics; Redis via `redis_exporter`; no Alertmanager | Lag needs no extra exporter (max offset − committed offset in PromQL); alert routing is environment-specific |
+| 43 | 2026-10-15 | Dashboard as code (`ops/grafana/dashboard.py`) with tests that every metric in the dashboard and alerts is exported, and that the committed JSON matches the generator | A renamed metric would otherwise leave an empty panel or an alert that can never fire, silently |
 
 ---
 
@@ -865,7 +926,7 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 ## Testing
 
 ```bash
-make test     # 107 unit tests, no network, API calls or writes to real infrastructure
+make test     # 113 unit tests, no network, API calls or writes to real infrastructure
 make lint     # ruff
 ```
 
@@ -884,6 +945,9 @@ CUDA packages off the runners.
   graceful degradation, the no-results floor, negations applied to fallback results.
 - `tests/test_offline.py`: aggregation, related searches by lift, alias folding, gate selection, expansion
   compile shape (types required, attributes boost), scheduler slots.
+- `tests/test_observability.py`: every metric referenced by the dashboard or the alerts is exported by the code,
+  every recording rule used is defined, the committed dashboard matches its generator, every alert has a severity
+  and summary, interactions are attributed to the right surface, process metrics report.
 - `tests/test_nrt.py`: window sliding and eviction, late events, the full decision chain (cached, confident,
   budget and gateway errors retried, useless segments remembered), NRT never replacing an existing L2 entry.
 - `tests/test_ranking.py`: static score ordering and smoothing, query-engagement prior, every feature, profile round
@@ -922,6 +986,7 @@ write-back and gateway-outage behavior in [Phase 4](#phase-4-fallback-path-done)
 | `pipeline-schedule` | Run the pipeline daily at 02:00 UTC (`HOURLY=1` for hourly) |
 | `hot-list` | Phase 6: hot list → S3 + `list_update`; warm L2 (last step of `pipeline`) |
 | `discovery` | Phase 7: co-purchase mining → complements (Haiku batch, `LIMIT=n` pilot) → Redis (also in `pipeline`) |
+| `dashboard` | Phase 10: regenerate the Grafana dashboard JSON from `ops/grafana/dashboard.py` |
 | `nrt` | Phase 9: near-real-time trend detector (long-running; `THRESHOLD=5` for a demo) |
 | `rank-publish` / `rank-train` | Phase 8: publish static scores + ranking features (also in `pipeline`) / retrain the LightGBM re-ranker |
 | `synth` | synthetic users and logs (+ 2,000 events to Kafka) |

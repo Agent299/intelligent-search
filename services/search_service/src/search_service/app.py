@@ -21,6 +21,7 @@ from redis.asyncio import Redis
 from common.config import get_settings
 from common.embedding_service import EmbeddingService
 from common.embeddings import warm_up
+from common.metrics import register_process_metrics
 from common.schemas import EventType, SearchResponse, SortBy
 
 from ranking.model import load_ranker  # isort: skip  (loads LightGBM before torch, see ranking.model)
@@ -94,6 +95,7 @@ def create_app(engine: SearchEngine | None = None) -> FastAPI:
             await closer()
 
     app = FastAPI(title="Search service", lifespan=lifespan)
+    register_process_metrics("search_service")
     Instrumentator().instrument(app).expose(app)
 
     @app.get("/healthz")
