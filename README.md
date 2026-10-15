@@ -1,0 +1,633 @@
+# Intelligent Search — AI-Powered E-Commerce Search (Case Study MVP)
+
+A working, end-to-end implementation of the system designed in **"Case Study: AI-Powered Search for E-Commerce
+Platforms"** (Chapter 5, `~/Desktop/Project 4.pdf`): LLM query understanding, hybrid keyword + semantic retrieval,
+complementary-product discovery, personalization, tiered caching, and an offline LLM pipeline that keeps the
+online path fast.
+
+It is a **portfolio / learning MVP**: every flow in the case study is implemented, at small scale (10k products),
+on local open-source infrastructure, with the same component boundaries and data contracts as the design so each
+piece could be swapped for its production counterpart.
+
+> **Use this README to follow the project.** [Progress tracker](#progress-tracker) shows where we are;
+> [Decision log](#decision-log) and [Spend log](#spend-log) record what changed and what it cost.
+
+---
+
+## Contents
+
+1. [Progress tracker](#progress-tracker)
+2. [What the case study asks for](#what-the-case-study-asks-for)
+3. [Architecture](#architecture)
+4. [Cost policy: tiered execution](#cost-policy-tiered-execution)
+5. [Quickstart](#quickstart)
+6. [Repository layout](#repository-layout)
+7. [Phase 0: Foundations](#phase-0-foundations-done)
+8. [Phase 1: Data and catalog ingestion](#phase-1-data-and-catalog-ingestion-done)
+9. [Phase 2: GenAI gateway](#phase-2-genai-gateway-done)
+10. [Phase 3: Online search fast path](#phase-3-online-search-fast-path-done)
+11. [Phase 4: Fallback path](#phase-4-fallback-path-done)
+12. [Remaining phases (roadmap)](#remaining-phases-roadmap)
+13. [Spend log](#spend-log)
+14. [Decision log](#decision-log)
+15. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
+16. [Testing](#testing)
+17. [Make targets](#make-targets)
+
+---
+
+## Progress tracker
+
+Last updated: **2026-10-14** (after Phase 4)
+
+| Phase | What it delivers | Status |
+|---|---|---|
+| 0. Foundations | Docker stack, shared schemas, normalization, DB schema, indices, topics, buckets | ✅ Done |
+| 1. Data & catalog ingestion | 10k-product catalog, taxonomy, LLM attribute enrichment, keyword + vector indices, freshness path, synthetic users & logs | ✅ Done |
+| 2. GenAI gateway | Task→model routing, circuit breakers, time budgets, guardrails, cost metrics, embedding service | ✅ Done |
+| 3. Online search: fast path | `GET /v1/search`, parallel BM25 + k-NN, fusion, confidence score, negation handling, event logging | ✅ Done |
+| 4. Fallback path | LLM rewrite on low confidence, retry, degrade gracefully | ✅ Done |
+| 5. Offline query pipeline | Log aggregation → enrichment → segmentation → expansion → cached ES queries | ⬜ Next |
+| 6. Cache tiers | L1 in-process, L2 Redis, warm semantic tier, hot-list warming, invalidation | ⬜ |
+| 7. Product discovery | Co-purchase mining + LLM complement selection → "Pairs well with" | ⬜ |
+| 8. Ranking | Offline static ranking + LightGBM personalized re-rank | ⬜ |
+| 9. Near-real-time trends | Sliding-window trend detection + lite enrichment | ⬜ |
+| 10. Observability | Prometheus metrics, Grafana dashboards, alert rules | ⬜ |
+| 11. Testing & evaluation | Golden set, offline metrics, LLM-as-judge, load test | ⬜ |
+| 12. Frontend demo | Next.js storefront with a "which path served this" debug panel | ⬜ |
+
+**Milestones:** M1 = Phases 0–3 (hybrid search working) · M2 = 4, 8-baseline, 12 (first demo) · M3 = 5–7 ·
+M4 = 8-ML, 9 · M5 = 10–11.
+
+**Where we are now:** Phases 0–4 are complete and verified against live infrastructure. **Milestone M1 (hybrid
+search working) is reached**; the case study's hard queries ("stuff for my dorm party", "hill station outfits",
+"old people home footwear") now return on-intent results through the LLM fallback. Next is Phase 5, the offline
+query pipeline that pre-computes these rewrites in batch so most of them never reach the online LLM.
+
+---
+
+## What the case study asks for
+
+**Functional requirements**
+- *Natural language understanding*: long-tail queries such as "healthy snacks without nuts for kids".
+- *Semantic search*: relevant results with or without an exact keyword match.
+- *Product recommendations*: complementary items ("cheeseburst pizza" → Coke/Pepsi; "brownie" → ice cream).
+- *Personalization*: results shaped by each user's history and preferences.
+
+**Non-functional requirements**: relevance, P90 < 1 s and P99 < 5 s, availability when an LLM provider
+fails, LLM cost control, and near-real-time catalog freshness (price, stock).
+
+**Design in three flows**
+1. **Offline query processing**: mine past queries, have an LLM segment and expand them, and cache the resulting
+   search queries.
+2. **Real-time search**: cache lookup → fast hybrid search → LLM rewrite only when confidence is low.
+3. **Product discovery**: co-purchase data + an LLM choose "pairs well with" items offline; served from cache.
+
+---
+
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph Online["Real-time search (Phases 3, 4, 6)"]
+        U[User / storefront] --> S[Search service]
+        S -->|1. lookup| C[(L1 / L2 / warm caches)]
+        S -->|2a. BM25| OS[(OpenSearch\nproduct_search_index)]
+        S -->|2b. k-NN| VS[(OpenSearch\nsemantic_search_index)]
+        S -->|3. rerank| R[Ranking]
+        S -.->|low confidence| GW[GenAI gateway]
+        S -->|events| K[[Kafka: query_logs]]
+    end
+    subgraph Offline["Offline intelligence (Phases 5, 7, 8, 9)"]
+        K --> L[(S3 data lake)]
+        L --> AGG[Log aggregation] --> ENR[Enrichment] --> SEG[Segmentation] --> EXP[Expansion]
+        SEG -.-> GW
+        EXP -.-> GW
+        EXP --> C
+        K --> NRT[NRT trend detector] --> C
+    end
+    subgraph Ingestion["Catalog ingestion (Phase 1)"]
+        DS[Amazon Reviews 2023] --> PG[(Postgres catalog)]
+        PG --> LLM[LLM attribute extraction] --> PG
+        PG --> OS
+        PG --> VS
+        CU[[Kafka: catalog_updates]] --> PG
+    end
+    GW --> CL[Claude: Haiku / Sonnet / Opus]
+```
+
+**Case study component → what this MVP uses**
+
+| Case study | MVP |
+|---|---|
+| Elasticsearch `product_search_index` | OpenSearch 2.15 (same mapping: BM25 text fields, keyword filters, nested attributes) |
+| Vector DB `semantic_search_index` (HNSW) | OpenSearch k-NN index, HNSW (lucene engine, cosine) |
+| DynamoDB (`product_catalog`, `user_profile`, `smart_query_cache`) | Postgres 16 (JSONB for attributes/preferences) |
+| Redis L2 / discovery cache | Redis 7.2 |
+| In-JVM L1 cache | In-process cache in the search service (Phase 6) |
+| Warm semantic cache | OpenSearch k-NN index `warm_query_cache` |
+| Kafka | Redpanda (Kafka-compatible) |
+| Spark / Flink | Python batch jobs (Polars) / Python stream consumer |
+| S3 (data lake, hot list) | SeaweedFS S3 API |
+| OpenAI Ada embeddings (1536-d) | Local `BAAI/bge-small-en-v1.5` (384-d) |
+| GenAI service / LLM gateway | FastAPI gateway (`services/genai_gateway`) |
+| LLM providers | Claude, tiered by task (see cost policy) |
+| Kubernetes, multi-AZ | Out of scope for the MVP (single-host Docker Compose) |
+
+---
+
+## Cost policy: tiered execution
+
+Cost is a primary design criterion. **Every task runs at the cheapest tier that meets its quality bar**: plain
+code when the output is deterministic, a cheap model for simple language tasks, and stronger models only for
+genuinely complex work, ideally as an *escalation* after a cheap attempt fails a code check.
+
+| Tier | Engine | Used for |
+|---|---|---|
+| **0: Code** (free) | Python / SQL / OpenSearch, local embeddings, LightGBM | query normalization + spell correction (SymSpell over catalog vocabulary), cache keys and all cache tiers, log aggregation and query frequency, profile/context lookups, **compiling search queries (template, not LLM)**, taxonomy match by exact/alias/embedding, co-purchase mining, static ranking, personalized re-rank, confidence score, trend detection, related searches from logs, attributes already present in structured product data, embeddings |
+| **1: Cheap**: `claude-haiku-5-5`, effort `low` | Batch API offline; direct calls online | catalog attribute extraction, offline query segmentation, NRT lite segmentation, online fallback rewrite, choosing complements from a supplied list |
+| **2: Strong**: `claude-sonnet-5-5` | Batch API; escalation only | query expansion for head queries (top 20%, cached and reused), and retries when a Tier 1 answer fails validation |
+| **3: Frontier**: `claude-opus-5-5` | low-volume offline | LLM-as-judge evaluation (≤ 500 sampled queries per run) |
+
+Rules:
+- **Cascade, not default-high.** Tier 1 answers first, code validates (schema, taxonomy membership, non-empty
+  results), and only failures go to Tier 2. If a task escalates more than ~15% of the time, re-evaluate its tier.
+- **Long-tail queries never get Tier 2 offline**: the warm semantic cache or the Tier 1 fallback serves them.
+- **Batch API for all offline LLM work** (50% cheaper), with inputs de-duplicated first and outputs cached.
+- **Small prompts by design**: LLM tasks get ~20 candidate taxonomy paths pre-selected by local embeddings, not the
+  whole 1,411-node taxonomy.
+- **Pilot before any paid bulk run** (≤ 200 items) and report the measured cost.
+- `services/genai_gateway/src/genai_gateway/routing.yaml` is the **single source of truth** for task → model chain,
+  effort and timeout. The gateway exports per-task token and cost metrics so these choices can be revisited with data.
+
+**Where the MVP deliberately departs from the case study to save cost:** the doc uses an LLM for spell
+correction, writing the Elasticsearch query JSON, taxonomy classification, and related searches. Here those are
+code (Tier 0); the LLM only makes the judgement calls (which alternatives fit the intent, which category among
+candidates).
+
+---
+
+## Quickstart
+
+**Prerequisites:** Docker Desktop (8 GB memory recommended), [uv](https://docs.astral.sh/uv/), an Anthropic API key.
+
+```bash
+cp .env.example .env              # then set ANTHROPIC_API_KEY
+make install                      # Python 3.12 venv + dependencies (uv)
+make up                           # start OpenSearch, Redis, Postgres, Redpanda, SeaweedFS, Prometheus, Grafana
+make migrate                      # Postgres schema
+make bootstrap                    # Kafka topics, S3 buckets, OpenSearch indices (idempotent)
+
+# Phase 1: build the catalog (10k products by default; SCALE=1.0 for 50k)
+make ingest                       # download sample -> load Postgres -> index (keyword + vectors)
+make enrich-submit LIMIT=200      # paid: pilot LLM enrichment first, check cost with enrich-collect
+make enrich-submit                # paid: the rest (Haiku via Batch API, ~$0.07 per 1k products)
+make enrich-status                # poll; batches usually finish within the hour
+make enrich-collect               # merge results into the catalog, prints measured cost
+make index                        # re-index with enriched attributes and tags
+make synth                        # synthetic users + search logs -> S3 data lake, user profiles, Kafka
+
+# Phase 2: GenAI gateway
+make gateway                      # http://localhost:8001  (docs at /docs, metrics at /metrics)
+
+# Phase 3: search service
+make search                       # http://localhost:8000/v1/search?q=beef%20jerky&debug=true
+make test                         # unit tests (no network, no API calls)
+```
+
+Service ports: OpenSearch `9200` · Redis `6379` · Postgres `5432` · Redpanda `9092` · S3 `8333` ·
+Prometheus `9090` · Grafana `3001` · gateway `8001` · search service `8000`.
+
+---
+
+## Repository layout
+
+```
+intelligent-search/
+├── docker-compose.yml            # local infrastructure (7 services, health-checked)
+├── Makefile                      # all common commands
+├── pyproject.toml                # one uv project; packages listed under [tool.hatch...]
+├── alembic.ini, migrations/      # Postgres schema (0001 initial, 0002 LLM enrichment fields)
+├── libs/common/src/common/       # shared library
+│   ├── config.py                 #   settings from .env
+│   ├── schemas.py                #   payload contracts from the case study (search API, pipeline payloads)
+│   ├── normalize.py              #   query normalization, cache-key hash, spell corrector
+│   ├── indices.py                #   OpenSearch mappings + "semantic document" builder
+│   ├── embeddings.py             #   local bge-small embeddings
+│   ├── embedding_service.py      #   embeddings + Redis cache (shared by gateway and search)
+│   ├── topics.py, db.py, llm.py  #   topic/index names, Postgres connection, Anthropic client
+│   └── bootstrap.py              #   create topics, buckets, indices
+├── services/genai_gateway/src/genai_gateway/
+│   ├── routing.yaml              #   task -> model chain (cost policy lives here)
+│   ├── prompts/*.v1.j2           #   versioned prompt templates
+│   ├── tasks.py, schemas.py      #   task registry, I/O models, code-side guardrails
+│   ├── core.py                   #   routing, failover, breakers, budgets, cost; Batch API helpers
+│   ├── breaker.py, llm.py        #   circuit breaker; provider adapter
+│   ├── embed.py                  #   embedding service with Redis cache
+│   └── app.py                    #   FastAPI app
+├── services/search_service/src/search_service/
+│   ├── app.py                    #   FastAPI: /v1/search, /v1/events
+│   ├── engine.py                 #   fast-path orchestration
+│   ├── retrieval.py              #   BM25, k-NN, hydration (async OpenSearch)
+│   ├── fusion.py                 #   reciprocal rank fusion + confidence score
+│   ├── filters.py                #   `filters` param -> OpenSearch clauses
+│   ├── negation.py               #   "without nuts" / "not too formal" handling
+│   ├── fallback.py               #   LLM rewrite path: memo, retry search, interleave, write-back
+│   ├── gateway_client.py         #   HTTP client for the GenAI gateway
+│   ├── taxonomy.py               #   embedding-preselected candidate categories
+│   ├── events.py                 #   analytic events to Kafka, click attribution
+│   └── vocab.py                  #   spell-correction dictionary from the catalog
+├── pipelines/
+│   ├── ingestion/                # download, load_catalog, resize_catalog, enrich_llm, index, catalog_updates
+│   └── synthetic/generate.py     # synthetic users, sessions, search events, co-purchases
+├── tests/                        # unit tests
+├── ops/prometheus/               # scrape config (dashboards/alerts in Phase 10)
+└── data/                         # git-ignored: raw sample, batch state, local copy of the lake
+```
+
+---
+
+## Phase 0: Foundations (done)
+
+- **Infrastructure** (`docker-compose.yml`): OpenSearch (security plugin off for local use), Redis, Postgres,
+  Redpanda, SeaweedFS (S3), Prometheus, Grafana, all with health checks so `make up` waits until ready.
+- **Shared contracts** (`common/schemas.py`): the `/v1/search` request/response (camelCase JSON, exactly the shape on
+  p.144 of the case study, plus a `pairsWellWith` section and a `debug` block that shows which path served a query),
+  and every pipeline payload: enriched query, segmented query, analytic event, cached query (with
+  `source` + `version`, so batch results always overwrite near-real-time results, as the doc requires).
+- **Query normalization** (`common/normalize.py`): Unicode normalization, lowercasing, punctuation stripping, and
+  spell correction against the catalog's own vocabulary (Tier 0, not an LLM).
+- **Database** (`migrations/`): `product_catalog` (with the doc's category+price secondary index), `taxonomy`,
+  `user_profile`, `smart_query_cache` (persistent tier), `co_purchase`.
+- **Search indices** (`common/indices.py`): `product_search_index` (doc p.163 mapping), `semantic_search_index`
+  (HNSW vectors), `warm_query_cache` (semantic cache for long-tail queries).
+- **Kafka topics**: `query_logs`, `log_processing_queue`, `query_process_queue`, `segmented_queries_queue`,
+  `list_update`, `catalog_updates`. **S3 buckets**: `datalake`, `hotlist`.
+
+---
+
+## Phase 1: Data and catalog ingestion (done)
+
+Implements the case study's ingestion and enrichment pipeline (Fig 5.1): *LLM extracts structured tags → index for
+keyword search → index for semantic search*.
+
+**1. Dataset** (`pipelines/ingestion/download.py`). Product metadata from
+[McAuley-Lab/Amazon-Reviews-2023](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023), streamed (the
+source files are 1–18 GB) from four categories so the case study's example queries have matching products:
+
+| Category | Products |
+|---|---|
+| Grocery & Gourmet Food | 3,000 |
+| Clothing, Shoes & Jewelry | 3,000 |
+| Electronics | 2,000 |
+| Home & Kitchen | 2,000 |
+| **Total** | **10,000** |
+
+Only products with a price, a title and a category path at least three levels deep are kept (about half the source
+rows have no price). Prices are in USD. `bought_together` is empty in the source, so co-purchases are synthetic.
+
+**2. Catalog + taxonomy** (`load_catalog.py`, `resize_catalog.py`). Products load into Postgres; a 4-level
+taxonomy (1,411 nodes, e.g. `Clothing, Shoes & Jewelry > Women > Shoes > Slippers`) is built from category paths.
+Only descriptive fields from the raw `details` become attributes (color, material, flavor, …), not UPCs or
+dimensions. Stock is synthetic (~5% out of stock). We first sampled 50k and then reduced to a stratified 10k to
+manage cost; `resize_catalog.py` keeps already-enriched products so paid work isn't thrown away.
+
+**3. LLM attribute enrichment** (`enrich_llm.py`, Tier 1). The Message Batches API sends 20 products per request to
+`claude-haiku-5-5` with a strict JSON schema whose attribute keys are an enum (a guardrail: the model cannot invent
+keys). Per product it returns a normalized `product_type` ("tube socks"), attributes (`gender: men`), and shopper
+`search_tags` ("soft sole", "gift for elderly", "post-workout snack"). Catalog-sourced values win over LLM values
+on conflict. Product ids the model invents are ignored. Commands: `submit` / `status` / `collect` / `cancel`.
+**Result: 10,000 / 10,000 products enriched.**
+
+**4. Indexing** (`index.py`). Each product goes to `product_search_index` (BM25 fields, filters, nested attributes,
+flattened tags, a popularity prior `static_score`) and to `semantic_search_index` as a 384-d embedding of its
+"semantic document" (doc p.164 format: *"Men's Terra Running Shoe by Olympus Athletics. Category: …"*).
+
+**5. Freshness path** (`catalog_updates.py`). A consumer on `catalog_updates` applies price/stock changes to
+Postgres and both indices within seconds. *Verified live:* one message changed product `B01DPV07ZI` (basmati rice)
+from $14.94 in stock to $9.99 out of stock in Postgres, the keyword index and the vector index; it was then
+restored. Try it:
+`uv run python -m pipelines.ingestion.catalog_updates emit <product_id> --price 9.99 --in-stock false`.
+
+**6. Synthetic users and behavior** (`pipelines/synthetic/generate.py`). 5,000 users with category and brand
+affinities, devices and cities. Sessions issue queries derived from the products they intend to buy (head queries
+like "beef jerky", long-tail like "gift for elderly", ~4% typos), with a click → cart → purchase funnel and
+complementary follow-up purchases (pizza → soda, brownie mix → ice cream, coffee → creamer, shoes → socks, …).
+
+| Output | Value |
+|---|---|
+| Search events | 74,682 over 14 days |
+| Clicks / purchases | 48,570 / 11,092 |
+| Unique queries | 28,688 (top 20% of queries carry 63% of traffic) |
+| Where | S3 `datalake/search_events/dt=YYYY-MM-DD/part-0.parquet` (15 partitions), `user_profile` table, latest 2,000 events on `query_logs` |
+
+---
+
+## Phase 2: GenAI gateway (done)
+
+The case study's "GenAI service / LLM gateway" (p.157–158): one internal API for every LLM interaction,
+hiding providers from the rest of the system.
+
+**API** (`make gateway`, port 8001)
+
+| Endpoint | Purpose |
+|---|---|
+| `POST /v1/llm/{task}` `{"inputs": {...}}` | run a task; returns output, model used, validity, every attempt, tokens, cost, latency |
+| `POST /v1/embed` `{"texts": [...], "kind": "query"\|"document"}` | local embeddings with a Redis cache |
+| `GET /v1/routing` | the task → model routing table |
+| `GET /v1/breakers` | circuit breaker state per model |
+| `GET /metrics`, `GET /healthz` | Prometheus metrics, liveness |
+
+**Tasks**: `segment`, `expand_head`, `expand_tail`, `rewrite`, `nrt_segment`, `discover`, `judge`; plus
+`extract_attributes` (batch-only, used by ingestion).
+
+**How a call works** (`core.py`)
+1. Validate inputs against the task's Pydantic model; render the versioned system prompt; serialize inputs with
+   sorted keys (identical inputs → identical prompt bytes → cacheable).
+2. Walk the task's model chain from `routing.yaml`. Skip a model whose **circuit breaker** is open (5 transient
+   failures → open for 30 s → one half-open trial).
+3. Call with the **remaining time budget** for the whole chain (no SDK retries, which would overrun it).
+4. Move to the next model on: transient error (timeout, connection, 429, 5xx), refusal, truncated output, invalid
+   JSON, or, when the route allows escalation, output that fails the task's **guardrail**.
+5. Return the result with `valid`, `escalated`, per-attempt outcomes, tokens and cost; 503 if every model failed.
+
+**Guardrails** (code, `tasks.py`): taxonomy paths must come from the supplied candidates; expansion may only pick
+product types that were retrieved from the catalog; discovery may only pick items from the co-purchase list; the
+judge's winner is recomputed from its scores. Invented values are dropped, never passed downstream.
+
+**Offline use**: `build_batch_request()`, `parse_and_validate()` and `next_model()` let pipelines submit through
+the Batch API with the same prompts, schemas, routing and guardrails, then escalate failures in a follow-up batch.
+
+**Metrics**: `gateway_llm_attempts_total{task,model,outcome}`, `gateway_llm_tokens_total`,
+`gateway_llm_cost_usd_total`, `gateway_llm_latency_seconds`, `gateway_escalations_total`, `gateway_breaker_state`,
+`embedding_cache_total`.
+
+**Live verification (2026-10-14, all on Haiku):**
+
+| Task | Query | Result | Latency | Cost |
+|---|---|---|---|---|
+| rewrite | "stuff for my dorm party" | snack + soft-drink categories; keywords chips, soda, party cups | 1.5–2.1 s | $0.00007–0.0002 |
+| segment | "organic aged basmati rice" | category rice, quality basmati, taxonomy `…> Dried Grains & Rice` | 3.4 s | $0.0002 |
+| nrt_segment | "old people home footwear" | product_type footwear | 1.2 s | $0.00005 |
+| discover | "brownie" + co-purchase list | vanilla ice cream, chocolate sauce, whipped cream (+ eggs, chips) | 3.3 s | $0.00007 |
+| embed | "winter wear for women" twice | 2nd request served from Redis cache | n/a | free |
+
+*Quality note:* for "brownie" Haiku also kept basket filler (eggs, chocolate chips) that the prompt asks it to
+skip. Tracked for the Phase 11 evaluation before deciding whether `discover` needs a different prompt or tier.
+
+Try it:
+
+```bash
+curl -s localhost:8001/v1/llm/rewrite -H 'content-type: application/json' \
+  -d '{"inputs":{"query":"stuff for my dorm party","candidate_categories":[
+       "Grocery & Gourmet Food > Snacks & Sweets > Snack Foods",
+       "Grocery & Gourmet Food > Beverages > Soft Drinks"]}}' | jq
+```
+
+---
+
+## Phase 3: Online search fast path (done)
+
+The case study's real-time search flow (p.156–157, Fig 5.7), minus caches (Phase 6) and fallback (Phase 4).
+**Entirely Tier 0: no LLM calls, no API cost.**
+
+**API** (`make search`, port 8000), exactly the contract on p.143–145 of the case study:
+
+```
+GET /v1/search?q=hill+station+outfits&userId=u00001&sessionId=s1&page=1&pageSize=20
+               &filters={"brand":"Decathlon","size":"S"}&sortBy=relevance|price_asc|price_desc&debug=true
+POST /v1/events  {"searchId": "...", "type": "click"|"add_to_cart"|"purchase", "productId": "..."}
+```
+
+The response has the doc's shape (`searchId`, `correctedQuery`, `results[]` with `productId/title/description/
+imageUrl/price{amount,currency}/brand/rating`, `relatedSearches`, `pagination`), plus `pairsWellWith` (Phase 7)
+and, with `debug=true`, `debug{servedBy, confidence, latencyMs}` for the demo UI.
+
+**How a search runs** (`engine.py`)
+1. **Normalize + spell-correct** (code). The dictionary is general English (82k words, bundled with SymSpell) plus
+   catalog vocabulary. English stops ordinary words ("dorm") from being "corrected" into product terms; among
+   equally close suggestions a catalog word wins ("jekry" → "jerky", not "jerry").
+2. **Negation** (code, `negation.py`): "without nuts", "no sugar", "not too formal" are removed from what retrieval
+   sees, and results naming the negated thing are dropped ("Raw Walnuts", "Peanut Butter …"), unless the product
+   says it is free of it ("Nut-Free Granola"). "Gluten free pasta" keeps "gluten free" in the query.
+3. **Retrieve in parallel**: BM25 over name, product type, tags, brand, category and description (field-boosted;
+   short queries need every term, longer ones 75%) **while** the query is embedded (Redis-cached), then k-NN top 100
+   with brand/price/stock filters applied inside the HNSW search.
+4. **Hydrate with all filters**: candidates are fetched from the product index with every filter, which is
+   where category and attribute filters reach the vector hits. Out-of-stock items are hidden unless
+   `{"in_stock": false}`.
+5. **Fuse** with reciprocal rank fusion (BM25 scores and cosines aren't comparable; ranks are). The popularity
+   prior only breaks ties (moves a product at most one place near the top); real re-ranking is Phase 8.
+6. **Confidence** in [0, 1] = 0.6 × semantic strength (top-3 cosine, rescaled 0.55 → 0.80) + 0.25 × agreement
+   between the keyword and vector top 10 + 0.15 × keyword coverage. **Below 0.6 (doc Fig 5.14) the query is
+   flagged** for the Phase 4 fallback.
+7. **Sort / paginate**: price sorts only consider plausibly relevant results, so a cheap unrelated item can't win.
+8. **Log**: a `search` event goes to Kafka `query_logs` in the background (search never waits for analytics);
+   the search context is kept in Redis for an hour so `/v1/events` can attribute clicks, carts and purchases.
+
+**Filters** (`filters.py`): `brand` (string or list), `category` (taxonomy prefix), `price_min`, `price_max`,
+`in_stock`; **any other key is an attribute filter** (`{"color":"navy","gender":"men"}`), matched on the nested
+attributes, so new attribute filters need no code.
+
+**Live evaluation (2026-10-14, 10k catalog, warm caches)**
+
+| Query | Confidence | Top results | Verdict |
+|---|---|---|---|
+| beef jerky | 0.89 | 3 beef jerky products | ✅ |
+| usb c cable | 0.88 | USB-C cables | ✅ |
+| waterprof hiking boots | 0.88 | corrected to "waterproof"; waterproof hiking boots | ✅ |
+| fleece jacket / coffee mug | 0.77 / 0.78 | fleece jackets / coffee mugs | ✅ |
+| organic aged basmati rice | 0.73 | both basmati rices, then organic long-grain rice | ✅ |
+| a summer dress that's not too formal | 0.81 | casual summer dresses; the formal dress is gone | ✅ (negation) |
+| healthy snacks without nuts for kids | 0.66 | kids' cookies, fruit crisps, snack bars; no walnuts | ✅ (negation) |
+| brownie | 0.68 | brownie products | ✅ |
+| basmati rice | 0.61 | 2 basmati rices, then a spice (only 2 basmati items in the 10k catalog) | ⚠️ data |
+| post-workout food | 0.56 | keto meal replacement, jerky, protein balls | 🔁 fallback |
+| old people home footwear | 0.38 | memory-foam house slippers | 🔁 fallback (results already decent) |
+| stuff for my dorm party | 0.35 | decor, sprinkles, a rug | 🔁 fallback needed |
+| hill station outfits | 0.24 | sweaters, sweatsuit, snow boots | 🔁 fallback needed |
+| cheeseburst pizza | 0.22 | cheese snacks, frozen pizza, cheddar | 🔁 fallback needed |
+| xqzv blorf | 0.12 | noise | 🔁 fallback (should return "no results") |
+
+The confidence score separates what the fast path handles (0.61–0.89) from the intent-heavy queries the case study
+says need an LLM (0.22–0.56). That split is what Phase 4 acts on.
+
+**Latency** (local, warm): **p50 18 ms, p90 20 ms, max 31 ms**; first query after a pause ~0.4 s; uncached new
+queries ~35–45 ms. Target is P90 < 1 s.
+
+**Also verified live:** price filter + ascending sort, category / brand / attribute filters, pagination without
+overlap, 422 on malformed input, click attribution (202) and unknown search ids (404), search + click events on
+Kafka with matching `search_id`, and a stock-out removing a product from results within ~1 s (and restoring it).
+
+## Phase 4: Fallback path (done)
+
+The case study's fallback path (p.157, Fig 5.14): when the fast path can't answer, ask an LLM to rewrite the
+query into terms the catalog understands and search again. The doc accepts a slower answer here (P99 < 3–5 s)
+because a slow good result beats a fast dead end.
+
+**When it runs:** fast-path confidence < 0.6 or zero results. Everything else never touches an LLM.
+
+**How it runs** (`fallback.py`)
+
+| Step | Tier | What happens |
+|---|---|---|
+| 1. Memo lookup | 0 | Redis `rewrite:v1:{query hash}`. A hit skips the LLM entirely (7-day TTL). "No usable rewrite" is also memoized (1-day TTL), so nonsense isn't paid for twice. Gateway *failures* are not memoized. |
+| 2. Candidate categories | 0 | The 20 taxonomy paths nearest the query embedding (in-memory matrix of 1,400+ path embeddings). |
+| 3. Rewrite | **1 (Haiku)** | Gateway `rewrite` task, 4 s budget. Returns keywords, attributes, categories; guardrails drop categories not in the candidates. |
+| 4. Compile | 0 | Code builds the query: any keyword must fully match; attributes and categories only **boost** (see decision 18). |
+| 5. Retry search | 0 | One BM25 query plus **one k-NN search per keyword**, fused with RRF. |
+| 6. Interleave | 0 | Round-robin across keywords, so a multi-intent query shows each need near the top. |
+| 7. Choose | 0 | Use the rewrite's results only if their confidence beats the fast path's. Negation exclusions still apply. If the gateway fails, return the fast-path results (HTTP 200, never an error). If fast-path confidence is below 0.15 and there's no usable rewrite, return an honest empty page instead of noise. |
+| 8. Write back | 0 | Store the rewrite + compiled query in the warm semantic cache (`warm_query_cache`) and `smart_query_cache` (`source=fallback`), never overwriting a batch-pipeline entry. Phase 6 reads these. |
+
+**Live results (2026-10-14)**
+
+| Query | Fast path | Fallback | Rewrite (Haiku) | Top results now |
+|---|---|---|---|---|
+| stuff for my dorm party | 0.35 | **0.83** | party cups, chips, soda, string lights, party games | party bundle, chips, peach soda, string lights, … |
+| hill station outfits | 0.24 | **0.81** | sweater, jacket, coat, fleece, knit cardigan | turtleneck sweater, fleece jacket, insulated ski jacket |
+| old people home footwear | 0.38 | **0.91** | slippers, house shoes, slip-on shoes, indoor shoes | house slippers, fuzzy clog slippers, memory-foam booties |
+| post-workout food | 0.56 | **0.87** | protein bar, protein shake, recovery drink, beef jerky, … | jerky protein bars, protein drinks, string cheese |
+| cheeseburst pizza | 0.22 | **0.71** | cheeseburst pizza, cheese stuffed crust pizza, frozen pizza, … | frozen pizzas, four-cheese crust pizza, pizza crusts |
+| something warm for my grandma | 0.53 | **0.86** | throw blanket, electric blanket, fleece blanket, lap blanket | fleece throw blankets |
+| xqzv blorf | 0.12 | no usable rewrite | n/a | **no results** (honest empty page) |
+| beef jerky, organic aged basmati rice, … | 0.66–0.89 | not called | n/a | unchanged (fast path) |
+
+The doc's "cheeseburst pizza → Coke/Pepsi" pairing is a *discovery* feature ("Pairs well with"), built in Phase 7.
+
+**Latency:** first-time fallback **2.0–4.2 s** (dominated by the Haiku call; within the doc's 3–5 s P99 budget);
+memoized fallback **84–265 ms**; fast path unchanged (~20 ms warm).
+
+**Cost:** ≈ **$0.0001–0.0002 per first-time rewrite**, then free for 7 days via the memo. All Phase 4 testing
+spent ≈ $0.0015. A re-run of the whole evaluation spent $0.00 (7/7 memo hits).
+
+**Resilience, verified live:** with the gateway stopped, new low-confidence queries return the fast-path results
+with HTTP 200 in 0.09–0.14 s, the failure is not memoized, and the same query uses the fallback once the gateway
+is back.
+
+## Remaining phases (roadmap)
+
+| Phase | Plan |
+|---|---|
+| **5. Offline pipeline** | Aggregate the lake (sessions, query frequency) → enrich (profile, context) → segment (Haiku batch, Sonnet escalation) → link and expand (k-NN candidates; Sonnet for head queries, Haiku for the rest) → compile ES query → `smart_query_cache` + cache tier by frequency. |
+| **6. Cache tiers** | L1 in-process (top 5%), L2 Redis (top 20%), warm semantic tier (similarity ≥ 0.88); hot list to S3 + `list_update` event; results cache with 5–10 min TTL and event-based purge on price/stock changes. |
+| **7. Discovery** | Mine co-purchase support/lift from the lake (code) → `discover` (Haiku batch) → Redis `discovery_products:{product}` → parallel lookup at search time. |
+| **8. Ranking** | Offline static score (purchase > cart > click, text relevance, popularity); LightGBM LambdaMART re-rank of the top ~500 using brand/category affinity, session intent, price band, context. |
+| **9. NRT trends** | 5-minute window sliding every 10 s over `query_logs`; trending + uncached → `nrt_segment` → warm tier; batch results overwrite later. |
+| **10. Observability** | Grafana dashboards (latency per path, cache hit ratios, fallback rate, LLM cost, CTR, conversion, zero-result rate) and alert rules. |
+| **11. Evaluation** | Golden set (~150 queries incl. all case-study examples), NDCG@10 / Recall@50, LLM-as-judge (Opus, pairwise, 1–5), Locust load test against the P90/P99 targets. |
+| **12. Frontend** | Next.js storefront: search, facets, sort, corrected-query banner, related searches, "Pairs well with", and a debug panel. |
+
+---
+
+## Spend log
+
+All Anthropic API spend so far, measured from API usage (Batch API prices where applicable).
+
+| Date | What | Model | Cost |
+|---|---|---|---|
+| 2026-10-14 | Connectivity smoke test | Haiku 5.5 | < $0.001 |
+| 2026-10-14 | Enrichment pilot, 200 products | Sonnet 5.5 (batch) | $0.215 |
+| 2026-10-14 | Enrichment run, canceled after 40 products (switch to Haiku) | Sonnet 5.5 (batch) | $0.050 |
+| 2026-10-14 | Enrichment, 9,716 products | Haiku 5.5 (batch) | $0.671 |
+| 2026-10-14 | Enrichment retry, 44 products the model skipped | Haiku 5.5 (batch) | $0.003 |
+| 2026-10-14 | Gateway live tests (~15 calls) | Haiku 5.5 | < $0.01 |
+| 2026-10-14 | Phase 4 fallback testing (~10 first-time rewrites; re-runs memoized) | Haiku 5.5 | ≈ $0.0015 |
+| | **Total** | | **≈ $0.95** |
+
+Measured unit costs: catalog enrichment **$1.08 / 1k products on Sonnet vs $0.069 / 1k on Haiku** (~16× cheaper,
+comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per first-time query**, then memoized.
+
+---
+
+## Decision log
+
+| # | Date | Decision | Why |
+|---|---|---|---|
+| 1 | 2026-10-14 | Build a **portfolio MVP** of every flow, locally, in Python/FastAPI, with Claude + local embeddings | Agreed scope; production infra (K8s, managed DBs) out of scope |
+| 2 | 2026-10-14 | Postgres replaces DynamoDB; OpenSearch replaces Elasticsearch + vector DB; Redpanda replaces Kafka | Free, local, same interfaces/contracts |
+| 3 | 2026-10-14 | **Dataset: Amazon Reviews 2023 metadata** instead of `anurag11231/preprocessed_amazon_products_dataset` | The latter has only electronics/tools/automotive (no grocery, food, apparel) and lacks ids, ratings, images; the case study's examples would have nothing to match |
+| 4 | 2026-10-14 | **SeaweedFS** instead of MinIO | MinIO images are no longer published on Docker Hub or quay.io |
+| 5 | 2026-10-14 | **Catalog held at 10k products** (sampled 50k, reduced stratified) | Sonnet pilot projected ~$54 for 50k; keep cost down for now. `SCALE=1.0` restores 50k |
+| 6 | 2026-10-14 | **Enrichment on Haiku**, Sonnet batch canceled | User request to manage cost; Haiku measured ~16× cheaper with good quality |
+| 7 | 2026-10-14 | **Tiered cost policy** for every task (code → Haiku → Sonnet → Opus) | User requirement: not all tasks are equal; deterministic work should be plain code |
+| 8 | 2026-10-14 | Spell correction, query compilation, related searches, taxonomy matching moved from LLM (doc) to code | Deterministic outputs; zero marginal cost |
+| 9 | 2026-10-14 | LLM tasks receive ~20 embedding-preselected taxonomy candidates, not the full taxonomy | Smaller prompts; makes "category must be from the list" checkable in code |
+| 10 | 2026-10-14 | Rewrite budget raised 1.5 s → 4 s; SDK auto-retries disabled for live calls | Measured Haiku latency 1.4–2.3 s; 1.5 s failed 2 of 3 calls. Doc allows P99 < 3–5 s for the fallback path; retries overran the budget |
+| 11 | 2026-10-14 | Prices kept in USD (doc examples use INR) | Source data is USD; currency is a field on every product |
+| 12 | 2026-10-14 | Reciprocal rank fusion instead of score blending | BM25 and cosine scores are on different scales; RRF needs only ranks |
+| 13 | 2026-10-14 | Negation handled in code ("without nuts", "not too formal") | Deterministic; both retrievers otherwise *match* the negated word |
+| 14 | 2026-10-14 | Spell correction uses English + catalog vocabulary, catalog wins ties | Catalog-only vocabulary "corrected" normal words; English-only picked "jerry" over "jerky" |
+| 15 | 2026-10-14 | Embedding service moved into `common`; search embeds in-process (Redis-cached) | Keeps the fast path independent of the gateway's availability and saves a network hop |
+| 16 | 2026-10-14 | Out-of-stock products hidden by default | Freshness requirement; `{"in_stock": false}` shows them |
+| 17 | 2026-10-14 | Rewrites memoized in Redis per normalized query (incl. "no usable rewrite"); failures not memoized | A repeated hard query should never pay for the LLM twice; a transient outage shouldn't stick |
+| 18 | 2026-10-14 | Rewrite categories and attributes **boost** instead of filter (doc applies them as hard AND/OR) | Categories can only come from embedding-preselected candidates; for "dorm party" those were all party supplies, so a filter removed the chips and soda the keywords found (9 results → 178) |
+| 19 | 2026-10-14 | One k-NN search per rewrite keyword + round-robin interleaving | A single blended vector, or plain RRF, let "string lights" fill the page; interleaving put cups, chips, soda and lights in the top 4 |
+| 20 | 2026-10-14 | Show fallback results only if they beat the fast path's confidence; empty page below 0.15 with no rewrite | Never make a decent answer worse; never show pure noise |
+| 21 | 2026-10-14 | Embedding model loads from local files only (download only if missing) and is warmed explicitly at startup | Root cause of the ~11 s outliers, see problems table |
+
+---
+
+## Problems hit and how they were fixed
+
+| Problem | Fix |
+|---|---|
+| `minio/minio` image pull denied | Switched to SeaweedFS (S3-compatible) on port 8333 |
+| Docker had 4 GB; stack is heavy | Temporarily reduced OpenSearch/Redpanda memory; restored after Docker was raised to 8 GB |
+| SeaweedFS "no free volumes left" on data-lake writes | `-volume.max=100 -master.volumeSizeLimitMB=64 -master.volumePreallocate=false` |
+| SDK couldn't find the API key (it lives in `.env`) | `common/llm.py` client factory reads it from settings |
+| Haiku rewrite timeouts at 1.5 s | See decision 10 |
+| Synthetic generator: O(users × catalog) brand lookup | Replaced with a product → brand map |
+| Haiku skipped 44 of 9,760 products in its answers | `collect` leaves them un-enriched; a follow-up `submit` picked them up ($0.003) |
+| `_cat/indices` showed 70,737 docs in `product_search_index` | Not a bug: it counts each nested attribute as a hidden document. `_count` returns 10,000 (+ 60,737 nested attributes) |
+| Catalog consumer could skip an update sent while it was still joining its group | `auto_offset_reset="earliest"` (updates replay in order per product, so replaying is safe); startup log line flushed |
+| Search for "healthy snacks without nuts" returned walnuts; "not too formal" returned a formal dress | Negation handling (decision 13) |
+| Popularity prior described as a nudge could actually lift a product ~13 places | Caught by a unit test; weight 0.003 → 0.0005 (one place at most near the top) |
+| ~11 s searches (once in Phase 3, again in Phase 4 with the gateway down) | **Root cause found:** the startup warm-up embedded "warm up", which was already in the Redis cache, so the model never loaded at startup; the first uncached query loaded it, including a ~10 s Hugging Face Hub check. Fix: warm the model directly and load with `local_files_only`. Gateway-down queries went from 10.9 s to 0.09–0.14 s |
+| "Dorm party" fallback returned 9 themed plate sets, no chips or soda | Categories boost instead of filter (decision 18) |
+| String lights filled the dorm-party page | Per-keyword k-NN + interleaving (decision 19) |
+| Unit tests wrote fake rewrites into the real `smart_query_cache` (overwrote the real "dorm party" row) | The Postgres writer is now injected (`persist=`), tests pass none; leaked rows deleted and the real row restored from its memoized rewrite (no LLM call). Verified a full test run leaves the DB unchanged |
+
+---
+
+## Testing
+
+```bash
+make test     # 53 unit tests, no network, API calls or writes to real infrastructure
+make lint     # ruff
+```
+
+- `tests/test_common.py`: normalization, spell correction, semantic document format, response serialization.
+- `tests/test_ingestion.py`: taxonomy paths, attribute extraction, index documents, popularity prior, batch requests.
+- `tests/test_search.py`: filter parsing and clause placement, negation, RRF and the prior's limit, confidence,
+  the engine (spell correction, negation, price sort, event logging) and HTTP endpoints, all with fakes.
+- `tests/test_fallback.py`: compile (boost, not filter), keyword interleaving, rewrite confidence, memoization
+  (including "no usable rewrite" and not memoizing gateway errors), fallback chosen over a weaker fast path,
+  graceful degradation, the no-results floor, negations applied to fallback results.
+- `tests/test_gateway.py`: routing and cost policy, strict schemas, circuit breaker states, escalation on
+  hallucinated taxonomy paths, breaker-open skipping, refusals, guardrails, judge, batch helpers, HTTP endpoints
+  (via a fake LLM caller).
+
+Live checks done by hand so far: infrastructure health, migrations, bootstrap idempotency, Kafka/S3 round trips,
+Anthropic connectivity, 10,000/10,000 products enriched and indexed in both indices, the catalog freshness path,
+the gateway runs in [Phase 2](#phase-2-genai-gateway-done), the embedding cache, the search evaluation,
+API checks and latency in [Phase 3](#phase-3-online-search-fast-path-done), and the fallback evaluation, memo,
+write-back and gateway-outage behavior in [Phase 4](#phase-4-fallback-path-done).
+
+---
+
+## Make targets
+
+| Target | Does |
+|---|---|
+| `install` | `uv sync --all-extras` |
+| `up` / `down` | start / stop the Docker stack |
+| `migrate` | Alembic migrations |
+| `bootstrap` | topics, buckets, indices |
+| `ingest` | download (SCALE, default 0.2 = 10k) → load → index |
+| `index` | (re)index the catalog |
+| `enrich-submit` / `enrich-status` / `enrich-collect` | LLM enrichment via Batch API (`LIMIT=n` for a pilot) |
+| `synth` | synthetic users and logs (+ 2,000 events to Kafka) |
+| `catalog-consumer` | run the price/stock freshness consumer |
+| `gateway` / `search` | run the gateway (8001) / search service (8000) |
+| `test` / `lint` | pytest / ruff |

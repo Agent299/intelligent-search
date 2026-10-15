@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.example
+.pytest_cache/
+.ruff_cache/
+data/raw/
+data/lake/
+models/
+node_modules/
+.next/

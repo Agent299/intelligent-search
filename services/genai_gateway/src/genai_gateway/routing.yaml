@@ -1,0 +1,61 @@
+# Task -> model routing for the GenAI gateway (doc p.158 "dynamic model routing").
+#
+# Cost policy: use the cheapest tier that meets the task's quality bar.
+#   tier 0  deterministic code - never reaches the gateway (normalization, caching, query compilation, ranking, ...)
+#   tier 1  claude-haiku-5-5   - default for every LLM task
+#   tier 2  claude-sonnet-5-5  - head-query expansion, and escalation when tier-1 output fails validation
+#   tier 3  claude-opus-5-5    - offline evaluation only
+#
+# `chain` is tried in order: the next model is used when the previous one's circuit breaker is open,
+# it times out, or (for tasks with `escalate_on_invalid: true`) its output fails code-side validation.
+# Prices are standard $/1M tokens (input, output); batch jobs pay 50%.
+
+models:
+  claude-haiku-5-5:  {tier: 1, price_in: 0.10, price_out: 0.50}
+  claude-sonnet-5-5: {tier: 2, price_in: 2.00, price_out: 10.00}
+  claude-opus-5-5:   {tier: 3, price_in: 4.00, price_out: 20.00}
+
+tasks:
+  extract_attributes:        # catalog enrichment (offline, Batch API)
+    chain: [claude-haiku-5-5]
+    effort: low
+    mode: batch
+
+  segment:                   # offline query segmentation + taxonomy classification
+    chain: [claude-haiku-5-5, claude-sonnet-5-5]
+    effort: low
+    mode: batch
+    escalate_on_invalid: true   # unknown taxonomy path / empty category -> retry on next model
+
+  expand_head:               # linking & expansion for top-20% queries (cached, amortized)
+    chain: [claude-sonnet-5-5]
+    effort: medium
+    mode: batch
+
+  expand_tail:               # expansion for remaining offline queries
+    chain: [claude-haiku-5-5, claude-sonnet-5-5]
+    effort: low
+    mode: batch
+    escalate_on_invalid: true   # compiled ES query returns zero results -> escalate
+
+  discover:                  # choose 3-5 complements from a supplied co-purchase list
+    chain: [claude-haiku-5-5]
+    effort: low
+    mode: batch
+
+  nrt_segment:               # near-real-time lite enrichment for trending queries (not user-facing)
+    chain: [claude-haiku-5-5]
+    effort: low
+    mode: sync
+    timeout_s: 6.0
+
+  rewrite:                   # online fallback path; doc allows P99 < 3-5 s for this ~1% of traffic.
+    chain: [claude-haiku-5-5]  # measured Haiku latency 1.4-2.3 s (2026-10-14), so 1.5 s timed out 2/3 calls
+    effort: low
+    mode: sync
+    timeout_s: 4.0
+
+  judge:                     # LLM-as-judge evaluation, sampled offline
+    chain: [claude-opus-5-5]
+    effort: high
+    mode: batch
