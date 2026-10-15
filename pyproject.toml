@@ -61,6 +61,7 @@ packages = [
     "libs/common/src/common",
     "services/genai_gateway/src/genai_gateway",
     "services/search_service/src/search_service",
+    "services/ranking/src/ranking",
     "pipelines",
 ]
 
@@ -76,4 +77,4 @@ target-version = "py312"
 select = ["E", "F", "I", "UP", "B"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["common", "pipelines", "genai_gateway", "search_service"]
+known-first-party = ["common", "pipelines", "genai_gateway", "search_service", "ranking"]

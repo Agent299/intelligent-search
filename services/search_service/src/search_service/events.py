@@ -44,9 +44,9 @@ class EventSink:
             except Exception:
                 EMIT_ERRORS.labels("redis").inc()
 
-    async def interaction(self, search_id: str, event_type: EventType, product_id: str) -> bool:
+    async def interaction(self, search_id: str, event_type: EventType, product_id: str) -> dict | None:
         """Record a click / add-to-cart / purchase against the search that displayed the product.
-        Returns False when the search context has expired or is unknown."""
+        Returns the search context, or None when it has expired or is unknown."""
         ctx = None
         if self.redis is not None:
             try:
@@ -55,7 +55,7 @@ class EventSink:
             except Exception:
                 EMIT_ERRORS.labels("redis").inc()
         if ctx is None:
-            return False
+            return None
         event = AnalyticEvent(
             event_id=uuid.uuid4().hex, event_type=event_type, search_id=search_id,
             event_timestamp=datetime.now(UTC), user_id=ctx["user_id"], session_id=ctx["session_id"],
@@ -66,7 +66,7 @@ class EventSink:
             device_type=ctx["device_type"],
         )
         await self._send(event)
-        return True
+        return ctx
 
     async def _send(self, event: AnalyticEvent) -> None:
         if self.producer is None:

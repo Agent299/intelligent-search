@@ -1,4 +1,4 @@
-.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery test lint gateway search
+.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery rank-publish rank-train test lint gateway search
 
 install:
 	uv sync --all-extras
@@ -59,6 +59,14 @@ discovery:
 	R=disc-$$(date -u +%Y%m%dT%H%M%S); \
 	uv run python -m pipelines.offline.run discover $$R $(if $(LIMIT),--limit $(LIMIT)) && \
 	uv run python -m pipelines.offline.run discover-collect $$R --wait
+
+# Phase 8: replay the logs -> static_score in the index + query/user ranking features in Redis (also in `pipeline`)
+rank-publish:
+	uv run python -m pipelines.ranking.publish
+
+# Phase 8: retrain the LightGBM re-ranker (models/ranker.txt + NDCG report in models/ranker.json); restart search
+rank-train:
+	uv run python -m pipelines.ranking.train
 
 # Daily at 02:00 UTC; HOURLY=1 for every hour
 pipeline-schedule:

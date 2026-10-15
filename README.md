@@ -30,12 +30,13 @@ piece could be swapped for its production counterpart.
 12. [Phase 5: Offline query pipeline](#phase-5-offline-query-pipeline-done)
 13. [Phase 6: Cache tiers](#phase-6-cache-tiers-done)
 14. [Phase 7: Product discovery](#phase-7-product-discovery-done)
-15. [Remaining phases (roadmap)](#remaining-phases-roadmap)
-16. [Spend log](#spend-log)
-17. [Decision log](#decision-log)
-18. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
-19. [Testing](#testing)
-20. [Make targets](#make-targets)
+15. [Phase 8: Ranking](#phase-8-ranking-done)
+16. [Remaining phases (roadmap)](#remaining-phases-roadmap)
+17. [Spend log](#spend-log)
+18. [Decision log](#decision-log)
+19. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
+20. [Testing](#testing)
+21. [Make targets](#make-targets)
 
 ---
 
@@ -53,8 +54,8 @@ Last updated: **2026-10-15** (after Phase 6)
 | 5. Offline query pipeline | Log aggregation → enrichment → segmentation → expansion → cached ES queries | ✅ Done |
 | 6. Cache tiers | L1 in-process, L2 Redis, warm semantic tier, hot-list warming, invalidation | ✅ Done |
 | 7. Product discovery | Co-purchase mining + LLM complement selection → "Pairs well with" | ✅ Done |
-| 8. Ranking | Offline static ranking + LightGBM personalized re-rank | ⬜ Next |
-| 9. Near-real-time trends | Sliding-window trend detection + lite enrichment | ⬜ |
+| 8. Ranking | Offline static ranking + LightGBM personalized re-rank | ✅ Done |
+| 9. Near-real-time trends | Sliding-window trend detection + lite enrichment | ⬜ Next |
 | 10. Observability | Prometheus metrics, Grafana dashboards, alert rules | ⬜ |
 | 11. Testing & evaluation | Golden set, offline metrics, LLM-as-judge, load test | ⬜ |
 | 12. Frontend demo | Next.js storefront with a "which path served this" debug panel | ⬜ |
@@ -62,12 +63,13 @@ Last updated: **2026-10-15** (after Phase 6)
 **Milestones:** M1 = Phases 0–3 (hybrid search working) · M2 = 4, 8-baseline, 12 (first demo) · M3 = 5–7 ·
 M4 = 8-ML, 9 · M5 = 10–11.
 
-**Where we are now:** Phases 0–7 are complete and verified against live infrastructure. Search now checks the
+**Where we are now:** Phases 0–8 are complete and verified against live infrastructure. Search now checks the
 cache tiers first: hot queries come back from the results cache in **~6 ms**, cached hard queries (L1 / L2 / warm)
 in **15–80 ms** without touching the fast path, and a low-confidence query similar to a cached one is answered
 from the warm tier in ~200 ms instead of a 2–4 s LLM call. Results now carry **"Pairs well with"**
 complements mined from co-purchases (163 categories, +3.6 ms), and hot queries carry related searches. **Milestone
-M3 (Phases 5–7) is reached.** Next is Phase 8, ranking.
+M3 (Phases 5–7) is reached.** Results are now re-ranked by a LightGBM LambdaMART model (NDCG@10 0.557 → 0.766
+on held-out searches, < 2.5 ms per request). Next is Phase 9, near-real-time trends.
 
 ---
 
@@ -174,7 +176,8 @@ candidates).
 
 ## Quickstart
 
-**Prerequisites:** Docker Desktop (8 GB memory recommended), [uv](https://docs.astral.sh/uv/), an Anthropic API key.
+**Prerequisites:** Docker Desktop (8 GB memory recommended), [uv](https://docs.astral.sh/uv/), an Anthropic API key;
+on macOS, `brew install libomp` for LightGBM (Phase 8; without it search falls back to the linear ranker).
 
 ```bash
 cp .env.example .env              # then set ANTHROPIC_API_KEY
@@ -653,11 +656,70 @@ their expansion's own suggestions (Phase 5).
 **Cost:** $0.034 for all of discovery (two 150-category pilots at $0.0125 and $0.0124, then 200 categories at
 $0.0089), about **$0.00008 per category**. Daily runs only pay for categories whose co-purchase list changed.
 
+## Phase 8: Ranking (done)
+
+The case study's ranking design (p.176–178, Fig 5.16): a global offline score per product, then a personalized
+re-rank of the top candidates per request. All Tier 0: logs, arithmetic and a small tree model, no LLM.
+
+**Shared features, one definition** (`services/ranking/src/ranking/features.py`), used by training and serving:
+
+| Feature | Meaning |
+|---|---|
+| `retrieval_rank` | 1 / (1 + position in the candidate list) |
+| `semantic_sim` | cosine(query, product), bge-small |
+| `static_score` | offline global score: 0.5 × popularity + 0.5 × smoothed engagement rate (purchase 3 > cart 2 > click 1, per impression) |
+| `popularity` | rating weighted by review volume |
+| `qp_engagement` | smoothed engagement rate of this product for this query |
+| `brand_in_query` | the shopper typed the product's brand |
+| `user_brand_aff`, `user_cat_aff`, `user_top_aff` | share of the user's past engagement on this brand / leaf category / department |
+| `session_brand_clicks` | clicks on this brand earlier in the session (Redis, 30 min) |
+| `price_band_gap` | \|log(price / user's median engaged price)\| |
+| `user_has_history` | 1 if the user has any engagement |
+
+**Offline** (`pipelines/ranking/`): a **point-in-time replay** walks every logged search in time order, emits a
+training group with features computed from history *before* that search, then folds the search's outcome in. A
+user's brand affinity therefore never contains the purchase being predicted. The same replay's final state is
+published for serving (`make rank-publish`, also the last step of `make pipeline`): `static_score` for 10,000
+products in the index (it is also the fast path's fusion prior and discovery's product pick), engagement for
+21,711 queries (`qp:v1:*`) and 4,801 user profiles (`ufeat:v1:*`) in Redis.
+
+**Training** (`make rank-train`): LightGBM LambdaMART on 48,571 logged searches with engagement (703k rows), split
+by time: train 34,000, validation 4,857 (early stopping, best iteration 129), test 9,714 (the latest 20%).
+
+| Ranker (test, NDCG@10) | All searches | Users with history |
+|---|---|---|
+| Logged order | 0.557 | 0.557 |
+| Static score only | 0.554 | |
+| Linear fallback (hand-set weights) | 0.623 | |
+| LightGBM without personal features | 0.766 | 0.767 |
+| **LightGBM** | **0.766** | **0.767** |
+
+Gain share: semantic_sim 66%, retrieval_rank 15%, qp_engagement 9%, popularity 6%, brand_in_query 2%,
+static_score 2%; personal features ≈ 0.
+
+**Why personalization adds nothing here.** The signal exists in the logs but is rare: when a user has engaged a
+brand before, a shown product of that brand is engaged 11.9% of the time vs 6.9% otherwise (1.7×), but only
+0.65% of shown products carry any brand history, so it can't move NDCG. Category affinity can't discriminate at all:
+the generator shows every result from the target's own category. With 5,000 users spread over thousands of
+brands, synthetic shoppers rarely meet a brand twice. The features, plumbing and per-session signal all work
+live (tests cover each); they need logs with repeat behaviour to earn weight. Live, the same query for an
+anonymous user and for a SanDisk buyer returns the same order, as the offline numbers predict.
+
+**Online** (`ranking/serving.py`): the top 100 candidates are re-scored after retrieval, for relevance order
+only. Price sorts are the shopper's choice, and the LLM fallback's keyword interleaving is kept (decision 19). One
+Redis round trip fetches the user profile, session brands and query engagement. The results cache stores the
+shared retrieval order plus similarities, and every hit is re-ranked per user. Click events update the session's
+brand counts. If no model file is present, the linear ranker is used; every failure keeps the retrieval order.
+
+**Live (2026-10-15):** re-rank **< 2.5 ms in 11 of 12 requests** (one cold first call); fast path 27–51 ms,
+results cache 10.5 ms, L1 7.7 ms with re-ranking included.
+
+**Cost:** $0. No LLM calls.
+
 ## Remaining phases (roadmap)
 
 | Phase | Plan |
 |---|---|
-| **8. Ranking** | Offline static score (purchase > cart > click, text relevance, popularity); LightGBM LambdaMART re-rank of the top ~500 using brand/category affinity, session intent, price band, context. |
 | **9. NRT trends** | 5-minute window sliding every 10 s over `query_logs`; trending + uncached → `nrt_segment` → warm tier; batch results overwrite later. |
 | **10. Observability** | Grafana dashboards (latency per path, cache hit ratios, fallback rate, LLM cost, CTR, conversion, zero-result rate) and alert rules. |
 | **11. Evaluation** | Golden set (~150 queries incl. all case-study examples), NDCG@10 / Recall@50, LLM-as-judge (Opus, pairwise, 1–5), Locust load test against the P90/P99 targets. |
@@ -726,6 +788,10 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 | 30 | 2026-10-15 | Baskets include add-to-cart, not only purchases | 9,073 purchase-only baskets gave 152 categories with pairs; with carts, 15,706 baskets gave 350 |
 | 31 | 2026-10-15 | `discover` prompt v2: "at most 5, none is valid" (v1: "choose 3–5"); prompt version is part of the change hash | v1 padded short noisy lists (potholders → curtains); v2 left 51 of 150 categories empty and kept the real pairings, for the same $0.012 |
 | 32 | 2026-10-15 | Linux resolves CPU-only torch (`[tool.uv.sources]`); GitHub Actions CI added | The CUDA build pulled 15 nvidia packages (several GB) onto every CI runner; embeddings run on CPU everywhere in this project |
+| 33 | 2026-10-15 | Ranking features built by a point-in-time log replay; the same replay publishes the serving state | No label leakage (affinity can't include the predicted purchase) and no train/serve skew: one feature function, one state builder |
+| 34 | 2026-10-15 | Re-rank the top 100 (plan: top ~500) for relevance order only; never price sorts or the LLM fallback | Candidate lists here are 100–200; price sort is explicit intent; the fallback's round-robin is what makes multi-intent pages work |
+| 35 | 2026-10-15 | Results cache stores the shared retrieval order + similarities and re-ranks each hit per user | Personalized order can't be shared across users; re-ranking a hit costs ~4 ms more (6 → 10.5 ms) |
+| 36 | 2026-10-15 | Ship LightGBM even though personal features add nothing on synthetic logs; don't regenerate the logs to manufacture a lift | +0.21 NDCG@10 over the logged order from relevance features alone; regenerating logs would invalidate every Phase 5–7 cache |
 
 ---
 
@@ -748,13 +814,15 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 | "Dorm party" fallback returned 9 themed plate sets, no chips or soda | Categories boost instead of filter (decision 18) |
 | String lights filled the dorm-party page | Per-keyword k-NN + interleaving (decision 19) |
 | Unit tests wrote fake rewrites into the real `smart_query_cache` (overwrote the real "dorm party" row) | The Postgres writer is now injected (`persist=`), tests pass none; leaked rows deleted and the real row restored from its memoized rewrite (no LLM call). Verified a full test run leaves the DB unchanged |
+| Search and training segfaulted (exit 139) once LightGBM ran after torch had embedded anything | Two OpenMP runtimes on macOS (torch's bundled libomp + Homebrew's). `ranking.model` imports LightGBM first; torch then reuses that runtime. Linux is unaffected |
+| Training printed nothing before crashing | stdout to a pipe is block-buffered, so the progress lines died with the process; diagnosed with `python -X faulthandler` and `-u` |
 
 ---
 
 ## Testing
 
 ```bash
-make test     # 83 unit tests, no network, API calls or writes to real infrastructure
+make test     # 99 unit tests, no network, API calls or writes to real infrastructure
 make lint     # ruff
 ```
 
@@ -773,6 +841,9 @@ CUDA packages off the runners.
   graceful degradation, the no-results floor, negations applied to fallback results.
 - `tests/test_offline.py`: aggregation, related searches by lift, alias folding, gate selection, expansion
   compile shape (types required, attributes boost), scheduler slots.
+- `tests/test_ranking.py`: static score ordering and smoothing, query-engagement prior, every feature, profile round
+  trip, point-in-time replay (features never include their own label), NDCG, both rankers (LightGBM feature-name
+  check), re-rank by user and session brand, failing open, engine re-ranks relevance only, clicks feed the session.
 - `tests/test_discovery.py`: baskets from purchases + carts, lift filtering, change hash, primary category,
   interleaving, fresh hydration that ignores the shopper's brand filter, failing open, and the response's
   `pairsWellWith` + hot related searches.
@@ -806,6 +877,7 @@ write-back and gateway-outage behavior in [Phase 4](#phase-4-fallback-path-done)
 | `pipeline-schedule` | Run the pipeline daily at 02:00 UTC (`HOURLY=1` for hourly) |
 | `hot-list` | Phase 6: hot list → S3 + `list_update`; warm L2 (last step of `pipeline`) |
 | `discovery` | Phase 7: co-purchase mining → complements (Haiku batch, `LIMIT=n` pilot) → Redis (also in `pipeline`) |
+| `rank-publish` / `rank-train` | Phase 8: publish static scores + ranking features (also in `pipeline`) / retrain the LightGBM re-ranker |
 | `synth` | synthetic users and logs (+ 2,000 events to Kafka) |
 | `catalog-consumer` | run the price/stock freshness consumer |
 | `gateway` / `search` | run the gateway (8001) / search service (8000) |

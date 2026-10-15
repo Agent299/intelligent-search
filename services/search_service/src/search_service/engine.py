@@ -2,6 +2,7 @@
 
     results cache (hot queries) -> exact cached query (L1 -> L2 -> warm) -> fast path
     -> [low confidence] similar warm-tier query -> LLM fallback
+    -> personalized re-rank of the top 100 (Phase 8, LightGBM or linear)
     then 'pairs well with' for the results' primary category (Phase 7)
 
 The fast path (Phase 3):
@@ -28,6 +29,7 @@ from common.embedding_service import EmbeddingService
 from common.normalize import SpellCorrector, normalize_query
 from common.schemas import (
     CachedQuerySource,
+    EventType,
     Pagination,
     Price,
     ProductResult,
@@ -37,6 +39,7 @@ from common.schemas import (
     ServedBy,
     SortBy,
 )
+from ranking.serving import RERANK_N, Reranker
 from search_service.cache import CachedResults, CacheEntry, QueryCache
 from search_service.compile import with_filters
 from search_service.discovery import Discovery
@@ -104,7 +107,9 @@ class FastPathResult:
 class SearchEngine:
     def __init__(self, retriever: Retriever, embeddings: EmbeddingService, spell: SpellCorrector,
                  sink: EventSink, settings: Settings, fallback: FallbackPath | None = None,
-                 cache: QueryCache | None = None, discovery: Discovery | None = None):
+                 cache: QueryCache | None = None, discovery: Discovery | None = None,
+                 reranker: Reranker | None = None):
+        self.reranker = reranker
         self.fallback = fallback
         self.cache = cache
         self.discovery = discovery
@@ -127,25 +132,38 @@ class SearchEngine:
         results_key = (self.cache.results_key(corrected, req.filters.as_log_map(), req.sort_by.value)
                        if hot else None)
         cached = await self.cache.get_results(results_key) if results_key else None
+        start = (req.page - 1) * req.page_size
+        # Retrieval order (shared by every user, so it is what the results cache stores) ...
         if cached is not None:
-            ids = cached.ids
-            start = (req.page - 1) * req.page_size
-            page_ids = ids[start:start + req.page_size]
-            products = await self.retriever.hydrate(page_ids, req.filters)  # current price; drops stock-outs
-            page_ids = [pid for pid in page_ids if pid in products]
+            ids, sims, origin = cached.ids, cached.sims, cached.served_by
             served = Served(served_by=ServedBy.results_cache, search_type=SearchType.cached,
                             confidence=cached.confidence, related=cached.related_searches,
                             rewritten=cached.rewritten_query, cached_query=cached.cached_query)
+            rerank = self._should_rerank(req, origin)
+            # current price and stock for everything the re-rank or the page needs
+            want = ids[:RERANK_N] if rerank else ids[start:start + req.page_size]
+            products = await self.retriever.hydrate(want, req.filters)
+            ids = [pid for pid in ids if pid in products or pid not in want]
         else:
             served = await self._serve(corrected, parsed, req.filters)
-            ids = [c.product_id for c in self._sort(served.ranked, served.products, req.sort_by)]
-            start = (req.page - 1) * req.page_size
-            page_ids, products = ids[start:start + req.page_size], served.products
+            ordered = self._sort(served.ranked, served.products, req.sort_by)
+            ids, products, origin = [c.product_id for c in ordered], served.products, served.served_by.value
+            sims = {c.product_id: c.semantic_sim for c in ordered[:RERANK_N] if c.semantic_sim is not None}
+            rerank = self._should_rerank(req, origin)
             if results_key:
                 self._in_background(self.cache.put_results(results_key, CachedResults(
-                    ids=ids, served_by=served.served_by.value,
-                    confidence=served.confidence, related_searches=served.related,
-                    rewritten_query=served.rewritten, cached_query=served.cached_query)))
+                    ids=ids, served_by=origin, confidence=served.confidence, related_searches=served.related,
+                    rewritten_query=served.rewritten, cached_query=served.cached_query, sims=sims)))
+        # ... then personalized per request (Phase 8)
+        if rerank:
+            head = ids[:RERANK_N]
+            ids = await self.reranker.rerank(corrected, req.user_id, req.session_id, head, sims, products) \
+                + ids[RERANK_N:]
+        page_ids = ids[start:start + req.page_size]
+        missing = [pid for pid in page_ids if pid not in products]
+        if missing:  # a cached page beyond the re-ranked head
+            products = {**products, **await self.retriever.hydrate(missing, req.filters)}
+        page_ids = [pid for pid in page_ids if pid in products]
 
         page = [products[pid] for pid in page_ids]
         pairs = await self.discovery.pairs_well_with(page, req.filters) if self.discovery else []
@@ -171,8 +189,24 @@ class SearchEngine:
                 served_by=served.served_by, confidence=served.confidence, latency_ms=round(elapsed * 1000, 1),
                 fast_path_confidence=served.fast_confidence, rewritten_query=served.rewritten,
                 cached_query=served.cached_query if served.cached_query != corrected else None,
-                cache_similarity=served.cache_similarity) if req.debug else None,
+                cache_similarity=served.cache_similarity,
+                ranker=self.reranker.name if rerank else None) if req.debug else None,
         )
+
+    def _should_rerank(self, req: SearchRequest, origin: str) -> bool:
+        """Relevance order only (price sorts are the shopper's explicit choice), and not the LLM fallback, whose
+        round-robin across rewrite keywords is what makes a multi-intent page work (decision 19)."""
+        return (self.reranker is not None and req.sort_by is SortBy.relevance
+                and origin != ServedBy.fallback.value)
+
+    async def on_interaction(self, ctx: dict, event_type: EventType, product_id: str) -> None:
+        """Short-term personalization: remember the brands clicked in this session."""
+        if self.reranker is None or event_type is not EventType.click or not ctx.get("session_id"):
+            return
+        product = (await self.retriever.hydrate([product_id], SearchFilters(include_out_of_stock=True))).get(
+            product_id)
+        if product:
+            await self.reranker.record_click(ctx["session_id"], product.get("brand"))
 
     async def _serve(self, corrected: str, parsed: ParsedQuery, filters: SearchFilters) -> "Served":
         """Doc lookup order, with one change (README decision 25): exact cache hits come before the fast path,
