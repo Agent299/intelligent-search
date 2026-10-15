@@ -88,7 +88,7 @@ class DiscoverInput(BaseModel):
 
 
 class DiscoverOutput(BaseModel):
-    complements: list[str] = Field(description="3-5 items chosen from co_purchase_data")
+    complements: list[str] = Field(description="0-5 genuine complements chosen from co_purchase_data, best first")
 
 
 # ---- judge (offline evaluation, doc p.181) ----

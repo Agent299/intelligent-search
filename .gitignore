@@ -10,3 +10,4 @@ data/lake/
 models/
 node_modules/
 .next/
+dist/

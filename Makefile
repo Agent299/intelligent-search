@@ -1,4 +1,4 @@
-.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list test lint gateway search
+.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery test lint gateway search
 
 install:
 	uv sync --all-extras
@@ -51,6 +51,14 @@ pipeline-pilot:
 # Phase 6: hot list -> S3 + list_update (search instances reload L1); warm L2 in Redis. Also the last step of `pipeline`
 hot-list:
 	uv run python -m pipelines.offline.run hot-list
+
+# Phase 7: co-purchase mining -> complements per category (Haiku batch, only new/changed lists) -> Redis.
+# Also part of `pipeline`. LIMIT=n for a pilot.
+discovery:
+	uv run python -m pipelines.offline.run co-purchase
+	R=disc-$$(date -u +%Y%m%dT%H%M%S); \
+	uv run python -m pipelines.offline.run discover $$R $(if $(LIMIT),--limit $(LIMIT)) && \
+	uv run python -m pipelines.offline.run discover-collect $$R --wait
 
 # Daily at 02:00 UTC; HOURLY=1 for every hour
 pipeline-schedule:

@@ -1,8 +1,8 @@
 """Hot list and L2 warming (doc p.171-172). Tier 0.
 
-1. Hot list: the top 5% of queries by frequency (`query_stats.tier = 'l1'`), each with its cached query when the
-   offline pipeline produced one, written to S3 `hotlist/hot_list.json`; the S3 location and version are
-   published on `list_update`, and search instances reload their in-process L1 from it.
+1. Hot list: the top 5% of queries by frequency (`query_stats.tier = 'l1'`), each with its related searches and
+   its cached query when the offline pipeline produced one, written to S3 `hotlist/hot_list.json`; the S3
+   location and version are published on `list_update`, and search instances reload their in-process L1 from it.
 2. L2: every top-20% query (tiers l1 + l2) that has a `smart_query_cache` entry goes to Redis `qcache:v1:{hash}`
    with a TTL longer than the pipeline cadence, so each run refreshes it and dropped queries expire.
 
@@ -35,8 +35,9 @@ def fetch_rows() -> list[dict]:
     """Top-20% queries keyed by their search-time form (the spell-corrected query), with any cached query."""
     with connect() as conn, conn.cursor() as cur:
         cur.execute("""
-            SELECT DISTINCT ON (q.query) q.query, q.tier, q.frequency, c.es_query, c.related_searches, c.source
-            FROM (SELECT coalesce(corrected_query, normalized_query) AS query, tier, frequency
+            SELECT DISTINCT ON (q.query) q.query, q.tier, q.frequency, c.es_query, c.source,
+                   coalesce(nullif(c.related_searches, '{}'), q.related_searches) AS related_searches
+            FROM (SELECT coalesce(corrected_query, normalized_query) AS query, tier, frequency, related_searches
                   FROM query_stats WHERE tier IN ('l1', 'l2')) q
             LEFT JOIN smart_query_cache c ON c.normalized_query = q.query
             ORDER BY q.query, q.frequency DESC""")
@@ -47,7 +48,8 @@ def build_hot_list(rows: list[dict], version: int) -> dict:
     hot = sorted((r for r in rows if r["tier"] == "l1"), key=lambda r: -r["frequency"])
     return {"version": version, "queries": [
         {"query": r["query"], "es_query": r["es_query"], "related_searches": r["related_searches"] or [],
-         "source": r["source"]} if r["es_query"] else {"query": r["query"]}
+         "source": r["source"]} if r["es_query"] else
+        {"query": r["query"], "related_searches": r["related_searches"] or []}
         for r in hot]}
 
 

@@ -9,6 +9,9 @@
     uv run python -m pipelines.offline.run write RUN              # 5. smart_query_cache + warm tier
     uv run python -m pipelines.offline.run hot-list               # 6. hot list -> S3 + list_update; L2 warm
     uv run python -m pipelines.offline.run recompile              # re-compile cached expansions (compiler change)
+    uv run python -m pipelines.offline.run co-purchase            # 7. lake baskets -> co_purchase (lift)
+    uv run python -m pipelines.offline.run discover RUN           #    complements per category (Haiku batch)
+    uv run python -m pipelines.offline.run discover-collect RUN   #    validate -> discovery_products:* in Redis
     uv run python -m pipelines.offline.run all [--limit N]        # everything, waiting on batches
     uv run python -m pipelines.offline.run schedule [--hourly]    # `all` daily at 02:00 UTC (or every hour)
 
@@ -22,6 +25,7 @@ import asyncio
 import time
 from datetime import UTC, datetime, timedelta
 
+from pipelines.discovery import discover
 from pipelines.hot_list import build as hot_list_build
 from pipelines.offline import aggregate, enrich, expand, lake, segment
 from pipelines.offline.batches import BatchJob
@@ -97,6 +101,28 @@ def cmd_write(run_id: str) -> None:
     print(f"[write] cached {asyncio.run(expand.write_caches(run_id))} expanded queries")
 
 
+def cmd_co_purchase() -> None:
+    sessions, pairs, keys = discover.run_mine()
+    print(f"[co-purchase] {sessions} basket sessions -> {pairs} category pairs (support >= {discover.mine.MIN_SUPPORT},"
+          f" lift >= {discover.mine.MIN_LIFT}) for {keys} primary categories")
+
+
+def cmd_discover(run_id: str, limit: int | None = None) -> None:
+    total, submitted = asyncio.run(discover.submit(run_id, limit))
+    print(f"[discover] {total} categories with co-purchase data; {submitted} new or changed submitted to Haiku batch")
+
+
+def cmd_discover_collect(run_id: str, wait: bool) -> None:
+    if BatchJob(run_id, "discover").state["batches"]:
+        if wait:
+            _collect_loop(run_id, "discover", discover.collect)
+        else:
+            res, esc, ex = discover.collect(run_id)
+            print(f"[discover-collect] ok={len(res.ok)} invalid={len(res.invalid)} escalated={esc} exhausted={len(ex)}")
+    written, removed = discover.write_sync(run_id)
+    print(f"[discover] wrote {written} discovery_products entries; removed {removed} stale")
+
+
 def cmd_recompile() -> None:
     print(f"[recompile] {asyncio.run(expand.recompile_caches())} cached queries recompiled (no LLM)")
 
@@ -107,14 +133,15 @@ def cmd_hot_list() -> None:
 
 
 def cost_report(run_id: str) -> None:
-    seg, exp = BatchJob(run_id, "segment"), BatchJob(run_id, "expand")
+    seg, exp, disc = BatchJob(run_id, "segment"), BatchJob(run_id, "expand"), BatchJob(run_id, "discover")
     models: dict[str, int] = {}
-    for job in (seg, exp):
+    for job in (seg, exp, disc):
         for it in job.items.values():
             m = it.get("final_model") or it.get("model")
             models[f"{it['task']}:{m}"] = models.get(f"{it['task']}:{m}", 0) + 1
-    total = seg.state.get("cost_usd", 0.0) + exp.state.get("cost_usd", 0.0)
+    total = sum(j.state.get("cost_usd", 0.0) for j in (seg, exp, disc))
     print(f"[cost] segment ${seg.state.get('cost_usd', 0):.4f} + expand ${exp.state.get('cost_usd', 0):.4f} "
+          f"+ discover ${disc.state.get('cost_usd', 0):.4f} "
           f"= ${total:.4f}; per query ${total / max(1, len(seg.items)):.5f}; task:model counts {models}")
 
 
@@ -129,6 +156,9 @@ def cmd_all(limit: int | None) -> None:
     cmd_expand_collect(run_id, wait=True)
     cmd_write(run_id)
     cmd_hot_list()
+    cmd_co_purchase()
+    cmd_discover(run_id)
+    cmd_discover_collect(run_id, wait=True)
     cost_report(run_id)
 
 
@@ -162,11 +192,15 @@ def main() -> None:
     sub.add_parser("enrich")
     sub.add_parser("hot-list")
     sub.add_parser("recompile")
+    sub.add_parser("co-purchase")
+    d = sub.add_parser("discover")
+    d.add_argument("run_id")
+    d.add_argument("--limit", type=int)
     s = sub.add_parser("segment")
     s.add_argument("run_id")
     s.add_argument("--limit", type=int)
     s.add_argument("--dry-run", action="store_true")
-    for name in ("segment-collect", "expand-collect"):
+    for name in ("segment-collect", "expand-collect", "discover-collect"):
         c = sub.add_parser(name)
         c.add_argument("run_id")
         c.add_argument("--wait", action="store_true")
@@ -183,6 +217,9 @@ def main() -> None:
         "enrich": cmd_enrich,
         "hot-list": cmd_hot_list,
         "recompile": cmd_recompile,
+        "co-purchase": cmd_co_purchase,
+        "discover": lambda: cmd_discover(args.run_id, args.limit),
+        "discover-collect": lambda: cmd_discover_collect(args.run_id, args.wait),
         "segment": lambda: cmd_segment(args.run_id, args.limit, args.dry_run),
         "segment-collect": lambda: cmd_segment_collect(args.run_id, args.wait),
         "expand": lambda: cmd_expand(args.run_id),

@@ -24,6 +24,7 @@ from common.embeddings import warm_up
 from common.schemas import EventType, SearchResponse, SortBy
 from search_service import hot_list
 from search_service.cache import QueryCache
+from search_service.discovery import Discovery
 from search_service.engine import EmptyQuery, SearchEngine, SearchRequest
 from search_service.events import EventSink
 from search_service.fallback import FallbackPath, upsert_smart_cache
@@ -76,7 +77,7 @@ def create_app(engine: SearchEngine | None = None) -> FastAPI:
             await hot_list.load(cache)
             follower = asyncio.create_task(hot_list.follow_updates(cache))
             app.state.engine = SearchEngine(retriever, embeddings, spell, EventSink(producer, redis), s, fallback,
-                                            cache)
+                                            cache, Discovery(redis, retriever))
             resources = [os_client, redis, producer, gateway]
         else:
             app.state.engine = engine

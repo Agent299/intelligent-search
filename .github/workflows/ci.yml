@@ -1,0 +1,111 @@
+# CI/CD for the intelligent-search MVP.
+#
+#   lint        ruff + lockfile in sync with pyproject.toml
+#   test        unit tests (fakes only: no network, API calls, or infrastructure)
+#   migrations  alembic upgrade -> downgrade -> upgrade against a throwaway Postgres 16
+#   build       wheel + sdist as a workflow artifact, on pushes to main once everything above passes
+#
+# No secrets are needed: nothing here calls the Anthropic API or touches real infrastructure.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:  # a newer push to the same branch / PR cancels the older run
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.12"
+  UV_LOCKED: "1"  # fail if uv.lock is out of date instead of silently re-resolving
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv python install ${{ env.PYTHON_VERSION }}
+      - name: Lockfile in sync
+        run: uv lock --check
+      - name: Ruff
+        run: uv run --only-group dev ruff check .
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv python install ${{ env.PYTHON_VERSION }}
+      - name: Install (Linux resolves CPU-only torch, see pyproject.toml)
+        run: uv sync --all-extras
+      - name: Pytest
+        run: uv run pytest -q
+
+  migrations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: search
+          POSTGRES_PASSWORD: search
+          POSTGRES_DB: search
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U search"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      POSTGRES_DSN: postgresql://search:search@localhost:5432/search
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv python install ${{ env.PYTHON_VERSION }}
+      - run: uv sync --all-extras
+      - name: Upgrade, downgrade, upgrade
+        run: |
+          uv run alembic upgrade head
+          uv run alembic downgrade base
+          uv run alembic upgrade head
+      - name: Every expected table exists
+        run: |
+          tables=$(PGPASSWORD=search psql -h localhost -U search -d search -tAc \
+            "select string_agg(tablename, ',' order by tablename) from pg_tables where schemaname = 'public'")
+          echo "tables: $tables"
+          test "$tables" = "alembic_version,co_purchase,product_catalog,query_stats,smart_query_cache,taxonomy,user_profile"
+
+  build:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [lint, test, migrations]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv python install ${{ env.PYTHON_VERSION }}
+      - run: uv build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ github.sha }}
+          path: dist/
+          retention-days: 30

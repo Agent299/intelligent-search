@@ -75,24 +75,29 @@ class QueryCache:
         self.os_client = os_client
         self.min_similarity = min_similarity
         self.results_ttl_s = results_ttl_s
-        self.hot: dict[str, dict | None] = {}  # L1: query -> hot-list record (with es_query, or None)
+        self.hot: dict[str, dict] = {}  # L1: query -> hot-list record ({"query", "es_query"?, "related_searches"})
         self.hot_version = 0
 
     # -- L1: hot list --
 
     def load_hot_list(self, hot_list: dict) -> None:
         """{"version": int, "queries": [{"query", "es_query"?, "related_searches"?, "source"?}]}"""
-        self.hot = {q["query"]: q if q.get("es_query") else None for q in hot_list.get("queries", [])}
+        self.hot = {q["query"]: q for q in hot_list.get("queries", [])}
         self.hot_version = int(hot_list.get("version", 0))
 
     def is_hot(self, query: str) -> bool:
         return query in self.hot
 
+    def related(self, query: str) -> list[str]:
+        """Related searches for a hot query (log-mined, or the expansion's own), whichever path serves it."""
+        rec = self.hot.get(query)
+        return (rec or {}).get("related_searches") or []
+
     # -- exact lookups: L1 -> L2 -> warm by id --
 
     async def exact(self, query: str) -> tuple[CacheEntry, ServedBy] | None:
         rec = self.hot.get(query)
-        if rec is not None:
+        if rec is not None and rec.get("es_query"):
             LOOKUPS.labels("l1", "hit").inc()
             return CacheEntry(query, rec["es_query"], rec.get("related_searches") or [],
                               rec.get("source", "batch")), ServedBy.l1
