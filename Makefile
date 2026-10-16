@@ -1,4 +1,4 @@
-.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery rank-publish rank-train nrt dashboard eval-systems eval-metrics load-test test test-integration lint gateway search
+.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery rank-publish rank-train nrt dashboard eval-systems eval-metrics load-test test test-integration lint gateway search web web-dev
 
 install:
 	uv sync --all-extras
@@ -111,3 +111,10 @@ gateway:
 
 search:
 	uv run uvicorn search_service.app:app --port 8000 --reload
+
+# Phase 12: storefront on :3000 (needs `make search`; SEARCH_API overrides http://localhost:8000)
+web:
+	cd web && npm ci && npm run build && npm run start
+
+web-dev:
+	cd web && npm run dev

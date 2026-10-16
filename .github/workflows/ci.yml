@@ -3,6 +3,7 @@
 #   lint        ruff + lockfile in sync with pyproject.toml
 #   test        unit tests (fakes only: no network, API calls, or infrastructure)
 #   migrations  alembic upgrade -> downgrade -> upgrade against a throwaway Postgres 16
+#   web         storefront (web/): npm ci + typecheck + production build
 #   build       wheel + sdist as a workflow artifact, on pushes to main once everything above passes
 #
 # No secrets are needed: nothing here calls the Anthropic API or touches real infrastructure.
@@ -55,6 +56,24 @@ jobs:
       - name: Pytest
         run: uv run pytest -q
 
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm audit signatures
+      - name: Build (typechecks too)
+        run: npm run build
+
   migrations:
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -94,7 +113,7 @@ jobs:
 
   build:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [lint, test, migrations]
+    needs: [lint, test, migrations, web]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

@@ -44,6 +44,7 @@ from search_service.cache import CachedResults, CacheEntry, QueryCache
 from search_service.compile import with_filters
 from search_service.discovery import Discovery
 from search_service.events import EventSink
+from search_service.facets import compute_facets
 from search_service.fallback import FallbackPath, Rewrite
 from search_service.filters import SearchFilters
 from search_service.fusion import SEM_FLOOR, Candidate, confidence, rrf_fuse
@@ -190,6 +191,7 @@ class SearchEngine:
             results=[self._to_result(p) for p in page],
             related_searches=related,
             pairs_well_with=[self._to_result(p) for p in pairs],
+            facets=compute_facets(ids, products),
             pagination=Pagination(current_page=req.page, total_pages=max(1, math.ceil(len(ids) / req.page_size)),
                                   total_results=len(ids)),
             debug=SearchDebug(
