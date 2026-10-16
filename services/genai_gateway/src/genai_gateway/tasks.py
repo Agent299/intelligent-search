@@ -115,6 +115,19 @@ def _validate_discover(inp: s.DiscoverInput, out: s.DiscoverOutput) -> Validatio
     return Validation(ok=True, output=data)
 
 
+def _validate_label(inp: s.LabelInput, out: s.LabelOutput) -> Validation:
+    """Keep grades for supplied ids only (first grade wins); invalid unless every product got one."""
+    ids = {p.id for p in inp.products}
+    grades: dict[str, int] = {}
+    for g in out.grades:
+        if g.id in ids and g.id not in grades:
+            grades[g.id] = g.grade
+    data = {"grades": grades}
+    if len(grades) < len(ids):
+        return Validation(ok=False, output=data, reason=f"graded {len(grades)} of {len(ids)} products")
+    return Validation(ok=True, output=data)
+
+
 def _validate_judge(inp: s.JudgeInput, out: s.JudgeOutput) -> Validation:
     data = out.model_dump()
     # The winner is a deterministic function of the scores; don't trust the model's restatement.
@@ -133,4 +146,5 @@ TASKS: dict[str, TaskSpec] = {
                             max_tokens=1024),
     "discover": TaskSpec("discover.v2.j2", s.DiscoverInput, s.DiscoverOutput, _validate_discover),
     "judge": TaskSpec("judge.v1.j2", s.JudgeInput, s.JudgeOutput, _validate_judge, max_tokens=4096),
+    "label": TaskSpec("label.v1.j2", s.LabelInput, s.LabelOutput, _validate_label, max_tokens=4096),
 }

@@ -63,11 +63,13 @@ packages = [
     "services/search_service/src/search_service",
     "services/ranking/src/ranking",
     "pipelines",
+    "eval",
 ]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+markers = ["integration: needs the running stack (SEARCH_URL); skipped otherwise"]
 
 [tool.ruff]
 line-length = 120
@@ -77,4 +79,4 @@ target-version = "py312"
 select = ["E", "F", "I", "UP", "B"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["common", "pipelines", "genai_gateway", "search_service", "ranking"]
+known-first-party = ["common", "pipelines", "genai_gateway", "search_service", "ranking", "eval"]

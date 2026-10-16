@@ -55,6 +55,11 @@ tasks:
     mode: sync
     timeout_s: 4.0
 
+  label:                     # golden-set relevance grades, drafted for human review (cost policy tier 3)
+    chain: [claude-opus-5-5]
+    effort: medium           # no reasoning field: the grades are the whole output
+    mode: batch
+
   judge:                     # LLM-as-judge evaluation, sampled offline
     chain: [claude-opus-5-5]
     effort: high

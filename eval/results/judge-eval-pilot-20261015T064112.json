@@ -1,0 +1,367 @@
+{
+ "judgments": 50,
+ "queries": 25,
+ "new_wins": 16,
+ "old_wins": 18,
+ "ties": 16,
+ "mean_score": {
+  "full": 3.12,
+  "baseline": 3.04
+ },
+ "position_a_win_share": 0.559,
+ "order_flips": "3/25",
+ "rows": [
+  {
+   "query": "healthy snacks without nuts for kids",
+   "new_is_a": true,
+   "new": 4,
+   "old": 3,
+   "winner": "new"
+  },
+  {
+   "query": "healthy snacks without nuts for kids",
+   "new_is_a": false,
+   "new": 4,
+   "old": 3,
+   "winner": "new"
+  },
+  {
+   "query": "gluten free gluten free flatbread",
+   "new_is_a": true,
+   "new": 3,
+   "old": 4,
+   "winner": "old"
+  },
+  {
+   "query": "gluten free gluten free flatbread",
+   "new_is_a": false,
+   "new": 2,
+   "old": 3,
+   "winner": "old"
+  },
+  {
+   "query": "zzkq mmrt plo",
+   "new_is_a": true,
+   "new": 4,
+   "old": 1,
+   "winner": "new"
+  },
+  {
+   "query": "zzkq mmrt plo",
+   "new_is_a": false,
+   "new": 3,
+   "old": 1,
+   "winner": "new"
+  },
+  {
+   "query": "sheer curtains",
+   "new_is_a": true,
+   "new": 5,
+   "old": 5,
+   "winner": "tie"
+  },
+  {
+   "query": "sheer curtains",
+   "new_is_a": false,
+   "new": 4,
+   "old": 5,
+   "winner": "old"
+  },
+  {
+   "query": "card game storage deck box",
+   "new_is_a": true,
+   "new": 2,
+   "old": 2,
+   "winner": "tie"
+  },
+  {
+   "query": "card game storage deck box",
+   "new_is_a": false,
+   "new": 2,
+   "old": 2,
+   "winner": "tie"
+  },
+  {
+   "query": "mossb alls",
+   "new_is_a": true,
+   "new": 1,
+   "old": 2,
+   "winner": "old"
+  },
+  {
+   "query": "mossb alls",
+   "new_is_a": false,
+   "new": 1,
+   "old": 2,
+   "winner": "old"
+  },
+  {
+   "query": "buttery snack",
+   "new_is_a": true,
+   "new": 3,
+   "old": 4,
+   "winner": "old"
+  },
+  {
+   "query": "buttery snack",
+   "new_is_a": false,
+   "new": 3,
+   "old": 4,
+   "winner": "old"
+  },
+  {
+   "query": "321done place cards",
+   "new_is_a": true,
+   "new": 3,
+   "old": 3,
+   "winner": "tie"
+  },
+  {
+   "query": "321done place cards",
+   "new_is_a": false,
+   "new": 3,
+   "old": 3,
+   "winner": "tie"
+  },
+  {
+   "query": "belkin wall surge protector",
+   "new_is_a": true,
+   "new": 3,
+   "old": 4,
+   "winner": "old"
+  },
+  {
+   "query": "belkin wall surge protector",
+   "new_is_a": false,
+   "new": 3,
+   "old": 4,
+   "winner": "old"
+  },
+  {
+   "query": "bienzoe boys shirt",
+   "new_is_a": true,
+   "new": 2,
+   "old": 5,
+   "winner": "old"
+  },
+  {
+   "query": "bienzoe boys shirt",
+   "new_is_a": false,
+   "new": 2,
+   "old": 5,
+   "winner": "old"
+  },
+  {
+   "query": "barnabas blattgold eidble gold leaf",
+   "new_is_a": true,
+   "new": 4,
+   "old": 3,
+   "winner": "new"
+  },
+  {
+   "query": "barnabas blattgold eidble gold leaf",
+   "new_is_a": false,
+   "new": 4,
+   "old": 4,
+   "winner": "tie"
+  },
+  {
+   "query": "organic aged basmati rice",
+   "new_is_a": true,
+   "new": 3,
+   "old": 3,
+   "winner": "tie"
+  },
+  {
+   "query": "organic aged basmati rice",
+   "new_is_a": false,
+   "new": 3,
+   "old": 3,
+   "winner": "tie"
+  },
+  {
+   "query": "nitrtae free lunch meat",
+   "new_is_a": true,
+   "new": 3,
+   "old": 4,
+   "winner": "old"
+  },
+  {
+   "query": "nitrtae free lunch meat",
+   "new_is_a": false,
+   "new": 2,
+   "old": 3,
+   "winner": "old"
+  },
+  {
+   "query": "xqzv blorf",
+   "new_is_a": true,
+   "new": 3,
+   "old": 1,
+   "winner": "new"
+  },
+  {
+   "query": "xqzv blorf",
+   "new_is_a": false,
+   "new": 3,
+   "old": 1,
+   "winner": "new"
+  },
+  {
+   "query": "dr john's healthy sweets sugar free lollipops",
+   "new_is_a": true,
+   "new": 3,
+   "old": 3,
+   "winner": "tie"
+  },
+  {
+   "query": "dr john's healthy sweets sugar free lollipops",
+   "new_is_a": false,
+   "new": 3,
+   "old": 3,
+   "winner": "tie"
+  },
+  {
+   "query": "wedge pumps",
+   "new_is_a": true,
+   "new": 3,
+   "old": 2,
+   "winner": "new"
+  },
+  {
+   "query": "wedge pumps",
+   "new_is_a": false,
+   "new": 3,
+   "old": 2,
+   "winner": "new"
+  },
+  {
+   "query": "custom party favors",
+   "new_is_a": true,
+   "new": 3,
+   "old": 4,
+   "winner": "old"
+  },
+  {
+   "query": "custom party favors",
+   "new_is_a": false,
+   "new": 3,
+   "old": 4,
+   "winner": "old"
+  },
+  {
+   "query": "organic red lentils",
+   "new_is_a": true,
+   "new": 2,
+   "old": 2,
+   "winner": "tie"
+  },
+  {
+   "query": "organic red lentils",
+   "new_is_a": false,
+   "new": 2,
+   "old": 2,
+   "winner": "tie"
+  },
+  {
+   "query": "roc ksugar",
+   "new_is_a": true,
+   "new": 3,
+   "old": 2,
+   "winner": "new"
+  },
+  {
+   "query": "roc ksugar",
+   "new_is_a": false,
+   "new": 2,
+   "old": 3,
+   "winner": "old"
+  },
+  {
+   "query": "premium water shoes",
+   "new_is_a": true,
+   "new": 3,
+   "old": 3,
+   "winner": "tie"
+  },
+  {
+   "query": "premium water shoes",
+   "new_is_a": false,
+   "new": 3,
+   "old": 3,
+   "winner": "tie"
+  },
+  {
+   "query": "stracciatella gelato",
+   "new_is_a": true,
+   "new": 5,
+   "old": 3,
+   "winner": "new"
+  },
+  {
+   "query": "stracciatella gelato",
+   "new_is_a": false,
+   "new": 5,
+   "old": 3,
+   "winner": "new"
+  },
+  {
+   "query": "cnavas wall art",
+   "new_is_a": true,
+   "new": 5,
+   "old": 5,
+   "winner": "tie"
+  },
+  {
+   "query": "cnavas wall art",
+   "new_is_a": false,
+   "new": 5,
+   "old": 5,
+   "winner": "tie"
+  },
+  {
+   "query": "stuff for a long road trip",
+   "new_is_a": true,
+   "new": 3,
+   "old": 4,
+   "winner": "old"
+  },
+  {
+   "query": "stuff for a long road trip",
+   "new_is_a": false,
+   "new": 3,
+   "old": 4,
+   "winner": "old"
+  },
+  {
+   "query": "gluten free spaghetti",
+   "new_is_a": true,
+   "new": 4,
+   "old": 3,
+   "winner": "new"
+  },
+  {
+   "query": "gluten free spaghetti",
+   "new_is_a": false,
+   "new": 4,
+   "old": 3,
+   "winner": "new"
+  },
+  {
+   "query": "asdkjh qwepoi",
+   "new_is_a": true,
+   "new": 5,
+   "old": 1,
+   "winner": "new"
+  },
+  {
+   "query": "asdkjh qwepoi",
+   "new_is_a": false,
+   "new": 2,
+   "old": 1,
+   "winner": "new"
+  }
+ ],
+ "cost_usd": 0.5078,
+ "invalid": 0
+}
