@@ -254,3 +254,36 @@ async def test_click_events_feed_the_session_signal():
     await engine.on_interaction({"session_id": "s1"}, EventType.click, "p3")
     await engine.on_interaction({"session_id": "s1"}, EventType.purchase, "p1")  # only clicks count
     assert redis.hashes[f"{SESSION_PREFIX}s1"] == {"Acme": 1.0}
+
+
+# ---- graded re-ranker training (pipelines.ranking.graded) ----
+
+
+def test_condensed_ndcg_drops_unjudged_products():
+    from pipelines.ranking.graded import ndcg
+    labels = {"a": 3, "b": 0}
+    assert ndcg(["x", "a", "b"], labels) < 1.0                 # unjudged x counts as 0 and pushes a down
+    assert ndcg(["x", "a", "b"], labels, condensed=True) == 1.0
+    assert ndcg(["a"], {"a": 0}) is None                        # nothing relevant: no score
+
+
+def test_training_groups_keep_judged_candidates_with_some_relevance():
+    from pipelines.ranking.graded import groups
+    row = [0.0] * len(F.FEATURES)
+    cands = [{"query": "q1", "ids": ["a", "b", "c"], "rows": [row, row, row]},
+             {"query": "q2", "ids": ["d", "e"], "rows": [row, row]},     # all graded 0: no ranking signal
+             {"query": "q3", "ids": ["f", "g"], "rows": [row, row]}]     # unlabeled
+    labels = {"q1": {"a": 2, "c": 0}, "q2": {"d": 0, "e": 0}}
+    xs, ys, sizes, queries = groups(cands, labels)
+    assert queries == ["q1"] and sizes == [2] and list(ys[0]) == [2.0, 0.0] and xs[0].shape == (2, len(F.FEATURES))
+
+
+async def test_capture_reranker_records_serving_rows_and_keeps_retrieval_order():
+    from pipelines.ranking.graded import CaptureReranker
+    rr = CaptureReranker(None)
+    products = {p: {"product_id": p, "brand": "B", "price": 5.0, "category_path": "A > B", "rating": 4.0,
+                    "review_count": 10, "static_score": 0.3} for p in ("p1", "p2", "p3")}
+    out = await rr.rerank("q", None, None, ["p1", "p2", "p3"], {"p1": 0.9, "p2": 0.8}, products)
+    assert out == ["p1", "p2", "p3"] and rr.ids == ["p1", "p2", "p3"]
+    assert rr.ranker.rows.shape == (3, len(F.FEATURES))
+    assert rr.ranker.rows[2, COL("semantic_sim")] == 0.8      # keyword-only candidate gets the lowest k-NN sim

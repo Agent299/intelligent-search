@@ -1,0 +1,2624 @@
+{
+ "batches": [
+  {
+   "id": "msgbatch_01A8aAuJqMhR3vc4hGNi3CuK",
+   "submitted_at": 1792177917,
+   "n": 84,
+   "collected": true
+  }
+ ],
+ "items": {
+  "lab-df347cc4efe41bc6": {
+   "task": "label",
+   "inputs": {
+    "query": "a summer dress that's not too formal",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Lafural Women Summer Causal Loose Tunic Short Sleeveless Tank Dresses Button Down Sundress",
+      "category": "Clothing > Dresses"
+     }
+    ]
+   },
+   "meta": {
+    "query": "a summer dress that's not too formal",
+    "ids": {
+     "p1": "B09Z1YJP2V"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-88b55b40f9049aef": {
+   "task": "label",
+   "inputs": {
+    "query": "stuff for my dorm party",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Easter Party Decorations Bunnies in Motion Photo Door Banner, Large Fabric Easter Backdrop Photo Door Banner Background,",
+      "category": "Lighting & Studio > Photo Studio"
+     },
+     {
+      "id": "p2",
+      "title": "QXY Rose Gold Happy 13th Birthday Cake Topper Birthday Anniverysary Decorations for girls boys Birthday Party Supplies",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     }
+    ]
+   },
+   "meta": {
+    "query": "stuff for my dorm party",
+    "ids": {
+     "p1": "B085C7PN71",
+     "p2": "B0922WMVJG"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 2,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-ab0edb614669891d": {
+   "task": "label",
+   "inputs": {
+    "query": "brownie",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Kenny's Wiley Wallaby Liquorice, Huckleberry, 7.05 ounce (Pack of 12)",
+      "category": "Candy & Chocolate > Licorice"
+     }
+    ]
+   },
+   "meta": {
+    "query": "brownie",
+    "ids": {
+     "p1": "B013D1ND7Y"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-fce85e04ae5bcf89": {
+   "task": "label",
+   "inputs": {
+    "query": "cozy movie night essentials",
+    "products": [
+     {
+      "id": "p1",
+      "title": "PHD CAKE 2.76 Inch Luxe Black 1 Number Birthday Candles, Black Number Candles, Cake Number Candles, Party Celebration",
+      "category": "Candles & Holders > Candles"
+     }
+    ]
+   },
+   "meta": {
+    "query": "cozy movie night essentials",
+    "ids": {
+     "p1": "B09W8HZ8R2"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-3d5c134ab0f1136d": {
+   "task": "label",
+   "inputs": {
+    "query": "tailgate party must haves",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Swashbuckle Snacks Tenkasu Tempura Bits 10.58oz, Made in Japan",
+      "category": "Cooking & Baking > Breadcrumbs & Seasoned Coatings"
+     },
+     {
+      "id": "p2",
+      "title": "Island Snacks Yougurt Mix, 7-Ounce (Pack Of 6)",
+      "category": "Snacks & Sweets > Snack Foods"
+     }
+    ]
+   },
+   "meta": {
+    "query": "tailgate party must haves",
+    "ids": {
+     "p1": "B0B2NWNY38",
+     "p2": "B008CNYWSS"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-d322653160515c17": {
+   "task": "label",
+   "inputs": {
+    "query": "survival kit for finals week",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Roasted Unsalted Mixed Nuts by Its Delish, 5 lbs Bulk Bag",
+      "category": "Cooking & Baking > Nuts & Seeds"
+     }
+    ]
+   },
+   "meta": {
+    "query": "survival kit for finals week",
+    "ids": {
+     "p1": "B09MW9S9M8"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-df08ff91e69da2e6": {
+   "task": "label",
+   "inputs": {
+    "query": "platform sandals",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Soles & Souls Elastic Ankle Strap Sandals for Women Flat",
+      "category": "Shoes > Sandals"
+     },
+     {
+      "id": "p2",
+      "title": "Rockport Women's Kells Bay Gore Strap Sandal",
+      "category": "Shoes > Sandals"
+     }
+    ]
+   },
+   "meta": {
+    "query": "platform sandals",
+    "ids": {
+     "p1": "B09VGDNBY1",
+     "p2": "B09QTFVDTQ"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-53cac32788f63f39": {
+   "task": "label",
+   "inputs": {
+    "query": "sunflower seeds",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Just Grown Raw Chia Seeds Kosher 12-Ounce",
+      "category": "Cooking & Baking > Nuts & Seeds"
+     }
+    ]
+   },
+   "meta": {
+    "query": "sunflower seeds",
+    "ids": {
+     "p1": "B00LNK5XQ2"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-658c62c102861086": {
+   "task": "label",
+   "inputs": {
+    "query": "provolone cheese",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Hotter Than Hell Habanero Cheddar Cheese Popcorn (Large 7 oz)",
+      "category": "Snack Foods > Popcorn"
+     },
+     {
+      "id": "p2",
+      "title": "PIZZA BIEN - Margherita Frozen Pizza , Charred Thin, Crispy Crust With A Yeasty Flavor Pizza Frozen ,100 % Natural Mozza",
+      "category": "Pizza > Cheese"
+     },
+     {
+      "id": "p3",
+      "title": "Carandini Italian Cheese Dressing, 8.45 FZ",
+      "category": "Condiments & Salad Dressings > Salad Dressings"
+     }
+    ]
+   },
+   "meta": {
+    "query": "provolone cheese",
+    "ids": {
+     "p1": "B07N32TFNJ",
+     "p2": "B09K4HGVG8",
+     "p3": "B085Z1SSMC"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 1,
+     "p3": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-63a78bd140365ad0": {
+   "task": "label",
+   "inputs": {
+    "query": "sheer curtains",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Gorgeous Home (#32) 1 Panel Solid True Beige Thermal Foam Lined Blackout Heavy Thick Window Treatment Curtain Drapes Sil",
+      "category": "Window Treatments > Curtains & Drapes"
+     },
+     {
+      "id": "p2",
+      "title": "GorgeousHome (D24) 2 Short Panels 30\" X 36\" each Bronze Grommets Window Curtain Foam Lined Not See Through Silky Touch i",
+      "category": "Window Treatments > Curtains & Drapes"
+     },
+     {
+      "id": "p3",
+      "title": "LORDTEX Navy Room Divider Curtains - Total Privacy Wall Room Divider Screens Sound Proof Wide Blackout Curtain for Livin",
+      "category": "Window Treatments > Curtains & Drapes"
+     }
+    ]
+   },
+   "meta": {
+    "query": "sheer curtains",
+    "ids": {
+     "p1": "B0181OARYK",
+     "p2": "B0756PTXQN",
+     "p3": "B08TMHJQYR"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1,
+     "p3": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-768972b2e44dffda": {
+   "task": "label",
+   "inputs": {
+    "query": "toasted corn snack",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Becca\u2019s Petites Trail Mix - Low Carb Healthy Snack Mix \u2013 Premium Mixed Nuts with Dark Chocolate - Great as or on Cereal,",
+      "category": "Snack Foods > Nuts & Seeds"
+     }
+    ]
+   },
+   "meta": {
+    "query": "toasted corn snack",
+    "ids": {
+     "p1": "B07BFJN8F2"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-bb60aec32d517dbc": {
+   "task": "label",
+   "inputs": {
+    "query": "dslr camera backpack",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Tamrac 5401 Superlight 1 Photo/Video Bag (Black)",
+      "category": "Bags & Cases > Camera Cases"
+     }
+    ]
+   },
+   "meta": {
+    "query": "dslr camera backpack",
+    "ids": {
+     "p1": "B00004X0ZZ"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-21e02af0f426b9ae": {
+   "task": "label",
+   "inputs": {
+    "query": "dr john's healthy sweets sugar free lollipops",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Set of 3 - Assorted Blink Pop Candies! Lollipops That Really Light Up! Perfect for Movie Night, Feild Trips, Road Trips ",
+      "category": "Candy & Chocolate > Suckers & Lollipops"
+     }
+    ]
+   },
+   "meta": {
+    "query": "dr john's healthy sweets sugar free lollipops",
+    "ids": {
+     "p1": "B075QPG2JR"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-042e6f9472373488": {
+   "task": "label",
+   "inputs": {
+    "query": "shift dress",
+    "products": [
+     {
+      "id": "p1",
+      "title": "LAISHEN Women's 2023 Wrap Dress Summer Boho Maxi Short Sleeve Floral Beach Long Flowy Dresses",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p2",
+      "title": "Prom Dresses Puffy Sleeves Ball Gowns for Women Formal High Split with Pockets 2023",
+      "category": "Clothing > Dresses"
+     }
+    ]
+   },
+   "meta": {
+    "query": "shift dress",
+    "ids": {
+     "p1": "B0BP1TH1BQ",
+     "p2": "B0BNBKZ367"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-489e6643e899f7bc": {
+   "task": "label",
+   "inputs": {
+    "query": "real essentials mens athletic gym shorts",
+    "products": [
+     {
+      "id": "p1",
+      "title": "CompressionZ Men's Compression Pants Base Layer Running Tights Mens Leggings for Sports",
+      "category": "Clothing > Active"
+     }
+    ]
+   },
+   "meta": {
+    "query": "real essentials mens athletic gym shorts",
+    "ids": {
+     "p1": "B086SQP93Y"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-1d7cf0fbaed39ddd": {
+   "task": "label",
+   "inputs": {
+    "query": "waterproof mattress protector",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Diving Case for iPhone 13 Pro Max, Underwater iPhone Case, [40m/130ft] Surfing Swimming Snorkeling Photo Video Waterproo",
+      "category": "Underwater Photography > Housings"
+     }
+    ]
+   },
+   "meta": {
+    "query": "waterproof mattress protector",
+    "ids": {
+     "p1": "B09DNXD7HX"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-6ccd778b84106bfc": {
+   "task": "label",
+   "inputs": {
+    "query": "camera battery charger",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Dual Rechargeable Batteries Charging Station Compatible with Arlo Pro/Pro 2/Go Camera (Batteries Not Included)",
+      "category": "Accessories > Batteries & Chargers"
+     }
+    ]
+   },
+   "meta": {
+    "query": "camera battery charger",
+    "ids": {
+     "p1": "B0C33SNYR3"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-74099f3e43d99c97": {
+   "task": "label",
+   "inputs": {
+    "query": "insulated tumbler",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Cpskup Quarantine Birthday Gifts for Women, Quarantine Birthday 2021 Insulated Stainless Steel Wine Tumbler, Social Dist",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p2",
+      "title": "DICTEA Double Wall Glass Tumbler - 14-Oz Reusable Coffee & Tea Cup, Clear Travel Mug, On the Go, Recyclable, Microwavabl",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     }
+    ]
+   },
+   "meta": {
+    "query": "insulated tumbler",
+    "ids": {
+     "p1": "B08X1XRV5F",
+     "p2": "B08SHWRQ6V"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-cc930e6abd98d069": {
+   "task": "label",
+   "inputs": {
+    "query": "coffee pods",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Cambraia Amazon Forest Coffee 12 oz each (3 Items Per Order)",
+      "category": "Coffee > Ground Coffee"
+     }
+    ]
+   },
+   "meta": {
+    "query": "coffee pods",
+    "ids": {
+     "p1": "B01HCRED3S"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-ce61531b029d73c4": {
+   "task": "label",
+   "inputs": {
+    "query": "cake topper",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Happy Birthday Glitter Cake Topper, Birthday Party Decorations Ideas, Premium Quality Decoration, Sturdy Doubled Sided G",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p2",
+      "title": "Sweet 16 Princess Cake Topper, 16th Birthday Party Decorations, Crystal Rhinestone Gold",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p3",
+      "title": "Sweet Shoppe - Dessert Cupcake Toppers - Candy and Bakery Birthday Party or Baby Shower Clear Treat Picks - Set of 24",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p4",
+      "title": "Meijiafei Loving Kissing Couple With Pet Cat Silhouette Wedding Cake Topper",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p5",
+      "title": "Bekaterea Rose gold 90 Years Blessed & Loved Cake topper\uff0c90th birthday cake decoration\uff0cPhoto Decoration Props, 90th Anni",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p6",
+      "title": "Happy Anniversary Glitter Cake Topper, Party Decorations Ideas, Premium Quality Decoration, Sturdy Doubled Sided Glitter",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     }
+    ]
+   },
+   "meta": {
+    "query": "cake topper",
+    "ids": {
+     "p1": "B09GRB2M54",
+     "p2": "B07QNZ484D",
+     "p3": "B07HGJG5Y2",
+     "p4": "B01DBFALTK",
+     "p5": "B09P1CJDM6",
+     "p6": "B09RMS5DC4"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 3,
+     "p3": 2,
+     "p4": 3,
+     "p5": 3,
+     "p6": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-2572ef769648e22f": {
+   "task": "label",
+   "inputs": {
+    "query": "snow pants",
+    "products": [
+     {
+      "id": "p1",
+      "title": "FASKUNOIE Men's Capri Pants Linen Cotton Wide Leg Below Knee Harem Pants with Pockets",
+      "category": "Clothing > Pants"
+     }
+    ]
+   },
+   "meta": {
+    "query": "snow pants",
+    "ids": {
+     "p1": "B08Z3QKKF7"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-b0318fd4539a4398": {
+   "task": "label",
+   "inputs": {
+    "query": "white rice",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Bytewise Organic Black Gram Whole White Lentil/ Urad Gota/ Matpe Beans, 2Lb",
+      "category": "Dried Beans, Lentils & Peas > Lentils"
+     }
+    ]
+   },
+   "meta": {
+    "query": "white rice",
+    "ids": {
+     "p1": "B06XYKGCKC"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-7ddc11da5b3f9acf": {
+   "task": "label",
+   "inputs": {
+    "query": "baocool laptop sleeve",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Everest Luggage Laptop Computer Backpack, Black, Black, One Size",
+      "category": "Laptop Accessories > Bags, Cases & Sleeves"
+     }
+    ]
+   },
+   "meta": {
+    "query": "baocool laptop sleeve",
+    "ids": {
+     "p1": "B009ZNIA0U"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-d0699e2b327e867c": {
+   "task": "label",
+   "inputs": {
+    "query": "tummy control swimsuit",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Womens High Waisted Cheetah Leopard Swimsuits Bikini Sexy Padded Push Up Animal Cow Printed 2 Piece Bathing Suit",
+      "category": "Clothing > Swimsuits & Cover Ups"
+     },
+     {
+      "id": "p2",
+      "title": "BALEAF Women's Knee Length Long Swim Shorts Upf50+ High Waisted Swim Capris Pants with Pockets",
+      "category": "Clothing > Swimsuits & Cover Ups"
+     }
+    ]
+   },
+   "meta": {
+    "query": "tummy control swimsuit",
+    "ids": {
+     "p1": "B07ZM52SVZ",
+     "p2": "B09Z2QZ6XX"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-99d165f8a89218e2": {
+   "task": "label",
+   "inputs": {
+    "query": "midi dress",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Rmaytiked Spaghetti Strap Lace Satin Homecoming Dresses for Women Teens Short Prom Dresses Cocktail Party Gowns with Poc",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p2",
+      "title": "VFSHOW Womens Elegant Bell Sleeve Cocktail Party Bodycon Pencil Sheath Dress",
+      "category": "Clothing > Dresses"
+     }
+    ]
+   },
+   "meta": {
+    "query": "midi dress",
+    "ids": {
+     "p1": "B09NDF3SHN",
+     "p2": "B09M8GT5XY"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-53ecbefbe10269c5": {
+   "task": "label",
+   "inputs": {
+    "query": "platform wedge sandals",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Forever Womens Low Wedge Heel Closed Toe Wedding Party Dress Sandals",
+      "category": "Shoes > Sandals"
+     }
+    ]
+   },
+   "meta": {
+    "query": "platform wedge sandals",
+    "ids": {
+     "p1": "B07CLFY87N"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-efa8c7d3f567aa88": {
+   "task": "label",
+   "inputs": {
+    "query": "dslr camera",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Polaroid PDC-700 0.8MP Digital Camera Creative Kit",
+      "category": "Digital Cameras > Point & Shoot Digital Cameras"
+     }
+    ]
+   },
+   "meta": {
+    "query": "dslr camera",
+    "ids": {
+     "p1": "B000023VQC"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-1f5aad48c7fdd5dd": {
+   "task": "label",
+   "inputs": {
+    "query": "apple tv case",
+    "products": [
+     {
+      "id": "p1",
+      "title": "ApeCase AC12466 32 CD DVD Blu-Ray and Gaming Case",
+      "category": "Living Room Furniture > TV & Media Furniture"
+     }
+    ]
+   },
+   "meta": {
+    "query": "apple tv case",
+    "ids": {
+     "p1": "B00419ZRYK"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-73a98bdea9da87d3": {
+   "task": "label",
+   "inputs": {
+    "query": "clothing",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Goodthreads Men's Supersoft Marled Cardigan Sweater",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p2",
+      "title": "Saodimallsu Women's Open Front Cardigan Sweater Chunky Soft Knit Casual Long Sleeve Sweaters Solid Loose with Pocket",
+      "category": "Clothing > Sweaters"
+     }
+    ]
+   },
+   "meta": {
+    "query": "clothing",
+    "ids": {
+     "p1": "B07P1F27ZF",
+     "p2": "B096NM7HFK"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-b1cac50c224603f1": {
+   "task": "label",
+   "inputs": {
+    "query": "orange sauce",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Gullah Gourmet (Mouth Stuffin' Chocolate Chip Muffins)",
+      "category": "Sauces, Gravies & Marinades > Hot Sauce"
+     },
+     {
+      "id": "p2",
+      "title": "Melinda\u2019s Original Habanero Extra Hot Sauce - 4 PACK",
+      "category": "Sauces, Gravies & Marinades > Hot Sauce"
+     },
+     {
+      "id": "p3",
+      "title": "Valentina Salsa Picante | Most Famous Mexican Hot Sauce with 34 Oz Bottle | The Valentina Hot Sauce for Spicy Food Every",
+      "category": "Sauces, Gravies & Marinades > Hot Sauce"
+     }
+    ]
+   },
+   "meta": {
+    "query": "orange sauce",
+    "ids": {
+     "p1": "B07PHK2YWQ",
+     "p2": "B09HL6YRNS",
+     "p3": "B09H3NZGL7"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 1,
+     "p3": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-1a1640521759a3f7": {
+   "task": "label",
+   "inputs": {
+    "query": "water crackers",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Natural Nectar Tomato Gluten Free Crackle Bred, 3.5 Oz",
+      "category": "Snack Foods > Crackers"
+     },
+     {
+      "id": "p2",
+      "title": "Lance Toast Chee Peanut Butter Crackers - 80 ct",
+      "category": "Snack Foods > Crackers"
+     },
+     {
+      "id": "p3",
+      "title": "New York All Natural Flatbreads, Pumpernickel Everything, 5 Ounce (Pack of 12)",
+      "category": "Snack Foods > Crackers"
+     }
+    ]
+   },
+   "meta": {
+    "query": "water crackers",
+    "ids": {
+     "p1": "B00MFCJSCC",
+     "p2": "B089P1XKZX",
+     "p3": "B00PN0FO3K"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1,
+     "p3": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-7e949bddcc4d6fba": {
+   "task": "label",
+   "inputs": {
+    "query": "toddler hawaiian outfit",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Disney Mickey Mouse Lion King 2 Pack Pants Newborn to Little Kid",
+      "category": "Baby Boys > Clothing"
+     },
+     {
+      "id": "p2",
+      "title": "vivifayee Baby Boy One 1st Birthday Outfits Infant Clothes Short Sleeve Bow Tie Romper Pants Set Suspenders",
+      "category": "Baby Boys > Clothing"
+     },
+     {
+      "id": "p3",
+      "title": "PATPAT Baby Boy Summer Outfit Short Sleeve Shirt Shorts Set Summer Holiday Set Infant Boy Outfits 3M-24M",
+      "category": "Baby Boys > Clothing"
+     }
+    ]
+   },
+   "meta": {
+    "query": "toddler hawaiian outfit",
+    "ids": {
+     "p1": "B085TPSTSY",
+     "p2": "B09VB6LTBJ",
+     "p3": "B0BZVXJPRM"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1,
+     "p3": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-81a0d2b52ddf8403": {
+   "task": "label",
+   "inputs": {
+    "query": "men's rain jacket",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Columbia Men's Hart Mountain Ii Half Zip",
+      "category": "Clothing > Jackets & Coats"
+     }
+    ]
+   },
+   "meta": {
+    "query": "men's rain jacket",
+    "ids": {
+     "p1": "B0BXL5BB2Q"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-86ed6a6185c8358f": {
+   "task": "label",
+   "inputs": {
+    "query": "16 5 x 12 25 x 14 5 in subwoofer enclosure",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Focal ICU-570 Integration Series 5 x 7 Inch Coaxial Speakers (Pair), RMS: 60W - MAX: 120W",
+      "category": "Car Electronics > Car Audio"
+     }
+    ]
+   },
+   "meta": {
+    "query": "16 5 x 12 25 x 14 5 in subwoofer enclosure",
+    "ids": {
+     "p1": "B077G25YP1"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-eb3e290ec326a29f": {
+   "task": "label",
+   "inputs": {
+    "query": "premium water shoes",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Crocs unisex-adult Men's and Women's Specialist Ii Clog | Work Shoes",
+      "category": "Shoes > Mules & Clogs"
+     }
+    ]
+   },
+   "meta": {
+    "query": "premium water shoes",
+    "ids": {
+     "p1": "B07XQP9W35"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-577034895aee67cd": {
+   "task": "label",
+   "inputs": {
+    "query": "premium instant noodles",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Simply Asia Spicy Mongolian Noodle Bowl, 8.5 oz",
+      "category": "Canned, Jarred & Packaged Foods > Packaged Meals & Side Dishes"
+     },
+     {
+      "id": "p2",
+      "title": "ONTRUE Sweet Potato Glass Noodles, Circle Shape, Korean Vermicelli Pasta, Fat-free and Gluten-free, 100% Sweet Potato St",
+      "category": "Canned, Jarred & Packaged Foods > Packaged Meals & Side Dishes"
+     },
+     {
+      "id": "p3",
+      "title": "Clearspring - Organic Gluten Free 100% Brown Rice Wide Noodles - 200g",
+      "category": "Pantry Staples > Pasta & Noodles"
+     }
+    ]
+   },
+   "meta": {
+    "query": "premium instant noodles",
+    "ids": {
+     "p1": "B07PWX7DBG",
+     "p2": "B0BZ7YHFFB",
+     "p3": "B010E0ZTIS"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 1,
+     "p3": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-d2a2154256d0255f": {
+   "task": "label",
+   "inputs": {
+    "query": "english muffins",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Eden Organic Cinnamon Muesli, 17.6 Ounce",
+      "category": "Cereals > Muesli & Granola Cereals"
+     },
+     {
+      "id": "p2",
+      "title": "Gullah Gourmet (Mouth Stuffin' Chocolate Chip Muffins)",
+      "category": "Sauces, Gravies & Marinades > Hot Sauce"
+     }
+    ]
+   },
+   "meta": {
+    "query": "english muffins",
+    "ids": {
+     "p1": "B00LBGCQ9U",
+     "p2": "B07PHK2YWQ"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-ae017ee6e08bbb21": {
+   "task": "label",
+   "inputs": {
+    "query": "jamaican blend whole bean coffee",
+    "products": [
+     {
+      "id": "p1",
+      "title": "The Bean Coffee Company Organic Decaf California Blend, Medium Roast, Ground, 5-Pound Bad",
+      "category": "Coffee > Whole Coffee Beans"
+     },
+     {
+      "id": "p2",
+      "title": "Bulletproof The Mentalist Medium-Dark Roast Ground Coffee, 12 Ounces (Pack of 3), 100% Arabica Coffee Sourced from Guate",
+      "category": "Coffee > Whole Coffee Beans"
+     }
+    ]
+   },
+   "meta": {
+    "query": "jamaican blend whole bean coffee",
+    "ids": {
+     "p1": "B0BFG761PD",
+     "p2": "B08B1C9MX4"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-8c8e10da598623a2": {
+   "task": "label",
+   "inputs": {
+    "query": "msi motherboard",
+    "products": [
+     {
+      "id": "p1",
+      "title": "PIONEER 512GB NVMe SSD PCIe M.2 2280 Gen 3x4 TLC Internal High Speed Read/Write up to 3300/2000MB/s Solid State Drive, 8",
+      "category": "Computer Components > Internal Components"
+     }
+    ]
+   },
+   "meta": {
+    "query": "msi motherboard",
+    "ids": {
+     "p1": "B07S7CZDMW"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-d8ada19a81d8cbe9": {
+   "task": "label",
+   "inputs": {
+    "query": "g skill ddr3 memory",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Lenovo IdeaPad 3i Laptop, 15.6\" HD Touchscreen Display, Intel Core i3-1115G4 Processor, 20GB DDR4 RAM, 1TB PCIe SSD, Blu",
+      "category": "Computers & Tablets > Laptops"
+     },
+     {
+      "id": "p2",
+      "title": "2022 Newest Lenovo Ideapad 3i Laptop, 15.6\u201d FHD 1080P Touchscreen, Intel Core i3-1115G4, 20GB DDR4 RAM, 1TB PCIe SSD, HD",
+      "category": "Computers & Tablets > Laptops"
+     }
+    ]
+   },
+   "meta": {
+    "query": "g skill ddr3 memory",
+    "ids": {
+     "p1": "B09PJ18D8T",
+     "p2": "B09MR5B5L7"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-2bc1795fe8e538db": {
+   "task": "label",
+   "inputs": {
+    "query": "rockville in-ceiling speakers",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Electriduct Crown Molding PVC Cable Raceway - 5 ft Stick - White (Pack of 2: 10 Feet)",
+      "category": "Cord Management > Cable Raceways"
+     }
+    ]
+   },
+   "meta": {
+    "query": "rockville in-ceiling speakers",
+    "ids": {
+     "p1": "B07VSLJQDL"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-8b5fdc19d5062bc3": {
+   "task": "label",
+   "inputs": {
+    "query": "men and women laptop sleeve",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Think Tank Photo My 2nd Brain 11 Laptop Sleeve Case (Black)",
+      "category": "Laptop Accessories > Bags, Cases & Sleeves"
+     }
+    ]
+   },
+   "meta": {
+    "query": "men and women laptop sleeve",
+    "ids": {
+     "p1": "B07F7KVK4L"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-b5b8466b2a92c760": {
+   "task": "label",
+   "inputs": {
+    "query": "pyle power adapter",
+    "products": [
+     {
+      "id": "p1",
+      "title": "UpBright 5.5V AC/DC Adapter Compatible with Panasonic KX-TGE470 KX-TGE470S KX-TGE470B KX-TGE474 KX-TGE475 KX-TGE475S KX-",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p2",
+      "title": "Schwinn 240 Recumbent Exercise Bike Home Gym Power \"Wall Plug\" AC Adapter / Power Cord",
+      "category": "Power Accessories > AC Adapters"
+     }
+    ]
+   },
+   "meta": {
+    "query": "pyle power adapter",
+    "ids": {
+     "p1": "B01M5LILIX",
+     "p2": "B007Z5RVJG"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-7f31b003dadfbb00": {
+   "task": "label",
+   "inputs": {
+    "query": "best winter snow boots",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Columbia Unisex-Child Childrens Powderbug Forty Snow Boot",
+      "category": "Girls > Outdoor & Work"
+     },
+     {
+      "id": "p2",
+      "title": "Not Rated Women's Tualamne Winter Boot",
+      "category": "Women > Fashion"
+     }
+    ]
+   },
+   "meta": {
+    "query": "best winter snow boots",
+    "ids": {
+     "p1": "B078TB67QJ",
+     "p2": "B00V65GI4U"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-272321c07fe72b17": {
+   "task": "label",
+   "inputs": {
+    "query": "42 x 63 inch blackout curtain",
+    "products": [
+     {
+      "id": "p1",
+      "title": "TEXPLUS 2 Panels Solid Color High Shading Grommet Top Blackout Curtains for Bedroom (Dark Blue, 2x52Wx84L inches)",
+      "category": "Window Treatments > Curtains & Drapes"
+     }
+    ]
+   },
+   "meta": {
+    "query": "42 x 63 inch blackout curtain",
+    "ids": {
+     "p1": "B07R6C2NLK"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-3f39e39024b2886d": {
+   "task": "label",
+   "inputs": {
+    "query": "hard drive cable",
+    "products": [
+     {
+      "id": "p1",
+      "title": "WD My Passport 1TB Portable External Hard Drive Storage USB 3.0 Black",
+      "category": "Data Storage > External Hard Drives"
+     },
+     {
+      "id": "p2",
+      "title": "G-Technology 500GB G-DRIVE mobile SSD Durable Portable External Storage - USB-C (USB 3.1), Up to 560 MB/s - 0G06052-1, b",
+      "category": "Data Storage > External Solid State Drives"
+     }
+    ]
+   },
+   "meta": {
+    "query": "hard drive cable",
+    "ids": {
+     "p1": "B007TISRBK",
+     "p2": "B07MG86YFN"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-999f30ed8e84e572": {
+   "task": "label",
+   "inputs": {
+    "query": "guava shells",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Camille Bloch Ragusa Friends Noir 132 g",
+      "category": "Chocolate > Candy & Chocolate Bars"
+     },
+     {
+      "id": "p2",
+      "title": "Presto Sales Brazil nuts, Fresh and Tasty\" Raw Broken Brazil Origin 16 oz. | KETO, Vegan, Non-GMO, Natural Healthy Snack",
+      "category": "Cooking & Baking > Nuts & Seeds"
+     }
+    ]
+   },
+   "meta": {
+    "query": "guava shells",
+    "ids": {
+     "p1": "B0759V5DSB",
+     "p2": "B074YZHFFS"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-26265c1a45bf0959": {
+   "task": "label",
+   "inputs": {
+    "query": "best ankle strap sandals",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Rockport Women's Kells Bay Gore Strap Sandal",
+      "category": "Shoes > Sandals"
+     }
+    ]
+   },
+   "meta": {
+    "query": "best ankle strap sandals",
+    "ids": {
+     "p1": "B09QTFVDTQ"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-4c95048eb35684aa": {
+   "task": "label",
+   "inputs": {
+    "query": "the skinny food co caramel syrup",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Wholesome Sweeteners, Inc., Organic Light Corn Syrup, Vanilla Flavor, 11.2 oz (317 g)(Pack of 3)",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     }
+    ]
+   },
+   "meta": {
+    "query": "the skinny food co caramel syrup",
+    "ids": {
+     "p1": "B075V7KCJH"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-c38d85467f26ba4b": {
+   "task": "label",
+   "inputs": {
+    "query": "black salt",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Savory Spice Whiskey Barrel & Hickory Smoked Salt -1/2 Cup Bag",
+      "category": "Food & Beverage Gifts > Herb, Spice & Seasoning Gifts"
+     }
+    ]
+   },
+   "meta": {
+    "query": "black salt",
+    "ids": {
+     "p1": "B08HGBYQWR"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-1b8e61b61e368426": {
+   "task": "label",
+   "inputs": {
+    "query": "gift wireless earbuds",
+    "products": [
+     {
+      "id": "p1",
+      "title": "BULYPAZY Sleep Headphones, 2023 Bluetooth Headband Headphones with HD Speakers and Mic Perfect for Side Sleepers Sleepin",
+      "category": "Headphones & Earbuds > Over-Ear Headphones"
+     }
+    ]
+   },
+   "meta": {
+    "query": "gift wireless earbuds",
+    "ids": {
+     "p1": "B0B1MNFSG9"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-f72609c127aff213": {
+   "task": "label",
+   "inputs": {
+    "query": "leakproof travel tumbler",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Yanglonghui 20oz Tumbler with Lid, Double Wall Stainless Steel Vacuum Insulated Coffee Mug for Home and Office, Thermal ",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     }
+    ]
+   },
+   "meta": {
+    "query": "leakproof travel tumbler",
+    "ids": {
+     "p1": "B0BB7FYZVC"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-bea8a2900c92f29e": {
+   "task": "label",
+   "inputs": {
+    "query": "organic red lentils",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Doves Farm Organic Digestives Fruity Oat - 200g",
+      "category": "Breads & Bakery > Cookies"
+     }
+    ]
+   },
+   "meta": {
+    "query": "organic red lentils",
+    "ids": {
+     "p1": "B01G297DTS"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-a79e4784afc0250c": {
+   "task": "label",
+   "inputs": {
+    "query": "blue bedroom decor",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Germany Text Map I by Michael Tompsett, 24x32-Inch Canvas Wall Art",
+      "category": "Wall Art > Posters & Prints"
+     }
+    ]
+   },
+   "meta": {
+    "query": "blue bedroom decor",
+    "ids": {
+     "p1": "B00C7OYAXU"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-c6c68542c6f97c70": {
+   "task": "label",
+   "inputs": {
+    "query": "wrist 5 0 to 7 5 inches silicone watch band",
+    "products": [
+     {
+      "id": "p1",
+      "title": "TenCloud Leather Bands Compatible with Fitbit Luxe, Classic Wristbands Metal Connectors Replacement Leather Strap for Lu",
+      "category": "Wearable Technology > Arm & Wristband Accessories"
+     }
+    ]
+   },
+   "meta": {
+    "query": "wrist 5 0 to 7 5 inches silicone watch band",
+    "ids": {
+     "p1": "B09BJK8KJV"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-3cf4c27839446a71": {
+   "task": "label",
+   "inputs": {
+    "query": "best sticker",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Yaroelrd 50PCS Summer ice Cream Sticker is Suitable for Kettle Scrapbook Notebook Refrigerator Skateboard Mobile Phone W",
+      "category": "Bathroom Accessories > Toilet Accessories"
+     }
+    ]
+   },
+   "meta": {
+    "query": "best sticker",
+    "ids": {
+     "p1": "B097MN1RHX"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-a7ffdc79317c09af": {
+   "task": "label",
+   "inputs": {
+    "query": "baseball acp",
+    "products": [
+     {
+      "id": "p1",
+      "title": "NANYUAYA Christmas Shirts for Women You Serious Clark Santa Hat Graphic Tshirt 3/4 Raglan Sleeve Baseball Tee Tops",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p2",
+      "title": "SUNNYEME Baseball Tee Long Sleeve Raglan Shirt Crew Neck Striped Tunics Casual Blouses Tops",
+      "category": "Clothing > Active"
+     }
+    ]
+   },
+   "meta": {
+    "query": "baseball acp",
+    "ids": {
+     "p1": "B07VQDG29T",
+     "p2": "B09JGKT47K"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-a4347617d3f9a76e": {
+   "task": "label",
+   "inputs": {
+    "query": "party speaker",
+    "products": [
+     {
+      "id": "p1",
+      "title": "3 Ft 3.5mm 1/8\" Stereo Audio Extension Cable Female to Male",
+      "category": "Home Audio Accessories > Cables"
+     },
+     {
+      "id": "p2",
+      "title": "Focal ICU-570 Integration Series 5 x 7 Inch Coaxial Speakers (Pair), RMS: 60W - MAX: 120W",
+      "category": "Car Electronics > Car Audio"
+     }
+    ]
+   },
+   "meta": {
+    "query": "party speaker",
+    "ids": {
+     "p1": "B002GUE468",
+     "p2": "B077G25YP1"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-9b8f909f552a631b": {
+   "task": "label",
+   "inputs": {
+    "query": "virginia spinach fettuccine",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Papa Vince whole wheat pasta - Non enriched, high in fiber, high in protein, ancient grain Timilia/Tumminia grown in Sic",
+      "category": "Pasta & Noodles > Pasta"
+     },
+     {
+      "id": "p2",
+      "title": "Update International AFPC-5 Aluminum Fryer/Pasta Combination",
+      "category": "Cookware > Pots & Pans"
+     }
+    ]
+   },
+   "meta": {
+    "query": "virginia spinach fettuccine",
+    "ids": {
+     "p1": "B07BLQZ6DK",
+     "p2": "B0147FPGM0"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-ec929717002b0022": {
+   "task": "label",
+   "inputs": {
+    "query": "cup and saucer kiddush cup",
+    "products": [
+     {
+      "id": "p1",
+      "title": "AARAINBOW 7 Pieces Stainless Steel Flatware Set Portable Reusable Cutlery Set Travel Utensils Set Including Chopsticks K",
+      "category": "Dining & Entertaining > Flatware"
+     },
+     {
+      "id": "p2",
+      "title": "GOGOPARTY Happy Kwanzaa Banner Backdrop Decorations - Rustic African Heritage Holiday Hanging Background Banner for Kwan",
+      "category": "Lighting & Studio > Photo Studio"
+     }
+    ]
+   },
+   "meta": {
+    "query": "cup and saucer kiddush cup",
+    "ids": {
+     "p1": "B09ND2GBHK",
+     "p2": "B0BBLNJ53P"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-22b117ec344eb9d5": {
+   "task": "label",
+   "inputs": {
+    "query": "organic hot shoe mount",
+    "products": [
+     {
+      "id": "p1",
+      "title": "EmpireTech PFB203W Wall Mount Bracket White",
+      "category": "Security & Surveillance > Accessories"
+     },
+     {
+      "id": "p2",
+      "title": "elago Google WiFi Wall Mount - Easy to Install/Move, No Screws Needed, Cable Management, Space Saving (Light Grey)",
+      "category": "Mounts > Speaker Mounts"
+     }
+    ]
+   },
+   "meta": {
+    "query": "organic hot shoe mount",
+    "ids": {
+     "p1": "B09MLJTR9M",
+     "p2": "B07GBTY1CB"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-62ef8df56afdd963": {
+   "task": "label",
+   "inputs": {
+    "query": "organic tv antenna",
+    "products": [
+     {
+      "id": "p1",
+      "title": "RiteAV 3 Port HDMI 1 x Coax Cable TV 3 RCA Composite USB Wall Plate",
+      "category": "Home Audio Accessories > Distribution"
+     },
+     {
+      "id": "p2",
+      "title": "uxcell Antenna Extension Cable SMA Male to SMA Male Coaxial Cable RG58 50 Ohm 2 ft",
+      "category": "Home Audio Accessories > Cables"
+     }
+    ]
+   },
+   "meta": {
+    "query": "organic tv antenna",
+    "ids": {
+     "p1": "B00RJWKR9Q",
+     "p2": "B07T2CQDP7"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-0cdb36566537ba2f": {
+   "task": "label",
+   "inputs": {
+    "query": "custom party favors",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Sweet and Awesome All Time Favorites Chocolate Candy Assortment - Skittles Original, Snickers Fun Size, Twix Minis, Star",
+      "category": "Chocolate Candy > Assortment Boxes"
+     },
+     {
+      "id": "p2",
+      "title": "26 Pack of Strawberry Popping Candy, Crackling candy, Nostalgic candy, 80s Candy Retro Candy, Birthday Party Favor Candy",
+      "category": "Candy & Chocolate > Suckers & Lollipops"
+     }
+    ]
+   },
+   "meta": {
+    "query": "custom party favors",
+    "ids": {
+     "p1": "B0B5GB26JK",
+     "p2": "B09W2JX54Y"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-4c3ed0debd2beb3c": {
+   "task": "label",
+   "inputs": {
+    "query": "cheap screen cleaner kit",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Wrap Around 14\" inch Fall Black Ruffled Elastic Solid Bed Skirt Fits All Queen, King and Cal King Size Bedding High Thre",
+      "category": "Bedding > Bed Skirts"
+     },
+     {
+      "id": "p2",
+      "title": "Bits and Pieces - Micro Fleece Battery-Operated Heated Scarf - 66\" Long Neckwear with Pockets",
+      "category": "Accessories > Scarves & Wraps"
+     },
+     {
+      "id": "p3",
+      "title": "Taupiri Queen Quilted Mattress Pad Cover with Deep Pocket (8\"-21\"), Cooling Soft Pillowtop Mattress Cover, Down Alternat",
+      "category": "Mattress Pads & Toppers > Mattress Pads"
+     }
+    ]
+   },
+   "meta": {
+    "query": "cheap screen cleaner kit",
+    "ids": {
+     "p1": "B01NC3B1NX",
+     "p2": "B017Y4BI1E",
+     "p3": "B0993PP6Y3"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 0,
+     "p3": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-43d170b50be80937": {
+   "task": "label",
+   "inputs": {
+    "query": "organic caftan",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Kyerivs Women's Summer Casual Loose Long Dress Beach Cover Up Cami Maxi Dresses with Pocket",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p2",
+      "title": "LOFBAZ Harem Pants for Women S-4XL Plus Drawstring Yoga Boho Palazzo PJ Clothing",
+      "category": "Women > Clothing"
+     },
+     {
+      "id": "p3",
+      "title": "HeSaYep Women's Wide Leg Linen Pants Drawstring High Waist Palazzo Pants Flowy Beach Lounge Trousers with Pockets",
+      "category": "Women > Clothing"
+     }
+    ]
+   },
+   "meta": {
+    "query": "organic caftan",
+    "ids": {
+     "p1": "B07Z346W7J",
+     "p2": "B00TFB72RO",
+     "p3": "B0B5M2ZWKD"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1,
+     "p3": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-044336050311d00a": {
+   "task": "label",
+   "inputs": {
+    "query": "small sideboard buffet",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Mango Steam Contemporary Modern Home Entertainment Liquor Bar Catalina Table (Medium, Clear and Brown)",
+      "category": "Game & Recreation Room Furniture > Home Bar Furniture"
+     },
+     {
+      "id": "p2",
+      "title": "Ultimate Guard Twin Flip`n`Tray 200+ Monocolor Black",
+      "category": "Dining & Entertaining > Dinnerware & Serveware"
+     }
+    ]
+   },
+   "meta": {
+    "query": "small sideboard buffet",
+    "ids": {
+     "p1": "B07BN3R4QH",
+     "p2": "B098QFTF1S"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-db30fc893b0fbaaf": {
+   "task": "label",
+   "inputs": {
+    "query": "mossb alls",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Nautica Men's Stripe Knit Sweater",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p2",
+      "title": "Oversized Cable Knit Sweater Chunky Turtleneck Sweater Cozy Baggy Sweater Casual Loose Jumper Tops",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p3",
+      "title": "PJ PAUL JONES Mens Striped Pullover Sweater Crewneck Contrast Fine Knitted Sweaters",
+      "category": "Clothing > Sweaters"
+     }
+    ]
+   },
+   "meta": {
+    "query": "mossb alls",
+    "ids": {
+     "p1": "B0846KLTSW",
+     "p2": "B0B7DY4TCV",
+     "p3": "B08CSDKWSH"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 0,
+     "p3": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-afaf404d436f3f6d": {
+   "task": "label",
+   "inputs": {
+    "query": "dairy free chocolate chips",
+    "products": [
+     {
+      "id": "p1",
+      "title": "The Good Chocolate - Keto Milk Chocolate Style Bars, 80% Less Sugar, Lower Net Carb Snack, Lower Calorie, Creamy Chocola",
+      "category": "Chocolate Candy > Candy & Chocolate Bars"
+     },
+     {
+      "id": "p2",
+      "title": "Savor by Suzie, Gluten-Free Pretzel Twists - Grain Free, Nut Free, Non-GMO Vegan, Sugar Free Paleo Snacks, Sea Salt, 18-",
+      "category": "Snack Foods > Pretzels"
+     },
+     {
+      "id": "p3",
+      "title": "Follow Your Heart Dairy Free Pepper Jack Style Cheese Slices, 7 Ounce (Pack of 12)",
+      "category": "Dairy, Eggs & Plant-Based Alternatives > Plant-Based Cheese"
+     }
+    ]
+   },
+   "meta": {
+    "query": "dairy free chocolate chips",
+    "ids": {
+     "p1": "B01M7X2LAH",
+     "p2": "B09GFTLHTD",
+     "p3": "B07NLVK1VM"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 0,
+     "p3": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-b07f328fe7e3e5fa": {
+   "task": "label",
+   "inputs": {
+    "query": "gluten free snack",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Shrewd Food Protein Puffs - High Protein, Low-Carb, Gluten-Free, Health Conscious Snacks, Keto Snacks, Non GMO, Soy-Free",
+      "category": "Snack Foods > Puffed Snacks"
+     }
+    ]
+   },
+   "meta": {
+    "query": "gluten free snack",
+    "ids": {
+     "p1": "B0BVTRB6NP"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-5614c50163dd6d62": {
+   "task": "label",
+   "inputs": {
+    "query": "gluten free spaghetti",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Big Green Organic Food- Organic Millet Capellini, Gluten-Free, Lectin-Free, Non-GMO, Vegan, 6g of Protein, Wheat and Ric",
+      "category": "Pasta & Noodles > Pasta"
+     }
+    ]
+   },
+   "meta": {
+    "query": "gluten free spaghetti",
+    "ids": {
+     "p1": "B07ZPHZD67"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-e98363516cf0e2cc": {
+   "task": "label",
+   "inputs": {
+    "query": "1-to-1 baking substitute gluten free flour",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Schar Gluten Free Pizza Crust Single Box (2 Crusts Per Box)",
+      "category": "Breads & Bakery > Pizza Crusts"
+     }
+    ]
+   },
+   "meta": {
+    "query": "1-to-1 baking substitute gluten free flour",
+    "ids": {
+     "p1": "B007UKVAKC"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-309fed0808c61ced": {
+   "task": "label",
+   "inputs": {
+    "query": "gluten free cookie flour",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Organic Amaranth Seeds- 5 Lbs- Grain Seed for Sprouting Sprouts, Cooking, Grinding For Flour, Soup, Food Storage & More",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p2",
+      "title": "Dr. Lucy's - Gluten Free Cookies Cinnamon Thin - 5.5 oz.",
+      "category": "Cookies > Butter"
+     }
+    ]
+   },
+   "meta": {
+    "query": "gluten free cookie flour",
+    "ids": {
+     "p1": "B00YDA673M",
+     "p2": "B07CW7FN4D"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-2f52f62aa0e1e340": {
+   "task": "label",
+   "inputs": {
+    "query": "sugar free maple syrup",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Natural & Artificial Maple Flavor, 16 oz.",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     },
+     {
+      "id": "p2",
+      "title": "Isomalt Crystals, 2 lb",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     },
+     {
+      "id": "p3",
+      "title": "Cherry Honey - Organically Flavored - Squeeze Bottle (Net Wt 16 oz)",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     }
+    ]
+   },
+   "meta": {
+    "query": "sugar free maple syrup",
+    "ids": {
+     "p1": "B00GQSX2FK",
+     "p2": "B08GJCHVJC",
+     "p3": "B00J8UDEJW"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1,
+     "p3": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-3022dc048092987f": {
+   "task": "label",
+   "inputs": {
+    "query": "gluten free gluten free flatbread",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Schar Gluten Free Pizza Crust Single Box (2 Crusts Per Box)",
+      "category": "Breads & Bakery > Pizza Crusts"
+     }
+    ]
+   },
+   "meta": {
+    "query": "gluten free gluten free flatbread",
+    "ids": {
+     "p1": "B007UKVAKC"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-66b01b82562753a0": {
+   "task": "label",
+   "inputs": {
+    "query": "amazon bsaics lightning cable",
+    "products": [
+     {
+      "id": "p1",
+      "title": "USB-C to USB A 10Gbps Data Transfer Cable 3ft Android Auto Type-C 3.1 Gen2 QC 3.0 Fast Charge Spare Cable for Samsung Ga",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     },
+     {
+      "id": "p2",
+      "title": "Lynn Electronics OLG10ABKK-005 Optilink CAT5E 5-Feet Patch Cord, Black, 3-Pack",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     }
+    ]
+   },
+   "meta": {
+    "query": "amazon bsaics lightning cable",
+    "ids": {
+     "p1": "B0BV6DCWH2",
+     "p2": "B07256B4B8"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-b715203388f610d3": {
+   "task": "label",
+   "inputs": {
+    "query": "fermented black benas",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Louisiana Favorites Camellia Dried 1 LB Beans Peas (Blackeye's, Kidney, Great Northern White)",
+      "category": "Dried Beans, Lentils & Peas > Beans"
+     }
+    ]
+   },
+   "meta": {
+    "query": "fermented black benas",
+    "ids": {
+     "p1": "B079LQ538G"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-d80db1e6526c512b": {
+   "task": "label",
+   "inputs": {
+    "query": "mini displayport to displayprot cable",
+    "products": [
+     {
+      "id": "p1",
+      "title": "T POWER 2 x pcs for USB Cable Tomtom GPS GO ONE Replacement Spare Power Cord Charging Sync Data Cable",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     },
+     {
+      "id": "p2",
+      "title": "GRFD DC 5V Portable USB Driver for El Wire Neon Light, 1-5M Electroluminescent Driver",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     }
+    ]
+   },
+   "meta": {
+    "query": "mini displayport to displayprot cable",
+    "ids": {
+     "p1": "B00JFL767A",
+     "p2": "B0BKZR4TVD"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-f27177240c5a5e5e": {
+   "task": "label",
+   "inputs": {
+    "query": "usb-c aux calbe",
+    "products": [
+     {
+      "id": "p1",
+      "title": "J&D XLR to 3.5mm Microphone Cable, PVC Shelled XLR Female to 3.5mm 1/8 inch TRS Male Balanced Cable XLR to TRS 1/8 inch ",
+      "category": "Home Audio Accessories > Cables"
+     },
+     {
+      "id": "p2",
+      "title": "StarTech.com 4-Port USB-C Hub - 10Gbps - 3x USB-A & 1x USB-C - 9.8\u201d Host Cable (HB31C3A1CB)",
+      "category": "Networking Products > Hubs"
+     }
+    ]
+   },
+   "meta": {
+    "query": "usb-c aux calbe",
+    "ids": {
+     "p1": "B09LVS3MWD",
+     "p2": "B09KX28C4K"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-8dd802fbb5dc74e8": {
+   "task": "label",
+   "inputs": {
+    "query": "work sheos",
+    "products": [
+     {
+      "id": "p1",
+      "title": "SAS Alpine Non-Slip",
+      "category": "Women > Fashion"
+     },
+     {
+      "id": "p2",
+      "title": "Wolverine Women's Piper Comp-Toe Work Boot",
+      "category": "Uniforms, Work & Safety > Shoes"
+     }
+    ]
+   },
+   "meta": {
+    "query": "work sheos",
+    "ids": {
+     "p1": "B094YG5G5N",
+     "p2": "B00DPEPO90"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 2,
+     "p2": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-b9ffc9a7a8bf14d0": {
+   "task": "label",
+   "inputs": {
+    "query": "trhow pillow covers",
+    "products": [
+     {
+      "id": "p1",
+      "title": "MANDIOO Pack of 2 Luxury Soft Plush Faux Fur Decorative Throw Pillow Covers Set Cushion Cases Pillowcases for Couch Sofa",
+      "category": "Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+     },
+     {
+      "id": "p2",
+      "title": "Kevin Textile Pack of 2 Outdoor Waterproof Throw Pillow Covers Decorative Square Outdoor Checkered Pillows Cushion Case ",
+      "category": "Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+     }
+    ]
+   },
+   "meta": {
+    "query": "trhow pillow covers",
+    "ids": {
+     "p1": "B086ZWHWTT",
+     "p2": "B07KR3L8LV"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-76491ff3e3d956c9": {
+   "task": "label",
+   "inputs": {
+    "query": "cnavas wall art",
+    "products": [
+     {
+      "id": "p1",
+      "title": "WallDeer Art Pablo Picasso Prints Canvas Poster Museum Art Abstract Painting Artwork Picture for Bedroom Without Frame (",
+      "category": "Wall Art > Posters & Prints"
+     },
+     {
+      "id": "p2",
+      "title": "Steph Curry Posters for Walls Golden State Warriors Poster Sports Basketball Superstar Canvas Wall Art Modern Inspiratio",
+      "category": "Wall Art > Posters & Prints"
+     },
+     {
+      "id": "p3",
+      "title": "Vintage Car Old Fashioned Automobile Classic Unframed Wall Art Print Poster Home Decor Premium",
+      "category": "Wall Art > Posters & Prints"
+     },
+     {
+      "id": "p4",
+      "title": "Beautiful Blooming Peony, Rose and Hydrangea Print; Paris Floral Decor by Lisa Audit; Two 11x14in Poster Prints",
+      "category": "Wall Art > Posters & Prints"
+     },
+     {
+      "id": "p5",
+      "title": "Confetti Fox Funny Bathroom Quotes Decor for Women, Beauty Makeup Humor Wall Art, Sassy Sayings Teen Girls Posters, Wake",
+      "category": "Wall Art > Posters & Prints"
+     }
+    ]
+   },
+   "meta": {
+    "query": "cnavas wall art",
+    "ids": {
+     "p1": "B09N92HJ91",
+     "p2": "B09XJY7TKM",
+     "p3": "B07P7WYDVT",
+     "p4": "B01NCECZ4F",
+     "p5": "B07PNWFMMH"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 3,
+     "p3": 2,
+     "p4": 2,
+     "p5": 2
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-cbb93c36d4b869a2": {
+   "task": "label",
+   "inputs": {
+    "query": "barnabas blattgold eidble gold leaf",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Mahamosa Mango Strawberry Organic Loose Black Tea 8 oz, Loose Leaf Black Tea Blend (with strawberry slices, mango cubes,",
+      "category": "Tea > Black"
+     },
+     {
+      "id": "p2",
+      "title": "Edible Pearl Sugar Sprinkles Silver Candy 120g/ 4.2oz Baking Edible Cake Decorations Cupcake Toppers Cookie Decorating I",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     }
+    ]
+   },
+   "meta": {
+    "query": "barnabas blattgold eidble gold leaf",
+    "ids": {
+     "p1": "B00CJL5LFC",
+     "p2": "B095VZVY44"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 1
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-f5906fe1aa93c3ab": {
+   "task": "label",
+   "inputs": {
+    "query": "coocat psu extension cbale",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Yeung Qee Headphone Extension Cable 1 ft, 4 Pole Nylon Braid 3.5mm TRRS Male to Female Lossless Stereo Audio Adapter Ext",
+      "category": "Home Audio Accessories > Cables"
+     }
+    ]
+   },
+   "meta": {
+    "query": "coocat psu extension cbale",
+    "ids": {
+     "p1": "B09F8CLWZ7"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 0
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  },
+  "lab-b6e2b66057065712": {
+   "task": "label",
+   "inputs": {
+    "query": "pilolw shams",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Sam Sandor N - Teal Initial Letter N Monogram Throw Pillow Square Cushion Case Cover Sham",
+      "category": "Decorative Pillows, Inserts & Covers > Throw Pillows"
+     }
+    ]
+   },
+   "meta": {
+    "query": "pilolw shams",
+    "ids": {
+     "p1": "B07Z69FRFF"
+    }
+   },
+   "model": "claude-opus-5-5",
+   "output": {
+    "grades": {
+     "p1": 3
+    }
+   },
+   "final_model": "claude-opus-5-5"
+  }
+ },
+ "cost_usd": 0.09136999999999998
+}
