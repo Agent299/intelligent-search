@@ -1,0 +1,308 @@
+seed: 11
+queries:
+- query: post-workout food
+  segment: case_study
+- query: cheeseburst pizza
+  segment: case_study
+- query: old people home footwear
+  segment: case_study
+- query: healthy snacks without nuts for kids
+  segment: case_study
+- query: a summer dress that's not too formal
+  segment: case_study
+- query: organic aged basmati rice
+  segment: case_study
+- query: stuff for my dorm party
+  segment: case_study
+- query: hill station outfits
+  segment: case_study
+- query: brownie
+  segment: case_study
+- query: something warm for my grandma
+  segment: case_study
+- query: cozy movie night essentials
+  segment: case_study
+- query: tailgate party must haves
+  segment: case_study
+- query: stuff for a long road trip
+  segment: case_study
+- query: survival kit for finals week
+  segment: case_study
+- query: platform sandals
+  segment: head_easy
+- query: sunflower seeds
+  segment: head_easy
+- query: provolone cheese
+  segment: head_easy
+- query: platform bed frame
+  segment: head_easy
+- query: sheer curtains
+  segment: head_easy
+- query: toasted corn snack
+  segment: head_easy
+- query: dslr camera backpack
+  segment: head_easy
+- query: dr john's healthy sweets sugar free lollipops
+  segment: head_easy
+- query: shift dress
+  segment: head_easy
+- query: real essentials mens athletic gym shorts
+  segment: head_easy
+- query: waterproof mattress protector
+  segment: head_easy
+- query: v-neck sweater
+  segment: head_easy
+- query: dress pumps
+  segment: head_easy
+- query: camera battery charger
+  segment: head_easy
+- query: pillowcase
+  segment: head_easy
+- query: insulated tumbler
+  segment: head_easy
+- query: coffee pods
+  segment: head_easy
+- query: cake topper
+  segment: head_easy
+- query: snow pants
+  segment: head_easy
+- query: white rice
+  segment: head_easy
+- query: baocool laptop sleeve
+  segment: head_easy
+- query: tummy control swimsuit
+  segment: head_easy
+- query: midi dress
+  segment: head_easy
+- query: platform wedge sandals
+  segment: head_easy
+- query: work shorts
+  segment: head_easy
+- query: dslr camera
+  segment: head_hard
+- query: aleppo pepper
+  segment: head_hard
+- query: blackout valance
+  segment: head_hard
+- query: arborio rice
+  segment: head_hard
+- query: apple tv case
+  segment: head_hard
+- query: card game storage deck box
+  segment: head_hard
+- query: sundress
+  segment: head_hard
+- query: clothing
+  segment: head_hard
+- query: orange sauce
+  segment: head_hard
+- query: water crackers
+  segment: head_hard
+- query: seasoned fries
+  segment: head_hard
+- query: isabake watch band
+  segment: head_hard
+- query: wedge pumps
+  segment: head_hard
+- query: in-ear monitors
+  segment: head_hard
+- query: mouse case
+  segment: head_hard
+- query: toddler hawaiian outfit
+  segment: torso
+- query: chocolate egg candy
+  segment: torso
+- query: men's rain jacket
+  segment: torso
+- query: dadawen mary jane pumps
+  segment: torso
+- query: polder spice rack
+  segment: torso
+- query: firewire cable
+  segment: torso
+- query: mandarin orange foil number balloon
+  segment: torso
+- query: 16 5 x 12 25 x 14 5 in subwoofer enclosure
+  segment: torso
+- query: premium water shoes
+  segment: torso
+- query: belkin wall surge protector
+  segment: torso
+- query: large security camera
+  segment: torso
+- query: premium instant noodles
+  segment: torso
+- query: english muffins
+  segment: torso
+- query: jamaican blend whole bean coffee
+  segment: torso
+- query: msi motherboard
+  segment: torso
+- query: bienzoe boys shirt
+  segment: torso_hard
+- query: gift running shoes
+  segment: torso_hard
+- query: i-tensodo keyboard cover
+  segment: torso_hard
+- query: g skill ddr3 memory
+  segment: torso_hard
+- query: salad topping
+  segment: torso_hard
+- query: great credentials syrup dispenser
+  segment: torso_hard
+- query: aleumdr tankini top
+  segment: torso_hard
+- query: bay area marketplace ranch dressing packets
+  segment: torso_hard
+- query: stracciatella gelato
+  segment: torso_hard
+- query: broccoli bites snack
+  segment: torso_hard
+- query: rockville in-ceiling speakers
+  segment: tail
+- query: cheap jogger pajama pants
+  segment: tail
+- query: men and women laptop sleeve
+  segment: tail
+- query: pyle power adapter
+  segment: tail
+- query: best winter snow boots
+  segment: tail
+- query: 42 x 63 inch blackout curtain
+  segment: tail
+- query: 1 5 inch heel wood slide sandals
+  segment: tail
+- query: hard drive cable
+  segment: tail
+- query: guava shells
+  segment: tail
+- query: best ankle strap sandals
+  segment: tail
+- query: the skinny food co caramel syrup
+  segment: tail
+- query: premium peasant blouse
+  segment: tail
+- query: reusable mask
+  segment: tail
+- query: slap ya mama jambalaya mix
+  segment: tail
+- query: black salt
+  segment: tail
+- query: gift wireless earbuds
+  segment: tail
+- query: leakproof travel tumbler
+  segment: tail
+- query: organic red lentils
+  segment: tail
+- query: buttery snack
+  segment: tail
+- query: nautica women's ankle socks
+  segment: tail
+- query: hypoallergenic vacuum bags
+  segment: tail_hard
+- query: 321done place cards
+  segment: tail_hard
+- query: madrigal family dress up
+  segment: tail_hard
+- query: blue bedroom decor
+  segment: tail_hard
+- query: camera field monitor
+  segment: tail_hard
+- query: first time car audio upgrade
+  segment: tail_hard
+- query: wrist 5 0 to 7 5 inches silicone watch band
+  segment: tail_hard
+- query: best sticker
+  segment: tail_hard
+- query: 2 lb rambutan
+  segment: tail_hard
+- query: baseball acp
+  segment: tail_hard
+- query: organic air freyr liner
+  segment: tail_hard
+- query: party speaker
+  segment: tail_hard
+- query: chocolate cake cup
+  segment: tail_hard
+- query: virginia spinach fettuccine
+  segment: tail_hard
+- query: roc ksugar
+  segment: tail_hard
+- query: cup and saucer kiddush cup
+  segment: pipeline_failed
+- query: organic hot shoe mount
+  segment: pipeline_failed
+- query: organic tv antenna
+  segment: pipeline_failed
+- query: custom party favors
+  segment: pipeline_failed
+- query: cheap screen cleaner kit
+  segment: pipeline_failed
+- query: organic caftan
+  segment: pipeline_failed
+- query: small sideboard buffet
+  segment: pipeline_failed
+- query: mossb alls
+  segment: pipeline_failed
+- query: dairy free chocolate chips
+  segment: dietary_negation
+- query: gluten free snack
+  segment: dietary_negation
+- query: gluten free spaghetti
+  segment: dietary_negation
+- query: gluten free apricot preserves
+  segment: dietary_negation
+- query: 1-to-1 baking substitute gluten free flour
+  segment: dietary_negation
+- query: gluten free cookie flour
+  segment: dietary_negation
+- query: syrup sugar free syrup
+  segment: dietary_negation
+- query: sugar free maple syrup
+  segment: dietary_negation
+- query: nitrtae free lunch meat
+  segment: dietary_negation
+- query: gluten free gluten free flatbread
+  segment: dietary_negation
+- query: amazon bsaics lightning cable
+  segment: typo
+  intended: amazon basics lightning cable
+- query: fermented black benas
+  segment: typo
+  intended: fermented black beans
+- query: mini displayport to displayprot cable
+  segment: typo
+  intended: mini displayport to displayport cable
+- query: usb-c aux calbe
+  segment: typo
+  intended: usb-c aux cable
+- query: work sheos
+  segment: typo
+  intended: work shoes
+- query: trhow pillow covers
+  segment: typo
+  intended: throw pillow covers
+- query: cnavas wall art
+  segment: typo
+  intended: canvas wall art
+- query: barnabas blattgold eidble gold leaf
+  segment: typo
+  intended: barnabas blattgold edible gold leaf
+- query: coocat psu extension cbale
+  segment: typo
+  intended: coocat psu extension cable
+- query: finite kindle paperwhite case
+  segment: typo
+  intended: fintie kindle paperwhite case
+- query: pilolw shams
+  segment: typo
+  intended: pillow shams
+- query: hand toewls
+  segment: typo
+  intended: hand towels
+- query: xqzv blorf
+  segment: gibberish
+- query: asdkjh qwepoi
+  segment: gibberish
+- query: zzkq mmrt plo
+  segment: gibberish

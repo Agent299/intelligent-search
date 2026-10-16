@@ -33,18 +33,19 @@ piece could be swapped for its production counterpart.
 15. [Phase 8: Ranking](#phase-8-ranking-done)
 16. [Phase 9: Near-real-time trends](#phase-9-near-real-time-trends-done)
 17. [Phase 10: Observability](#phase-10-observability-done)
-18. [Remaining phases (roadmap)](#remaining-phases-roadmap)
-19. [Spend log](#spend-log)
-20. [Decision log](#decision-log)
-21. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
-22. [Testing](#testing)
-23. [Make targets](#make-targets)
+18. [Phase 11: Testing and evaluation](#phase-11-testing-and-evaluation-done)
+19. [Remaining phases (roadmap)](#remaining-phases-roadmap)
+20. [Spend log](#spend-log)
+21. [Decision log](#decision-log)
+22. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
+23. [Testing](#testing)
+24. [Make targets](#make-targets)
 
 ---
 
 ## Progress tracker
 
-Last updated: **2026-10-15** (after Phase 6)
+Last updated: **2026-10-16** (after Phase 11)
 
 | Phase | What it delivers | Status |
 |---|---|---|
@@ -59,8 +60,8 @@ Last updated: **2026-10-15** (after Phase 6)
 | 8. Ranking | Offline static ranking + LightGBM personalized re-rank | ✅ Done |
 | 9. Near-real-time trends | Sliding-window trend detection + lite enrichment | ✅ Done |
 | 10. Observability | Prometheus metrics, Grafana dashboards, alert rules | ✅ Done |
-| 11. Testing & evaluation | Golden set, offline metrics, LLM-as-judge, load test | ⬜ Next |
-| 12. Frontend demo | Next.js storefront with a "which path served this" debug panel | ⬜ |
+| 11. Testing & evaluation | Golden set, offline metrics, LLM-as-judge, load test | ✅ Done |
+| 12. Frontend demo | Next.js storefront with a "which path served this" debug panel | ⬜ Next |
 
 **Milestones:** M1 = Phases 0–3 (hybrid search working) · M2 = 4, 8-baseline, 12 (first demo) · M3 = 5–7 ·
 M4 = 8-ML, 9 · M5 = 10–11.
@@ -73,8 +74,11 @@ complements mined from co-purchases (163 categories, +3.6 ms), and hot queries c
 M3 (Phases 5–7) is reached.** Results are now re-ranked by a LightGBM LambdaMART model (NDCG@10 0.557 → 0.766
 on held-out searches, < 2.5 ms per request), and a near-real-time detector caches trending hard queries within
 seconds, off the request path. **Milestone M4 (Phases 8–9) is reached.** Everything is observable: a provisioned
-Grafana dashboard (business, latency, caches, LLM, ranking, platform) and 17 alert rules. Next is Phase 11,
-testing and evaluation.
+Grafana dashboard (business, latency, caches, LLM, ranking, platform) and 17 alert rules. Evaluation is in place: a 147-query golden set graded by Opus, offline
+NDCG@10 / Recall@50 for three system configurations, a pairwise LLM judge, a load test that meets the P90 and P99
+targets with room to spare, and integration tests against the live stack. **Milestone M5 (Phases 10–11) is
+reached.** The evaluation's main finding is that the LightGBM re-ranker does not help on graded relevance (see
+[Phase 11](#phase-11-testing-and-evaluation-done)). Next is Phase 12, the frontend demo.
 
 ---
 
@@ -159,7 +163,7 @@ genuinely complex work, ideally as an *escalation* after a cheap attempt fails a
 | **0: Code** (free) | Python / SQL / OpenSearch, local embeddings, LightGBM | query normalization + spell correction (SymSpell over catalog vocabulary), cache keys and all cache tiers, log aggregation and query frequency, profile/context lookups, **compiling search queries (template, not LLM)**, taxonomy match by exact/alias/embedding, co-purchase mining, static ranking, personalized re-rank, confidence score, trend detection, related searches from logs, attributes already present in structured product data, embeddings |
 | **1: Cheap**: `claude-haiku-5-5`, effort `low` | Batch API offline; direct calls online | catalog attribute extraction, offline query segmentation, NRT lite segmentation, online fallback rewrite, choosing complements from a supplied list |
 | **2: Strong**: `claude-sonnet-5-5` | Batch API; escalation only | query expansion for head queries (top 20%, cached and reused), and retries when a Tier 1 answer fails validation |
-| **3: Frontier**: `claude-opus-5-5` | low-volume offline | LLM-as-judge evaluation (≤ 500 sampled queries per run) |
+| **3: Frontier**: `claude-opus-5-5` | low-volume offline | LLM-as-judge evaluation (≤ 500 sampled queries per run); golden-set relevance labels (drafts for human review, labeled once and reused) |
 
 Rules:
 - **Cascade, not default-high.** Tier 1 answers first, code validates (schema, taxonomy membership, non-empty
@@ -351,7 +355,7 @@ hiding providers from the rest of the system.
 | `GET /v1/breakers` | circuit breaker state per model |
 | `GET /metrics`, `GET /healthz` | Prometheus metrics, liveness |
 
-**Tasks**: `segment`, `expand_head`, `expand_tail`, `rewrite`, `nrt_segment`, `discover`, `judge`; plus
+**Tasks**: `segment`, `expand_head`, `expand_tail`, `rewrite`, `nrt_segment`, `discover`, `judge`, `label`; plus
 `extract_attributes` (batch-only, used by ingestion).
 
 **How a call works** (`core.py`)
@@ -813,11 +817,100 @@ checked through Grafana's API and per-panel queries, not by eye: no browser was 
 
 **Cost:** ≈ $0.001 (demo traffic: a few first-time fallback rewrites and NRT calls).
 
+## Phase 11: Testing and evaluation (done)
+
+The case study's evaluation (p.181): a golden query set with graded relevance, offline ranking metrics, an LLM
+judge comparing old and new, and a load test against the latency NFRs.
+
+**Golden set** (`eval/golden/`, built deterministically from the logs by `python -m eval.golden.build`): 147
+queries in 11 segments: the 14 case-study examples ("post-workout food", "healthy snacks without nuts for kids",
+"stuff for my dorm party", …), head queries (25 easy, 15 that needed the offline pipeline), torso (15 + 10 hard),
+tail (20 + 15 hard), 8 queries the pipeline failed on, 10 dietary/negation, 12 typos and 3 gibberish.
+
+**Labels** (`eval/label.py`, Opus via the Batch API, cost policy Tier 3): TREC-style pooling. Every system's top
+20 per query is graded 0–3 (3 = exactly what the shopper wants, 0 = irrelevant or violates a negation), so all
+systems are judged on the same products. 4,437 grades, about 30 products per query; the gateway guardrail rejects
+a response unless every product got exactly one grade (0 rejected). Only unlabeled (query, product) pairs are
+sent, so re-labeling after a system change pays only for new products. The grades are **drafts for human review**
+(`"reviewed": false` on every row): no human has spot-checked them yet.
+
+**Systems** (`eval/systems.py`, in-process, results cache off so latency measures the real path):
+`baseline` = the Phase 3 fast path only; `full` = what production serves (caches → fast path → warm tier → LLM
+fallback, then the LightGBM re-rank for an anonymous shopper); `full_no_rerank` = `full` without the re-rank.
+
+**Offline metrics** (`make eval-metrics` → `eval/results/report.json`; free, no LLM). 144 labeled queries
+(gibberish excluded from NDCG/Recall):
+
+| System | NDCG@10 | Recall@50 | Zero-result rate | P50 / P90 / P99 (ms) |
+|---|---|---|---|---|
+| baseline | 0.822 | 0.920 | 0.0% | 26 / 55 / 404 |
+| full | 0.815 | 0.882 | 2.0% | 24 / 59 / 3,977 |
+| full_no_rerank | 0.822 | 0.901 | 2.0% | 20 / 32 / 64 |
+
+Recall@50 is relative to the relevant products any system found, so it compares systems rather than measuring
+catalog coverage. The 2% zero-result rate is the 3 gibberish queries returning nothing, which is correct; the
+baseline returns products for all three. The full system's P99 is its 6 LLM-fallback queries (~4 s each).
+
+NDCG@10 by segment (selected):
+
+| Segment | n | baseline | full | full_no_rerank |
+|---|---|---|---|---|
+| case_study | 14 | 0.616 | **0.690** | 0.645 |
+| head_hard | 15 | **0.853** | 0.808 | 0.803 |
+| tail_hard | 15 | 0.746 | 0.705 | **0.762** |
+| torso_hard | 10 | 0.795 | 0.777 | **0.806** |
+| head_easy | 25 | 0.928 | 0.927 | 0.928 |
+
+**What it shows** (paired bootstrap over queries, 5,000 resamples):
+
+- **Overall, the three systems are indistinguishable.** full − baseline = −0.007 NDCG@10 (95% CI −0.037 to
+  +0.023). On the easy majority of queries the fast path already ranks well, and caches only change latency.
+- **The LLM paths help where the case study says they should**: on its own hard examples full beats baseline by
+  +0.074 (10 queries better, 4 worse). With n = 14 the interval is wide (−0.108 to +0.246), so this is a direction,
+  not a result.
+- **The LightGBM re-ranker hurts slightly.** full − full_no_rerank = −0.006 overall (44 queries better, 66 worse;
+  CI −0.019 to +0.007), and −0.026 on the hard segments (7 better, 20 worse; CI −0.057 to +0.003). Its Phase 8 gain
+  (0.557 → 0.766) was measured on held-out *synthetic clicks*; for an anonymous shopper its personal features are
+  zero and it mostly reorders by popularity and engagement priors, which graded relevance does not reward. It also
+  lowers Recall@50 (0.901 → 0.882). Next step: retrain against these graded labels (or real clicks) before trusting
+  it; until then it is the first thing to switch off in an A/B test.
+
+**LLM-as-judge** (`eval/judge.py`, Opus, pairwise baseline vs full, each list scored 1–5 with reasoning first; the
+winner is recomputed from the scores by the guardrail). Position bias is measured, not assumed away: systems are
+randomly assigned to A/B and each query is judged in both orders. **Pilot only: 25 stratified queries, 50
+judgments.** Full won 16, baseline 18, 16 ties; mean score 3.12 vs 3.04; position A won 56% of decided pairs and 3
+of 25 verdicts flipped with the order. That agrees with the metrics (no overall difference) and is too small to say
+more. The plan's 500-query run was deferred to keep spend down; the full 147-query run, both orders, is estimated at
+≈ $3.00 (`python -m eval.judge submit RUN --both-orders`).
+
+**Load test** (`make load-test`, `eval/load_test.py`): an open-loop asyncio + httpx client rather than Locust: it
+starts requests on a fixed schedule whether or not earlier ones finished, so overload shows up as latency instead of
+slowing arrivals, and it needs no new dependency. Queries are drawn from the logs weighted by frequency.
+
+| Target RPS | Achieved | Requests | Errors | P50 | P90 | P95 | P99 | Max |
+|---|---|---|---|---|---|---|---|---|
+| 20 | 20.0 | 1,200 | 0 | 26 ms | 36 ms | 48 ms | 437 ms | 4.0 s |
+
+Both NFRs hold (P90 < 1 s, P99 < 5 s). Path mix: fast path 80%, results cache 11%, warm 4%, L2 2%, L1 2%, LLM
+fallback 0.6%. The fallback's P90 is 4.0 s, inside the P99 budget only because it is rare: if the fallback rate
+rose above ~1% the P99 target would be at risk, which is what `FallbackRateHigh` alerts on.
+
+**Integration tests** (`make test-integration`, `tests/test_integration.py`): 11 tests through the public HTTP API
+only, so they also work against a deployed service: case-study queries return results, gibberish returns an
+honest empty page, a negated ingredient is excluded, spell correction is reported, a batch-cached query is served
+from a cache tier, click events are accepted and unknown searches rejected, bad filters are a 4xx, and `/metrics`
+exposes the business metrics. **All 11 pass** against the live stack (2026-10-16).
+
+**Not included:** human review of the Opus grades; the full LLM-judge run; a load test above 20 RPS (one local
+process on a laptop, so this is not a capacity statement); a quality check of "Pairs well with" complements.
+
+**Cost:** $2.00 (labels: $0.21 pilot + $1.28 for the remaining 127 queries; judge pilot $0.51). Measured unit
+costs on Opus via batch: **≈ $0.010 per query labeled** (~30 products) and **≈ $0.010 per pairwise judgment**.
+
 ## Remaining phases (roadmap)
 
 | Phase | Plan |
 |---|---|
-| **11. Evaluation** | Golden set (~150 queries incl. all case-study examples), NDCG@10 / Recall@50, LLM-as-judge (Opus, pairwise, 1–5), Locust load test against the P90/P99 targets. |
 | **12. Frontend** | Next.js storefront: search, facets, sort, corrected-query banner, related searches, "Pairs well with", and a debug panel. |
 
 ---
@@ -842,7 +935,10 @@ All Anthropic API spend so far, measured from API usage (Batch API prices where 
 | 2026-10-15 | Phase 7 discovery: two 150-category pilots (prompt v1, v2) + 200 remaining categories | Haiku 5.5 (batch) | $0.034 |
 | 2026-10-15 | Phase 9 NRT demo (4 `nrt_segment` calls, prompt v1 + v2) | Haiku 5.5 | ≈ $0.0003 |
 | 2026-10-15 | Phase 10 demo traffic (first-time fallback rewrites, NRT) | Haiku 5.5 | ≈ $0.001 |
-| | **Total** | | **≈ $2.61** |
+| 2026-10-15 | Phase 11 golden-set labels, 20-query pilot (588 grades) | Opus 5.5 (batch) | $0.213 |
+| 2026-10-15 | Phase 11 LLM-judge pilot, 25 queries × 2 orders | Opus 5.5 (batch) | $0.508 |
+| 2026-10-16 | Phase 11 golden-set labels, remaining 127 queries (3,849 grades) | Opus 5.5 (batch) | $1.276 |
+| | **Total** | | **≈ $4.61** |
 
 Measured unit costs: catalog enrichment **$1.08 / 1k products on Sonnet vs $0.069 / 1k on Haiku** (~16× cheaper,
 comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per first-time query**, then memoized.
@@ -926,7 +1022,8 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 ## Testing
 
 ```bash
-make test     # 113 unit tests, no network, API calls or writes to real infrastructure
+make test              # 121 unit tests, no network, API calls or writes to real infrastructure
+make test-integration  # 11 tests against the running stack (SEARCH_URL, default http://localhost:8000)
 make lint     # ruff
 ```
 
@@ -959,6 +1056,10 @@ CUDA packages off the runners.
 - `tests/test_cache.py`: each tier (L1, L2, similar warm only below the confidence gate, never for negations),
   request filters applied to cached queries, results cache re-hydration and keying, purge on catalog updates,
   cache outage falling through to the fast path, hot-list and L2 contents.
+- `tests/test_eval.py`: NDCG and Recall against graded labels (and agreement with the ranking module's NDCG),
+  nearest-rank percentiles, typo generation, stratified pilots, pooling order, the label guardrail (every product
+  graded, unknown ids dropped), the judge mapping positions back to systems and counting order flips.
+- `tests/test_integration.py`: see [Phase 11](#phase-11-testing-and-evaluation-done); skipped unless `SEARCH_URL` is set.
 - `tests/test_gateway.py`: routing and cost policy, strict schemas, circuit breaker states, escalation on
   hallucinated taxonomy paths, breaker-open skipping, refusals, guardrails, judge, batch helpers, HTTP endpoints
   (via a fake LLM caller).
@@ -987,9 +1088,11 @@ write-back and gateway-outage behavior in [Phase 4](#phase-4-fallback-path-done)
 | `hot-list` | Phase 6: hot list → S3 + `list_update`; warm L2 (last step of `pipeline`) |
 | `discovery` | Phase 7: co-purchase mining → complements (Haiku batch, `LIMIT=n` pilot) → Redis (also in `pipeline`) |
 | `dashboard` | Phase 10: regenerate the Grafana dashboard JSON from `ops/grafana/dashboard.py` |
+| `eval-systems` / `eval-metrics` | Phase 11: run the golden queries through each system / NDCG, Recall, zero-result rate, latency (free) |
+| `load-test` | Phase 11: open-loop load test (`RPS=20 DURATION=60`) |
 | `nrt` | Phase 9: near-real-time trend detector (long-running; `THRESHOLD=5` for a demo) |
 | `rank-publish` / `rank-train` | Phase 8: publish static scores + ranking features (also in `pipeline`) / retrain the LightGBM re-ranker |
 | `synth` | synthetic users and logs (+ 2,000 events to Kafka) |
 | `catalog-consumer` | run the price/stock freshness consumer |
 | `gateway` / `search` | run the gateway (8001) / search service (8000) |
-| `test` / `lint` | pytest / ruff |
+| `test` / `test-integration` / `lint` | unit tests / tests against the running stack / ruff |

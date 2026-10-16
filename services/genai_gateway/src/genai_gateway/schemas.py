@@ -91,6 +91,28 @@ class DiscoverOutput(BaseModel):
     complements: list[str] = Field(description="0-5 genuine complements chosen from co_purchase_data, best first")
 
 
+# ---- label: graded relevance for the golden set (offline evaluation, doc p.181) ----
+
+class LabelProduct(BaseModel):
+    id: str
+    title: str
+    category: str | None = None
+
+
+class LabelInput(BaseModel):
+    query: str
+    products: list[LabelProduct]
+
+
+class Grade(BaseModel):
+    id: str
+    grade: Literal[0, 1, 2, 3]
+
+
+class LabelOutput(BaseModel):
+    grades: list[Grade]
+
+
 # ---- judge (offline evaluation, doc p.181) ----
 
 class JudgedResult(BaseModel):

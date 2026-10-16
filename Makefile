@@ -1,4 +1,4 @@
-.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery rank-publish rank-train nrt dashboard test lint gateway search
+.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery rank-publish rank-train nrt dashboard eval-systems eval-metrics load-test test test-integration lint gateway search
 
 install:
 	uv sync --all-extras
@@ -76,6 +76,18 @@ nrt:
 dashboard:
 	uv run python ops/grafana/dashboard.py
 
+# Phase 11: golden queries through each system (needs `make up` + `make gateway`) -> offline metrics (free).
+# Paid labelling / judging are run explicitly: uv run python -m eval.label|eval.judge submit|collect RUN
+eval-systems:
+	uv run python -m eval.systems
+
+eval-metrics:
+	uv run python -m eval.metrics
+
+# Phase 11: open-loop load test against a running search service (RPS=20 DURATION=60 by default)
+load-test:
+	uv run python -m eval.load_test $(if $(RPS),--rps $(RPS)) $(if $(DURATION),--seconds $(DURATION))
+
 # Daily at 02:00 UTC; HOURLY=1 for every hour
 pipeline-schedule:
 	uv run python -m pipelines.offline.run schedule $(if $(HOURLY),--hourly)
@@ -87,6 +99,9 @@ pipeline-dry:
 
 test:
 	uv run pytest -q
+
+test-integration:
+	SEARCH_URL=$${SEARCH_URL:-http://localhost:8000} uv run pytest -q -m integration
 
 lint:
 	uv run ruff check .

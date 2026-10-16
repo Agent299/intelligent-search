@@ -1,0 +1,33 @@
+{
+ "target_rps": 20.0,
+ "achieved_rps": 20.01,
+ "requests": 1200,
+ "errors": 0,
+ "latency_ms": {
+  "p50": 26.1,
+  "p90": 36.3,
+  "p95": 47.5,
+  "p99": 436.9
+ },
+ "max_ms": 4002.2,
+ "nfr": {
+  "p90_under_1s": true,
+  "p99_under_5s": true
+ },
+ "served_by_share": {
+  "fast_path": 0.804,
+  "results_cache": 0.113,
+  "warm": 0.037,
+  "l2": 0.022,
+  "l1": 0.018,
+  "fallback": 0.006
+ },
+ "p90_ms_by_path": {
+  "fallback": 4002.2,
+  "fast_path": 37.1,
+  "l1": 22.5,
+  "l2": 25.3,
+  "results_cache": 17.5,
+  "warm": 26.9
+ }
+}
