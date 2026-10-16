@@ -10,3 +10,5 @@ models/
 node_modules/
 .next/
 dist/
+data/ranking/graded/candidates-*.jsonl
+data/ranking/graded/ranker-graded.txt

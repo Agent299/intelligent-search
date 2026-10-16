@@ -78,8 +78,9 @@ seconds, off the request path. **Milestone M4 (Phases 8–9) is reached.** Every
 Grafana dashboard (business, latency, caches, LLM, ranking, platform) and 17 alert rules. Evaluation is in place: a 147-query golden set graded by Opus, offline
 NDCG@10 / Recall@50 for three system configurations, a pairwise LLM judge, a load test that meets the P90 and P99
 targets with room to spare, and integration tests against the live stack. **Milestone M5 (Phases 10–11) is
-reached.** The evaluation's main finding is that the LightGBM re-ranker does not help on graded relevance (see
-[Phase 11](#phase-11-testing-and-evaluation-done)). A Next.js storefront (`make web`, http://localhost:3000) puts
+reached.** The evaluation found that the LightGBM re-ranker, trained on synthetic clicks, hurt graded relevance;
+retrained on graded labels over real retrieval candidates it now matches or slightly beats retrieval order (see
+[Phase 8](#phase-8-ranking-done)). A Next.js storefront (`make web`, http://localhost:3000) puts
 it all in front of a shopper, with a panel that shows which path served each search. **All 13 phases are done.**
 
 ---
@@ -731,6 +732,44 @@ brand counts. If no model file is present, the linear ranker is used; every fail
 **Live (2026-10-15):** re-rank **< 2.5 ms in 11 of 12 requests** (one cold first call); fast path 27–51 ms,
 results cache 10.5 ms, L1 7.7 ms with re-ranking included.
 
+**Retrained on graded relevance (2026-10-16).** Phase 11 showed the model above losing to plain retrieval order on
+the golden set (NDCG@10 −0.006 overall, 44 queries better / 66 worse; −0.026 on hard queries). The cause was the
+training data, not the model. The synthetic logs' "shown" lists are random products from the target's category
+with the query's source product placed near the top, and one product is the right answer. Serving re-ranks the
+retriever's real top 100, where many products can be relevant. The model learned a distribution it never sees.
+
+`pipelines/ranking/graded.py` (`make rank-graded-capture`, then a paid label step, then `make rank-graded-train`)
+retrains on what serving sees:
+
+1. **Training queries:** 377 logged queries sampled with the golden set's segment rules, hard segments
+   over-sampled 2×, **no golden query** (nor a typo's intended query). The golden set stays the test set.
+2. **Candidates captured through the serving engine itself**, with a recording ranker in the model's place: the
+   exact feature rows the live re-rank computes (similarity fill for keyword-only hits, query engagement from
+   Redis), for an anonymous shopper. Queries the LLM fallback serves are skipped; production doesn't re-rank them
+   either (328 train / 142 golden queries kept).
+3. **Labels:** the top 30 candidates graded 0–3 by the `label` task on **Haiku** (8,212 grades, $0.12). A pilot on
+   621 golden products already graded by Opus decided the tier: within one grade 100% of the time, the same
+   relevant / not-relevant call (grade ≥ 2) 94%, quadratic-weighted κ 0.88; Haiku is a little more lenient
+   (0 → 1), a monotone shift that ordering within a query tolerates. Opus would have cost ~22× more.
+4. **Training:** LambdaMART, 5-fold cross-validation grouped by query to pick the rounds (37), then fit on all
+   322 queries with any relevance. It installs only if it beats retrieval order on the golden set; the old model is
+   kept as `models/ranker-synthetic.txt`.
+
+| Golden set, end to end (`eval.systems` + `eval.metrics`, all pools graded) | Synthetic-click model | Graded model |
+|---|---|---|
+| full − full_no_rerank, NDCG@10 | −0.006 (44 better / 66 worse) | **+0.006** (50 / 49), CI −0.003 to +0.016 |
+| … on the hard segments (n = 40) | −0.026 (7 / 20) | **+0.011** (12 / 6), CI −0.003 to +0.028 |
+| Recall@50 of `full` | 0.882 | **0.910** |
+| Mean rank shift in the top 10 | 6.2 | 2.5 |
+
+The re-rank no longer hurts and now helps slightly, mostly on hard queries, but the gain is **not significant**:
+retrieval order is already close to what these features can do for relevance. Gain share: retrieval_rank 60%,
+qp_engagement 23%, semantic_sim 12%, static_score 3%, popularity 2%; personal features 0, since it was trained for
+anonymous shoppers. In cross-validation on the training queries it adds +0.015 over retrieval order (0.887 vs
+0.872, judged products only). Re-rank latency is unchanged (5 of 6 live requests < 2.5 ms; the model is smaller).
+Personalization therefore still has no weight; it needs either real logs with repeat behaviour or graded
+labels per shopper.
+
 **Cost:** $0. No LLM calls.
 
 ## Phase 9: Near-real-time trends (done)
@@ -876,7 +915,8 @@ NDCG@10 by segment (selected):
 - **The LLM paths help where the case study says they should**: on its own hard examples full beats baseline by
   +0.074 (10 queries better, 4 worse). With n = 14 the interval is wide (−0.108 to +0.246), so this is a direction,
   not a result.
-- **The LightGBM re-ranker hurts slightly.** full − full_no_rerank = −0.006 overall (44 queries better, 66 worse;
+- **The LightGBM re-ranker hurts slightly** (since fixed: [retrained on graded labels](#phase-8-ranking-done), it
+  is now +0.006 overall and +0.011 on hard queries, not significant). full − full_no_rerank = −0.006 overall (44 queries better, 66 worse;
   CI −0.019 to +0.007), and −0.026 on the hard segments (7 better, 20 worse; CI −0.057 to +0.003). Its Phase 8 gain
   (0.557 → 0.766) was measured on held-out *synthetic clicks*; for an anonymous shopper its personal features are
   zero and it mostly reorders by popularity and engagement priors, which graded relevance does not reward. It also
@@ -972,7 +1012,7 @@ typechecked build.
 
 | Item | Why |
 |---|---|
-| Retrain or switch off the LightGBM re-ranker | Phase 11: net negative on graded relevance (44 better / 66 worse) |
+| Personalization signal | The re-ranker now matches or slightly beats retrieval order, but personal features carry no weight: needs real repeat-behaviour logs |
 | Human review of the Opus golden-set grades | They are drafts (`reviewed: false`); metrics inherit any labeling bias |
 | Full LLM-judge run (147 queries, both orders, ≈ $3) | The 25-query pilot is too small to call a winner |
 | Visual QA of the storefront in a browser | Not possible in the build session |
@@ -1002,7 +1042,10 @@ All Anthropic API spend so far, measured from API usage (Batch API prices where 
 | 2026-10-15 | Phase 11 golden-set labels, 20-query pilot (588 grades) | Opus 5.5 (batch) | $0.213 |
 | 2026-10-15 | Phase 11 LLM-judge pilot, 25 queries × 2 orders | Opus 5.5 (batch) | $0.508 |
 | 2026-10-16 | Phase 11 golden-set labels, remaining 127 queries (3,849 grades) | Opus 5.5 (batch) | $1.276 |
-| | **Total** | | **≈ $4.61** |
+| 2026-10-16 | Re-ranker retrain: Haiku-vs-Opus label agreement pilot (621 grades) | Haiku 5.5 (batch) | $0.009 |
+| 2026-10-16 | Re-ranker retrain: training labels, 328 queries (8,212 grades) | Haiku 5.5 (batch) | $0.125 |
+| 2026-10-16 | Golden-set top-up: products the new ranking surfaced (145 grades) | Opus 5.5 (batch) | $0.091 |
+| | **Total** | | **≈ $4.84** |
 
 Measured unit costs: catalog enrichment **$1.08 / 1k products on Sonnet vs $0.069 / 1k on Haiku** (~16× cheaper,
 comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per first-time query**, then memoized.
@@ -1056,6 +1099,7 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 | 41 | 2026-10-15 | Process saturation from stdlib `resource` (`app_process_*`), not psutil or the default collector | The default collector reads `/proc` and is empty on macOS; one small collector works everywhere with no new dependency |
 | 42 | 2026-10-15 | Kafka lag from Redpanda's built-in metrics; Redis via `redis_exporter`; no Alertmanager | Lag needs no extra exporter (max offset − committed offset in PromQL); alert routing is environment-specific |
 | 43 | 2026-10-15 | Dashboard as code (`ops/grafana/dashboard.py`) with tests that every metric in the dashboard and alerts is exported, and that the committed JSON matches the generator | A renamed metric would otherwise leave an empty panel or an alert that can never fire, silently |
+| 44 | 2026-10-16 | Re-ranker trained on graded labels over captured serving candidates, not on synthetic clicks; Haiku grades training data, Opus grades the golden test set | The synthetic logs' shown lists don't resemble the retriever's candidates (Phase 11: the old model lost to retrieval order). Haiku agreed with Opus within one grade on 100% of 621 pilot products at ~1/22 the cost; the test set keeps the stronger grader |
 
 ---
 
@@ -1086,7 +1130,7 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 ## Testing
 
 ```bash
-make test              # 123 unit tests, no network, API calls or writes to real infrastructure
+make test              # 126 unit tests, no network, API calls or writes to real infrastructure
 make test-integration  # 11 tests against the running stack (SEARCH_URL, default http://localhost:8000)
 make lint     # ruff
 ```
@@ -1156,6 +1200,7 @@ write-back and gateway-outage behavior in [Phase 4](#phase-4-fallback-path-done)
 | `eval-systems` / `eval-metrics` | Phase 11: run the golden queries through each system / NDCG, Recall, zero-result rate, latency (free) |
 | `load-test` | Phase 11: open-loop load test (`RPS=20 DURATION=60`) |
 | `nrt` | Phase 9: near-real-time trend detector (long-running; `THRESHOLD=5` for a demo) |
+| `rank-graded-capture` / `rank-graded-train` | capture training + golden candidates through the serving engine / train on graded labels, install only if it beats retrieval order |
 | `rank-publish` / `rank-train` | Phase 8: publish static scores + ranking features (also in `pipeline`) / retrain the LightGBM re-ranker |
 | `synth` | synthetic users and logs (+ 2,000 events to Kafka) |
 | `catalog-consumer` | run the price/stock freshness consumer |

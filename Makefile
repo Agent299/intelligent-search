@@ -1,4 +1,4 @@
-.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery rank-publish rank-train nrt dashboard eval-systems eval-metrics load-test test test-integration lint gateway search web web-dev
+.PHONY: install up down migrate bootstrap ingest index enrich-submit enrich-status enrich-collect synth catalog-consumer pipeline pipeline-pilot pipeline-dry pipeline-schedule hot-list discovery rank-publish rank-train rank-graded-capture rank-graded-train nrt dashboard eval-systems eval-metrics load-test test test-integration lint gateway search web web-dev
 
 install:
 	uv sync --all-extras
@@ -67,6 +67,17 @@ rank-publish:
 # Phase 8: retrain the LightGBM re-ranker (models/ranker.txt + NDCG report in models/ranker.json); restart search
 rank-train:
 	uv run python -m pipelines.ranking.train
+
+# Re-ranker on graded relevance over real candidates (needs `make gateway`). Labels are a paid step, run explicitly:
+#   uv run python -m pipelines.ranking.graded label-submit RUN --model claude-haiku-5-5 ; ... label-collect RUN
+rank-graded-capture:
+	uv run python -m pipelines.ranking.graded queries
+	uv run python -m pipelines.ranking.graded capture train
+	uv run python -m pipelines.ranking.graded capture golden
+
+# Train, report against retrieval order on the golden set, install as models/ranker.txt; restart search
+rank-graded-train:
+	uv run python -m pipelines.ranking.graded train --install
 
 # Phase 9: near-real-time trend detector on query_logs (long-running). THRESHOLD=5 for a demo (default 100 / 5 min)
 nrt:

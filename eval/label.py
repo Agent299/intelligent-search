@@ -27,10 +27,10 @@ POOL_DEPTH = 20
 STAGE = "label"
 
 
-def load_labels() -> dict[str, dict[str, int]]:
+def load_labels(path: Path = LABELS) -> dict[str, dict[str, int]]:
     out: dict[str, dict[str, int]] = {}
-    if LABELS.exists():
-        for line in LABELS.read_text().splitlines():
+    if path.exists():
+        for line in path.read_text().splitlines():
             r = json.loads(line)
             out.setdefault(r["query"], {})[r["product_id"]] = r["grade"]
     return out
@@ -74,18 +74,16 @@ def product_text(ids: list[str]) -> dict[str, dict]:
     return {d["_id"]: d["_source"] for d in docs if d.get("found")}
 
 
-def submit(run_id: str, limit: int | None) -> tuple[int, int]:
-    """Returns (queries submitted, products to grade)."""
-    have, pool = load_labels(), pools()
-    queries = stratified(load_golden(), limit) if limit else [g["query"] for g in load_golden()]
-    todo = {q: [pid for pid in pool[q] if pid not in have.get(q, {})] for q in queries}
-    todo = {q: ids for q, ids in todo.items() if ids}
+def label_items(todo: dict[str, list[str]], prefix: str = "lab") -> dict[str, dict]:
+    """Batch items grading each query's products (query -> product ids). Products are sent as p1..pN."""
     text = product_text(sorted({pid for ids in todo.values() for pid in ids}))
     items = {}
     for q, ids in todo.items():
         ids = [pid for pid in ids if pid in text]
+        if not ids:
+            continue
         short = {f"p{i + 1}": pid for i, pid in enumerate(ids)}
-        items[f"lab-{hashlib.sha1(q.encode()).hexdigest()[:16]}"] = {
+        items[f"{prefix}-{hashlib.sha1(q.encode()).hexdigest()[:16]}"] = {
             "task": "label",
             "inputs": {"query": q, "products": [
                 {"id": sid, "title": text[pid]["name"][:120],
@@ -93,12 +91,11 @@ def submit(run_id: str, limit: int | None) -> tuple[int, int]:
                 for sid, pid in short.items()]},
             "meta": {"query": q, "ids": short},
         }
-    BatchJob(run_id, STAGE).submit(items)
-    return len(items), sum(len(it["meta"]["ids"]) for it in items.values())
+    return items
 
 
-def collect(run_id: str) -> tuple[int, int, float]:
-    """Returns (queries labeled, labels written, cost USD so far)."""
+def collect_into(run_id: str, path: Path) -> tuple[int, int, float]:
+    """Validate a finished label batch and append its grades to `path`. Returns (queries, labels, cost USD)."""
     job = BatchJob(run_id, STAGE)
     res = job.collect()
     for cid, reason in res.invalid.items():
@@ -111,9 +108,25 @@ def collect(run_id: str) -> tuple[int, int, float]:
         for sid, grade in item["output"]["grades"].items():
             rows.append({"query": item["meta"]["query"], "product_id": item["meta"]["ids"][sid], "grade": grade,
                          "model": item["final_model"], "labeled_at": now, "reviewed": False})
-    with LABELS.open("a") as f:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a") as f:
         f.writelines(json.dumps(r) + "\n" for r in rows)
     return len(res.ok), len(rows), job.state.get("cost_usd", 0.0)
+
+
+def submit(run_id: str, limit: int | None) -> tuple[int, int]:
+    """Returns (queries submitted, products to grade)."""
+    have, pool = load_labels(), pools()
+    queries = stratified(load_golden(), limit) if limit else [g["query"] for g in load_golden()]
+    todo = {q: [pid for pid in pool[q] if pid not in have.get(q, {})] for q in queries}
+    items = label_items({q: ids for q, ids in todo.items() if ids})
+    BatchJob(run_id, STAGE).submit(items)
+    return len(items), sum(len(it["meta"]["ids"]) for it in items.values())
+
+
+def collect(run_id: str) -> tuple[int, int, float]:
+    """Returns (queries labeled, labels written, cost USD so far)."""
+    return collect_into(run_id, LABELS)
 
 
 def main() -> None:

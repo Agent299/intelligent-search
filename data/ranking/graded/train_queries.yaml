@@ -1,0 +1,756 @@
+seed: 23
+queries:
+- query: imou indoor security camera
+  segment: head_easy
+- query: cable clips
+  segment: head_easy
+- query: all purpose seasoning
+  segment: head_easy
+- query: usb c cable
+  segment: head_easy
+- query: jerky gift basket
+  segment: head_easy
+- query: oval wall mirror
+  segment: head_easy
+- query: mens athletic shirt
+  segment: head_easy
+- query: spice jars
+  segment: head_easy
+- query: luckgood886 usb flash drive
+  segment: head_easy
+- query: closet organization suit hangers
+  segment: head_easy
+- query: edible gold leaf
+  segment: head_easy
+- query: heated blanket
+  segment: head_easy
+- query: pool shoes
+  segment: head_easy
+- query: airpods pro case
+  segment: head_easy
+- query: flip flops
+  segment: head_easy
+- query: winter boots
+  segment: head_easy
+- query: provolone cheese slices
+  segment: head_easy
+- query: ankle boots
+  segment: head_easy
+- query: carrington farms flax chia blend
+  segment: head_easy
+- query: cable sleeve
+  segment: head_easy
+- query: sherpa pullover hoodie
+  segment: head_easy
+- query: organic shower curtain liner
+  segment: head_easy
+- query: amazon basics suit hangers
+  segment: head_easy
+- query: skullcandy wireless earbuds
+  segment: head_easy
+- query: women's pajama set
+  segment: head_easy
+- query: peanut butter stirrer
+  segment: head_easy
+- query: lucuma powder
+  segment: head_easy
+- query: best ipad case
+  segment: head_easy
+- query: fascinator hat
+  segment: head_easy
+- query: baby sun hat
+  segment: head_easy
+- query: underwire bra
+  segment: head_easy
+- query: match cargo shorts
+  segment: head_easy
+- query: deli turkey
+  segment: head_easy
+- query: winter gloves
+  segment: head_easy
+- query: flat shoelaces
+  segment: head_easy
+- query: m 2 nvme adapter
+  segment: head_easy
+- query: rose petals
+  segment: head_hard
+- query: urban coco shift dress
+  segment: head_hard
+- query: kids soda
+  segment: head_hard
+- query: watch band
+  segment: head_hard
+- query: flax chia blend
+  segment: head_hard
+- query: speakerphone
+  segment: head_hard
+- query: home queen blackout valance
+  segment: head_hard
+- query: ultimate guard deck box
+  segment: head_hard
+- query: blue cheese stuffed olives
+  segment: head_hard
+- query: popcorn popper
+  segment: head_hard
+- query: coverall
+  segment: head_hard
+- query: speaker case
+  segment: head_hard
+- query: samsonite carry-on luggage
+  segment: head_hard
+- query: ottoman
+  segment: head_hard
+- query: conference speakerphone
+  segment: head_hard
+- query: skort
+  segment: head_hard
+- query: retro pumps
+  segment: head_hard
+- query: the teapot company herbal tea
+  segment: head_hard
+- query: crystal tree
+  segment: head_hard
+- query: camera lens
+  segment: head_hard
+- query: bedroom bedding
+  segment: head_hard
+- query: bench cushion
+  segment: head_hard
+- query: deck box
+  segment: head_hard
+- query: babydoll nightie
+  segment: head_hard
+- query: tissue pom poms
+  segment: head_hard
+- query: case fan
+  segment: head_hard
+- query: melting clock
+  segment: head_hard
+- query: lundberg white rice
+  segment: head_hard
+- query: lcd writing tablet
+  segment: head_hard
+- query: spinach fettuccine
+  segment: head_hard
+- query: pack of 100 suit hangers
+  segment: head_hard
+- query: remote control case
+  segment: head_hard
+- query: checkers seasoned fries
+  segment: head_hard
+- query: faux wood blinds
+  segment: head_hard
+- query: jordan almonds
+  segment: head_hard
+- query: ductless mini split
+  segment: head_hard
+- query: walking shorts
+  segment: head_hard
+- query: refrigerator deodorizer
+  segment: head_hard
+- query: biscaynebay tablecloth
+  segment: head_hard
+- query: shower radio
+  segment: head_hard
+- query: millet
+  segment: head_hard
+- query: eyecup
+  segment: head_hard
+- query: jandals
+  segment: head_hard
+- query: produce aisle dark red cherries
+  segment: head_hard
+- query: edilly memory foam mattress topper
+  segment: head_hard
+- query: greek yogurt
+  segment: head_hard
+- query: recliner pull handle
+  segment: head_hard
+- query: brass hand bell
+  segment: head_hard
+- query: thermal paste
+  segment: head_hard
+- query: active
+  segment: head_hard
+- query: shortbread cookies
+  segment: head_hard
+- query: celestial seasonings decaf green tea
+  segment: torso
+- query: large hdmi cable
+  segment: torso
+- query: allenjoy photo backdrop
+  segment: torso
+- query: atx power extension cable
+  segment: torso
+- query: plant-based meal packets
+  segment: torso
+- query: kava instant coffee
+  segment: torso
+- query: incense sticks
+  segment: torso
+- query: adidas soccer shoes
+  segment: torso
+- query: casebuy chromebook keyboard cover
+  segment: torso
+- query: sweater
+  segment: torso
+- query: crocsee cable sleeve
+  segment: torso
+- query: relax home life bed wedge pillow
+  segment: torso
+- query: 5 25 oz 12 pack sunflower seeds
+  segment: torso
+- query: coviss golf polo shirt
+  segment: torso
+- query: sun-dried tomatoes
+  segment: torso
+- query: simplicity rose petals
+  segment: torso
+- query: zmart slouch socks
+  segment: torso
+- query: audio cable for tv
+  segment: torso
+- query: modern blackout curtains
+  segment: torso
+- query: yebing slipper socks
+  segment: torso
+- query: large bed sheet set
+  segment: torso
+- query: slip on slip on sneakers
+  segment: torso
+- query: best liquid water enhancer
+  segment: torso
+- query: gpu power extension cable
+  segment: torso
+- query: 64gb thumb drive
+  segment: torso
+- query: stainless steel plastic lemon zester
+  segment: torso
+- query: hipster panty
+  segment: torso
+- query: lush decor quilt set
+  segment: torso
+- query: chocolate bars
+  segment: torso
+- query: amazon essentials girls fleece jacket
+  segment: torso
+- query: bathroom decor
+  segment: torso
+- query: dual-core processor
+  segment: torso
+- query: lee cargo shorts
+  segment: torso
+- query: mules
+  segment: torso
+- query: chocolate wafer candy
+  segment: torso
+- query: small keyboard cover
+  segment: torso
+- query: reading and watching tablet floor stand
+  segment: torso_hard
+- query: hot tea
+  segment: torso_hard
+- query: first wall art wall art
+  segment: torso_hard
+- query: bolero
+  segment: torso_hard
+- query: brush roll
+  segment: torso_hard
+- query: sweet orange orange juice
+  segment: torso_hard
+- query: small slippers
+  segment: torso_hard
+- query: wododo fanny pack
+  segment: torso_hard
+- query: cream citrus juicer
+  segment: torso_hard
+- query: statement ring
+  segment: torso_hard
+- query: sylvania portable cd boombox
+  segment: torso_hard
+- query: gift for fitness lover
+  segment: torso_hard
+- query: gift sneakers
+  segment: torso_hard
+- query: brensten popcorn popper
+  segment: torso_hard
+- query: pencil tree
+  segment: torso_hard
+- query: costume robe
+  segment: torso_hard
+- query: 3t to 12 underwear
+  segment: torso_hard
+- query: promise ring
+  segment: torso_hard
+- query: large walking shoes
+  segment: torso_hard
+- query: party drinks
+  segment: torso_hard
+- query: umeboshi furikake
+  segment: torso_hard
+- query: party decor
+  segment: torso_hard
+- query: beach shower radio
+  segment: torso_hard
+- query: whipped topping
+  segment: torso_hard
+- query: streaming movies and tv streaming media player
+  segment: torso_hard
+- query: pipe connector
+  segment: torso_hard
+- query: palo azul tea
+  segment: torso_hard
+- query: humble crew toy organizer
+  segment: torso_hard
+- query: tube top
+  segment: torso_hard
+- query: sunburst mirror
+  segment: torso_hard
+- query: baby gift set
+  segment: torso_hard
+- query: half slip
+  segment: torso_hard
+- query: buydecorativefilm window film
+  segment: torso_hard
+- query: acrylic risers
+  segment: torso_hard
+- query: waouh birthday banner
+  segment: torso_hard
+- query: classic photo album
+  segment: torso_hard
+- query: lardux floating candles
+  segment: torso_hard
+- query: symcode page turner remote
+  segment: torso_hard
+- query: podravka pate
+  segment: torso_hard
+- query: gift sheet set
+  segment: torso_hard
+- query: bike remote
+  segment: torso_hard
+- query: large deck box
+  segment: torso_hard
+- query: syrup pump
+  segment: torso_hard
+- query: stakich royal jelly
+  segment: torso_hard
+- query: candy
+  segment: torso_hard
+- query: gift coverall
+  segment: torso_hard
+- query: rice bowl
+  segment: torso_hard
+- query: pxiyou laundry room sign
+  segment: torso_hard
+- query: graceart steampunk skirt
+  segment: torso_hard
+- query: 1 4 oz 12 count nut bars
+  segment: torso_hard
+- query: large graphic t-shirt
+  segment: torso_hard
+- query: moroccan pouf
+  segment: torso_hard
+- query: clip-on speaker
+  segment: torso_hard
+- query: office snack
+  segment: torso_hard
+- query: electric air duster
+  segment: torso_hard
+- query: all-in-one computer
+  segment: torso_hard
+- query: crunch candy
+  segment: torso_hard
+- query: petticoat
+  segment: torso_hard
+- query: black and white cookies
+  segment: torso_hard
+- query: green garlic press
+  segment: torso_hard
+- query: rockdove slippers
+  segment: torso_hard
+- query: trainers
+  segment: torso_hard
+- query: spice specialist pastrami rub
+  segment: torso_hard
+- query: dadanism bags cases & sleeves
+  segment: torso_hard
+- query: single earbud
+  segment: torso_hard
+- query: sopressata
+  segment: torso_hard
+- query: housewarming gift
+  segment: torso_hard
+- query: gochugaru
+  segment: torso_hard
+- query: black streaming media player
+  segment: torso_hard
+- query: garmin bike remote
+  segment: torso_hard
+- query: battery capacity checker
+  segment: torso_hard
+- query: salusanan vinyl stickers
+  segment: torso_hard
+- query: 8 pack seltzer
+  segment: torso_hard
+- query: string lights for tree
+  segment: tail
+- query: shaderz sunglasses
+  segment: tail
+- query: men men's turtleneck sweater
+  segment: tail
+- query: oakley eyeglass ear socks
+  segment: tail
+- query: saodimallsu women's henley sweater
+  segment: tail
+- query: pci cooling fan
+  segment: tail
+- query: mini santa hot chocolate candy
+  segment: tail
+- query: lightweight summer cardigan
+  segment: tail
+- query: organic women's cardigan
+  segment: tail
+- query: ergonomic laptop keyboard
+  segment: tail
+- query: quilted mattress pad
+  segment: tail
+- query: baking and cooking gelatin sheets
+  segment: tail
+- query: sleepwear
+  segment: tail
+- query: turandoss huggie earrings
+  segment: tail
+- query: large dijon mustard
+  segment: tail
+- query: long sleeve performance shirt
+  segment: tail
+- query: cafetime dachshund pillow cover
+  segment: tail
+- query: pull on graphic tee
+  segment: tail
+- query: hickey freeman merino wool scarf
+  segment: tail
+- query: large snack cakes
+  segment: tail
+- query: diet gift snack
+  segment: tail
+- query: whimsical practicality edible cake topper
+  segment: tail
+- query: premium fuzzy socks
+  segment: tail
+- query: cheap pancake mix
+  segment: tail
+- query: sweetly divine pepper jelly
+  segment: tail
+- query: christopher ranch fresh garlic
+  segment: tail
+- query: long battery life tablet
+  segment: tail
+- query: snack peak caramel candy gift box
+  segment: tail
+- query: 16gb voice recorder
+  segment: tail
+- query: artificial bird nest
+  segment: tail
+- query: large lasagne noodles
+  segment: tail
+- query: cheap replacement ear tips
+  segment: tail
+- query: kosher olive oil
+  segment: tail
+- query: thick and rich double devon cream
+  segment: tail
+- query: bakery decorations
+  segment: tail
+- query: samsung vhs vcr
+  segment: tail
+- query: best cros strainer shoes
+  segment: tail_hard
+- query: gift fermneted black beans
+  segment: tail_hard
+- query: countertop blender
+  segment: tail_hard
+- query: large blacklight poster
+  segment: tail_hard
+- query: school lunch treats
+  segment: tail_hard
+- query: celiac friendly dinner
+  segment: tail_hard
+- query: stand acse
+  segment: tail_hard
+- query: best mac and cheese mix
+  segment: tail_hard
+- query: citrus vinegar
+  segment: tail_hard
+- query: premium chari covers
+  segment: tail_hard
+- query: lightweight mini speaker
+  segment: tail_hard
+- query: soft cotton abby clothes
+  segment: tail_hard
+- query: voip headset
+  segment: tail_hard
+- query: large baking cocoa
+  segment: tail_hard
+- query: gift spy camera
+  segment: tail_hard
+- query: best coleslaw mix
+  segment: tail_hard
+- query: stocking stuffers
+  segment: tail_hard
+- query: women' stank top
+  segment: tail_hard
+- query: traditional coal hod
+  segment: tail_hard
+- query: small white rice
+  segment: tail_hard
+- query: cheap talking watch
+  segment: tail_hard
+- query: allwin-houseware w knife sharpening steel
+  segment: tail_hard
+- query: bottle bursh
+  segment: tail_hard
+- query: clear bcak tablet case
+  segment: tail_hard
+- query: 4g lte module
+  segment: tail_hard
+- query: candy for kids
+  segment: tail_hard
+- query: washable mouse skin cover
+  segment: tail_hard
+- query: car speakerg rill
+  segment: tail_hard
+- query: gift tablet floor stand
+  segment: tail_hard
+- query: organic keyboards mice & accessories
+  segment: tail_hard
+- query: gift tennis dress
+  segment: tail_hard
+- query: sewing lover gift
+  segment: tail_hard
+- query: ar country store salt and pepper shaker set
+  segment: tail_hard
+- query: american greetings coin purse
+  segment: tail_hard
+- query: small tablecloth
+  segment: tail_hard
+- query: small dream catcher
+  segment: tail_hard
+- query: best tea cozy
+  segment: tail_hard
+- query: hostess coffee
+  segment: tail_hard
+- query: 99 volts graphic tee
+  segment: tail_hard
+- query: camping coffee
+  segment: tail_hard
+- query: kids and adults handheld game console
+  segment: tail_hard
+- query: best nativity banner
+  segment: tail_hard
+- query: cheap himalayans alt
+  segment: tail_hard
+- query: deviled egg ingredient
+  segment: tail_hard
+- query: custard for pudding
+  segment: tail_hard
+- query: minyee watch band
+  segment: tail_hard
+- query: headphone storage
+  segment: tail_hard
+- query: squirrel brand gummy candy
+  segment: tail_hard
+- query: dry cloth clean
+  segment: tail_hard
+- query: premium wedge pumps
+  segment: tail_hard
+- query: small bike remote
+  segment: tail_hard
+- query: movie part ybackdrop
+  segment: tail_hard
+- query: tv streaming players apple tv case
+  segment: tail_hard
+- query: large bench cushion
+  segment: tail_hard
+- query: premium tv stand
+  segment: tail_hard
+- query: toast jam
+  segment: tail_hard
+- query: dmruio bag storage box
+  segment: tail_hard
+- query: s hooks
+  segment: tail_hard
+- query: hamantashen
+  segment: tail_hard
+- query: office gift
+  segment: tail_hard
+- query: tropical importers mangoes
+  segment: tail_hard
+- query: taco tray
+  segment: tail_hard
+- query: bzees sandals
+  segment: tail_hard
+- query: l to 5xl tunic top
+  segment: tail_hard
+- query: large smoked salmon
+  segment: tail_hard
+- query: halawawa cake topper
+  segment: tail_hard
+- query: all age groups rose petals
+  segment: tail_hard
+- query: pinky promise bracelet
+  segment: tail_hard
+- query: lightweight hat
+  segment: tail_hard
+- query: kids 4-13 girls tracksuit set
+  segment: tail_hard
+- query: day to night shoes
+  segment: tail_hard
+- query: tivo accessories
+  segment: tail_hard
+- query: prepared mustard
+  segment: tail_hard
+- query: cheap walkie talkie
+  segment: pipeline_failed
+- query: fast image transfer
+  segment: pipeline_failed
+- query: large key tassel
+  segment: pipeline_failed
+- query: organic boys clothing set
+  segment: pipeline_failed
+- query: organic connectors & adapters
+  segment: pipeline_failed
+- query: best camisole
+  segment: pipeline_failed
+- query: baby boys thermal sleep and play
+  segment: pipeline_failed
+- query: organic crispbread
+  segment: pipeline_failed
+- query: organic roasted pepper bruschetta
+  segment: pipeline_failed
+- query: satin quinceanera dress
+  segment: pipeline_failed
+- query: organic can cooler
+  segment: pipeline_failed
+- query: matzo
+  segment: pipeline_failed
+- query: gift millet
+  segment: pipeline_failed
+- query: apple silcer
+  segment: pipeline_failed
+- query: true to size garden closg
+  segment: pipeline_failed
+- query: king akmeha sarong
+  segment: pipeline_failed
+- query: organic lens extender
+  segment: pipeline_failed
+- query: columbia board shorts
+  segment: pipeline_failed
+- query: organic baby halloween costume
+  segment: pipeline_failed
+- query: medicine organizer
+  segment: pipeline_failed
+- query: rfid cloner card
+  segment: pipeline_failed
+- query: organic watch band
+  segment: pipeline_failed
+- query: all flavor sourc andy
+  segment: pipeline_failed
+- query: premium lasagna dinner kit
+  segment: pipeline_failed
+- query: small pistachios
+  segment: pipeline_failed
+- query: small sports rba
+  segment: pipeline_failed
+- query: small deck boots
+  segment: pipeline_failed
+- query: couch release lever
+  segment: pipeline_failed
+- query: organic jandals
+  segment: pipeline_failed
+- query: descaling powder
+  segment: pipeline_failed
+- query: ticky tacka keyboard stickers
+  segment: pipeline_failed
+- query: organic guayabera shirt
+  segment: pipeline_failed
+- query: best surplice dress
+  segment: pipeline_failed
+- query: organic mouse jiggler
+  segment: pipeline_failed
+- query: 50sd ress
+  segment: pipeline_failed
+- query: oak leaf chocolate balls
+  segment: pipeline_failed
+- query: pesticide free black tea
+  segment: dietary_negation
+- query: gluten free snack bars
+  segment: dietary_negation
+- query: gluten free condiment
+  segment: dietary_negation
+- query: by the cup sugar free syrup
+  segment: dietary_negation
+- query: sugar free drink mix
+  segment: dietary_negation
+- query: blackberry patch sugar free maple syrup
+  segment: dietary_negation
+- query: gluten-free arborio rice
+  segment: dietary_negation
+- query: gluten free snacks
+  segment: dietary_negation
+- query: gluten free popcorn kernels
+  segment: dietary_negation
+- query: sugar free edible cupcake topper
+  segment: dietary_negation
+- query: salt free seasoning
+  segment: dietary_negation
+- query: sugar free butterscotch candy
+  segment: dietary_negation
+- query: vegan gluten free gummy candy
+  segment: dietary_negation
+- query: gluten free edible cake topper
+  segment: dietary_negation
+- query: sugar free cheesecake
+  segment: dietary_negation
+- query: fragrance free deodorizer
+  segment: dietary_negation
+- query: drip-free spout teapot
+  segment: dietary_negation
+- query: nut-free kids snack cookies
+  segment: dietary_negation
+- query: caffeine free drink
+  segment: dietary_negation
+- query: sugar free herbal tea
+  segment: dietary_negation
+- query: nut free dairy free teriyaki stir fry meal kit
+  segment: dietary_negation
+- query: sugar free syrup
+  segment: dietary_negation
+- query: keto paleo gluten free thai coconut sauce
+  segment: dietary_negation
+- query: gluten-free sunflower and pumpkin seeds
+  segment: dietary_negation
+- query: lead and nickel free skull stud earrings
+  segment: dietary_negation
+- query: sugar-free low carb barbecue sauce
+  segment: dietary_negation
+- query: dairy free shake
+  segment: dietary_negation
+- query: caffeine free herbal loose leaf tea
+  segment: dietary_negation
+- query: gluten-free greek yogurt
+  segment: dietary_negation
+- query: gmo free jalapeno nacho slices
+  segment: dietary_negation
+- query: soy free mayo
+  segment: dietary_negation
+- query: egg free mayonnaise
+  segment: dietary_negation
+- query: pfc-free water repellent sport sandals
+  segment: dietary_negation
+- query: gluten free jelly
+  segment: dietary_negation
+- query: dairy free plant-based butter
+  segment: dietary_negation
+- query: organic sugar free syrup
+  segment: dietary_negation

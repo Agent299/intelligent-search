@@ -1,0 +1,108 @@
+{
+ "trained_at": "2026-10-16T19:11:42+00:00",
+ "labels": "graded (pipelines.ranking.graded)",
+ "features": [
+  "retrieval_rank",
+  "semantic_sim",
+  "static_score",
+  "popularity",
+  "qp_engagement",
+  "brand_in_query",
+  "user_brand_aff",
+  "user_cat_aff",
+  "user_top_aff",
+  "session_brand_clicks",
+  "price_band_gap",
+  "user_has_history"
+ ],
+ "train_queries": 322,
+ "train_rows": 8048,
+ "rounds": 37,
+ "cv_ndcg@10": 0.8869,
+ "golden": {
+  "retrieval order": {
+   "ndcg@10": 0.8205,
+   "condensed_ndcg@10": 0.8205,
+   "queries": 142,
+   "by_segment": {
+    "case_study": 0.645,
+    "dietary_negation": 0.868,
+    "head_easy": 0.928,
+    "head_hard": 0.803,
+    "pipeline_failed": 0.683,
+    "tail": 0.843,
+    "tail_hard": 0.751,
+    "torso": 0.872,
+    "torso_hard": 0.793,
+    "typo": 0.874
+   }
+  },
+  "current (lightgbm)": {
+   "ndcg@10": 0.8096,
+   "condensed_ndcg@10": 0.8115,
+   "queries": 142,
+   "by_segment": {
+    "case_study": 0.69,
+    "dietary_negation": 0.856,
+    "head_easy": 0.927,
+    "head_hard": 0.808,
+    "pipeline_failed": 0.62,
+    "tail": 0.82,
+    "tail_hard": 0.69,
+    "torso": 0.879,
+    "torso_hard": 0.762,
+    "typo": 0.864
+   },
+   "vs_retrieval": {
+    "mean": -0.0108,
+    "ci95": [
+     -0.0247,
+     0.0028
+    ],
+    "better": 46,
+    "worse": 69
+   }
+  },
+  "new (graded)": {
+   "ndcg@10": 0.823,
+   "condensed_ndcg@10": 0.8278,
+   "queries": 142,
+   "by_segment": {
+    "case_study": 0.643,
+    "dietary_negation": 0.878,
+    "head_easy": 0.906,
+    "head_hard": 0.823,
+    "pipeline_failed": 0.718,
+    "tail": 0.85,
+    "tail_hard": 0.755,
+    "torso": 0.881,
+    "torso_hard": 0.803,
+    "typo": 0.862
+   },
+   "vs_retrieval": {
+    "mean": 0.0025,
+    "ci95": [
+     -0.0078,
+     0.0137
+    ],
+    "better": 49,
+    "worse": 50
+   }
+  }
+ },
+ "importance_gain_share": {
+  "retrieval_rank": 0.601,
+  "qp_engagement": 0.234,
+  "semantic_sim": 0.118,
+  "static_score": 0.025,
+  "popularity": 0.016,
+  "brand_in_query": 0.007,
+  "user_brand_aff": 0.0,
+  "user_cat_aff": 0.0,
+  "user_top_aff": 0.0,
+  "session_brand_clicks": 0.0,
+  "price_band_gap": 0.0,
+  "user_has_history": 0.0
+ },
+ "installed": true
+}

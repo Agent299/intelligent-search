@@ -1,0 +1,4740 @@
+{
+ "batches": [
+  {
+   "id": "msgbatch_01K8tWqpZdfYXuN4CKHdUHbB",
+   "submitted_at": 1792176871,
+   "n": 20,
+   "collected": true
+  }
+ ],
+ "items": {
+  "agr-3a38210844a552a1": {
+   "task": "label",
+   "meta": {
+    "query": "something warm for my grandma",
+    "ids": {
+     "p1": "B0B87F3NVS",
+     "p2": "B08P4SSFX4",
+     "p3": "B086H331YG",
+     "p4": "B07VSBY83N",
+     "p5": "B00LNFB1D6",
+     "p6": "B082S1ZR1L",
+     "p7": "B0B4KR9385",
+     "p8": "B01AR8HUKC",
+     "p9": "B099S25HXL",
+     "p10": "B0BTH7G3H1",
+     "p11": "B08SJ35WMW",
+     "p12": "B08PV8H6HW",
+     "p13": "B07BZYKZKC",
+     "p14": "B09JZCK1VL",
+     "p15": "B076T265BP",
+     "p16": "B0B28NRNYX",
+     "p17": "B0BGLNMPF7",
+     "p18": "B00Q88RWTA",
+     "p19": "B096NM7HFK",
+     "p20": "B017Y4BI1E",
+     "p21": "B0BXW4XH48",
+     "p22": "B07V4SWQF2",
+     "p23": "B0BCPDJNF5",
+     "p24": "B09XQQ2Q9C",
+     "p25": "B07PH1R6X3",
+     "p26": "B07FM3DM9H",
+     "p27": "B07PN6DLB9",
+     "p28": "B07VWRJYQF",
+     "p29": "B0C4G56GNM",
+     "p30": "B07ZR7SC6Z",
+     "p31": "B09SM2FBYH",
+     "p32": "B0B93QGHWF",
+     "p33": "B0B6N7RHW5",
+     "p34": "B081S95MP1",
+     "p35": "B0BRC4F464",
+     "p36": "B09G6N98CD",
+     "p37": "B099RX8863",
+     "p38": "B07V5VPTSC",
+     "p39": "B07SMYHS2T",
+     "p40": "B08DXFY4KH",
+     "p41": "B0B5HS2SPR",
+     "p42": "B0C4H9NXCH",
+     "p43": "B0B5WXTXDX",
+     "p44": "B0BVFHY38F",
+     "p45": "B0BK1Z24H8",
+     "p46": "B09JWXM4ZV",
+     "p47": "B0BG3YL211",
+     "p48": "B07W956RY4",
+     "p49": "B08GC2BHNL"
+    }
+   },
+   "inputs": {
+    "query": "something warm for my grandma",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Grandma Gifts - Happy Birthday Gifts for Grandma - Grandma Gifts from Grandchildren - New Grandma Gifts First Time - Mot",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p2",
+      "title": "Funny Saying Novelty Gift ideas - My Favorite People Call Me Grandma Long Sleeve T-Shirt",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p3",
+      "title": "Cottage Creek Granny Mug, 16oz. Ceramic Granny Coffee Mug, Gifts for Granny",
+      "category": "Dining & Entertaining > Novelty"
+     },
+     {
+      "id": "p4",
+      "title": "Creaides 10 Pcs Baby It's Cold Outside Cake Toppers Xmas Cake Decoration for Merry Christmas Winter Party Favors",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p5",
+      "title": "Barney, Crunchy Almond Butter, 10 oz",
+      "category": "Nut & Seed Butters > Almond Butter"
+     },
+     {
+      "id": "p6",
+      "title": "Womens Happiness is Being a Grammy Funny T Shirt Gift Grandmother for Grandma",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p7",
+      "title": "Unboxme Cookies & Tea Sunshine Gift Box For Women & Men | Get Well Soon, Thinking Of You, You Got This, Sympathy, Birthd",
+      "category": "Food & Beverage Gifts > Bakery & Dessert Gifts"
+     },
+     {
+      "id": "p8",
+      "title": "R.H. Jewelry Stainless Steel Sentiment Pendant Necklace Cat Memorial Round Tag",
+      "category": "Jewelry > Pendants & Coins"
+     },
+     {
+      "id": "p9",
+      "title": "GIFTAGIRL Wife for Wife from Husband - Funny Wine Gifts from Husband or Mothers Day Wife Gifts, Perfect for Any Occasion",
+      "category": "Storage & Organization > Racks & Holders"
+     },
+     {
+      "id": "p10",
+      "title": "Gifts for Women Funny Romantic Gifts for Her Birthday Anniversary Easter Mother's Day Unique Candles Gift for Friends Gi",
+      "category": "Candles & Holders > Candles"
+     },
+     {
+      "id": "p11",
+      "title": "Pinkfong Baby Shark Mommy Shark T-Shirt and French Terry Shorts Outfit Set Newborn to Little Kid",
+      "category": "Baby Boys > Clothing"
+     },
+     {
+      "id": "p12",
+      "title": "Black Nurse Gifts for Women Soft Fleece Throw Blanket for Black Nurses Graduation Gift Retirement Gifts for African Nurs",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p13",
+      "title": "Womens Happiness is Being a Grandma T Shirt Funny Cute Nana Grandmother Gift",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p14",
+      "title": "KOSUSANILL Baby Girl Red Plaid Christmas Dress Long/Short Sleeve Xmas Kids Cute Princess Ruffle Dresses with Bowknot 6M-",
+      "category": "Baby Girls > Clothing"
+     },
+     {
+      "id": "p15",
+      "title": "Elaine Karen Deluxe Poly Cotton Thermal Blanket \u2013 Extra Soft and Breathable, Comfortable and Warm Blankets, All-Season W",
+      "category": "Bedding > Duvets & Down Comforters"
+     },
+     {
+      "id": "p16",
+      "title": "Personalized Birthday Wine Cup Gifts with Names Ages for Women Mom Daughter Aunt Sister Grandma Nana Gigi 20oz Custom Bi",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p17",
+      "title": "Ussap Hello Winter Warm Wishes Gnome Decorative Throw Pillow Cover Set of 4, Snowflake Hot Cocoa Baby It's Cold Outside ",
+      "category": "Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+     },
+     {
+      "id": "p18",
+      "title": "Newrara 100% Cotton Linen 3D American Flag Print Bedding Set Queen Size Duvet Cover Sheet Pillow Case Comforter Linen (N",
+      "category": "Bedding > Sheets & Pillowcases"
+     },
+     {
+      "id": "p19",
+      "title": "Saodimallsu Women's Open Front Cardigan Sweater Chunky Soft Knit Casual Long Sleeve Sweaters Solid Loose with Pocket",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p20",
+      "title": "Bits and Pieces - Micro Fleece Battery-Operated Heated Scarf - 66\" Long Neckwear with Pockets",
+      "category": "Accessories > Scarves & Wraps"
+     },
+     {
+      "id": "p21",
+      "title": "LUSWEET Throw Blanket Warm Fuzzy Plush Blanket Flannel Fleece Bed Blanket Cute Penguins Fun Art Lightweight Blanket Thro",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p22",
+      "title": "YOU SA Super Soft Shaggy Faux Fur Blanket Ultra Plush Decorative Throw Blanket 63''x79'' Mint Green",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p23",
+      "title": "CafePress Cherry Blossom Owl Throw Blanket Super Soft Fleece Plush Throw Blanket, 60\"x50\"",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p24",
+      "title": "BATTILO HOME Rust Red Knit Throw Blanket for Couch,Decorative Accent Fall Blanket Soft Throw Blankets Boho for Halloween",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p25",
+      "title": "I Paused My Game to Be Here Video Gamer Mens Retro Graphic Funny T Shirt",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p26",
+      "title": "Plush Blanket Bedding Sofa Cover Furry Fuzzy Fur Warm Throw Quilt Cozy Couch Blanket for Winter (63\"x 79\", Wine Maroon)",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p27",
+      "title": "Dreamscene Luxury Waffle Mink Soft Warm Throw Size Sofa Bed Blanket - 50\" x 60\" - Chocolate Brown",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p28",
+      "title": "Longhui bedding Teal Knitted Throw Blanket for Couch, Soft, Cozy Machine Washable 100% Cotton Sofa Knit Blankets, Heavy ",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p29",
+      "title": "PAVILIA Cozy Fleece Bed Blanket King | Fuzzy, Super Soft, Plush, Luxury Flannel Throw | Warm Ribbed Microfiber Blanket f",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p30",
+      "title": "H.VERSAILTEX Original Velvet Cushion Covers 18x18 Mix and Match (Set of 2) Decorative Throw Pillow Covers for Living Roo",
+      "category": "Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+     },
+     {
+      "id": "p31",
+      "title": "Cheetos Chester Cheetah Fleece Throw Blanket - Flamin Hot Chester Cheetah Soft Fleece Throw Blanket",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p32",
+      "title": "Sleepwish Pug Fleece Blanket Pet Blanket Dog Reversible Blanket Soft Sherpa Blanket Throw Blanket for Pug Lover King(108",
+      "category": "Kids' Bedding > Blankets & Throws"
+     },
+     {
+      "id": "p33",
+      "title": "Lanpn Christmas Throw Pillow Covers 18x18 Set of 4, Decorative Holiday Farmhouse Merry Xmas 18 x 18 Buffalo Check Plaid ",
+      "category": "Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+     },
+     {
+      "id": "p34",
+      "title": "Richie House Women's Plush Soft Warm Fleece Bathrobe Robe RH1591",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p35",
+      "title": "V.&GRIN Boys Fleece Robe, Hooded Toddler Soft Fuzzy Bathrobe for Kids 3-14 Years",
+      "category": "Clothing > Sleepwear & Robes"
+     },
+     {
+      "id": "p36",
+      "title": "RECYCO Fleece Throw Blanket for Couch, Super Soft Cozy Fuzzy Decorative Blankets and Throws with Striped Pattern for Sof",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p37",
+      "title": "Meekio Set of 2 Burgundy Pillow Covers 20 x 20 Inch Farmhouse Boho Decorative Throw Pillow Covers Linen Cushion Covers f",
+      "category": "Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+     },
+     {
+      "id": "p38",
+      "title": "Longhui bedding Medium Grey Throw Pillow Cover for Couch Sofa Bed, Cotton Linen Decorative Pillows Cushion Covers, Gray ",
+      "category": "Decorative Pillows, Inserts & Covers > Throw Pillow Covers"
+     },
+     {
+      "id": "p39",
+      "title": "KYKU Men's Print Graphic T Shirt Short Sleeve Summer T-Shirt Novelty Casual Tee",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p40",
+      "title": "Flannel Fleece Throw Blanket Sherpa Warm Lightweight Super Soft Plush Throw Blanket 3D Future Paleontologist List of Din",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p41",
+      "title": "Chanasya Double Sided Oversized Faux Fur Wolf Super Soft Faux Fur Throw Blanket - Fuzzy Plush Cozy Blanket for Sofa Chai",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p42",
+      "title": "Christian Blanket Bible Verse Blanket - Christian Religious Gifts for Women - Faith Gifts for Women Throw Blankets - Scr",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p43",
+      "title": "Delerain Flannel Blanket Hedgehog Floral Lightweight Cozy Bed Blanket Soft Throw Blanket fits Couch Sofa Suitable for Al",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p44",
+      "title": "Pink Cupcake Throw Blanket, Super Soft Flannel Blanket for Girls and Boys, Cute Cupcakes Design Blanket for Kids Bed, Co",
+      "category": "Kids' Bedding > Blankets & Throws"
+     },
+     {
+      "id": "p45",
+      "title": "Retro 70S Pink and Orange Swirls Flannel Fleece Throw Blankets 50\"X40\" Lightweight Fluffy Winter Fall Blanket Cozy Soft ",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p46",
+      "title": "Marvel Marvel Comic Blanket, 36\"x58\", Misc. Comic Collage, Silky Touch Super Soft Throw Blanket",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p47",
+      "title": "Sleepwish Fox Blanket for Kids Girls Boys Adult Soft Plush Sherpa Throw Blanket Blue Orange Fox Thick Winter Animal Flee",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p48",
+      "title": "Denali Ultimate Comfort Home D\u00e9cor Throw Blanket, Plush, Hand-Stitched, Super Cozy Blankets Made in The USA, Coffee Brea",
+      "category": "Blankets & Throws > Throws"
+     },
+     {
+      "id": "p49",
+      "title": "Best Friend Blanket, Valentines Day Gifts for Best Friend, Bestfriend Birthday Gifts for BFF, Super Soft Sherpa Throw, f",
+      "category": "Blankets & Throws > Throws"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 2,
+     "p3": 1,
+     "p4": 0,
+     "p5": 0,
+     "p6": 1,
+     "p7": 1,
+     "p8": 0,
+     "p9": 0,
+     "p10": 1,
+     "p11": 0,
+     "p12": 2,
+     "p13": 1,
+     "p14": 0,
+     "p15": 3,
+     "p16": 1,
+     "p17": 1,
+     "p18": 1,
+     "p19": 3,
+     "p20": 3,
+     "p21": 3,
+     "p22": 3,
+     "p23": 3,
+     "p24": 3,
+     "p25": 0,
+     "p26": 3,
+     "p27": 3,
+     "p28": 3,
+     "p29": 3,
+     "p30": 1,
+     "p31": 2,
+     "p32": 2,
+     "p33": 1,
+     "p34": 3,
+     "p35": 1,
+     "p36": 3,
+     "p37": 1,
+     "p38": 1,
+     "p39": 0,
+     "p40": 2,
+     "p41": 3,
+     "p42": 3,
+     "p43": 3,
+     "p44": 2,
+     "p45": 3,
+     "p46": 2,
+     "p47": 2,
+     "p48": 3,
+     "p49": 2
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-e98363516cf0e2cc": {
+   "task": "label",
+   "meta": {
+    "query": "1-to-1 baking substitute gluten free flour",
+    "ids": {
+     "p1": "B0C3SG683Q",
+     "p2": "B077WKN8L4",
+     "p3": "B0C5JZWKQK",
+     "p4": "B07YF2W4WV",
+     "p5": "B00022F2A4",
+     "p6": "B0BMKLH71N",
+     "p7": "B0BSVH24Q4",
+     "p8": "B0001ZTCVC",
+     "p9": "B087FCR6FK",
+     "p10": "B08VVBL68P",
+     "p11": "B096CNDTNG",
+     "p12": "B01KIRHTLM",
+     "p13": "B00CO1ZCJM",
+     "p14": "B08GZCS4KZ",
+     "p15": "B00MWVTID0",
+     "p16": "B0B7BLRQ1K",
+     "p17": "B09RF39XPF",
+     "p18": "B09NQ8XM8W",
+     "p19": "B06XP4YMJB",
+     "p20": "B00BCSXHHM",
+     "p21": "B0BX35H5C6",
+     "p22": "B07BBR4GJJ",
+     "p23": "B0BHVVXT23",
+     "p24": "B0B3LFW6H1",
+     "p25": "B00AE1RQO8",
+     "p26": "B07CB83T8S"
+    }
+   },
+   "inputs": {
+    "query": "1-to-1 baking substitute gluten free flour",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Bobs Red Mill, 1 To 1 Gluten Free Baking Flour, 44 Ounce",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p2",
+      "title": "GERBS All Purpose Gluten Free Baking Flour, 2 LB Bag, Top 14 Food Allergy Free, Keto, Vegan, Non GMO",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p3",
+      "title": "Simple Mills Almond Flour Baking Mix, Chocolate Muffin & Cake Mix - Gluten Free, Plant Based, Paleo Friendly, 11.2 Ounce",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p4",
+      "title": "Big Green Organic Food- Organic Millet Flour, Gluten-Free, Kosher, Artisan Baking (1)",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p5",
+      "title": "Authentic Foods Dough Enhancer, 2 Ounce",
+      "category": "Refrigerated Doughs > Cookie Dough"
+     },
+     {
+      "id": "p6",
+      "title": "Blue Diamond Almonds, Almond Flour, Gluten Free, Blanched, Finely Sifted, 1 Lb",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p7",
+      "title": "BulkSupplements.com Xylitol Powder - Natural Sugar Substitute & Sugar Alternative - Sweetener For Baking & Cooking, Glut",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     },
+     {
+      "id": "p8",
+      "title": "Authentic Foods Pancake & Baking Mix - 1.25lb",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p9",
+      "title": "Simple Mills, Cookies Variety Pack, Chocolate Chip, Double Chocolate Chip, Toasted Pecan Variety Pack, 3 Count (Packagin",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p10",
+      "title": "Sweet Nature Monk Fruit Sweetener Non GMO Gluten Free Sugar Substitute Kosher 16 ounces (1 LB)",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     },
+     {
+      "id": "p11",
+      "title": "Old Fashioned Cornmeal, 1.5 Pounds \u2013 Whole Grain Corn Flour, Finely Ground Meal, Vegan, Kosher, Bulk, Great for Baking C",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p12",
+      "title": "Blends by Orly Premium Gluten Free Cookie Flour London Blend - 20 OZ",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p13",
+      "title": "Pamela'S Bread Mix Flour Blend Gluten Free 4 LB (Pack of 3) - Pack Of 3",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p14",
+      "title": "Gluten-Free Pancake and Waffle Mix by Birch Benders, Made with Brown Rice Flour, Potato, Cassava, Almond, and Cane Sugar",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p15",
+      "title": "Doves Farm Organic Stoneground Wholegrain Spelt Flour (1Kg)",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p16",
+      "title": "Tidbits Fun Bites Meringue the Original Pack, Low Calorie Snacks, Gluten Free Snacks, Sugar Free Snacks, Low Carb Snack-",
+      "category": "Cookies > Meringues"
+     },
+     {
+      "id": "p17",
+      "title": "Molino Rossetto Instant Rapid-Rise Dry Yeast - Premium Yeast for Baking Bread, Cake, Pizza Dough Crust - Bread Machine Y",
+      "category": "Cooking & Baking > Leaveners & Yeasts"
+     },
+     {
+      "id": "p18",
+      "title": "Nstezrne Measuring Cups Set, Measuring Cup Set, 18/8 Stainless Steel Measuring Cups Set, Metal Measuring Cups Set for Ba",
+      "category": "Kitchen Utensils & Gadgets > Measuring Tools & Scales"
+     },
+     {
+      "id": "p19",
+      "title": "Gefen Coffee Cake Mix Gluten Free Kosher For Passover 14 oz. Pack of 1.",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p20",
+      "title": "New Grains Gluten Free Flour Tortillas 2 packs (4 - 10\" tortillas each)",
+      "category": "Breads > Flatbreads"
+     },
+     {
+      "id": "p21",
+      "title": "Nairn's Gluten Free Chocolate Chip Oat grahams 00098632 5.64 Ounce (Pack of 1)",
+      "category": "Cookies > Oatmeal"
+     },
+     {
+      "id": "p22",
+      "title": "Bob's Red Mill Organic Buckwheat Flour, 22 Ounce, Pack of 2",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p23",
+      "title": "The Essential Baking Company Take & Bake French, 16 oz",
+      "category": "Breads > Baguette"
+     },
+     {
+      "id": "p24",
+      "title": "Cinnamon and Chocolate Smartcake bundle: 4 twin-packs of cinnamon and 4 twin-packs of chocolate, gluten free, sugar free",
+      "category": "Snack Foods > Snack Cakes & Pastries"
+     },
+     {
+      "id": "p25",
+      "title": "Guittard Baking Chips, Milk Chocolate, 11.5 oz",
+      "category": "Cooking & Baking > Baking Chips"
+     },
+     {
+      "id": "p26",
+      "title": "Cook\u2019s, Pure Vanilla Powder, World\u2019s Finest Gourmet Fresh Premium Vanilla (24 Ounce (Pack of 1))",
+      "category": "Pantry Staples > Herbs, Spices & Seasonings"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 3,
+     "p3": 1,
+     "p4": 2,
+     "p5": 1,
+     "p6": 2,
+     "p7": 1,
+     "p8": 1,
+     "p9": 1,
+     "p10": 1,
+     "p11": 1,
+     "p12": 3,
+     "p13": 3,
+     "p14": 1,
+     "p15": 0,
+     "p16": 0,
+     "p17": 1,
+     "p18": 1,
+     "p19": 1,
+     "p20": 1,
+     "p21": 1,
+     "p22": 2,
+     "p23": 0,
+     "p24": 1,
+     "p25": 1,
+     "p26": 1
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-4d4a6dbcf9a113f1": {
+   "task": "label",
+   "meta": {
+    "query": "zzkq mmrt plo",
+    "ids": {
+     "p1": "B07BNPP9L6",
+     "p2": "B09TF6156K",
+     "p3": "B09PSVCKXS",
+     "p4": "B008AK85M2",
+     "p5": "B00TFB72RO",
+     "p6": "B08MLNQQN1",
+     "p7": "B07SG4ZK2L",
+     "p8": "B00QUNGV1I",
+     "p9": "B095CTYVNQ",
+     "p10": "B0BRM7NW75",
+     "p11": "B0BGNSL3KG",
+     "p12": "B0BX5MYBYN",
+     "p13": "B08PTTBQBJ",
+     "p14": "B01L90PW3O",
+     "p15": "B09QBQWS1Q",
+     "p16": "B071P8RWRT",
+     "p17": "B08HGZ1X9W",
+     "p18": "B00G336Y0S",
+     "p19": "B096SZMXX6",
+     "p20": "B08NCYXQH7"
+    }
+   },
+   "inputs": {
+    "query": "zzkq mmrt plo",
+    "products": [
+     {
+      "id": "p1",
+      "title": "4 Boxes of Kimbo Espresso Napoli Nespresso Capsules",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p2",
+      "title": "VIPEK L22S Heavy Duty Clothes Rack L Shaped Garment Rack Metal Clothing Rack Freestanding Wardrobe Closet Rack with 8 Sh",
+      "category": "Clothing & Closet Storage > Garment Racks"
+     },
+     {
+      "id": "p3",
+      "title": "San Francisco Bay Compostable Coffee Pods - Fog Chaser (12 Ct) K Cup Compatible including Keurig 2.0, Medium Dark Roast",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p4",
+      "title": "Knorr Kremowa Zupa Borowikowa z Cebulka 50g",
+      "category": "Soups, Stocks & Broths > Noodle Soups"
+     },
+     {
+      "id": "p5",
+      "title": "LOFBAZ Harem Pants for Women S-4XL Plus Drawstring Yoga Boho Palazzo PJ Clothing",
+      "category": "Women > Clothing"
+     },
+     {
+      "id": "p6",
+      "title": "Kizik The Madrid Eco-Knit Slip-On Sneakers, Casual Trendy Shoes for Women and Men",
+      "category": "Shoes > Fashion Sneakers"
+     },
+     {
+      "id": "p7",
+      "title": "SSV Speaker Pods Front Kick Panels for 2018-2019 Polaris RZR XP Turbo Dynamix",
+      "category": "Vehicle Electronics Accessories > Audio & Video Accessories"
+     },
+     {
+      "id": "p8",
+      "title": "LOFBAZ Yoga Harem Pants for Women Boho Hippie Bohemian Beach Baggy Jumpsuit",
+      "category": "Yoga > Women"
+     },
+     {
+      "id": "p9",
+      "title": "CRU Kafe Organic Strong Box | Nespresso Compatible Coffee Pods | Variety Gift Selection Pack - 60 Pods | Indian, Intense",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p10",
+      "title": "Neateam Magazine Basket Holder with Handles, Foldable PU Leather Magazine Rack Floor, Document File Holder Organizer New",
+      "category": "Home D\u00e9cor Accents > Magazine Holders"
+     },
+     {
+      "id": "p11",
+      "title": "Metal K Cup Holders for Counter by Kinkota, K Cup Organizer, Large Capacity Coffee Pod Holder Coffee Station Organizer, ",
+      "category": "Storage & Organization > Food Storage"
+     },
+     {
+      "id": "p12",
+      "title": "XIYAO Collapsible Storage Bins with Lids, 8.4 Gal Clear Plastic Closet Organizers and Storage box, Large Size Stackable ",
+      "category": "Baskets, Bins & Containers > Lidded Storage Bins"
+     },
+     {
+      "id": "p13",
+      "title": "Korean Premium Dried & Sliced Daikon Radish 6 Ounce from Jeju Island, Korea 170 gram for Kimchi and Tea",
+      "category": "Fresh Vegetables > Root Vegetables"
+     },
+     {
+      "id": "p14",
+      "title": "K-fee System Capsule Adapter for Dolce Gusto\u00ae Machines",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p15",
+      "title": "Zojirushi Stainless Steel Mug, 16 ounce, Black Matte",
+      "category": "Storage & Organization > Thermoses"
+     },
+     {
+      "id": "p16",
+      "title": "Funny Guy Mugs Premium Baja Hoodie Sweatshirt Pullover Jerga Poncho",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p17",
+      "title": "LHZK Large Cooler Bags Insulated Grocery Bags with Thermal Foam Insulation Reusable Grocery Bag Transport Cold Or Hot Fo",
+      "category": "Storage & Organization > Travel & To-Go Food Containers"
+     },
+     {
+      "id": "p18",
+      "title": "Volcom Men's Frickin Modern Fit Stretch Chino Pant",
+      "category": "Clothing > Pants"
+     },
+     {
+      "id": "p19",
+      "title": "Organic Coffee Capsules for Nespresso Original Machines | French Vanilla Flavored Espresso | Non-GMO Fair Trade Kosher V",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p20",
+      "title": "Koverz Neoprene 12 oz. Can/Bottle Coolie Insulator - Choose Your Style! - Tropics",
+      "category": "Storage & Organization > Travel & To-Go Food Containers"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 0,
+     "p3": 0,
+     "p4": 0,
+     "p5": 0,
+     "p6": 0,
+     "p7": 0,
+     "p8": 0,
+     "p9": 0,
+     "p10": 0,
+     "p11": 0,
+     "p12": 0,
+     "p13": 0,
+     "p14": 0,
+     "p15": 0,
+     "p16": 0,
+     "p17": 0,
+     "p18": 0,
+     "p19": 0,
+     "p20": 0
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-a7f3e902a7aef402": {
+   "task": "label",
+   "meta": {
+    "query": "v-neck sweater",
+    "ids": {
+     "p1": "B08MRT3P25",
+     "p2": "B07934GMYC",
+     "p3": "B0767SWQZT",
+     "p4": "B07814TJK6",
+     "p5": "B09Q5DJPXN",
+     "p6": "B0B4JZMLHH",
+     "p7": "B004GXA70U",
+     "p8": "B09BDY9BSP",
+     "p9": "B096X2KVJP",
+     "p10": "B07V5MFJP8",
+     "p11": "B072NHXP9Z",
+     "p12": "B01MZFS5A5",
+     "p13": "B004IA7IN0",
+     "p14": "B09DY24NH1",
+     "p15": "B09G9RPWM9",
+     "p16": "B07L4RTP4Y",
+     "p17": "B01G2P37GK",
+     "p18": "B01K3BKQQS",
+     "p19": "B08CXMC3HD",
+     "p20": "B089GVKFRM",
+     "p21": "B07QF66388",
+     "p22": "B08DSDXBX9",
+     "p23": "B09QGYYGGC",
+     "p24": "B088F1CKNZ"
+    }
+   },
+   "inputs": {
+    "query": "v-neck sweater",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Amazon Essentials Men's V-Neck Sweater (Available in Big & Tall)",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p2",
+      "title": "Tommy Hilfiger Women's V-Neck Knit Sweater",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p3",
+      "title": "Gildan Women's Heavy Cotton V-Neck T-Shirt, 2-Pack",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p4",
+      "title": "Hollywood Star Fashion Women's Deep V-Neck Short-Sleeve Shirt",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p5",
+      "title": "Eurivicy Women's Wrap V Neck Sweater Long Sleeve Drawstring Knot Front Solid Ribbed Knit Cardigan Top",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p6",
+      "title": "ZAFUL Women's Oversized V Neck Pullover Sweater Vest Sleeveless Cable Knit Loose Tank Tops",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p7",
+      "title": "Champion Women's Favorite V-Neck Tee",
+      "category": "Clothing > Active"
+     },
+     {
+      "id": "p8",
+      "title": "Womens Lightweight V Neck Sweaters Tops Long Sleeve Side Slit Knit Top Loose Pullovers",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p9",
+      "title": "Saodimallsu Women's Oversized Sweaters Batwing Long Sleeve Loose V Neck Button Henley Tops Pullover Knit Jumper",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p10",
+      "title": "Faatoop Women's Button Down Knitwear Casual Long Sleeve V-Neck Open Front Striped Cardigan Sweater",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p11",
+      "title": "P&B Kale G. Women's V-Neck",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p12",
+      "title": "ToBeInStyle Women's Long Sleeve Crew Neck Solid Print Sweater",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p13",
+      "title": "Cherokee Flexibles Women Scrubs Top V-Neck Knit Panel 2968",
+      "category": "Uniforms, Work & Safety > Clothing"
+     },
+     {
+      "id": "p14",
+      "title": "Aiyino Men's Quarter Zip Up Long Sleeve Sweaters Slim Fit Lightweight Mock Neck Pullover Casual Polo Sweater",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p15",
+      "title": "Cherokee Euphoria Women Scrubs Top Tuckable V-Neck CK788A",
+      "category": "Uniforms, Work & Safety > Clothing"
+     },
+     {
+      "id": "p16",
+      "title": "SELECTEES Women V-neck Printed Funny Graphic T-shirts Teen Girls Tops",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p17",
+      "title": "Emmalise Women's Short Sleeve T Shirt V Neck Tee Junior and Plus Sizes",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p18",
+      "title": "Hollywood Star Fashion Clothes Effect Woman Short Sleeve V-Neck T-Shirt, Multiple Colors S-3X",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p19",
+      "title": "Am\u00e9lieBoutik Women Mock Neck Fair Isle Trim Long Sleeve Pullover Knit Sweater",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p20",
+      "title": "Latuza Women's Bamboo Viscose Sleep T-Shirt V-Neck Pajamas Top",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p21",
+      "title": "Amazon Essentials Women's Lightweight Vee Cardigan Sweater (Available in Plus Size)",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p22",
+      "title": "PJ Paul Jones Men's Cardigan Sweaters Stand Collar Cable Knitted Button Sweater",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p23",
+      "title": "Women Casual V Neck T-Shirts Summer Puff Short Sleeve Tops Loose Fit Tunic Basic Tees",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p24",
+      "title": "Allaruna Womens Plus-Size T-Shirts Short Sleeve V Neck Side Split Tunic Tops",
+      "category": "Clothing > Tops, Tees & Blouses"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 3,
+     "p3": 1,
+     "p4": 1,
+     "p5": 3,
+     "p6": 2,
+     "p7": 1,
+     "p8": 3,
+     "p9": 3,
+     "p10": 3,
+     "p11": 1,
+     "p12": 2,
+     "p13": 1,
+     "p14": 2,
+     "p15": 1,
+     "p16": 1,
+     "p17": 1,
+     "p18": 1,
+     "p19": 2,
+     "p20": 1,
+     "p21": 3,
+     "p22": 2,
+     "p23": 1,
+     "p24": 1
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-a5e7d6bb9625d239": {
+   "task": "label",
+   "meta": {
+    "query": "wedge pumps",
+    "ids": {
+     "p1": "B08KYKRP4S",
+     "p2": "B09VZ4CBSD",
+     "p3": "B0BQ4ZNDK3",
+     "p4": "B08527N8WY",
+     "p5": "B0B4C93BLX",
+     "p6": "B072J8PBKS",
+     "p7": "B0BJJVLPTS",
+     "p8": "B01NH2ZTKN",
+     "p9": "B0B5K5ZTR5",
+     "p10": "B08BQFDT2T",
+     "p11": "B06Y5JTNVY",
+     "p12": "B07W9JWRCV",
+     "p13": "B07CM39VKG",
+     "p14": "B08JPRKZGL",
+     "p15": "B0BRCRTKRX",
+     "p16": "B07CQ5P6SN",
+     "p17": "B07BDZWKMJ",
+     "p18": "B088J4CVR9",
+     "p19": "B08B4TNTQN",
+     "p20": "B09X9SG8LP",
+     "p21": "B08KYK6QDG",
+     "p22": "B08RYS4PY6",
+     "p23": "B01MTK2L07",
+     "p24": "B08Y7TQT78",
+     "p25": "B0BHMP8937",
+     "p26": "B0C634NDW8",
+     "p27": "B09BM4Y3MX",
+     "p28": "B07D1SLV3K",
+     "p29": "B07THD71VL",
+     "p30": "B07F8MG66F",
+     "p31": "B0791CCTLK",
+     "p32": "B084GSHTJ2",
+     "p33": "B09WCYFM6Z",
+     "p34": "B01IACF7T8",
+     "p35": "B01G6UPS4K",
+     "p36": "B003HC8UIM",
+     "p37": "B0721SMGGG"
+    }
+   },
+   "inputs": {
+    "query": "wedge pumps",
+    "products": [
+     {
+      "id": "p1",
+      "title": "DREAM PAIRS Women's Debbie Mid Wedge Heel Pump Shoes",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p2",
+      "title": "AONEGOLD Hidden Wedge Sneakers for Women Casual Platform Sneakers High Heeld Lace Up Walking Shoes Women's Fashion Sneak",
+      "category": "Shoes > Fashion Sneakers"
+     },
+     {
+      "id": "p3",
+      "title": "Dr. Scholl's Shoes Women's Barton Band Wedge Sandal, Brown Microfiber, 7",
+      "category": "Shoes > Sandals"
+     },
+     {
+      "id": "p4",
+      "title": "Reef Women's Cushion Sunrise Shoes",
+      "category": "Shoes > Fashion Sneakers"
+     },
+     {
+      "id": "p5",
+      "title": "Chunky Low Block Heels for Women - Closed Toe 2 Inch Chunky Heels Flight Attendant Shoes - Dress Pump Shoes Pointed Toe ",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p6",
+      "title": "Nine West Women's FIFTH9X9 LE Leather Pump",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p7",
+      "title": "Rilista Women's Slingback Closed Pointed Toe Heels Bowknot Slip On Weding Party Dress Pumps",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p8",
+      "title": "White Syrup Pump for 750mL (25.4oz) Bottles, Pack of 3 (Compatible with Torani, Tate and Lyle)",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p9",
+      "title": "Women Pumps Chunky Heel Classic Knit Square Toe Pumps Shoes Slip On Casual Dress Shoes",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p10",
+      "title": "Dansko Women's Stacey Wedge Sandals",
+      "category": "Women > Shoes"
+     },
+     {
+      "id": "p11",
+      "title": "SAGUARO Mesh Women Walking Shoes Lady Fashion Orthopedic Sock Sneakers Wedge Platform Toning Rocker Shoes",
+      "category": "Shoes > Athletic"
+     },
+     {
+      "id": "p12",
+      "title": "DADAWEN Women's Leather Classic T-Strap Platform Chunky Mid-Heel Mary Jane Square Toe Oxfords Dress Pump Shoes",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p13",
+      "title": "Chase & Chloe New Kimmy-36 Women's Teardrop Cut Out T-Strap Mid Heel Dress Pumps",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p14",
+      "title": "VERCART Wedge Headboard Pillows Bed Wedge Pillow Headboard Wedge Pillow Triangle Pillow Wedge Daybed Pillows Bolster Pil",
+      "category": "Bed Pillows & Positioners > Reading & Bed Rest Pillows"
+     },
+     {
+      "id": "p15",
+      "title": "COLETER Women's Slingback Pumps 4IN Buckle Ankle Strap Sandals Closed Pointed Toe Office Work Wedding Shoes",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p16",
+      "title": "Relax Home Life 7.5 Inch Bed Wedge Pillow for Acid Reflux, 1.5 Inch Memory Foam Top with Bamboo Cover, 25\" W x 26\" L x 7",
+      "category": "Bed Pillows & Positioners > Bed Pillows"
+     },
+     {
+      "id": "p17",
+      "title": "FitFlop Men's Lido Double Slide Sandals in Neoprene",
+      "category": "Shoes > Sandals"
+     },
+     {
+      "id": "p18",
+      "title": "Florsheim Men's Lexington Wingtip Oxford",
+      "category": "Shoes > Oxfords"
+     },
+     {
+      "id": "p19",
+      "title": "VICKI\u00b7VICKI Women's Platform Wedges heels Sandals Wedge Espadrilles Ankle Strap",
+      "category": "Shoes > Sandals"
+     },
+     {
+      "id": "p20",
+      "title": "XIIALBU Sneakers for Women Casual Plus Size Wedge Mesh Breathable Hook Loop Comfortable Casual Shoes",
+      "category": "Shoes > Athletic"
+     },
+     {
+      "id": "p21",
+      "title": "DREAM PAIRS Women's Divine-01 High Heels Dress Pump Shoes",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p22",
+      "title": "MEILIYA Women's T-Strap Platform Mary Jane Lolita Shoes Gothic Mid Chunky Heel Dress Pumps",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p23",
+      "title": "Olivia K Women's Kitten Heels Mary Jane Pumps - Adorable Vintage Shoes- Unique Round Toe Design with an Adjustable Strap",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p24",
+      "title": "LUXMAX Women Kawaii Shoes Mid Block Heel Mary Jane Rockabilly Pumps with Bow",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p25",
+      "title": "Hush Puppies Women's Pleats Be with You Pump",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p26",
+      "title": "LifeStride Women's Devyn Block Heel Loafer",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p27",
+      "title": "Walking Cradles Dalton",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p28",
+      "title": "Basic Solid Stretchy Cotton High Waist A-line Flared Skater Mini Skirt",
+      "category": "Clothing > Skirts"
+     },
+     {
+      "id": "p29",
+      "title": "Jordan's Skinny Syrups Sugar Free 4 Flavor Variety 1 of each 750 ml Bottle with By The Cup Coffee Syrup Pumps",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p30",
+      "title": "PCEAIIH Women Long Sleeve Loose Plain Maxi Pockets Dresses Casual Long Dresses",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p31",
+      "title": "pestor Unisex Pair of Professional Boot Stretcher Adjustable Width Shoe Shaper, Wooden Boot Tree Stretch for Women and M",
+      "category": "Shoe Care & Accessories > Shoe & Boot Trees"
+     },
+     {
+      "id": "p32",
+      "title": "GRECERELLE Women's Short Sleeve Summer Dresses Elastic Waist Slit Casual Long Maxi Dress with Belt",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p33",
+      "title": "Women Square Toe Pumps T-Strap Block Chunky Heel Mary Jane Ankle Strap Sweet Uniform Sandals Shoes",
+      "category": "Shoes > Sandals"
+     },
+     {
+      "id": "p34",
+      "title": "Breckelle's - Women's Mavis Pointed Toe Single Soles Pump",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p35",
+      "title": "Women's leather loafers Bright Color Casual Flower Printed Slip On Leather Flat Pumps Shoes",
+      "category": "Shoes > Loafers & Slip-Ons"
+     },
+     {
+      "id": "p36",
+      "title": "Norina Jaguar Canvas",
+      "category": "Shoes > Sandals"
+     },
+     {
+      "id": "p37",
+      "title": "PPXID Girl's Shiny Sequins Sweet Bowknot Flat Shoes Princess Pumps",
+      "category": "Shoes > Flats"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 1,
+     "p3": 2,
+     "p4": 1,
+     "p5": 2,
+     "p6": 2,
+     "p7": 2,
+     "p8": 0,
+     "p9": 2,
+     "p10": 2,
+     "p11": 1,
+     "p12": 2,
+     "p13": 2,
+     "p14": 0,
+     "p15": 2,
+     "p16": 0,
+     "p17": 0,
+     "p18": 1,
+     "p19": 2,
+     "p20": 1,
+     "p21": 2,
+     "p22": 2,
+     "p23": 2,
+     "p24": 2,
+     "p25": 2,
+     "p26": 1,
+     "p27": 2,
+     "p28": 0,
+     "p29": 0,
+     "p30": 0,
+     "p31": 1,
+     "p32": 0,
+     "p33": 2,
+     "p34": 2,
+     "p35": 2,
+     "p36": 1,
+     "p37": 1
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-ec929717002b0022": {
+   "task": "label",
+   "meta": {
+    "query": "cup and saucer kiddush cup",
+    "ids": {
+     "p1": "B08P5DWXG7",
+     "p2": "B0BCKXCK1X",
+     "p3": "B0B8R246N5",
+     "p4": "B0BB7FYZVC",
+     "p5": "B08DKSTTV3",
+     "p6": "B0BTH6GRY9",
+     "p7": "B08239N53B",
+     "p8": "B09NCJH2FT",
+     "p9": "B0BSGNYZHV",
+     "p10": "B09827D3FL",
+     "p11": "B07S75KXQN",
+     "p12": "B0BNLY249N",
+     "p13": "B0BXFTKH53",
+     "p14": "B08SHWRQ6V",
+     "p15": "B09R6L7MG5",
+     "p16": "B0B28NRNYX",
+     "p17": "B0964V7S7Y",
+     "p18": "B095Y243PC",
+     "p19": "B07959XX5V",
+     "p20": "B08BR46JZ5",
+     "p21": "B07SZ9FWKF",
+     "p22": "B01HOUNCDA",
+     "p23": "B0C654SCW3",
+     "p24": "B0BW4RTXWL",
+     "p25": "B08MLDJDG4",
+     "p26": "B08128LL98",
+     "p27": "B07DP5LTS4",
+     "p28": "B00I40B0CA",
+     "p29": "B07P3ZGZWF",
+     "p30": "B09VT1H745",
+     "p31": "B09ZZN6RL2",
+     "p32": "B09NQ8XM8W",
+     "p33": "B097HNT2RP",
+     "p34": "B01DRSPF3S",
+     "p35": "B08MQCM8PZ",
+     "p36": "B08XY8Z6FY",
+     "p37": "B071VGZ9JN",
+     "p38": "B0025URT8E",
+     "p39": "B0C15FRY9T",
+     "p40": "B0BTZB597M",
+     "p41": "B07VT546QB",
+     "p42": "B0000W00J4"
+    }
+   },
+   "inputs": {
+    "query": "cup and saucer kiddush cup",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Godinger Twilight Swirl Crystal Kiddush Cup and Saucer",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p2",
+      "title": "RYUHYF Straw cup, coffee cup, glass with straw and lid, double drink cup, milk cup, tea cup, ice coffee cup, car cup,set",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p3",
+      "title": "notNeutral LINO Porcelain Cup & Saucer (Large Latte, Light Gray, 12 oz, 1)",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p4",
+      "title": "Yanglonghui 20oz Tumbler with Lid, Double Wall Stainless Steel Vacuum Insulated Coffee Mug for Home and Office, Thermal ",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p5",
+      "title": "Vera Bradley Travel Tumbler with Lid and Straw, 24 Ounce Insulated Cup, Black Plastic Double Wall Tumbler (Bandana Medal",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p6",
+      "title": "Bubba Envy S Vacuum-Insulated Stainless Steel Tumbler with Lid and Straw, 24oz Reusable Iced Coffee or Water Cup, BPA-Fr",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p7",
+      "title": "EcoMozz 20oz Tumbler Bulk Stainless Steel Vacuum Insulated Tumblers with Lid Double Wall Travel Mug, Durable Powder Coat",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p8",
+      "title": "The Navy Knot Mr and Mrs Wine Tumbler Set - Stainless Steel Insulated Tumblers w/Lids - Stemless Wine Glass & Coffee Cup",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p9",
+      "title": "GOBATT 12 pack 30 oz Insulated Travel Coffee Mug With Lids and Straws, Stainless Steel Double Vacuum Coffee Tumbler Cup,",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p10",
+      "title": "Nutribullet Blender 24 Ounce Tall Cup with Standard Lip Ring, Compatible with Nutribullet Replacement Parts 24 oz for Nu",
+      "category": "Small Appliance Parts & Accessories > Blender Replacement Parts"
+     },
+     {
+      "id": "p11",
+      "title": "Victor Allen Hostess Of Twinkie Sno Ball Honey Bun Ding Dong for K Cup Keurig 2.0 Brewers 72 Single Serve Coffee Pods, V",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p12",
+      "title": "Tervis Marines Made in USA Double Walled Insulated Tumbler Cup Keeps Drinks Cold & Hot, 16oz Mug, Classic",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p13",
+      "title": "Funky Chunky Gourmet Popcorn, Chocolatey Popcorn, Pretzel, and Nutty Mixes, Peanut Butter Cup Popcorn, 2-Pound Gift Tin ",
+      "category": "Food & Beverage Gifts > Snack Gifts"
+     },
+     {
+      "id": "p14",
+      "title": "DICTEA Double Wall Glass Tumbler - 14-Oz Reusable Coffee & Tea Cup, Clear Travel Mug, On the Go, Recyclable, Microwavabl",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p15",
+      "title": "Swig Life 18oz Travel Mug | Insulated Tumbler with Handle and Lid, Cup Holder Friendly, Dishwasher Safe, Stainless Steel",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p16",
+      "title": "Personalized Birthday Wine Cup Gifts with Names Ages for Women Mom Daughter Aunt Sister Grandma Nana Gigi 20oz Custom Bi",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p17",
+      "title": "Sugar Bowl - Libara, Stainless Steel Sugar Cup with Lid, Spice Salt Server and Pepper Storage Organizer, Seasoning Box C",
+      "category": "Food & Beverage Gifts > Herb, Spice & Seasoning Gifts"
+     },
+     {
+      "id": "p18",
+      "title": "Joyrses silicone collapsible coffee cup, travel camping cup, cup cover sealed, 18 oz, folded only 2 in(purple)",
+      "category": "Kitchen Utensils & Gadgets > Measuring Tools & Scales"
+     },
+     {
+      "id": "p19",
+      "title": "32 oz Colossal Cup and Extractor Blade Replacement Parts Compatible with NutriBullet 600W 900W Blenders NB-101B NB-101S",
+      "category": "Small Appliance Parts & Accessories > Blender Replacement Parts"
+     },
+     {
+      "id": "p20",
+      "title": "Cuptify Hello Sunshine Sunflower Best Friend Gift for Women on Guava 20 oz Stainless Steel Tumbler",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p21",
+      "title": "Maars Classic Insulated Tumblers 16 oz | Double Wall, Reusable Plastic Acrylic - Clear | Perfect for Parties, Birthdays,",
+      "category": "Storage & Organization > Thermoses"
+     },
+     {
+      "id": "p22",
+      "title": "Double Donut Decaf Flavored Coffee Variety Pack-6 Traditional Flavors(Caramel Swirl,Hazelnut,Glazed Donut,Mocha Nut Fudg",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p23",
+      "title": "Gya Tea Co Green Tea K Cups Variety Pack - 4 Flavors of Keurig Tea K-Cups to Unwind - Green Tea, High Mountain, Jasmine ",
+      "category": "Tea > Tea Samplers"
+     },
+     {
+      "id": "p24",
+      "title": "Seattle's Best Coffee K-Cup Coffee Pods\u2014Medium Roast Coffee\u2014Breakfast Blend for Keurig Brewers, 100% Arabica\u20144 boxes (96",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p25",
+      "title": "Bonsenkitchen Electric Milk Frother Handheld, Portable Whisk Milk Foam Maker with Stainless Steel Stand, Battery Operate",
+      "category": "Coffee, Tea & Espresso > Milk Frothers"
+     },
+     {
+      "id": "p26",
+      "title": "BTaT- Tea Cups, Pack of 2, Glass Tea Cup, Tea Cup, Fancy Tea Cups, Gifts for Women, Tea Mugs for Women, Flower Tea Cup, ",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p27",
+      "title": "Aluminum Tumbler Reusable 16 OZ Drinking Cups - Bright Anodized Color - Set of 6 - Aqua",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p28",
+      "title": "Betty Boop New York Goblet, Multi Colored",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p29",
+      "title": "5 Pcs Sake Set Traditional Japan Sake Cup Set Hand Painted Design Porcelain Pottery Ceramic Cups Crafts Wine Glasses (Pi",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p30",
+      "title": "Pooqla 4th of July Decorations Lighted Star Tree, Patriotic Decor Tabletop Tree Light with 4 Hanging Balls Battery Opera",
+      "category": "Artificial Plants & Flowers > Artificial Trees"
+     },
+     {
+      "id": "p31",
+      "title": "Kindergarten BabyApe NFTs Coffee Mug (15 ozs) (KBA 7070)",
+      "category": "Dining & Entertaining > Novelty"
+     },
+     {
+      "id": "p32",
+      "title": "Nstezrne Measuring Cups Set, Measuring Cup Set, 18/8 Stainless Steel Measuring Cups Set, Metal Measuring Cups Set for Ba",
+      "category": "Kitchen Utensils & Gadgets > Measuring Tools & Scales"
+     },
+     {
+      "id": "p33",
+      "title": "Let's Make Memories Personalized A Toast to Love Wood Wine Rack - Wedding Shower - Newlywed",
+      "category": "Dining & Entertaining > Novelty"
+     },
+     {
+      "id": "p34",
+      "title": "Handmade New Zealand Stewart Island Fish Hook Pewter Pendant on Waxed Cord",
+      "category": "Home D\u00e9cor Accents > Hanging Ornaments"
+     },
+     {
+      "id": "p35",
+      "title": "Swiss Miss Marshmallow Hot Cocoa Mix, 6ct. Box | Peppermint Candy Cane Cups, 2-ct.",
+      "category": "Hot Chocolate & Malted Drinks > Cocoa"
+     },
+     {
+      "id": "p36",
+      "title": "Crystalia Glass Oil and Vinegar Dispenser Set for Kitchen, Modern Olive Oil and Vinegar Pour Bottle Set, Cruet with Sili",
+      "category": "Kitchen Utensils & Gadgets > Oil Sprayers & Dispensers"
+     },
+     {
+      "id": "p37",
+      "title": "DCI XL Wine Glass, Holds a Whole Bottle of Wine",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p38",
+      "title": "1 X Dreamcatcher Beaded Purple Feathers Iridescent by Kheops International",
+      "category": "Home D\u00e9cor Accents > Dream Catchers"
+     },
+     {
+      "id": "p39",
+      "title": "Smart Sips, Chocolate Peanut Butter Coffee, 24 Count, Single Serve Cups for Keurig K-Cup Brewers",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p40",
+      "title": "Viwehots Measuring Cups and Spoons Set, Plastic Measuring Cup Set, Cute Measuring Spoons and Cups, Color Measuring Cups ",
+      "category": "Kitchen Utensils & Gadgets > Measuring Tools & Scales"
+     },
+     {
+      "id": "p41",
+      "title": "MOCOUM Wine Glasses Rack Under Cabinet Stemware Rack, Wine Glass Hanger Rack Wire Wine Glass Holder Storage Hanger for C",
+      "category": "Storage & Organization > Racks & Holders"
+     },
+     {
+      "id": "p42",
+      "title": "Gobel LB Fluted Rectangle Mold Tart",
+      "category": "Bakeware > Pie, Tart & Quiche Pans"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 1,
+     "p3": 2,
+     "p4": 1,
+     "p5": 1,
+     "p6": 1,
+     "p7": 1,
+     "p8": 1,
+     "p9": 1,
+     "p10": 1,
+     "p11": 0,
+     "p12": 1,
+     "p13": 0,
+     "p14": 1,
+     "p15": 1,
+     "p16": 1,
+     "p17": 1,
+     "p18": 1,
+     "p19": 1,
+     "p20": 1,
+     "p21": 1,
+     "p22": 0,
+     "p23": 0,
+     "p24": 0,
+     "p25": 0,
+     "p26": 2,
+     "p27": 1,
+     "p28": 1,
+     "p29": 2,
+     "p30": 0,
+     "p31": 1,
+     "p32": 0,
+     "p33": 0,
+     "p34": 0,
+     "p35": 0,
+     "p36": 0,
+     "p37": 1,
+     "p38": 0,
+     "p39": 0,
+     "p40": 0,
+     "p41": 0,
+     "p42": 0
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-c38d85467f26ba4b": {
+   "task": "label",
+   "meta": {
+    "query": "black salt",
+    "ids": {
+     "p1": "B0C32NHW6Y",
+     "p2": "B06ZZS343H",
+     "p3": "B08HKK85DC",
+     "p4": "B083Z6KDQJ",
+     "p5": "B0BX1WRPBQ",
+     "p6": "B07WFHTCWQ",
+     "p7": "B0BLXMT3HF",
+     "p8": "B0163V6KM6",
+     "p9": "B003K3KOM8",
+     "p10": "B09MHGRFML",
+     "p11": "B0BXBMWNZT",
+     "p12": "B00J7ONL2Y",
+     "p13": "B09SRML7M7",
+     "p14": "B01G7MOHJO",
+     "p15": "B071LT2FCW",
+     "p16": "B0163V2FX4",
+     "p17": "B0B5SSBVT1",
+     "p18": "B0000VLR9M",
+     "p19": "B00GODXCZW",
+     "p20": "B00DBM0FMM",
+     "p21": "B00A72NDGO",
+     "p22": "B015CYGA3Y",
+     "p23": "B0BCGZYVJQ",
+     "p24": "B00E3C9PKM",
+     "p25": "B0B136Q2Y3",
+     "p26": "B095VMZ3GC",
+     "p27": "B004T1UNJO"
+    }
+   },
+   "inputs": {
+    "query": "black salt",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Hawaiian Black Lava Sea Salt, Black Salt for Cooking or Cocktails, Sal Negra, 14 oz Bag - Sea Salt Superstore",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p2",
+      "title": "24K Black Sea Salt Finishing Flakes - 240 gm (6.3oz) | Crystalline Flakes Mixed With Activated Charcoal, Earthy Taste, T",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p3",
+      "title": "Pride Of India - Himalayan Black Salt - Coarse Grind, 1 Pound (16oz) Jar - Kala Namak - Contains 84+ Minerals - Use in G",
+      "category": "Herbs, Spices & Seasonings > Single Herbs & Spices"
+     },
+     {
+      "id": "p4",
+      "title": "McCormick Garlic and Onion, Black Pepper and Sea Salt All Purpose Seasoning, 4.25 oz",
+      "category": "Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+     },
+     {
+      "id": "p5",
+      "title": "Belmont Peanuts Sea Salt and Black Pepper Virginia Peanuts, 25oz, Farms Collection",
+      "category": "Cooking & Baking > Nuts & Seeds"
+     },
+     {
+      "id": "p6",
+      "title": "Black Jewell Simply Sea Salt Hulless Heirloom Popped Popcorn 4.5 Ounces (Pack of 3)",
+      "category": "Snack Foods > Popcorn"
+     },
+     {
+      "id": "p7",
+      "title": "IAN's Truffle Seasoning (2oz) - Black Truffle Salt for Steakhouse Quality Crust - Steak Seasoning & Burger Seasoning - 1",
+      "category": "Dried Fruits & Vegetables > Dried Vegetables"
+     },
+     {
+      "id": "p8",
+      "title": "Smoky 4/S Special Seasoned Sea Salt By Penzeys Spices 4 oz 1/2 cup jar (Pack of 1)",
+      "category": "Food & Beverage Gifts > Herb, Spice & Seasoning Gifts"
+     },
+     {
+      "id": "p9",
+      "title": "Chinese Douchi - Fermented Black Beans - 16 Oz Bag Each",
+      "category": "Dried Beans, Lentils & Peas > Beans"
+     },
+     {
+      "id": "p10",
+      "title": "Sanniti Ground Black Pepper, 18 oz (Pack of 1)",
+      "category": "Herbs, Spices & Seasonings > Pepper & Peppercorns"
+     },
+     {
+      "id": "p11",
+      "title": "Pretzel Salt for Soft Pretzels, Food Grade Salt for Pretzels and Bagels, Heat Resistant Course Sea Salt for Soft Pretzel",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p12",
+      "title": "N'JOY Iodized Salt AND Pepper - Salt 1,200 ct., Pepper 800 ct Individual Packets",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p13",
+      "title": "Desi Kitchen Spices All Natural | Salt Free | Vegan | NON GMO | Black Mustard Whole (Kali Sarson Sabut) 312gm (11 oz)",
+      "category": "Herbs, Spices & Seasonings > Single Herbs & Spices"
+     },
+     {
+      "id": "p14",
+      "title": "Haku Black Garlic Shoyu (500 ml)",
+      "category": "Sauces, Gravies & Marinades > Sauces"
+     },
+     {
+      "id": "p15",
+      "title": "Marshalls Creek Kosher Spices OUTBACK STEAKHOUSE STEAK RUB NO SALT, 11 OZ",
+      "category": "Pantry Staples > Herbs, Spices & Seasonings"
+     },
+     {
+      "id": "p16",
+      "title": "California Style Seasoned Pepper By Penzeys Spices 2.3 oz 1/2 cup jar (Pack of 1)",
+      "category": "Food & Beverage Gifts > Herb, Spice & Seasoning Gifts"
+     },
+     {
+      "id": "p17",
+      "title": "Kaimana Ahi Tuna Jerky Kiawe Smoked Sea Salt 2 Ounce - Soft and Tasty - Premium Fish Jerky Made in the USA. High in Omeg",
+      "category": "Snack Foods > Meat Snacks"
+     },
+     {
+      "id": "p18",
+      "title": "LorAnn Licorice (Black) SS Flavor, 1 dram bottle (.0125 fl oz - 3.7ml - 1 teaspoon)",
+      "category": "Pantry Staples > Cooking & Baking"
+     },
+     {
+      "id": "p19",
+      "title": "PINK CURING SALT 16 oz",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p20",
+      "title": "Red Cayenne Sea Salt - Non GMO - Authentic Gourmet Finishing Salt - 3.1oz - Artisanal Seasoning - Crafted In Small Batch",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p21",
+      "title": "Morton Salt Substitute, 3.12 oz, 2 pk",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p22",
+      "title": "Le Guerandais Coarse Sea Salt Gros Sel De Guerande, 28.21 oz (1 Pack)",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p23",
+      "title": "Harney & Sons Earl Grey Supreme, 4 oz Loose Leaf Tea w/Silver Tips and Bergamont Oil",
+      "category": "Tea > Black"
+     },
+     {
+      "id": "p24",
+      "title": "The Tao of Tea, Black Dragon Oolong Tea, Loose Leaf, 3.5 Ounce Tin",
+      "category": "Tea > Oolong"
+     },
+     {
+      "id": "p25",
+      "title": "PYNK Margarita salt Cocktail Rimmer, SPICY Natural Drink Rimmer for Vodka & Tequila Drinks, Dipping seasoning for fruits",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p26",
+      "title": "Himalayan Pink Salt Coarse in Grinder 8 Ounces, Unrefined Non-Idoized Halal Kosher Healthy Hymalain Pink Minerals Salt f",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p27",
+      "title": "Cape Cod Potato Chips, Sea Salt and Vinegar Kettle Cooked Chips, 8 Ounce",
+      "category": "Snack Foods > Chips & Crisps"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 3,
+     "p3": 3,
+     "p4": 1,
+     "p5": 1,
+     "p6": 1,
+     "p7": 2,
+     "p8": 1,
+     "p9": 1,
+     "p10": 1,
+     "p11": 1,
+     "p12": 1,
+     "p13": 0,
+     "p14": 1,
+     "p15": 0,
+     "p16": 1,
+     "p17": 0,
+     "p18": 0,
+     "p19": 1,
+     "p20": 1,
+     "p21": 1,
+     "p22": 1,
+     "p23": 0,
+     "p24": 0,
+     "p25": 1,
+     "p26": 1,
+     "p27": 0
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-0cdd92d7090eb91d": {
+   "task": "label",
+   "meta": {
+    "query": "chocolate cake cup",
+    "ids": {
+     "p1": "B0BSPJX5JH",
+     "p2": "B001EO5Q0U",
+     "p3": "B017NL12IC",
+     "p4": "B08QZXC5NW",
+     "p5": "B07XNXCDHV",
+     "p6": "B084JBC7TW",
+     "p7": "B003QP34ZO",
+     "p8": "B01MT8RP3L",
+     "p9": "B07LHM3LB3",
+     "p10": "B0BZDFQ6PP",
+     "p11": "B0C15FRY9T",
+     "p12": "B01MSEJQED",
+     "p13": "B088K9XQ87",
+     "p14": "B099PMLSS9",
+     "p15": "B0C1MHPCDN",
+     "p16": "B000EJM4AG",
+     "p17": "B0BXFTKH53",
+     "p18": "B01LOR5JBC",
+     "p19": "B00MULGRUO",
+     "p20": "B00CA5S6BI",
+     "p21": "B07M7FHHL7"
+    }
+   },
+   "inputs": {
+    "query": "chocolate cake cup",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Duncan Hines Keto Friendly Double Chocolate Cake Mix, 2.1 Keto Friendly Double Chocolate Cake Cup 25.2 Ounce (Pack of 12",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p2",
+      "title": "Dr. Oetker Organic Chocolate Cake Mix, 17.1-Ounce Unit (Pack of 4)",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p3",
+      "title": "Funshowcase Lace Sugar Art Alphabet and Numbers Candy Fondant Chocolate Mold for Cake Decoration, Cupcake Decorate, Poly",
+      "category": "Bakeware > Candy Making Supplies"
+     },
+     {
+      "id": "p4",
+      "title": "Chocolate Keto Cake Mix by Keto and Co | Just 1.8g Net Carbs Per Serving | Gluten Free, Low Carb, No Added Sugar, Natura",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p5",
+      "title": "Amosfun Happy Birthday Silicone Cake Mold Chocolate Mold for Cake Decoration Candy Mold Fondant Tool",
+      "category": "Bakeware > Candy Making Supplies"
+     },
+     {
+      "id": "p6",
+      "title": "Duncan Hines Keto Friendly Cake Cups Birthday Cake Mix, 2.1 oz",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p7",
+      "title": "CK Products Tea Pot and Tea Cup Sucker Chocolate Mold",
+      "category": "Bakeware > Candy Making Supplies"
+     },
+     {
+      "id": "p8",
+      "title": "AKOAK Silicone Mold 55 Cavity Mini Coffee Beans Chocolate Sugar Candy Mold Cake Decor,2 Count",
+      "category": "Bakeware > Candy Making Supplies"
+     },
+     {
+      "id": "p9",
+      "title": "Valrhona Cocoa Powder (1 Kilo) (2 Pack)",
+      "category": "Cooking & Baking > Baking Chocolates, Carob & Cocoa"
+     },
+     {
+      "id": "p10",
+      "title": "Hawaiian Paradise Coffee Chocolate Macadamia Nut Single Serve Cups 18 Count - Medium Roast - Compatible with Keurig K-Cu",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p11",
+      "title": "Smart Sips, Chocolate Peanut Butter Coffee, 24 Count, Single Serve Cups for Keurig K-Cup Brewers",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p12",
+      "title": "Duncan Hines Perfect Size for One, Chocolate Brownie, 10.6 oz",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p13",
+      "title": "Victor Allen's Indulgent Milk Chocolate Hot Cocoa Single Serve Pods",
+      "category": "Hot Chocolate & Malted Drinks > Cocoa"
+     },
+     {
+      "id": "p14",
+      "title": "Barnabas Blattgold Genuine Edible Gold Leaf - Gold Leaf Sheets - Loose Leaf for Cupcakes and Chocolate - 1.5 inches per ",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p15",
+      "title": "Starbucks Coffee K-Cup Pods, Veranda Blend, Blonde Roast Coffee, Notes of Toasted Malt & Milk Chocolate, Keurig Genuine ",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p16",
+      "title": "CybrTrayd Chocolate Candy Mold \u2013 Plain Round Lolly \u2013 4 Cavities 2-7/8\u201d round x 1/4\" diameter \u2013 For Candy, Cookies, Choco",
+      "category": "Bakeware > Candy Making Supplies"
+     },
+     {
+      "id": "p17",
+      "title": "Funky Chunky Gourmet Popcorn, Chocolatey Popcorn, Pretzel, and Nutty Mixes, Peanut Butter Cup Popcorn, 2-Pound Gift Tin ",
+      "category": "Food & Beverage Gifts > Snack Gifts"
+     },
+     {
+      "id": "p18",
+      "title": "Drake's Funny Bones, 10 Twin-Wrapped Devils Food Cakes, 13.73 OZ Box",
+      "category": "Snack Foods > Snack Cakes & Pastries"
+     },
+     {
+      "id": "p19",
+      "title": "Kallo Organic Milk Chocolate Rice Cakes 90g",
+      "category": "Cooking & Baking > Baking Mixes"
+     },
+     {
+      "id": "p20",
+      "title": "8\" Round ~ Winter Buddies Christmas ~ Edible Cake/Cupcake Topper - d8003",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p21",
+      "title": "Good Dees Low Carb Baking Mix,Cracker Biscuit Mix, Keto Baking Mix, Gluten Free, No Sugar Added, Grain-Free, Soy-Free, D",
+      "category": "Cooking & Baking > Baking Mixes"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 2,
+     "p3": 1,
+     "p4": 2,
+     "p5": 1,
+     "p6": 2,
+     "p7": 1,
+     "p8": 1,
+     "p9": 1,
+     "p10": 1,
+     "p11": 1,
+     "p12": 2,
+     "p13": 1,
+     "p14": 1,
+     "p15": 0,
+     "p16": 1,
+     "p17": 0,
+     "p18": 2,
+     "p19": 1,
+     "p20": 1,
+     "p21": 1
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-becf269537fddc8b": {
+   "task": "label",
+   "meta": {
+    "query": "dadawen mary jane pumps",
+    "ids": {
+     "p1": "B07W9JWRCV",
+     "p2": "B01MTK2L07",
+     "p3": "B08Y7TQT78",
+     "p4": "B09WCYFM6Z",
+     "p5": "B08RYS4PY6",
+     "p6": "B0757HSGPP",
+     "p7": "B07DKG6VS5",
+     "p8": "B07X75M1KW",
+     "p9": "B09Y5DRPTQ",
+     "p10": "B07H51RPLH",
+     "p11": "B0877CBP8D",
+     "p12": "B0B5K5ZTR5",
+     "p13": "B0BHMP8937",
+     "p14": "B072J8PBKS",
+     "p15": "B01G1YYOU0",
+     "p16": "B08KYKRP4S",
+     "p17": "B00JXBJ13Y",
+     "p18": "B01IACF7T8",
+     "p19": "B0816711TY",
+     "p20": "B07WZDTWJS",
+     "p21": "B07CM39VKG",
+     "p22": "B0BRCRTKRX",
+     "p23": "B0C634NDW8",
+     "p24": "B09NSZ12NZ",
+     "p25": "B08KYK6QDG",
+     "p26": "B08BNGS918",
+     "p27": "B0BJJVLPTS"
+    }
+   },
+   "inputs": {
+    "query": "dadawen mary jane pumps",
+    "products": [
+     {
+      "id": "p1",
+      "title": "DADAWEN Women's Leather Classic T-Strap Platform Chunky Mid-Heel Mary Jane Square Toe Oxfords Dress Pump Shoes",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p2",
+      "title": "Olivia K Women's Kitten Heels Mary Jane Pumps - Adorable Vintage Shoes- Unique Round Toe Design with an Adjustable Strap",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p3",
+      "title": "LUXMAX Women Kawaii Shoes Mid Block Heel Mary Jane Rockabilly Pumps with Bow",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p4",
+      "title": "Women Square Toe Pumps T-Strap Block Chunky Heel Mary Jane Ankle Strap Sweet Uniform Sandals Shoes",
+      "category": "Shoes > Sandals"
+     },
+     {
+      "id": "p5",
+      "title": "MEILIYA Women's T-Strap Platform Mary Jane Lolita Shoes Gothic Mid Chunky Heel Dress Pumps",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p6",
+      "title": "Chiximaxu Leather Mary Jane Flat Girl Casual Shoes(Toddler/Little Kid/Big Kid)",
+      "category": "Kids Shoes Union > Girls Flats & Loafers"
+     },
+     {
+      "id": "p7",
+      "title": "DADAWEN Toddler/Little Kid Boys Girls Lightweight Breathable Sneakers Strap Athletic Tennis Shoes for Running Walking",
+      "category": "Shoes > Athletic"
+     },
+     {
+      "id": "p8",
+      "title": "myppgg Baby Girls Mary Jane Flats Sparkly Bowknot Princess Dress Crib Shoes Non-Slip for Toddler First Walkers",
+      "category": "Baby Girls > Shoes"
+     },
+     {
+      "id": "p9",
+      "title": "SOFMUO Baby Girls Mary Jane Flats with Bowknot Ballet Slippers Toddler First Walkers Infant Princess Wedding Christmas D",
+      "category": "Baby Girls > Shoes"
+     },
+     {
+      "id": "p10",
+      "title": "Vionic Women's Gem Delilah Ballet Flat - Ladies Pointed Mary Jane Flat with Concealed Orthotic Arch Support",
+      "category": "Shoes > Flats"
+     },
+     {
+      "id": "p11",
+      "title": "Deer Stags Unisex-Child Oxford",
+      "category": "Shoes > Oxfords"
+     },
+     {
+      "id": "p12",
+      "title": "Women Pumps Chunky Heel Classic Knit Square Toe Pumps Shoes Slip On Casual Dress Shoes",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p13",
+      "title": "Hush Puppies Women's Pleats Be with You Pump",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p14",
+      "title": "Nine West Women's FIFTH9X9 LE Leather Pump",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p15",
+      "title": "Nufoot Mary Janes Women's Shoes, Best Foldable & Flexible Flats, Slipper Socks, Travel Slippers & Exercise Shoes, Dance ",
+      "category": "Shoes > Slippers"
+     },
+     {
+      "id": "p16",
+      "title": "DREAM PAIRS Women's Debbie Mid Wedge Heel Pump Shoes",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p17",
+      "title": "Aravon Women's Dolly Flat",
+      "category": "Shoes > Flats"
+     },
+     {
+      "id": "p18",
+      "title": "Breckelle's - Women's Mavis Pointed Toe Single Soles Pump",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p19",
+      "title": "Womens Mesh Walking Shoes Working Nurse Shoes Non-Slip Adjustable Breathable Wedges Slip-on Mary Janes Sneaker Fitness C",
+      "category": "Shoes > Athletic"
+     },
+     {
+      "id": "p20",
+      "title": "Furdeour Girls Dress Shoes Mary Jane Flower Wedding Party Bridesmaids Shoes Glitter Princess Ballet Flats for Kid Toddle",
+      "category": "Shoes > Flats"
+     },
+     {
+      "id": "p21",
+      "title": "Chase & Chloe New Kimmy-36 Women's Teardrop Cut Out T-Strap Mid Heel Dress Pumps",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p22",
+      "title": "COLETER Women's Slingback Pumps 4IN Buckle Ankle Strap Sandals Closed Pointed Toe Office Work Wedding Shoes",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p23",
+      "title": "LifeStride Women's Devyn Block Heel Loafer",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p24",
+      "title": "Sloggers Waterproof Garden Shoe for Women \u2013 Outdoor Slip On Rain and Garden Clogs with Premium Comfort Insole, (Blue/Pin",
+      "category": "Shoes > Outdoor"
+     },
+     {
+      "id": "p25",
+      "title": "DREAM PAIRS Women's Divine-01 High Heels Dress Pump Shoes",
+      "category": "Shoes > Pumps"
+     },
+     {
+      "id": "p26",
+      "title": "Obtaom Women\u2019s Canvas Shoes Low Top Fashion Sneakers Slip on Walking Shoe",
+      "category": "Shoes > Fashion Sneakers"
+     },
+     {
+      "id": "p27",
+      "title": "Rilista Women's Slingback Closed Pointed Toe Heels Bowknot Slip On Weding Party Dress Pumps",
+      "category": "Shoes > Pumps"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 2,
+     "p3": 2,
+     "p4": 2,
+     "p5": 2,
+     "p6": 1,
+     "p7": 1,
+     "p8": 1,
+     "p9": 1,
+     "p10": 2,
+     "p11": 1,
+     "p12": 2,
+     "p13": 2,
+     "p14": 2,
+     "p15": 1,
+     "p16": 2,
+     "p17": 1,
+     "p18": 2,
+     "p19": 1,
+     "p20": 1,
+     "p21": 2,
+     "p22": 2,
+     "p23": 1,
+     "p24": 0,
+     "p25": 2,
+     "p26": 1,
+     "p27": 2
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-4d7ac58c0a74bcfe": {
+   "task": "label",
+   "meta": {
+    "query": "bienzoe boys shirt",
+    "ids": {
+     "p1": "B0B5TS1XC7",
+     "p2": "B0798T5WY6",
+     "p3": "B0728HDX25",
+     "p4": "B09Z3DP7L4",
+     "p5": "B0C4XHKW4S",
+     "p6": "B01N5GAMXL",
+     "p7": "B07CGS1HML",
+     "p8": "B076GZY5PB",
+     "p9": "B07SMYHS2T",
+     "p10": "B07NVV4TRJ",
+     "p11": "B01EKNFKYI",
+     "p12": "B07BZZH2NR",
+     "p13": "B0966VM963",
+     "p14": "B0B18TTS9M",
+     "p15": "B08ZPS2RX6",
+     "p16": "B08LQGGPCP",
+     "p17": "B087RT64SG",
+     "p18": "B08V8JJ1PW",
+     "p19": "B07RPHJD6B",
+     "p20": "B07L4YQW1M",
+     "p21": "B09F1WY11P",
+     "p22": "B09RQPHLCY",
+     "p23": "B07PH1R6X3",
+     "p24": "B073WN7DZQ",
+     "p25": "B07FF2KHXF",
+     "p26": "B09YDB67TT",
+     "p27": "B08XRG41X6",
+     "p28": "B099874H99",
+     "p29": "B09BBYW9DR",
+     "p30": "B0B5SYXQP7",
+     "p31": "B0C1CQH65Z",
+     "p32": "B08F6W82JD",
+     "p33": "B0C5QVRLCZ",
+     "p34": "B0821WB1TM",
+     "p35": "B07YXPM28F",
+     "p36": "B07VWFM5GZ",
+     "p37": "B01JNY91FS",
+     "p38": "B07FPRN3BZ",
+     "p39": "B01L2EVIKS",
+     "p40": "B07D979B5G",
+     "p41": "B082VSGRZP",
+     "p42": "B09MVCCNW7",
+     "p43": "B07BZYKZKC",
+     "p44": "B076BR12FD",
+     "p45": "B01N3MASN8",
+     "p46": "B0B1L42279",
+     "p47": "B09BBVRLG6",
+     "p48": "B0B9HNLNS6",
+     "p49": "B088PYKS31"
+    }
+   },
+   "inputs": {
+    "query": "bienzoe boys shirt",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Bienzoe Boy's Cotton Plaid Roll Up Button Down Sports Shirts",
+      "category": "Clothing > Tops, Tees & Shirts"
+     },
+     {
+      "id": "p2",
+      "title": "Ben Sherman Boys' Shirt - Casual Short Sleeve Button Down Collared Shirt (Size: 8-18)",
+      "category": "Clothing > Tops, Tees & Shirts"
+     },
+     {
+      "id": "p3",
+      "title": "KISBINI Boys California Summer Clothes Set T Shirt and Short",
+      "category": "Clothing > Clothing Sets"
+     },
+     {
+      "id": "p4",
+      "title": "Nautica Boys' Short Sleeve Coast Crew Neck T-Shirt",
+      "category": "Boys > Tops & Tees"
+     },
+     {
+      "id": "p5",
+      "title": "Tommy Hilfiger Boys' Short Sleeve Fashion Polo Shirt",
+      "category": "Clothing > Tops, Tees & Shirts"
+     },
+     {
+      "id": "p6",
+      "title": "Rafael Boy's Dress Shirt & Tie",
+      "category": "Boys > Clothing"
+     },
+     {
+      "id": "p7",
+      "title": "Atari Boys Rough Logo Childrens T-Shirt Black",
+      "category": "Baby Boys > Clothing"
+     },
+     {
+      "id": "p8",
+      "title": "SSLR Big Boys Tshirts Crew Neck Casual Tee Long Sleeve Stripe T Shirts for Kids",
+      "category": "Clothing > Tops, Tees & Shirts"
+     },
+     {
+      "id": "p9",
+      "title": "KYKU Men's Print Graphic T Shirt Short Sleeve Summer T-Shirt Novelty Casual Tee",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p10",
+      "title": "Boys Dragon Ball Z Goku Shirt Navy Blue Dragon Ball Z Boys Clothing",
+      "category": "Clothing > Tops, Tees & Shirts"
+     },
+     {
+      "id": "p11",
+      "title": "Fifth Sun Boys' Little Boys' Poly Skull Graphic T-Shirt",
+      "category": "Clothing > Tops, Tees & Shirts"
+     },
+     {
+      "id": "p12",
+      "title": "Youth Ask Me Why I'm Lazy T Shirt Funny Flipup Zoo Animal Sloth Tee for Kids",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p13",
+      "title": "IZOD Boys' 4-Piece Set with Collared Dress Shirt, Tie, Vest, and Pants",
+      "category": "Clothing > Suits & Sport Coats"
+     },
+     {
+      "id": "p14",
+      "title": "Hurley Boys' Long Sleeve Basic T-Shirt",
+      "category": "Clothing > Tops, Tees & Shirts"
+     },
+     {
+      "id": "p15",
+      "title": "Mud Pie Baby Toddler Boy Football Shirt",
+      "category": "Baby Boys > Clothing"
+     },
+     {
+      "id": "p16",
+      "title": "Toddler Kids Baby Boys 1st Christmas Outift Gentleman Striped Shirt with Bowtie + Long Suspender Pants Overalls Clothes",
+      "category": "Baby Boys > Clothing"
+     },
+     {
+      "id": "p17",
+      "title": "Marvel Spider-Man Avengers Miles Morales 2 Pack T-Shirts Toddler to Big Kid",
+      "category": "Clothing > Tops, Tees & Shirts"
+     },
+     {
+      "id": "p18",
+      "title": "Cycling Jersey Shorts Set Padded Suit Kid's Bicycle Tops Shirt Mountain Bike Riding",
+      "category": "Cycling > Boys"
+     },
+     {
+      "id": "p19",
+      "title": "YOMXL Men Vintage Leopard Print Shirt Summer Beach Tee Lapel Collar Short Sleeve V-Neck Button Tops",
+      "category": "Wall Art > Posters & Prints"
+     },
+     {
+      "id": "p20",
+      "title": "Southern Fin Apparel Youth Fishing Shirt for Kids Boys Girls Long Sleeve UV",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p21",
+      "title": "Be The Sunshine Shirt, Summer Shirts for Women, Retro Sun T Shirt, Vintage Graphic T-Shirt, Kindness Tshirt",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p22",
+      "title": "Marvel Men's Venom Graphic T-Shirt",
+      "category": "Clothing > Shirts"
+     },
+     {
+      "id": "p23",
+      "title": "I Paused My Game to Be Here Video Gamer Mens Retro Graphic Funny T Shirt",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p24",
+      "title": "Made in USA - Colorful Butterfly Ladies V-Neck 3D Graphic Butterfly T-Shirt w/Rhinestones",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p25",
+      "title": "U.S. Polo Assn. Men's Crew Neck Small Pony T-Shirt",
+      "category": "Clothing > Shirts"
+     },
+     {
+      "id": "p26",
+      "title": "Amazon Essentials Men's Regular-Fit Short-Sleeve Crewneck T-Shirt, Pack of 2",
+      "category": "Clothing > Underwear"
+     },
+     {
+      "id": "p27",
+      "title": "Amazon Essentials Women's Long-Sleeve Crewneck Smocked Cuff T-Shirt",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p28",
+      "title": "Crazy Dog T-Shirts Mens Thats A Horrible Idea What Time T Shirt Funny Adult Sarcastic Humor Tee",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p29",
+      "title": "Hurley Men's Icon Slash Gradient T-shirt",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p30",
+      "title": "Marvel Avengers Hulk Iron Man Spider-Man T-Shirt and Mesh Shorts Outfit Set Toddler to Big Kid",
+      "category": "Clothing > Clothing Sets"
+     },
+     {
+      "id": "p31",
+      "title": "Hanes Men's Essentials Long Sleeve T-Shirt Pack, Crewneck Cotton Tees, 4-Pack",
+      "category": "Clothing > Shirts"
+     },
+     {
+      "id": "p32",
+      "title": "Under Armour Men's Boxed Sportstyle Short-sleeve T-shirt",
+      "category": "Clothing > Active"
+     },
+     {
+      "id": "p33",
+      "title": "Amazon Essentials Women's Classic T-Shirt Bra",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p34",
+      "title": "Best DAD Ever Funny Unisex T-Shirt",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p35",
+      "title": "Under Armour Men's Tech 2.0 V-Neck Short-Sleeve T-Shirt",
+      "category": "Clothing > Active"
+     },
+     {
+      "id": "p36",
+      "title": "SUPEYA Youve Got A Friend in Me T-Shirt for Women Funny Letter Print Shirt Cute Graphic Short Sleeve Tees Tops",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p37",
+      "title": "Gold Toe Men's Crew Neck T-Shirt",
+      "category": "Clothing > Shirts"
+     },
+     {
+      "id": "p38",
+      "title": "The Mountain Men's Lion Collage T-Shirt",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p39",
+      "title": "Trevco Battlestar Galactica- Cylon Invaders T-Shirt Size 4XL",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p40",
+      "title": "Bob Ross Retro Fill Licensed T-Shirt",
+      "category": "Clothing > Shirts"
+     },
+     {
+      "id": "p41",
+      "title": "Brisco Brands Pirate Captain Humanoid Alien Vector Graphic T Shirt Men or Women",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p42",
+      "title": "Lynyrd Skynyrd Men's Eagle Guitar 73 T-Shirt Black",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p43",
+      "title": "Womens Happiness is Being a Grandma T Shirt Funny Cute Nana Grandmother Gift",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p44",
+      "title": "Vintage Distressed Roller Skate Sun Classic Retro Premium T-Shirt",
+      "category": "Clothing > Active"
+     },
+     {
+      "id": "p45",
+      "title": "Nicht Mein Fuhrer! Not My President T-Shirt",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p46",
+      "title": "The Hell I Won't Shirt Womens Vintage Graphic T-Shirt Funny Saying Tees Country Casual Short Sleeve Tops",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p47",
+      "title": "Hurley Men's One and Only Logo T-Shirt",
+      "category": "Clothing > Shirts"
+     },
+     {
+      "id": "p48",
+      "title": "Halloween Hocus Pocus Shirt for Women Ring Hole Sanderson Sister Squad Graphic Tees Classic Halloween Movie Top T-Shirt",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p49",
+      "title": "CafePress Aloha Palm Toddler T Shirt Toddler Tee",
+      "category": "Baby Girls > Clothing"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 2,
+     "p3": 1,
+     "p4": 2,
+     "p5": 2,
+     "p6": 2,
+     "p7": 2,
+     "p8": 2,
+     "p9": 1,
+     "p10": 2,
+     "p11": 2,
+     "p12": 1,
+     "p13": 1,
+     "p14": 2,
+     "p15": 2,
+     "p16": 1,
+     "p17": 2,
+     "p18": 1,
+     "p19": 1,
+     "p20": 2,
+     "p21": 1,
+     "p22": 1,
+     "p23": 1,
+     "p24": 1,
+     "p25": 1,
+     "p26": 1,
+     "p27": 1,
+     "p28": 1,
+     "p29": 1,
+     "p30": 1,
+     "p31": 1,
+     "p32": 1,
+     "p33": 1,
+     "p34": 1,
+     "p35": 1,
+     "p36": 1,
+     "p37": 1,
+     "p38": 1,
+     "p39": 1,
+     "p40": 1,
+     "p41": 1,
+     "p42": 1,
+     "p43": 1,
+     "p44": 1,
+     "p45": 1,
+     "p46": 1,
+     "p47": 1,
+     "p48": 1,
+     "p49": 1
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-d80db1e6526c512b": {
+   "task": "label",
+   "meta": {
+    "query": "mini displayport to displayprot cable",
+    "ids": {
+     "p1": "B0BX48BW9H",
+     "p2": "B002YHYTI6",
+     "p3": "B09SQF2G7C",
+     "p4": "B0BQFH76XM",
+     "p5": "B01C4W1QFO",
+     "p6": "B084SVC463",
+     "p7": "B08BFNYYLP",
+     "p8": "B09N36SM9F",
+     "p9": "B0002J2MNW",
+     "p10": "B09Y1DPZMC",
+     "p11": "B00006B8BJ",
+     "p12": "B07MDGDSYS",
+     "p13": "B075RJHLB4",
+     "p14": "B00ZQ5IWAY",
+     "p15": "B07DPRH4RW",
+     "p16": "B0BZP7PJ9G",
+     "p17": "B09CPMM949",
+     "p18": "B0BL34WF1Y",
+     "p19": "B09D9BVP15",
+     "p20": "B0C1STHMH7",
+     "p21": "B09ZNNX5X5",
+     "p22": "B00CKLYGX4",
+     "p23": "B00ZXUTXCS",
+     "p24": "B07VZRXJJ1",
+     "p25": "B07CHHZYZS",
+     "p26": "B073R7WVW1",
+     "p27": "B0B7JF5516",
+     "p28": "B00NMBXUXI",
+     "p29": "B082YB9888"
+    }
+   },
+   "inputs": {
+    "query": "mini displayport to displayprot cable",
+    "products": [
+     {
+      "id": "p1",
+      "title": "uni 4K Mini DisplayPort to DisplayPort Cable 6ft (4K@60Hz, 2K@144Hz), Bi-Directional Mini DP to DP Cable, Sturdy Aluminu",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     },
+     {
+      "id": "p2",
+      "title": "Monoprice 6ft 32AWG Mini DisplayPort Cable - White",
+      "category": "Computer Accessories & Peripherals > Computer Cable Adapters"
+     },
+     {
+      "id": "p3",
+      "title": "KOMYTOO 10ft DisplayPort Cable 1.4, 8k DisplayPort Cable, DP Cable Male to Male Support 8K 60Hz, 4K 144Hz, 1080P 240Hz H",
+      "category": "Accessories > Cables"
+     },
+     {
+      "id": "p4",
+      "title": "WJESOG USB C to Dual DisplayPort Splitter Adapter Hub Dual 4K@60Hz,Type C to 2 DP Multi Monitor Converte Compatible Thun",
+      "category": "Computer Accessories & Peripherals > Computer Cable Adapters"
+     },
+     {
+      "id": "p5",
+      "title": "HP USB-C to DisplayPort Graphics Adapter",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     },
+     {
+      "id": "p6",
+      "title": "TNP Premium Mini Toslink to Toslink Digital Optical Audio Cable (3 Feet) - Standard Toslink to Mini Toslink Male Plug Co",
+      "category": "Accessories > Cables"
+     },
+     {
+      "id": "p7",
+      "title": "Seadream 2Pack 1Feet Micro HDMI Type D Male to Mini HDMI Type C Male Connector Adapter Cable Cord (1Feet 2Pack)",
+      "category": "Accessories > Cables"
+     },
+     {
+      "id": "p8",
+      "title": "J&D 4-Piece Angled DisplayPort Adapters, 4 Pcs Male to Female 90 Degree and 270 Degree Right-Angle and 90 Degree Left an",
+      "category": "Home Audio Accessories > Connectors & Adapters"
+     },
+     {
+      "id": "p9",
+      "title": "C2G/ Cables to Go 40003 Velocity Mini-Coax F-Type Cable, Blue (1.5 Feet, 0.45 Meters), Black",
+      "category": "Home Audio Accessories > Cables"
+     },
+     {
+      "id": "p10",
+      "title": "EMK\u00ae Toslink to Mini Toslink Digital Optical Audio Cables Nylon Braided S/PDIF Cable Fiber Optic Cables for Home Theater",
+      "category": "Accessories > Cables"
+     },
+     {
+      "id": "p11",
+      "title": "StarTech.com 10' RS232 Serial Null Modem Cable - Null modem cable - DB-9 (F) to DB-9 (F) - 10 ft (SCNM9FF)",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     },
+     {
+      "id": "p12",
+      "title": "Willhom 821-00010-A PCIe SSD Second Dual Hard Drive Flex Cable Connector Adapter Replacement for Mac Mini Unibody A1347 ",
+      "category": "Computer Components > Laptop Replacement Parts"
+     },
+     {
+      "id": "p13",
+      "title": "StarTech.com Thunderbolt 3 PCIe Expansion Chassis w/DisplayPort \u2013 PCIe x16 \u2013 External PCIe Slot for Thunderbolt 3 Device",
+      "category": "Computer Components > Internal Components"
+     },
+     {
+      "id": "p14",
+      "title": "Synergy Digital Camera HDMI Cable, Works with Nikon D7200 Digital Camera, 5 Ft. High Definition Mini HDMI (Type C) to HD",
+      "category": "Accessories > Cables & Cords"
+     },
+     {
+      "id": "p15",
+      "title": "Amiroko USB C to HDMI Cable, USB 3.1 Type C (Thunderbolt 3 Compatible) to HDMI 4K Cable Adapter for MacBook Pro, Dell XP",
+      "category": "Accessories > Cables"
+     },
+     {
+      "id": "p16",
+      "title": "Minisopuru 4 Ports USB C Hub \u2013 10Gbps USB Hub for Laptop, USB Hub Multiport Adapter, USB C Adapter for MacBook Pro, MacB",
+      "category": "Computer Accessories & Peripherals > USB Hubs"
+     },
+     {
+      "id": "p17",
+      "title": "UGREEN USB C to 3.5mm Audio Adapter Type C to Headphone Aux Jack Dongle 24bit/96kHz HiFi DAC Braided Cable Cord Compatib",
+      "category": "Headphones, Earbuds & Accessories > Adapters"
+     },
+     {
+      "id": "p18",
+      "title": "KAMRUI Thin Client Mini PC AMD 4-Core Ryzen 7 3750H Radeon RX Vega 10 Graphics 32GB DDR4 RAM 2TB NVMe SSD WiFi AC BT 4K ",
+      "category": "Computers & Tablets > Desktops"
+     },
+     {
+      "id": "p19",
+      "title": "xiwai CYFPV HDMI Male to Micro HDMI Male Extension FPC Flat Cable 1080P for FPV HDTV Multicopter Aerial Photography (0.8",
+      "category": "Accessories > Cables"
+     },
+     {
+      "id": "p20",
+      "title": "TECHTOBOX USB C to HDMI Cable [4K@60Hz,High-Speed] 3.3ft Type C to HDMI Braided Cord Laptop and Phone to TV Cable [Thund",
+      "category": "Accessories > Cables"
+     },
+     {
+      "id": "p21",
+      "title": "iPhone Charger 10FT Lightning Cable [Apple MFi Certified] Right Angle 3 Pack 90 Degree Nylon Braided Apple Chargers for ",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     },
+     {
+      "id": "p22",
+      "title": "C2G 50239 Select VGA Video Extension Cable VGA Male to VGA Female, In-Wall CMG-Rated, Black (15 Feet, 4.57 Meters)",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     },
+     {
+      "id": "p23",
+      "title": "5 inch HDMI Touch LCD Display (B) with Bicolor Case Supports mini PC including Raspberry Pi 4 3 2 Model B B+ Banana Pi P",
+      "category": "Computer Components > Single Board Computers"
+     },
+     {
+      "id": "p24",
+      "title": "SHARPER IMAGE SBS1-SI Small Personal USB Fan with Soft Blades, 2 Speeds, Touch Control, Quiet Operation, 5V Wall Adapter",
+      "category": "Computer Accessories & Peripherals > USB Gadgets"
+     },
+     {
+      "id": "p25",
+      "title": "NewBEP HDMI to VGA Cable Adapter with 3.5mm Audio Cord, 1080P HD 6ft/1.8m Gold-Plated HDMI Male to VGA Male Active Video",
+      "category": "Computer Accessories & Peripherals > Computer Cable Adapters"
+     },
+     {
+      "id": "p26",
+      "title": "Camera USB Cable for Sony Alpha a6000 a6300 a6400 a6500 a5100 a5000 A77II A7IIK,A99II,Cyber-Shot DSCHX200V,DSCHX400, DSC",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     },
+     {
+      "id": "p27",
+      "title": "iPhone Charger 6 feet 2Pack,Long Lightning Cable 6ft,Nylon Braided Fast Charging Cord for Apple MFi Certified iPhone 13/",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     },
+     {
+      "id": "p28",
+      "title": "JIUWU Motherboard 4 Ports USB 2.0 Hubs Expansion Rear Panel Header Bracket",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     },
+     {
+      "id": "p29",
+      "title": "Amazon Basics ABS USB-A to Lightning Cable Cord, MFi Certified Charger for Apple iPhone, iPad, Black, 1-Ft",
+      "category": "Computer Accessories & Peripherals > Cables & Accessories"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 3,
+     "p3": 2,
+     "p4": 1,
+     "p5": 1,
+     "p6": 0,
+     "p7": 1,
+     "p8": 1,
+     "p9": 0,
+     "p10": 0,
+     "p11": 0,
+     "p12": 0,
+     "p13": 0,
+     "p14": 1,
+     "p15": 1,
+     "p16": 0,
+     "p17": 0,
+     "p18": 0,
+     "p19": 0,
+     "p20": 1,
+     "p21": 0,
+     "p22": 1,
+     "p23": 0,
+     "p24": 0,
+     "p25": 1,
+     "p26": 0,
+     "p27": 0,
+     "p28": 0,
+     "p29": 0
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-a345c591948056ba": {
+   "task": "label",
+   "meta": {
+    "query": "cheeseburst pizza",
+    "ids": {
+     "p1": "B00JJDR8UE",
+     "p2": "B09K4HGVG8",
+     "p3": "B00HCMTQOA",
+     "p4": "B075Y8WCVH",
+     "p5": "B07LFM616X",
+     "p6": "B084QDQD7R",
+     "p7": "B0817H746Y",
+     "p8": "B01INHJCPK",
+     "p9": "B005VSN6FM",
+     "p10": "B075G5J41N",
+     "p11": "B00SCE2IHO",
+     "p12": "B0994RZDYQ",
+     "p13": "B005O6PKYG",
+     "p14": "B0B5B33LY4",
+     "p15": "B0BV18FW4H",
+     "p16": "B0B8NK81M9",
+     "p17": "B00E36RUV4",
+     "p18": "B0000WOF7M",
+     "p19": "B0000WOEUA",
+     "p20": "B00BUMA4J4",
+     "p21": "B087JZJ94B"
+    }
+   },
+   "inputs": {
+    "query": "cheeseburst pizza",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Elmer's New Orleans Chee Wees - Barbeque (2oz/1Bag)",
+      "category": "Snack Foods > Chips & Crisps"
+     },
+     {
+      "id": "p2",
+      "title": "PIZZA BIEN - Margherita Frozen Pizza , Charred Thin, Crispy Crust With A Yeasty Flavor Pizza Frozen ,100 % Natural Mozza",
+      "category": "Pizza > Cheese"
+     },
+     {
+      "id": "p3",
+      "title": "Widmers 10 Year Cheddar Cheese 1 LB",
+      "category": "Cheese > Cheddar"
+     },
+     {
+      "id": "p4",
+      "title": "Amazon Brand - Happy Belly Sliced Provolone Cheese, 10 Slices, 8 Ounce",
+      "category": "Cheese > Provolone"
+     },
+     {
+      "id": "p5",
+      "title": "Panera Bread Mac & Cheese (4 pack)",
+      "category": "Canned, Jarred & Packaged Foods > Packaged Meals & Side Dishes"
+     },
+     {
+      "id": "p6",
+      "title": "Botticelli Premium Italian Pizza Sauce for Authentic Italian Taste - (Pack of 2) - Whole30 Approved - Made in Italy, Low",
+      "category": "Sauces, Gravies & Marinades > Sauces"
+     },
+     {
+      "id": "p7",
+      "title": "Daiya, Dairy Free Mozzarella Style Vegan Cheese Shreds, 7.1 Ounce",
+      "category": "Dairy, Eggs & Plant-Based Alternatives > Plant-Based Cheese"
+     },
+     {
+      "id": "p8",
+      "title": "DiGiorno Personal Size Hand Tossed Style Crust, Four Cheese, 9.2 Oz",
+      "category": "Pizza > Cheese"
+     },
+     {
+      "id": "p9",
+      "title": "Future Essentials Freeze Dried Shredded Sharp Cheddar Cheese (10 oz)",
+      "category": "Cheese > Cheddar"
+     },
+     {
+      "id": "p10",
+      "title": "Bread Cheese, Juustoleipa, 10 oz. (4 pack)",
+      "category": "Cheese > American"
+     },
+     {
+      "id": "p11",
+      "title": "Perugina Glacia Mint Hard Candy, 2.2 lb Bag",
+      "category": "Candy & Chocolate > Hard Candy"
+     },
+     {
+      "id": "p12",
+      "title": "WISCONSIN CHEESE COMPANY'S - SWISS CHEESE BLOCKS 4oz. (Pack of 6) Excellent on Charcuterie Boards, Cheese and Crackers, ",
+      "category": "Dairy, Eggs & Plant-Based Alternatives > Cheese Assortments & Samplers"
+     },
+     {
+      "id": "p13",
+      "title": "Ricotta Salata by Zerto - Whole Wheel (8 pound)",
+      "category": "Dairy, Eggs & Plant-Based Alternatives > Cheese"
+     },
+     {
+      "id": "p14",
+      "title": "Tribeca Curations | Sour Candy Buttons by Doscher's | Value Pack 100 Strips",
+      "category": "Candy & Chocolate > Hard Candy"
+     },
+     {
+      "id": "p15",
+      "title": "Cheddar Cheese Filled Pretzel Sandwiches Value Pack | Bundled by Tribeca Curations | 8 Ounce Bag | Pack of 4 Includes Tr",
+      "category": "Snacks & Sweets > Snack Foods"
+     },
+     {
+      "id": "p16",
+      "title": "TJ POP Pizza Peel 12 Inch with Pizza Cutter, Round Pizza Paddle, Acacia Wood Pizza Cutting Board, Cheese Serving Board",
+      "category": "Kitchen Utensils & Gadgets > Pasta & Pizza Tools"
+     },
+     {
+      "id": "p17",
+      "title": "Roland Foods Sun-Dried Tomato Strips, Specialty Imported Food, 2.5-Pound Bag",
+      "category": "Dried Fruits & Vegetables > Dried Vegetables"
+     },
+     {
+      "id": "p18",
+      "title": "igourmet Spanish Cheese Tasting Gift Box - Includes Spanish Manchego Cheese, Mahon Reserva Cheese, Idiazabal Cheese and ",
+      "category": "Food & Beverage Gifts > Cheese & Charcuterie Gifts"
+     },
+     {
+      "id": "p19",
+      "title": "igourmet French Cheese Tasting Assortment In A Gift Box",
+      "category": "Food & Beverage Gifts > Cheese & Charcuterie Gifts"
+     },
+     {
+      "id": "p20",
+      "title": "Stonewall Kitchen Down East Tartar Sauce, 7.5 Ounces",
+      "category": "Pantry Staples > Jams, Jellies & Sweet Spreads"
+     },
+     {
+      "id": "p21",
+      "title": "The Original Gino's East of Chicago Deep Dish 3 Pack (Sausage and Pepperoni Combo)",
+      "category": "Frozen > Pizza"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 2,
+     "p3": 1,
+     "p4": 1,
+     "p5": 1,
+     "p6": 1,
+     "p7": 1,
+     "p8": 2,
+     "p9": 1,
+     "p10": 1,
+     "p11": 0,
+     "p12": 1,
+     "p13": 1,
+     "p14": 0,
+     "p15": 1,
+     "p16": 1,
+     "p17": 1,
+     "p18": 1,
+     "p19": 1,
+     "p20": 0,
+     "p21": 2
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-de96e8cfda8d1889": {
+   "task": "label",
+   "meta": {
+    "query": "syrup sugar free syrup",
+    "ids": {
+     "p1": "B000T8XZOQ",
+     "p2": "B07THD71VL",
+     "p3": "B003TG7GNG",
+     "p4": "B0BZ29216G",
+     "p5": "B06X6JQ3XJ",
+     "p6": "B07SG16PB3",
+     "p7": "B09Z8W7C93",
+     "p8": "B07VWX9BCY",
+     "p9": "B07F1MFWV1",
+     "p10": "B0BKTHZZB9",
+     "p11": "B0BL1YFWCF",
+     "p12": "B084NWQ8NW",
+     "p13": "B002UKOAJK",
+     "p14": "B0889Z88VS",
+     "p15": "B01M1HQPEL",
+     "p16": "B07CVKSY5H",
+     "p17": "B086KD94X9",
+     "p18": "B0126UP8U8",
+     "p19": "B09DV9TC3X",
+     "p20": "B08B7XFGW7",
+     "p21": "B0BN2CF4GR",
+     "p22": "B0B5KRW5CQ",
+     "p23": "B0BSVPQ3D2",
+     "p24": "B0798R9NPV",
+     "p25": "B0B3LFW6H1",
+     "p26": "B08GJCHVJC",
+     "p27": "B08X29WGDC",
+     "p28": "B0C4WFWK43"
+    }
+   },
+   "inputs": {
+    "query": "syrup sugar free syrup",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Monin - Sugar Free Sweetener, Great for Coffee, Cocktails, & Lattes, Dissolves Quickly In Liquids, Made With Sucralose, ",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p2",
+      "title": "Jordan's Skinny Syrups Sugar Free 4 Flavor Variety 1 of each 750 ml Bottle with By The Cup Coffee Syrup Pumps",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p3",
+      "title": "BLACKBERRY PATCH Sugar Free Maple Praline Syrup, 12 Ounce",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     },
+     {
+      "id": "p4",
+      "title": "Jordan's Skinny Syrups, Maple Donut Coffee Syrup, Sugar Free, 25.4 Ounces (Pack of 1), Zero Calorie Drink Flavoring & Mi",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p5",
+      "title": "Da Vinci SUGAR FREE Toasted Marshmallow Syrup 750mL",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p6",
+      "title": "Jordan's Skinny Syrups Sugar Free White Chocolate 750 ml (Pack of 2) with By The Cup Coaster",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p7",
+      "title": "DaVinci Gourmet Syrup, Zero Calorie Sugar-Free Caramel, 12.7 Fl Oz",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p8",
+      "title": "DaVinci Gourmet Sugar Free Peppermint Paddy Syrup, 750 mL Plastic Bottle",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p9",
+      "title": "Skinny Food Salted Caramel Syrup Dessert Topping Sugar Free Zero Calories Guilt Free SW",
+      "category": "Cooking & Baking > Dessert Syrups & Sauces"
+     },
+     {
+      "id": "p10",
+      "title": "Monin - Raspberry Syrup, Sweet and Tart, Great for Cocktails and Lemonades, Gluten-Free, Non-GMO (1 Liter, 4-Pack)",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p11",
+      "title": "Monin - Frosted Mint Syrup, Bold Spearmint Coolness, Natural Flavors, Great for Smoothies, Sodas, Cocktails, and Teas, N",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p12",
+      "title": "Sahara Gold Organic Pure Date Honey Syrup Kosher 100% Healthy | Low Glycemic Paleo Natural Sweetener No Sugar Added | Ve",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     },
+     {
+      "id": "p13",
+      "title": "Apricot Pancake Syrup",
+      "category": "Pantry Staples > Cooking & Baking"
+     },
+     {
+      "id": "p14",
+      "title": "Floral Elixir Co. Cherry Blossom Elixir - All Natural Syrup for Cocktails & Sodas",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p15",
+      "title": "Coconut Jam by Hey Boo (2-Pack) - Dairy Free - Made in USA - No Corn Syrup",
+      "category": "Breads & Bakery > Breadsticks"
+     },
+     {
+      "id": "p16",
+      "title": "Stirrings Authentic Grenadine, 355 Ml",
+      "category": "Beverages > Bottled Beverages, Water & Drink Mixes"
+     },
+     {
+      "id": "p17",
+      "title": "Hellmann's Classics Raspberry Vinaigrette Salad Dressing Jug Gluten Free, No Artificial Flavors or High Fructose Corn Sy",
+      "category": "Condiments & Salad Dressings > Salad Dressings"
+     },
+     {
+      "id": "p18",
+      "title": "Madhava Naturally Sweet Organic Blue Agave Low-Glycemic Sweetener, Amber Raw, 46 Ounce (Packaging may vary)",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     },
+     {
+      "id": "p19",
+      "title": "Jordan's Skinny Mixes Strawberry Key Lime Margarita, Sugar Free Cocktail Flavoring Mix, 32 Fl Oz (Pack of 2)",
+      "category": "Bottled Beverages, Water & Drink Mixes > Cocktail Mixers"
+     },
+     {
+      "id": "p20",
+      "title": "Tuscanini Premium Italian Apricot Preserves, 11.64 oz Jar, Spreadable Fruit Jam, No High Fructose Corn Syrup, No Preserv",
+      "category": "Jams, Jellies & Sweet Spreads > Jams, Jellies & Preserves"
+     },
+     {
+      "id": "p21",
+      "title": "Drink Simple Sparkling Maple Water, Electrolyte Hydration Drink with Natural Prebiotics, No Added Sugar or Sweeteners, S",
+      "category": "Bottled Beverages, Water & Drink Mixes > Water"
+     },
+     {
+      "id": "p22",
+      "title": "MiO Sugar-Free Versatile Fruit Variety Naturally Flavored Liquid Water Enhancer (8 Count 1.62 fl oz)",
+      "category": "Bottled Beverages, Water & Drink Mixes > Powdered Drink Mixes & Flavorings"
+     },
+     {
+      "id": "p23",
+      "title": "NuNaturals Liquid Stevia, Sugar-Free Sweetener, Plant-Based Sugar Substitute, Zero Calorie",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     },
+     {
+      "id": "p24",
+      "title": "Simply Delish Natural Jel Dessert Sugar Free Variety Pack Strawberry and Rasberry, 2 CT",
+      "category": "Cooking & Baking > Pudding & Gelatin"
+     },
+     {
+      "id": "p25",
+      "title": "Cinnamon and Chocolate Smartcake bundle: 4 twin-packs of cinnamon and 4 twin-packs of chocolate, gluten free, sugar free",
+      "category": "Snack Foods > Snack Cakes & Pastries"
+     },
+     {
+      "id": "p26",
+      "title": "Isomalt Crystals, 2 lb",
+      "category": "Cooking & Baking > Baking Syrups, Sugars & Sweeteners"
+     },
+     {
+      "id": "p27",
+      "title": "bubly Sparkling Water, Strawberry, 12 fl oz. cans (8 Pack)",
+      "category": "Bottled Beverages, Water & Drink Mixes > Water"
+     },
+     {
+      "id": "p28",
+      "title": "Zevia Kidz Watermelon, 7.5 Ounce Cans (Pack of 24)",
+      "category": "Bottled Beverages, Water & Drink Mixes > Soft Drinks"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 2,
+     "p2": 3,
+     "p3": 3,
+     "p4": 3,
+     "p5": 3,
+     "p6": 3,
+     "p7": 3,
+     "p8": 3,
+     "p9": 3,
+     "p10": 1,
+     "p11": 1,
+     "p12": 2,
+     "p13": 1,
+     "p14": 1,
+     "p15": 0,
+     "p16": 1,
+     "p17": 0,
+     "p18": 1,
+     "p19": 2,
+     "p20": 0,
+     "p21": 1,
+     "p22": 2,
+     "p23": 2,
+     "p24": 1,
+     "p25": 0,
+     "p26": 1,
+     "p27": 0,
+     "p28": 0
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-09162dc6d6aa9495": {
+   "task": "label",
+   "meta": {
+    "query": "asdkjh qwepoi",
+    "ids": {
+     "p1": "B09VS5T3FR",
+     "p2": "B07BZZH2NR",
+     "p3": "B099NHZHS1",
+     "p4": "B08QF5G6XB",
+     "p5": "B09JSMFN4G",
+     "p6": "B009358ISY",
+     "p7": "B075R5HP7G",
+     "p8": "B009DTL90Y",
+     "p9": "B08J7GVYQP",
+     "p10": "B07SYQ6M27",
+     "p11": "B07JVFPQ6P",
+     "p12": "B07SMYHS2T",
+     "p13": "B08SWNTLVM",
+     "p14": "B07K77JM3X",
+     "p15": "B09GYSSR9P",
+     "p16": "B07ZCG6K17",
+     "p17": "B0C5MH6KT2",
+     "p18": "B0B2SYG2B2",
+     "p19": "B09WR31QN1",
+     "p20": "B0B2P8KHF5"
+    }
+   },
+   "inputs": {
+    "query": "asdkjh qwepoi",
+    "products": [
+     {
+      "id": "p1",
+      "title": "IZOD mens Printed Rayon Sleep Short",
+      "category": "Clothing > Sleep & Lounge"
+     },
+     {
+      "id": "p2",
+      "title": "Youth Ask Me Why I'm Lazy T Shirt Funny Flipup Zoo Animal Sloth Tee for Kids",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p3",
+      "title": "HEZIOWYUN Women Kawaii Sweaters Long Sleeve Crewneck Cow Printed Harajuku Sweater Loose Aesthetic Knitted Pullover",
+      "category": "Clothing > Sweaters"
+     },
+     {
+      "id": "p4",
+      "title": "Asnomy Sofa Covers for 2 Cushion Couch Stretch loveseat Covers Slipcovers, Pet Protector Furniture Covers for Dogs Cats ",
+      "category": "Slipcovers > Sofa Slipcovers"
+     },
+     {
+      "id": "p5",
+      "title": "AYIFU Womens Summer Tops Short Sleeve Casual Shirts Asymmetric Neck Color Block Tunic",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p6",
+      "title": "Yair Emanuel Large Wooden Noah's Ark Design for Children's Room - Mezuzah Scroll Case For Door Lintel (MZL-8)",
+      "category": "Home D\u00e9cor Accents > Mezuzahs"
+     },
+     {
+      "id": "p7",
+      "title": "DAVID ARCHY Men's Cotton Sleepwear Button-Down Pajamas Set",
+      "category": "Clothing > Sleep & Lounge"
+     },
+     {
+      "id": "p8",
+      "title": "Koh-kae Snack Peanut Nori Wasabi Flavour Coated 115 G (4.06 Oz) X 5 Cans",
+      "category": "Cooking & Baking > Nuts & Seeds"
+     },
+     {
+      "id": "p9",
+      "title": "Ekouaer Womens Long Sleeve Button Down Nightgown Loose V-Neck Nightshirt Sleepwear Pajama Dress",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p10",
+      "title": "YIMANIE Mens Silk Satin Pajamas Set Short Sleeve and Shorts Classic Sleepwear Loungewear\u2026",
+      "category": "Clothing > Sleep & Lounge"
+     },
+     {
+      "id": "p11",
+      "title": "KYKU Unisex Funny 3D Hoodies Pullover Hooded Sweatshirt with Pockets Long Sleeve",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p12",
+      "title": "KYKU Men's Print Graphic T Shirt Short Sleeve Summer T-Shirt Novelty Casual Tee",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p13",
+      "title": "Drippin in Melanin T-Shirt Afro Women Funny Letter Print Tshirts Black Queen Graphic Tee Tops Short Sleeve Shirt",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p14",
+      "title": "Lavenderi Men's Kimono Printed Sexy Short Bathrobe Robes",
+      "category": "Clothing > Sleep & Lounge"
+     },
+     {
+      "id": "p15",
+      "title": "PajamaGram Pajama Set For Women - Pajamas Women Jersey Boyfriend, 100% Cotton",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p16",
+      "title": "WDIRARA Women's 3 pcs Sleepwear Leaf Print Cami and Pants Pajama Set with Robe",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p17",
+      "title": "Ekouaer Women's Fit Short-Sleeve Sleepwear, Striped Shorts",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p18",
+      "title": "Knee Length Cargo Shorts for Women Girls Gothic Alt Scene Emo Pants Harajuku Y2k Baggy Streetwear Grunge Hip-hop Techwea",
+      "category": "Clothing > Shorts"
+     },
+     {
+      "id": "p19",
+      "title": "XYXIONGMAO Techware Graphic Men Hoodies Japanese Streetwear Oversized Ghost Hip Hop Evil Sweatshirt",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p20",
+      "title": "ZANZEA Women's Irregular Hem High Low Asymmetrical Top Long Sleeve Casual Ruffle Print Blouse Shirts Tunic",
+      "category": "Clothing > Tops, Tees & Blouses"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 0,
+     "p3": 0,
+     "p4": 0,
+     "p5": 0,
+     "p6": 0,
+     "p7": 0,
+     "p8": 0,
+     "p9": 0,
+     "p10": 0,
+     "p11": 0,
+     "p12": 0,
+     "p13": 0,
+     "p14": 0,
+     "p15": 0,
+     "p16": 0,
+     "p17": 0,
+     "p18": 0,
+     "p19": 0,
+     "p20": 0
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-21e02af0f426b9ae": {
+   "task": "label",
+   "meta": {
+    "query": "dr john's healthy sweets sugar free lollipops",
+    "ids": {
+     "p1": "B07ZWLC2VG",
+     "p2": "B08R6M4HLP",
+     "p3": "B0BXBHYXJ3",
+     "p4": "B08MFQHGFL",
+     "p5": "B0798R9NPV",
+     "p6": "B0B7BLRQ1K",
+     "p7": "B0BS77QKW6",
+     "p8": "B0BRM6ZSY8",
+     "p9": "B0B7KG9WST",
+     "p10": "B07FDXYCM9",
+     "p11": "B089QVT5R3",
+     "p12": "B08X9CYVN4",
+     "p13": "B00FIUC0IC",
+     "p14": "B0727PDB1P",
+     "p15": "B07SG16PB3",
+     "p16": "B0B8C4YVNJ",
+     "p17": "B08BXQB8RN",
+     "p18": "B001F8MWKM",
+     "p19": "B0BLWGG2NV",
+     "p20": "B08YS38C9R",
+     "p21": "B0B3LFW6H1",
+     "p22": "B07JZZWXZN",
+     "p23": "B0000E2YFL",
+     "p24": "B08G9NQZ85",
+     "p25": "B0BSW9WRS1",
+     "p26": "B006NAK8DU",
+     "p27": "B087HB7LQG",
+     "p28": "B006XIQTL2",
+     "p29": "B0797Z337R"
+    }
+   },
+   "inputs": {
+    "query": "dr john's healthy sweets sugar free lollipops",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Dr. John's Healthy Sweets Sugar Free Classic Fruit Tooth Lollipops (150 count, 2.5 LB)",
+      "category": "Candy & Chocolate > Suckers & Lollipops"
+     },
+     {
+      "id": "p2",
+      "title": "Good Good Keto Jam, Jelly with No Added Sugar, Variety Box - 12 ounces each (3 Count)",
+      "category": "Food & Beverage Gifts > Jam, Jelly & Sweet Spread Gifts"
+     },
+     {
+      "id": "p3",
+      "title": "Sugar Free Strawberry Jell-O, 0.6 Ounces (Pack of 6) with By The Cup Mood Spoons",
+      "category": "Snack Foods > Puddings & Gelatins"
+     },
+     {
+      "id": "p4",
+      "title": "Candy Retailer Sugar Free Butterscotch Discs Candy 1lb",
+      "category": "Candy & Chocolate > Hard Candy"
+     },
+     {
+      "id": "p5",
+      "title": "Simply Delish Natural Jel Dessert Sugar Free Variety Pack Strawberry and Rasberry, 2 CT",
+      "category": "Cooking & Baking > Pudding & Gelatin"
+     },
+     {
+      "id": "p6",
+      "title": "Tidbits Fun Bites Meringue the Original Pack, Low Calorie Snacks, Gluten Free Snacks, Sugar Free Snacks, Low Carb Snack-",
+      "category": "Cookies > Meringues"
+     },
+     {
+      "id": "p7",
+      "title": "Saturday Sweets Rainbow Rolls | Authentic Swedish Candy | Low Calorie & Non-GMO, Gelatin Free, No High Fructose Corn Syr",
+      "category": "Candy & Chocolate > Gummy Candy"
+     },
+     {
+      "id": "p8",
+      "title": "Funtasty Finnska Sugar Free Black Licorice Soft Candy, Gummy Bites, Bulk 1 Pound",
+      "category": "Candy & Chocolate > Licorice"
+     },
+     {
+      "id": "p9",
+      "title": "Keto Cookies | Healthy Snacks | Sugar Free Chocolate Chip Cookies | Gluten Free | Low Carb | Grain Free | Prime Delivery",
+      "category": "Cookies > Chocolate Chip"
+     },
+     {
+      "id": "p10",
+      "title": "Halls XS Blueberry Flavored Sugar Free Candy 15g.",
+      "category": "Candy & Chocolate > Hard Candy"
+     },
+     {
+      "id": "p11",
+      "title": "Candy Club Gourmet Sweet and Sour Pink Cadillacs, Gluten Free, Fun and Fruity Gummies for Gifts, Parties, Snacks, Candy ",
+      "category": "Candy & Chocolate > Gummy Candy"
+     },
+     {
+      "id": "p12",
+      "title": "Nature's Twist Sugar Free Lemonade, 16.9 Ounce (24 Pack)",
+      "category": "Bottled Beverages, Water & Drink Mixes > Juices"
+     },
+     {
+      "id": "p13",
+      "title": "Smucker's Sugar-Free Fruit Spread Assortment, 0.375 Ounce (Pack of 200)",
+      "category": "Jams, Jellies & Sweet Spreads > Jams, Jellies & Preserves"
+     },
+     {
+      "id": "p14",
+      "title": "Chips Eucalyptus Menthol Jujubes Sugar Free 1 Pound Bag",
+      "category": "Candy & Chocolate > Mints"
+     },
+     {
+      "id": "p15",
+      "title": "Jordan's Skinny Syrups Sugar Free White Chocolate 750 ml (Pack of 2) with By The Cup Coaster",
+      "category": "Beverage Syrups & Concentrates > Syrups"
+     },
+     {
+      "id": "p16",
+      "title": "Jackson\u2019s Sweet Potato Kettle Chips with Sea Salt made with Premium Avocado Oil (5 oz, Pack of 12) - Allergen-friendly, ",
+      "category": "Snack Foods > Chips & Crisps"
+     },
+     {
+      "id": "p17",
+      "title": "Andy Anand Sugar Free Blueberry Cheesecake 9\" Made in Traditional Way, Amazing-Delicious-Decadent & Greeting Card, Birth",
+      "category": "Cakes > Cheesecakes"
+     },
+     {
+      "id": "p18",
+      "title": "Healthy Gift Basket Classic",
+      "category": "Food & Beverage Gifts > Assortments & Variety Gifts"
+     },
+     {
+      "id": "p19",
+      "title": "SweetGourmet Forest Berries Bonelle Jellies | Bulk Wrapped | Blackberry, Gooseberry, Blueberry, Raspberry | 1 Pound",
+      "category": "Chocolate Candy > Assortment Boxes"
+     },
+     {
+      "id": "p20",
+      "title": "Angie's BOOMCHICKAPOP Sweet and Salty Kettle Corn Popcorn, Gluten Free, Party Size 10 oz.",
+      "category": "Snack Foods > Popcorn"
+     },
+     {
+      "id": "p21",
+      "title": "Cinnamon and Chocolate Smartcake bundle: 4 twin-packs of cinnamon and 4 twin-packs of chocolate, gluten free, sugar free",
+      "category": "Snack Foods > Snack Cakes & Pastries"
+     },
+     {
+      "id": "p22",
+      "title": "Hi-Chew Sensationally Chewy Japanese Fruit Candy, Banana, 1.76 Ounce (Pack of 10)",
+      "category": "Candy & Chocolate > Chewing & Bubble Gum"
+     },
+     {
+      "id": "p23",
+      "title": "Tootsie Roll Charms Super Blow Pop Lollipops - Dual Candy and Gum Suckers - Bulk Treat for Kids and Adults - Assorted Fl",
+      "category": "Candy & Chocolate > Suckers & Lollipops"
+     },
+     {
+      "id": "p24",
+      "title": "SWEETSOME Rain Blo Pops - Lollipops, Bubble Gum Filled Assorted Fruit Flavors Candy Pop - 2 Pound Assorted Candy Bag",
+      "category": "Candy & Chocolate > Suckers & Lollipops"
+     },
+     {
+      "id": "p25",
+      "title": "Dum Dums Super Treats 200 Ct Bag",
+      "category": "Candy & Chocolate > Suckers & Lollipops"
+     },
+     {
+      "id": "p26",
+      "title": "Valentine Conversation Heart Lollipops - Double Sided, Grape and Strawberry - 46 Pieces - Valentine's Day Candy",
+      "category": "Candy & Chocolate > Suckers & Lollipops"
+     },
+     {
+      "id": "p27",
+      "title": "Zoo Animal Lollipops Suckers, Fat-Free, 12 Individually Wrapped with Sticks",
+      "category": "Candy & Chocolate > Suckers & Lollipops"
+     },
+     {
+      "id": "p28",
+      "title": "Scorpion Lollipop (4 Count) *Apple, Bannana, Blueberry, Strawberry*",
+      "category": "Candy & Chocolate > Suckers & Lollipops"
+     },
+     {
+      "id": "p29",
+      "title": "Chupa Chups Pops Cremosa Ice Cream Flavor 40 Count - Strawberry Ice-cream Flavor And Chocolate Ice-cream Flavor Lollipop",
+      "category": "Candy & Chocolate > Suckers & Lollipops"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 1,
+     "p3": 1,
+     "p4": 2,
+     "p5": 1,
+     "p6": 1,
+     "p7": 1,
+     "p8": 1,
+     "p9": 1,
+     "p10": 1,
+     "p11": 1,
+     "p12": 1,
+     "p13": 1,
+     "p14": 1,
+     "p15": 1,
+     "p16": 0,
+     "p17": 1,
+     "p18": 1,
+     "p19": 1,
+     "p20": 0,
+     "p21": 1,
+     "p22": 1,
+     "p23": 2,
+     "p24": 2,
+     "p25": 2,
+     "p26": 2,
+     "p27": 2,
+     "p28": 2,
+     "p29": 2
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-69d07088112f6638": {
+   "task": "label",
+   "meta": {
+    "query": "sundress",
+    "ids": {
+     "p1": "B092277RFQ",
+     "p2": "B0BGXP8PT6",
+     "p3": "B09Z1YJP2V",
+     "p4": "B07C1NJN1S",
+     "p5": "B08P21MTN7",
+     "p6": "B010ZBSZ0A",
+     "p7": "B082HC45GF",
+     "p8": "B09XR3JMKX",
+     "p9": "B07T1VZWMR",
+     "p10": "B09T6LHJ24",
+     "p11": "B0C65PCCPB",
+     "p12": "B093FF9YXF",
+     "p13": "B0B3WZBKT6",
+     "p14": "B09MLHZY13",
+     "p15": "B09NC46MK7",
+     "p16": "B0C3Q9MKQF",
+     "p17": "B00YV5KOR4",
+     "p18": "B09M6V2Q3G",
+     "p19": "B088GR19ZB",
+     "p20": "B092V4QCMP",
+     "p21": "B0C37S217D",
+     "p22": "B08L3QRY4B",
+     "p23": "B096K2VW5Z",
+     "p24": "B09R9RNPG9",
+     "p25": "B07V83R4SC",
+     "p26": "B084KJ8G7F",
+     "p27": "B07RN7GQ2S",
+     "p28": "B0917F353X",
+     "p29": "B0824K2BS8",
+     "p30": "B097JCBR28",
+     "p31": "B07MV1GGCB",
+     "p32": "B01LYG6LGO",
+     "p33": "B0BRMZ3H75",
+     "p34": "B0BTGYCQHV",
+     "p35": "B00X3OOZAQ",
+     "p36": "B0BP1TH1BQ"
+    }
+   },
+   "inputs": {
+    "query": "sundress",
+    "products": [
+     {
+      "id": "p1",
+      "title": "UGUEST Women's Sleeveless Sundress with Pockets Round Neck Ruffle Skirt Mini Swing Playered A-line Beach Party Summer Dr",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p2",
+      "title": "YUNDAI Summer Sleeveless Dresses for Women Beach Tshirt Sundress Casual Pockets Boho Tank Dress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p3",
+      "title": "Lafural Women Summer Causal Loose Tunic Short Sleeveless Tank Dresses Button Down Sundress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p4",
+      "title": "Womens Summer Dresses Strapless Beach Sundress Off Shoulder Boho Party Floral Long Maxi",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p5",
+      "title": "PRETTYGARDEN Women's Casual Halter Neck Sleeveless Floral Long Maxi Dress Backless Loose Ruffle Sundress with Belt",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p6",
+      "title": "RJC Women's Waimea Sunset Hawaiian Smocked Sundress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p7",
+      "title": "Toddler Girls Valentine's Day Dress Baby Ruffled Stripe Love Heart Print Princess Sundress One-Piece Clothes",
+      "category": "Baby Girls > Clothing"
+     },
+     {
+      "id": "p8",
+      "title": "GOYONYING Toddler Baby Girl Dress Flutter Ruffle Flower Girl Dress Kids Casual Beach Princess Dresses Sundress 18M-6T",
+      "category": "Baby Girls > Clothing"
+     },
+     {
+      "id": "p9",
+      "title": "EASYDWELL Sleeveless Casual Summer Flare Tshirt Dress with Pockets Sundresses for Women",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p10",
+      "title": "Glamaker Women's Short Sleeve Smocked Square Neck A Line Summer Flowy Maxi Long Dress",
+      "category": "Women > Clothing"
+     },
+     {
+      "id": "p11",
+      "title": "Women Summer Dresses Casual Boho Smocked Ruffle Sun Beach Babydoll Mini Dress Layered Flowy Swing Casaul Dress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p12",
+      "title": "Adogirl Women's Sexy Spaghetti Strap Sleeveless Ruched Ruffle Hem Bandage Oversized Beach Loose Long Maxi Swing Dress",
+      "category": "Clothing > Swimsuits & Cover Ups"
+     },
+     {
+      "id": "p13",
+      "title": "R.YIposha Women Vintage Elastic Square Neck Ruffled Half Sleeve Summer Backless Beach Flowy Maxi Dresses",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p14",
+      "title": "ZANZEA Womens Floral Print Maxi Dress Casual Summer V Neck Long Boho Beach Sundress Plus Size",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p15",
+      "title": "KIRUNDO 2023 Women's Summer Sleeveless Mini Dress Solid Tie Crewneck High Waist Ruffle A-Line Flowy Pleated Short Dresse",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p16",
+      "title": "Supnier Women's Summer Casual Floral Printed Bohemian Spaghetti Strap Floral Long Maxi Dress with Pockets",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p17",
+      "title": "CowCow Womens Gradient Rhombuses Reversible Sleeveless Dress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p18",
+      "title": "GRECERELLE Women's Sleeveless Racerback Maxi Dress Floral Print Casual Long Dresses with Pockets",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p19",
+      "title": "Nemidor Women's Deep V-Neckline Sleeveless Vintage Plus Size Floral Print Summer Casual Maxi Long Dress NEM234",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p20",
+      "title": "Toddler Baby Girls Sunflower Clothes Set Long Sleeve Top and Pants 2pcs Outfits Fall Clothes",
+      "category": "Baby Girls > Clothing"
+     },
+     {
+      "id": "p21",
+      "title": "Runwind Plus Size Dresses for Women Floral Maxi Dress Flowy 3/4 Sleeve with Belt",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p22",
+      "title": "Floerns Women's Boho Floral Print Square Neck Flounce Sleeve A Line Long Dress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p23",
+      "title": "POPYOUNG Women's Summer Casual Lace Hem Tshirt Dresses Short Sleeve Boho Beach Dress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p24",
+      "title": "PRETTYGARDEN Women's Fall Long Puff Sleeve Babydoll Dress Casual Square Neck Elastic Waist Ruffle A Line Mini Dresses",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p25",
+      "title": "Nemidor Women's V-Neck Loose Pocket T Shirt Dress Casual Plus Size Summer Midi Dress NEM215",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p26",
+      "title": "851 - Plus Size Embroidered Off Shoulder Mexican Hawaii Floral Summer Sun Dress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p27",
+      "title": "Anysize Spring Summer Dress Linen&Cotton Front Pockets Plus Size Dress F132A",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p28",
+      "title": "WEACZZY Women Summer Casual Swing T Shirt Dresses Beach Cover up Loose Dress",
+      "category": "Clothing > Swimsuits & Cover Ups"
+     },
+     {
+      "id": "p29",
+      "title": "MIAMINE Women V-Neck Casual Floral Print Pockets Slit Button Up Spring Fall Party Maxi Dresses",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p30",
+      "title": "Flying Tomato Love Colette Women's Vintage Floral Maxi Dress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p31",
+      "title": "Back From Bali Womens Off Shoulder Long Mexican Embroidered Dress Maxi Boho Floral Summer Peasant Dress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p32",
+      "title": "R.Vivimos Women's Summer Boho Button Up V Neck Floral Print Roll Up Causal Split Beach Midi Dresses",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p33",
+      "title": "Amegoya Women's Boho V Neck Long Sleeve Wedding Guest Maxi Dress 2023 Summer Prom Long Flowy Dresses",
+      "category": "Maternity > Nursing"
+     },
+     {
+      "id": "p34",
+      "title": "Summer Floral Casual Dresses for Women Bohemia Spaghetti Strap Mini Short Ruffle Dress",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p35",
+      "title": "CowCow Womens Summer Boho Retro Funny Bird Palm Trees Beach Design Empire Waist Long Maxi Dress, XS-5XL",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p36",
+      "title": "LAISHEN Women's 2023 Wrap Dress Summer Boho Maxi Short Sleeve Floral Beach Long Flowy Dresses",
+      "category": "Clothing > Dresses"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 3,
+     "p3": 3,
+     "p4": 3,
+     "p5": 3,
+     "p6": 3,
+     "p7": 2,
+     "p8": 2,
+     "p9": 3,
+     "p10": 2,
+     "p11": 2,
+     "p12": 3,
+     "p13": 2,
+     "p14": 3,
+     "p15": 3,
+     "p16": 3,
+     "p17": 2,
+     "p18": 3,
+     "p19": 3,
+     "p20": 1,
+     "p21": 2,
+     "p22": 2,
+     "p23": 2,
+     "p24": 2,
+     "p25": 2,
+     "p26": 3,
+     "p27": 2,
+     "p28": 2,
+     "p29": 2,
+     "p30": 2,
+     "p31": 2,
+     "p32": 2,
+     "p33": 1,
+     "p34": 3,
+     "p35": 2,
+     "p36": 2
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-43d170b50be80937": {
+   "task": "label",
+   "meta": {
+    "query": "organic caftan",
+    "ids": {
+     "p1": "B0B3S8WMTT",
+     "p2": "B00P8WVSL0",
+     "p3": "B088KM5ZYT",
+     "p4": "B0BG8TF29H",
+     "p5": "B08JMS4H6P",
+     "p6": "B0881ZBZHT",
+     "p7": "B004QWN3WK",
+     "p8": "B00028NAYS",
+     "p9": "B01M0SKG7S",
+     "p10": "B001N0TPVQ",
+     "p11": "B0C62J19L6",
+     "p12": "B00Q59K9VU",
+     "p13": "B088R8WM8M",
+     "p14": "B0C1MH7LB6",
+     "p15": "B0B632256Z",
+     "p16": "B0B8T8J3T6",
+     "p17": "B07CJPVDHP",
+     "p18": "B096SZMXX6",
+     "p19": "B09MJGMT4V",
+     "p20": "B09D4X6J3V",
+     "p21": "B07T1B6TXV",
+     "p22": "B09Y2HTZC5",
+     "p23": "B09MJ2FC7S",
+     "p24": "B01NAJA7ZU",
+     "p25": "B0917F353X",
+     "p26": "B0757MH61Z",
+     "p27": "B07YF2W4WV",
+     "p28": "B07Q6TJ7YB",
+     "p29": "B010LAP3DM",
+     "p30": "B09KS1W2YZ",
+     "p31": "B0BWM246JY",
+     "p32": "B09MZTC8MF",
+     "p33": "B07N48DZ23",
+     "p34": "B00D4WSGVQ",
+     "p35": "B09Y1G7FVL",
+     "p36": "B0C6FNFT7V"
+    }
+   },
+   "inputs": {
+    "query": "organic caftan",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Jot Original - Organic Coffee Concentrate. 150 mg of Caffeine. One Tbsp Instantly Creates Iced or Hot Coffee. 14 Serving",
+      "category": "Coffee > Iced Coffee & Cold-Brew"
+     },
+     {
+      "id": "p2",
+      "title": "Harney & Sons Organic Green Tea With Organic Peppermint, Pack Of 6",
+      "category": "Tea > Green"
+     },
+     {
+      "id": "p3",
+      "title": "McCabe Organic Barley Tea, 1.5 lb (24 oz) (3 Packs), USDA Certified Organic, Product of USA, CCOF Certified(California C",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p4",
+      "title": "Lifeboost Coffee Whole Bean Medium Roast Coffee - Low Acid Single Origin USDA Organic Coffee - Non-GMO Whole Beans Coffe",
+      "category": "Coffee > Ground Coffee"
+     },
+     {
+      "id": "p5",
+      "title": "Groundwork Certified Organic Whole Bean Coffee, Black Gold, 12 oz Bag",
+      "category": "Beverages > Coffee"
+     },
+     {
+      "id": "p6",
+      "title": "Brain Bean Organic Coffee | Smooth Taste, Antioxidant Rich & Fair Trade | Whole Bean Medium Roast 16 Oz",
+      "category": "Coffee > Whole Coffee Beans"
+     },
+     {
+      "id": "p7",
+      "title": "Jim\u2019s Organic Coffee \u2013 Sweet Nothings Decaf \u2013 Light Roast, Whole Bean, 12 oz Bag",
+      "category": "Coffee > Whole Coffee Beans"
+     },
+     {
+      "id": "p8",
+      "title": "Tazo Organic Darjeeling Tea, 20 ct",
+      "category": "Tea > Tea Samplers"
+     },
+     {
+      "id": "p9",
+      "title": "2lb Fair Trade Organic Honduran Whole Bean Medium Roast, 100% Arabica Specialty Coffee, 32 ounces, 2 pounds, Bulk Coffee",
+      "category": "Coffee > Whole Coffee Beans"
+     },
+     {
+      "id": "p10",
+      "title": "Sambazon Organic Amazon Energy Drink, Original Acai Berry, 12 Ounce (Pack of 24)",
+      "category": "Prime Day Grocery > Prime Day Grocery Deals"
+     },
+     {
+      "id": "p11",
+      "title": "Teeccino Chicory Coffee Alternative \u2013 French Roast \u2013 Ground Herbal Coffee That\u2019s Prebiotic, Caffeine-Free & Acid Free, D",
+      "category": "Beverages > Coffee Substitutes"
+     },
+     {
+      "id": "p12",
+      "title": "TRADER JOE'S FAIR TRADE ORGANIC BOLIVIAN BLEND 14oz",
+      "category": "Coffee > Whole Coffee Beans"
+     },
+     {
+      "id": "p13",
+      "title": "Organic Ethiopian Decaf Water Processed Whole Bean Coffee (12oz Whole Bean)",
+      "category": "Coffee > Whole Coffee Beans"
+     },
+     {
+      "id": "p14",
+      "title": "Raven\u2019s Brew Coffee Bold Organic Coffee Dark Roast Ground - Organic Three Peckered Billy Goat 12oz",
+      "category": "Coffee > Ground Coffee"
+     },
+     {
+      "id": "p15",
+      "title": "Organic Green Tea Bags, 120 Bags of Green Tea, Eco-Friendly Tea bags in Kraft Bag, Premium Green Tea Bags Are Provided b",
+      "category": "Tea > Fruit & Herbal Tea"
+     },
+     {
+      "id": "p16",
+      "title": "Bean & Bean Downtown Medium Roast - Whole Bean Coffee Blend Organic \u2013 Creamy, Clean and Smooth Fair Trade \u2013 Ideal Espres",
+      "category": "Coffee > Whole Coffee Beans"
+     },
+     {
+      "id": "p17",
+      "title": "Camano Island Coffee Roasters - Organic Brazil Dark Roast Coffee - Fresh Premium USDA Certified Organic, Shade Grown, Fa",
+      "category": "Coffee > Whole Coffee Beans"
+     },
+     {
+      "id": "p18",
+      "title": "Organic Coffee Capsules for Nespresso Original Machines | French Vanilla Flavored Espresso | Non-GMO Fair Trade Kosher V",
+      "category": "Coffee > Single-Serve Capsules & Pods"
+     },
+     {
+      "id": "p19",
+      "title": "MUD\\WTR - 30 Serving :rise (180g) Mushroom-Based Coffee Alternative, Low Caffeine & Organic Ingredients, Vegan, Gluten F",
+      "category": "Beverages > Coffee Substitutes"
+     },
+     {
+      "id": "p20",
+      "title": "Revolution Tea - Mesh Infuser Full Leaf Tea - Organic Green Tea - 30 Bags",
+      "category": "Tea > Green"
+     },
+     {
+      "id": "p21",
+      "title": "Bloggerlove Women Nightgowns Cotton Caftan House Dress Short Sleeve Sleepwear",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p22",
+      "title": "Buddha Teas Organic Echinacea Tea - OU Kosher, USDA Organic, CCOF Organic, 18 Bleach-Free Tea Bags",
+      "category": "Tea > Fruit & Herbal Tea"
+     },
+     {
+      "id": "p23",
+      "title": "Jacansi Women's V-Neck Casual Long Sleeve/Short Sleeve Maxi Dress Hoodie Pocket Dress",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p24",
+      "title": "Riviera Sun Caftan Caftans for Women",
+      "category": "Clothing > Swimsuits & Cover Ups"
+     },
+     {
+      "id": "p25",
+      "title": "WEACZZY Women Summer Casual Swing T Shirt Dresses Beach Cover up Loose Dress",
+      "category": "Clothing > Swimsuits & Cover Ups"
+     },
+     {
+      "id": "p26",
+      "title": "Celmia Autumn Solid Loose Long Maxi Dress Cotton Caftan",
+      "category": "Clothing > Dresses"
+     },
+     {
+      "id": "p27",
+      "title": "Big Green Organic Food- Organic Millet Flour, Gluten-Free, Kosher, Artisan Baking (1)",
+      "category": "Cooking & Baking > Flours & Meals"
+     },
+     {
+      "id": "p28",
+      "title": "AVIIER Nightgowns for Women Sexy Lingerie Dress Soft Full Slips Dresses with Pockets S-XXL",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p29",
+      "title": "Odishabazaar Womens Cotton Caftan Nighty Blue Batik Kaftan Maxi Dress",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p30",
+      "title": "Sareks 16 oz Black Seed 100% USDA ORGANIC Certified - Black Cumin Seeds - Nothing Added - Resealable Bag - Bulk Nigella ",
+      "category": "Herbs, Spices & Seasonings > Single Herbs & Spices"
+     },
+     {
+      "id": "p31",
+      "title": "Renoholl Women Summer Dress Square Neck Petal Sleeve A-Line Dress Hem Belted Swing Beach Dresses with Pockets",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p32",
+      "title": "Big Green Organic Food- Organic Buckwheat Capellini, 8.8oz, 100% buckwheat, Gluten-Free, Non-GMO (1 Pack)",
+      "category": "Pasta & Noodles > Pasta"
+     },
+     {
+      "id": "p33",
+      "title": "LARACE Plus Size Dresses for Women Casual T Shirt Dress with Pockets Long Tunic Or Tops to Wear with Leggings",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p34",
+      "title": "Caffe Mauro Italian Roast Brick Ground Coffee (2 Pack)",
+      "category": "Coffee > Ground Coffee"
+     },
+     {
+      "id": "p35",
+      "title": "Chriselda Womens Ribbed Lounge Set 2 Piece Outfits Short Sleeve Crop Top and Wide Leg Pants Pajamas Set",
+      "category": "Clothing > Lingerie, Sleep & Lounge"
+     },
+     {
+      "id": "p36",
+      "title": "Araksa Organic Khao Doi Roasted Thai Rice and Silk Black Tea Blend |100% Authentic Premium Silk Black Tea Handcrafted Na",
+      "category": "Tea > Black"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 0,
+     "p2": 0,
+     "p3": 0,
+     "p4": 0,
+     "p5": 0,
+     "p6": 0,
+     "p7": 0,
+     "p8": 0,
+     "p9": 0,
+     "p10": 0,
+     "p11": 0,
+     "p12": 0,
+     "p13": 0,
+     "p14": 0,
+     "p15": 0,
+     "p16": 0,
+     "p17": 0,
+     "p18": 0,
+     "p19": 0,
+     "p20": 0,
+     "p21": 2,
+     "p22": 0,
+     "p23": 1,
+     "p24": 2,
+     "p25": 1,
+     "p26": 2,
+     "p27": 0,
+     "p28": 1,
+     "p29": 2,
+     "p30": 0,
+     "p31": 1,
+     "p32": 0,
+     "p33": 1,
+     "p34": 0,
+     "p35": 1,
+     "p36": 0
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-b5b8466b2a92c760": {
+   "task": "label",
+   "meta": {
+    "query": "pyle power adapter",
+    "ids": {
+     "p1": "B07NW7F3S4",
+     "p2": "B00DUXBYJA",
+     "p3": "B00WF0F4ZO",
+     "p4": "B07FLHLG55",
+     "p5": "B01MZIZ4XC",
+     "p6": "B01CDUJBIQ",
+     "p7": "B078FGMPZP",
+     "p8": "B08VWVLBWF",
+     "p9": "B08C9Q6GLP",
+     "p10": "B00VLUUTHC",
+     "p11": "B0C613NVQ7",
+     "p12": "B09KL3694M",
+     "p13": "B0BWQQ7FBL",
+     "p14": "B00BXSDPC8",
+     "p15": "B00B1QY1CU",
+     "p16": "B00VLWU8FS",
+     "p17": "B08R6YNJWC",
+     "p18": "B0B526LLPJ",
+     "p19": "B07BTD6MXV",
+     "p20": "B00Y3T8CVI",
+     "p21": "B08QCDZHF9",
+     "p22": "B09BZK457K",
+     "p23": "B00FVEPURI",
+     "p24": "B0BB6R89VF",
+     "p25": "B07CM31CNN"
+    }
+   },
+   "inputs": {
+    "query": "pyle power adapter",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Pyle Power Adapter (for Pyle Model: PSBV200BT)",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p2",
+      "title": "UpBright 4-Pin 12V AC/DC Adapter Compatible with Philips Magnavox 17MD255V/17 17MD255V 17MD255/17 Widescreen 17\" DVD Pla",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p3",
+      "title": "UpBright New 6V Car DC Adapter Compatible with XACT XTR1 XTR1CK Sirius Radio Receiver Portable Dock Stand 6VDC Auto Vehi",
+      "category": "Car Electronics > Car Audio"
+     },
+     {
+      "id": "p4",
+      "title": "Power Supply Adapter Sonic-Wall TZ102",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p5",
+      "title": "OMNIHIL AC/DC Power Adapter Compatible with Pix-Star FotoConnect XD 10.4 inch & 15 inch Wi-Fi Digital Photo Frame Model:",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p6",
+      "title": "UpBright New Global 5V AC/DC Adapter Compatible with Lenovo Ideapad 100S-11IBY Chromebook 80R2 80R2001FUS 11.6\" Z3735F G",
+      "category": "Laptop Accessories > Chargers & Adapters"
+     },
+     {
+      "id": "p7",
+      "title": "Omnihil AC/DC Power Adapter Compatible with Uniden BC72XLT, BC75XLT, BC92XLT, BC95XLT, BC125AT, BC246T, BC296D, SC230 Po",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p8",
+      "title": "[UL Listed] MIXGOO 5V 4A Power Supply Charger (Input AC 100V-240V, Output DC 5 Volt 4 Amp 20 Watt) Adapter Switching Tra",
+      "category": "Power Accessories > Power Converters"
+     },
+     {
+      "id": "p9",
+      "title": "QKKE AC Adapter for Defiant 99814 LED Spotlight Wall Charger Power Supply Cable Cord",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p10",
+      "title": "Generic faed Compatible Replacement AC DC Adapter for Pet Safe PIF 300 Instant Wireless Dog Fence System Power Cord",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p11",
+      "title": "Facmogu 2 Pack DC 5V 2A Power Adapter, AC 100-240V to DC 5V 2A 10W Power Supply Transformers, 5.5 x 2.5mm DC Jack Also C",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p12",
+      "title": "UpBright 5V AC/DC Adapter Compatible with Capello Ci320 Bluetooth Speaker with Clock Radio CR60 Tune Clock Alarm JDA0500",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p13",
+      "title": "\u3010UL Listed\u3011 Geluorui UL AC Adapter 12V 2A Power Supply AC110V\u2192DC12V 2000mA 1000mA 500mA 100mA Switching Power Adapter wi",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p14",
+      "title": "UpBright New 5V AC/DC Adapter Replacement for Lenovo IdeaTab Idea Tab S2109 S2109A S2109A-F Tablet PC 5VDC Power Supply ",
+      "category": "Tablet Accessories > Chargers & Adapters"
+     },
+     {
+      "id": "p15",
+      "title": "HQRP AC Adapter Works with Digitech PS0913B BP200, BP355, Brian May-XAS-BM, EX-7 Expression Factory, EXH, Power Supply C",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p16",
+      "title": "Generic Compatible Replacement AC Adapter Charger for Boss BCB 60 Pedal Board Power Supply Cord Wall Charger Mains New",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p17",
+      "title": "UL Listed 15V Power Cord for Sony SRS-XB3 SRS-X55 SRSX55 Portable Speaker Charger Replacement AC/DC Adapter for Sony SRS",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p18",
+      "title": "UpBright AC DC Adapter Compatible with Milanix MX7 MX7U 7\" MX8 8\" MX12 12.1\" MX13 13.3\" MX14 14.1\" Portable Rechargeable",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p19",
+      "title": "Omnihil AC/DC Power Adapter Compatible with GOOLOO 1000A Peak 20800mAh Portable Car Jump Starter",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p20",
+      "title": "T-Power AC Adapter for HP 120W, 600 610 200 Series 120W All-in-One Desktop PC and HP 120W Envy Recline 20\" 21\" HP Pavili",
+      "category": "Laptop Accessories > Chargers & Adapters"
+     },
+     {
+      "id": "p21",
+      "title": "PCIe to M.2 (A) Adapter Supports Raspberry Pi Compute Module 4 for NVMe Protocol M.2 Improving Efficiency Faster Reading",
+      "category": "Accessories > Antennas"
+     },
+     {
+      "id": "p22",
+      "title": "COOCAT White Sleeved Cable, PSU Power Supply Cable Extension Kits, 18AWG 24Pin ATX / 8 (4+4) Pin EPS/Dual 8 (6+2) Pin PC",
+      "category": "Home Audio Accessories > Cables"
+     },
+     {
+      "id": "p23",
+      "title": "UpBright 7.5V AC/DC Adapter Compatible with Vision Fitness Elliptical Trainer X6200 0812EPC100100914 X6200HRC 48-075-100",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p24",
+      "title": "Belkin Surge Protector Power Cube, Power Strip w/ 3 AC Outlets, 3 USB-A Ports, & 5ft Sturdy Extension Cord - Convenient ",
+      "category": "Power Strips & Surge Protectors > Power Strips"
+     },
+     {
+      "id": "p25",
+      "title": "UL Listed AC Charger Compatible with Asus Laptop 15 M509 M509D M509DA M509DJ M509DL 14 M409DL M409DJ M409DA M409D M409 P",
+      "category": "Laptop Accessories > Chargers & Adapters"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 1,
+     "p3": 1,
+     "p4": 1,
+     "p5": 1,
+     "p6": 1,
+     "p7": 1,
+     "p8": 1,
+     "p9": 1,
+     "p10": 1,
+     "p11": 1,
+     "p12": 1,
+     "p13": 1,
+     "p14": 1,
+     "p15": 1,
+     "p16": 1,
+     "p17": 1,
+     "p18": 1,
+     "p19": 1,
+     "p20": 1,
+     "p21": 0,
+     "p22": 1,
+     "p23": 1,
+     "p24": 1,
+     "p25": 1
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-a7ffdc79317c09af": {
+   "task": "label",
+   "meta": {
+    "query": "baseball acp",
+    "ids": {
+     "p1": "B008SCBZ8S",
+     "p2": "B07YMJ9RM5",
+     "p3": "B0B7G163SZ",
+     "p4": "B098NDGDFH",
+     "p5": "B0B7H9RLMQ",
+     "p6": "B073DYJ2V1",
+     "p7": "B07C2F64NC",
+     "p8": "B08YGYWD9J",
+     "p9": "B09LS6TRC6",
+     "p10": "B07DS2Q5NS",
+     "p11": "B00NO3LY00",
+     "p12": "B075G3GBBH",
+     "p13": "B0711T5LF3",
+     "p14": "B00SLHHXFO",
+     "p15": "B07DXKQYMN",
+     "p16": "B0BLK65VKM",
+     "p17": "B07BTD6MXV",
+     "p18": "B00XQUIUTY",
+     "p19": "B07B899VQV",
+     "p20": "B01DTRZIQG",
+     "p21": "B07W4S69DB",
+     "p22": "B07F6D5CS4",
+     "p23": "B00JV91ZSM",
+     "p24": "B07PH1R6X3",
+     "p25": "B0BTH6GRY9",
+     "p26": "B09Z3DP7L4",
+     "p27": "B099874H99",
+     "p28": "B09HQD5SMW",
+     "p29": "B07R79N4GW",
+     "p30": "B07SMYHS2T",
+     "p31": "B07WRW5FZH",
+     "p32": "B07VWFM5GZ",
+     "p33": "B07B1XP2MY",
+     "p34": "B07SDS8RT3",
+     "p35": "B084RK2B94",
+     "p36": "B07PJF5FF1",
+     "p37": "B09MJZLGM5",
+     "p38": "B07JPM72RG",
+     "p39": "B07CKRQHGX",
+     "p40": "B01EAPZW8A",
+     "p41": "B07894L8J9",
+     "p42": "B097HFDM3P",
+     "p43": "B01CM8T2NI",
+     "p44": "B07CL138K8",
+     "p45": "B07K2KP1DG",
+     "p46": "B0BC3JXGZF"
+    }
+   },
+   "inputs": {
+    "query": "baseball acp",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Baseball Cake Topper (6 Count)",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p2",
+      "title": "EvoShield Adult and Youth Pro Team BP Jacket",
+      "category": "Clothing > Active"
+     },
+     {
+      "id": "p3",
+      "title": "MadSportsStuff Baseball Stirrup Socks 3 Stripe with Featheredge",
+      "category": "Clothing > Active"
+     },
+     {
+      "id": "p4",
+      "title": "Amzdest 90s Clothing for Women,Unisex Hip Hop Outfit for Party,Bel Air Baseball Jersey,Short Sleeve Button Down Shirt",
+      "category": "Women > Clothing"
+     },
+     {
+      "id": "p5",
+      "title": "MadSportsStuff Dugout 3 Stripe Baseball Socks Over the Calf Length (Multiple Colors)",
+      "category": "Clothing > Active"
+     },
+     {
+      "id": "p6",
+      "title": "Flexfit Men's Athletic Baseball Fitted Cap",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p7",
+      "title": "Reyn Spooner Men's Chicago Cubs MLB Classic Fit Hawaiian Shirt",
+      "category": "Clothing > Shirts"
+     },
+     {
+      "id": "p8",
+      "title": "Smack Apparel Boston Baseball Fans. Chicks Dig The Long Ball Red T-Shirt (Sm-5X)",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p9",
+      "title": "Under Armour Boy's Leadoff Low Junior Rubber Molded Cleat Shoe, (102) Baseball Gray/Baseball Gray/White, 1 Little Kid",
+      "category": "Baby Boys > Shoes"
+     },
+     {
+      "id": "p10",
+      "title": "I&W Hatgear Customized Letter Intial Baseball Hat A to Z Team Colors, Navy Cap Black White",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p11",
+      "title": "Smack Apparel St. Louis Baseball Fans. A Drinking Town with a Baseball Problem Red T-Shirt (Sm-5X)",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p12",
+      "title": "Interstate Apparel Men's Lion Indian Headdress Black/Camo Raglan Baseball Hoodie Black",
+      "category": "Clothing > Fashion Hoodies & Sweatshirts"
+     },
+     {
+      "id": "p13",
+      "title": "Accessory USA AC DC Adapter for LifeSpan Fitness R3 & C3 Recumbent Exercise Bike Life Span Power Supply Cord",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p14",
+      "title": "LAT-Ladies' Fine Jersey Baseball T-Shirt-3530-XL-Vntge Hthr- Vntge Smoke",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p15",
+      "title": "ILTEX Raglan T-Shirt 3/4 Sleeve Athletic Baseball Jersey Unisex (30+ Colors)",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p16",
+      "title": "Ordeimo 2022 World Baseball Champions Tumbler, 20Oz World Champions Insulated Tumbler with Lids and Straws Houston Tumbl",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p17",
+      "title": "Omnihil AC/DC Power Adapter Compatible with GOOLOO 1000A Peak 20800mAh Portable Car Jump Starter",
+      "category": "Power Accessories > AC Adapters"
+     },
+     {
+      "id": "p18",
+      "title": "Football Compression Arm Sleeve For Youth Women Running Basketball Aqua-X 1 Pair (Small, White)",
+      "category": "Cycling > Women"
+     },
+     {
+      "id": "p19",
+      "title": "Starter Men's 10\" Dazzle Basketball Short with Pockets, Amazon Exclusive",
+      "category": "Clothing > Active"
+     },
+     {
+      "id": "p20",
+      "title": "Meijiafei Crossed Rackets Tennis Birthday or Wedding Acrylic Cake Topper",
+      "category": "Cooking & Baking > Frosting, Icing & Decorations"
+     },
+     {
+      "id": "p21",
+      "title": "United States Army Retired Emblem Patch Hat Black Baseball Cap",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p22",
+      "title": "Sequin Hat Magic - Reversible Adjustable Baseball Hat Cap for Womens 56-58cm / 22\"-23\"",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p23",
+      "title": "Disabled US Army Baseball Cap, Black Hat, Proud of It with Golden Wreath",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p24",
+      "title": "I Paused My Game to Be Here Video Gamer Mens Retro Graphic Funny T Shirt",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p25",
+      "title": "Bubba Envy S Vacuum-Insulated Stainless Steel Tumbler with Lid and Straw, 24oz Reusable Iced Coffee or Water Cup, BPA-Fr",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p26",
+      "title": "Nautica Boys' Short Sleeve Coast Crew Neck T-Shirt",
+      "category": "Boys > Tops & Tees"
+     },
+     {
+      "id": "p27",
+      "title": "Crazy Dog T-Shirts Mens Thats A Horrible Idea What Time T Shirt Funny Adult Sarcastic Humor Tee",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p28",
+      "title": "Alphabet AZ Letter Red Baseball Cap Dad Hat Polo Cap Adjustable Unisex Cotton One Size",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p29",
+      "title": "United States Flag Digital Camo Embroidered Baseball Cap",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p30",
+      "title": "KYKU Men's Print Graphic T Shirt Short Sleeve Summer T-Shirt Novelty Casual Tee",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p31",
+      "title": "Umite Chef 22oz Tumbler Insulated Stainless Steel Travel Tumbler Mug with Lid, 2 Straws & Brush Durable Insulated Coffee",
+      "category": "Dining & Entertaining > Glassware & Drinkware"
+     },
+     {
+      "id": "p32",
+      "title": "SUPEYA Youve Got A Friend in Me T-Shirt for Women Funny Letter Print Shirt Cute Graphic Short Sleeve Tees Tops",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p33",
+      "title": "BLACKMYTH Women's Graphic Funny T Shirt Cute Tops Teen Girl Tee",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p34",
+      "title": "Russell Athletic Men's Cotton T-Shirts",
+      "category": "Clothing > Active"
+     },
+     {
+      "id": "p35",
+      "title": "WITHMOONS Women Tweed Check Baseball Cap Stylish Plaid Adjustable Hat CW00029",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p36",
+      "title": "DANVOUY Women Not Today Satan V-Neck Graphic T-Shirt Casual Tops Tees",
+      "category": "Clothing > Tops, Tees & Blouses"
+     },
+     {
+      "id": "p37",
+      "title": "24 Pieces Blank Baseball Cap Adjustable Back Strap Plain Blank Camouflage Hat Unisex Baseball Cap for Trucker Men Women(",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p38",
+      "title": "Cute Owl Hat Cotton Baseball Cap",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p39",
+      "title": "Big Accessories 6-Panel Twill Sandwich Baseball Cap (BX004)",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p40",
+      "title": "Lonestar Collection Big T Western Dallas Houston Hats Vintage Distressed Baseball Cap Dad Hat Adjustable",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p41",
+      "title": "Armycrew US Submarine Service Veteran Embroidered Patch Snapback Baseball Cap",
+      "category": "Clothing > Novelty"
+     },
+     {
+      "id": "p42",
+      "title": "Quanhaigou Classic Snapback Hat Hip Hop Flat Bill Visor Cap - Unisex Adult Adjustable Baseball Hats",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p43",
+      "title": "Beechfield Ultimate 5 panel contrast cap sandwich peak",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p44",
+      "title": "Sunset C Colorado Mountains Flexfit 6277 Hat. Colorado Themed Cap",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p45",
+      "title": "Evergreen Tree Embroidered Dad Hat - Adjustable Polo Style Cap for Men & Women",
+      "category": "Accessories > Hats & Caps"
+     },
+     {
+      "id": "p46",
+      "title": "Pop Threads Baseball Furies Minimalist 70s Graphic Tee T-Shirt for Men",
+      "category": "Clothing > Novelty"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 1,
+     "p2": 1,
+     "p3": 1,
+     "p4": 1,
+     "p5": 1,
+     "p6": 3,
+     "p7": 1,
+     "p8": 1,
+     "p9": 1,
+     "p10": 3,
+     "p11": 1,
+     "p12": 1,
+     "p13": 0,
+     "p14": 1,
+     "p15": 1,
+     "p16": 1,
+     "p17": 0,
+     "p18": 0,
+     "p19": 0,
+     "p20": 0,
+     "p21": 3,
+     "p22": 3,
+     "p23": 3,
+     "p24": 0,
+     "p25": 0,
+     "p26": 0,
+     "p27": 0,
+     "p28": 3,
+     "p29": 3,
+     "p30": 0,
+     "p31": 0,
+     "p32": 0,
+     "p33": 0,
+     "p34": 0,
+     "p35": 3,
+     "p36": 0,
+     "p37": 3,
+     "p38": 3,
+     "p39": 3,
+     "p40": 3,
+     "p41": 3,
+     "p42": 3,
+     "p43": 2,
+     "p44": 3,
+     "p45": 3,
+     "p46": 1
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  },
+  "agr-089029960d4a3ff3": {
+   "task": "label",
+   "meta": {
+    "query": "polder spice rack",
+    "ids": {
+     "p1": "B016QJ20RE",
+     "p2": "B08PC7L6RJ",
+     "p3": "B0BD7Q4MMX",
+     "p4": "B07NPWXQXB",
+     "p5": "B0BN1FQ8J1",
+     "p6": "B09ZXCSSJ2",
+     "p7": "B073TD41NS",
+     "p8": "B07T1F2W41",
+     "p9": "B09JN2C7BR",
+     "p10": "B0B3WXZ8X3",
+     "p11": "B08HGBYQWR",
+     "p12": "B09Y8KHD2V",
+     "p13": "B07KJMZ74H",
+     "p14": "B0065888ZK",
+     "p15": "B08BJCF6N1",
+     "p16": "B07VT546QB",
+     "p17": "B00D5UD4N2",
+     "p18": "B0B3NGGFKW",
+     "p19": "B000NCXW1Y",
+     "p20": "B09G62H3C6",
+     "p21": "B0851F6J3M",
+     "p22": "B08DFYXHH5",
+     "p23": "B01FKM79JW",
+     "p24": "B07TYMB2HK",
+     "p25": "B0184B2CJS",
+     "p26": "B0B2Q53G1L",
+     "p27": "B09QV9RXX9",
+     "p28": "B0B9RFQ6XP",
+     "p29": "B08CMCTK6B"
+    }
+   },
+   "inputs": {
+    "query": "polder spice rack",
+    "products": [
+     {
+      "id": "p1",
+      "title": "Polder Chrome 18-Jar Compact Spice Rack, 18-5 ounce Glass Jar has Perforated Shaker Caps, Chrome Plated Lids, Sleek Enou",
+      "category": "Kitchen Utensils & Gadgets > Seasoning & Spice Tools"
+     },
+     {
+      "id": "p2",
+      "title": "PremiumPresents 2 pack 15inch and 16inch Magnetic spice rack, 6 hooks, paper towel rack. Kitchen organization. Refrigera",
+      "category": "Kitchen Utensils & Gadgets > Seasoning & Spice Tools"
+     },
+     {
+      "id": "p3",
+      "title": "EKNITEY Spice Rack Organizer for Countertop, 2 Tier Bathroom Shelf, Desktop Makeup Organizer, Small Storage Rack for Kit",
+      "category": "Kitchen Utensils & Gadgets > Seasoning & Spice Tools"
+     },
+     {
+      "id": "p4",
+      "title": "mDesign Expandable Plastic Deluxe Spice Rack, Drawer Organizer for Kitchen Cabinet Drawers, 3 Tier Slanted for Spice Jar",
+      "category": "Kitchen Utensils & Gadgets > Seasoning & Spice Tools"
+     },
+     {
+      "id": "p5",
+      "title": "JUOIFIP Clear Acrylic Floating Shelves 2 Pack, 15\u201d Modern Acrylic Picture Display Shelves, Wall Mounted Storage Shelf fo",
+      "category": "Home D\u00e9cor Accents > Floating Shelves"
+     },
+     {
+      "id": "p6",
+      "title": "CycleMore 15 Pcs Glass Mason Spice Jars 4oz Empty Spice Bottles with Blank Labels and Shaker Lids, Gold Airtight Metal C",
+      "category": "Storage & Organization > Food Storage"
+     },
+     {
+      "id": "p7",
+      "title": "FOLOBE Premium Quality Acrylic condiment set spice box with spoon seasoning salt pepper spice cans kitchen accessories",
+      "category": "Kitchen Utensils & Gadgets > Seasoning & Spice Tools"
+     },
+     {
+      "id": "p8",
+      "title": "MyGift Large Rustic Burnt Wood Tabletop Lazy Susan Turntable Rotating Tray with Black Metal Rim, 15-Inch",
+      "category": "Storage & Organization > Racks & Holders"
+     },
+     {
+      "id": "p9",
+      "title": "Simply Organic Ultimate Organic Starter Spice Gift Set",
+      "category": "Food & Beverage Gifts > Herb, Spice & Seasoning Gifts"
+     },
+     {
+      "id": "p10",
+      "title": "2 Tier Bathroom Counter Organizer, Solid Wood Bathroom Storage Tray for Counter Standing Rack, Cosmetic Holder, Kitchen ",
+      "category": "Bathroom Accessories > Holders & Dispensers"
+     },
+     {
+      "id": "p11",
+      "title": "Savory Spice Whiskey Barrel & Hickory Smoked Salt -1/2 Cup Bag",
+      "category": "Food & Beverage Gifts > Herb, Spice & Seasoning Gifts"
+     },
+     {
+      "id": "p12",
+      "title": "PHI VILLA Microwave Cart on Wheels Kitchen Cabinet Movable Kitchen Island Cart with Extendable Shelves Towel Rack and Dr",
+      "category": "Kitchen Furniture > Storage Islands & Carts"
+     },
+     {
+      "id": "p13",
+      "title": "Nacho Cheese Seasoning by Oh My Spice | Low Sodium, 0 Calories, 0 Carbs, 0 Sugar, Gluten Free, Paleo, Non GMO, No MSG, N",
+      "category": "Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+     },
+     {
+      "id": "p14",
+      "title": "MDH Sambar Masala 100g",
+      "category": "Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+     },
+     {
+      "id": "p15",
+      "title": "Lawry's Salt Free All Purpose Recipe Blend Seasoning, 13 oz - One 13 Ounce Container of Salt Free All Purpose Seasoning ",
+      "category": "Sauces, Gravies & Marinades > Seasoning Mixes"
+     },
+     {
+      "id": "p16",
+      "title": "MOCOUM Wine Glasses Rack Under Cabinet Stemware Rack, Wine Glass Hanger Rack Wire Wine Glass Holder Storage Hanger for C",
+      "category": "Storage & Organization > Racks & Holders"
+     },
+     {
+      "id": "p17",
+      "title": "Zaatar - 8 oz Pouch",
+      "category": "Herbs, Spices & Seasonings > Single Herbs & Spices"
+     },
+     {
+      "id": "p18",
+      "title": "Spicy Himalayan Salt infused Chili Pepper, Shaker Jar (SET OF 2), Perfect Flavored Hot Salt for Popcorn, Seasoning,Cooki",
+      "category": "Herbs, Spices & Seasonings > Salt & Salt Substitutes"
+     },
+     {
+      "id": "p19",
+      "title": "SMOKED BARBEQUE SEASONING FRESHLY PACKED IN LARGE JARS, spices, herbs, seasonings",
+      "category": "Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+     },
+     {
+      "id": "p20",
+      "title": "Triple B BBQ Rub & Seasoning - SPICY",
+      "category": "Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+     },
+     {
+      "id": "p21",
+      "title": "Bamboo Mortar and Pestle Hand Grinder For Garlic Press,4.7 Inch Coffee Grinder,Herb Spice Masher,Ginger Crusher,Spice Gr",
+      "category": "Kitchen Utensils & Gadgets > Seasoning & Spice Tools"
+     },
+     {
+      "id": "p22",
+      "title": "SIQUK 6 Pack Cupboard Bars Adjustable Spring Tension Rods Black Refrigerator Bar Extendable Rod for DIY Projects, 12 to ",
+      "category": "Window Treatment Hardware > Window Rods"
+     },
+     {
+      "id": "p23",
+      "title": "Secret Aardvark Hot Sauce - Habanero Hot Sauce, Habanero Peppers & Roasted Tomatoes, Medium Spiced Hot Sauce, Non-GMO, L",
+      "category": "Sauces, Gravies & Marinades > Hot Sauce"
+     },
+     {
+      "id": "p24",
+      "title": "Avokado Silicone Steamer Basket for 6qt Instant Pot [3qt, 8qt avail], Ninja Foodi, Other Pressure Cookers and Instant Po",
+      "category": "Cookware > Steamers"
+     },
+     {
+      "id": "p25",
+      "title": "Walkerswood Mild Traditional Jamaican Jerk Seasoning (Set of 2)",
+      "category": "Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+     },
+     {
+      "id": "p26",
+      "title": "Magnetic Measuring Spoons Set Stainless Steel with Leveler, Stackable Metal Tablespoon Measure Spoon for Baking, Measuri",
+      "category": "Kitchen Utensils & Gadgets > Measuring Tools & Scales"
+     },
+     {
+      "id": "p27",
+      "title": "HOMEFORT 5-Tier Wire Shelving 5 Shelves Unit Metal Storage Rack Durable Organizer Perfect for Pantry Closet Kitchen Laun",
+      "category": "Racks, Shelves & Drawers > Standing Shelf Units"
+     },
+     {
+      "id": "p28",
+      "title": "SOLEJAZZ Rolling Storage Cart, 4 Tier Bathroom Organizer Slide Out Utility Cart, Mobile Shelving Unit Organizer Standing",
+      "category": "Racks, Shelves & Drawers > Standing Shelf Units"
+     },
+     {
+      "id": "p29",
+      "title": "Spiceology - Raspberry Chipotle Sweet & Spicy BBQ Rub - All-Purpose Seasonings, Spice Blends and Barbeque Rubs - Use On:",
+      "category": "Herbs, Spices & Seasonings > Mixed Spices & Seasonings"
+     }
+    ]
+   },
+   "model": "claude-haiku-5-5",
+   "output": {
+    "grades": {
+     "p1": 3,
+     "p2": 2,
+     "p3": 2,
+     "p4": 2,
+     "p5": 1,
+     "p6": 1,
+     "p7": 1,
+     "p8": 1,
+     "p9": 1,
+     "p10": 1,
+     "p11": 1,
+     "p12": 1,
+     "p13": 1,
+     "p14": 1,
+     "p15": 1,
+     "p16": 0,
+     "p17": 1,
+     "p18": 1,
+     "p19": 1,
+     "p20": 1,
+     "p21": 1,
+     "p22": 0,
+     "p23": 1,
+     "p24": 0,
+     "p25": 1,
+     "p26": 1,
+     "p27": 1,
+     "p28": 1,
+     "p29": 1
+    }
+   },
+   "final_model": "claude-haiku-5-5"
+  }
+ },
+ "cost_usd": 0.009175850000000001
+}
