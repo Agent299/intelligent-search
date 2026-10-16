@@ -34,18 +34,19 @@ piece could be swapped for its production counterpart.
 16. [Phase 9: Near-real-time trends](#phase-9-near-real-time-trends-done)
 17. [Phase 10: Observability](#phase-10-observability-done)
 18. [Phase 11: Testing and evaluation](#phase-11-testing-and-evaluation-done)
-19. [Remaining phases (roadmap)](#remaining-phases-roadmap)
-20. [Spend log](#spend-log)
-21. [Decision log](#decision-log)
-22. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
-23. [Testing](#testing)
-24. [Make targets](#make-targets)
+19. [Phase 12: Frontend demo](#phase-12-frontend-demo-done)
+20. [Next steps](#next-steps)
+21. [Spend log](#spend-log)
+22. [Decision log](#decision-log)
+23. [Problems hit and how they were fixed](#problems-hit-and-how-they-were-fixed)
+24. [Testing](#testing)
+25. [Make targets](#make-targets)
 
 ---
 
 ## Progress tracker
 
-Last updated: **2026-10-16** (after Phase 11)
+Last updated: **2026-10-16** (after Phase 12)
 
 | Phase | What it delivers | Status |
 |---|---|---|
@@ -61,7 +62,7 @@ Last updated: **2026-10-16** (after Phase 11)
 | 9. Near-real-time trends | Sliding-window trend detection + lite enrichment | ✅ Done |
 | 10. Observability | Prometheus metrics, Grafana dashboards, alert rules | ✅ Done |
 | 11. Testing & evaluation | Golden set, offline metrics, LLM-as-judge, load test | ✅ Done |
-| 12. Frontend demo | Next.js storefront with a "which path served this" debug panel | ⬜ Next |
+| 12. Frontend demo | Next.js storefront with a "which path served this" debug panel | ✅ Done |
 
 **Milestones:** M1 = Phases 0–3 (hybrid search working) · M2 = 4, 8-baseline, 12 (first demo) · M3 = 5–7 ·
 M4 = 8-ML, 9 · M5 = 10–11.
@@ -78,7 +79,8 @@ Grafana dashboard (business, latency, caches, LLM, ranking, platform) and 17 ale
 NDCG@10 / Recall@50 for three system configurations, a pairwise LLM judge, a load test that meets the P90 and P99
 targets with room to spare, and integration tests against the live stack. **Milestone M5 (Phases 10–11) is
 reached.** The evaluation's main finding is that the LightGBM re-ranker does not help on graded relevance (see
-[Phase 11](#phase-11-testing-and-evaluation-done)). Next is Phase 12, the frontend demo.
+[Phase 11](#phase-11-testing-and-evaluation-done)). A Next.js storefront (`make web`, http://localhost:3000) puts
+it all in front of a shopper, with a panel that shows which path served each search. **All 13 phases are done.**
 
 ---
 
@@ -210,10 +212,13 @@ make gateway                      # http://localhost:8001  (docs at /docs, metri
 # Phase 3: search service
 make search                       # http://localhost:8000/v1/search?q=beef%20jerky&debug=true
 make test                         # unit tests (no network, no API calls)
+
+# Phase 12: storefront (Node 24)
+make web                          # http://localhost:3000
 ```
 
 Service ports: OpenSearch `9200` · Redis `6379` · Postgres `5432` · Redpanda `9092` · S3 `8333` ·
-Prometheus `9090` · Grafana `3001` · gateway `8001` · search service `8000`.
+Prometheus `9090` · Grafana `3001` · gateway `8001` · search service `8000` · storefront `3000`.
 
 ---
 
@@ -253,11 +258,14 @@ intelligent-search/
 │   ├── gateway_client.py         #   HTTP client for the GenAI gateway
 │   ├── taxonomy.py               #   embedding-preselected candidate categories
 │   ├── events.py                 #   analytic events to Kafka, click attribution
+│   ├── facets.py                 #   category / brand / price facets over the top results
 │   └── vocab.py                  #   spell-correction dictionary from the catalog
 ├── pipelines/
 │   ├── ingestion/                # download, load_catalog, resize_catalog, enrich_llm, index, catalog_updates
 │   └── synthetic/generate.py     # synthetic users, sessions, search events, co-purchases
-├── tests/                        # unit tests
+├── eval/                         # golden set, labels, offline metrics, LLM judge, load test (Phase 11)
+├── web/                          # Next.js storefront (Phase 12): app/page.tsx, app/components/, lib/search.ts
+├── tests/                        # unit + integration tests
 ├── ops/prometheus/               # scrape config (dashboards/alerts in Phase 10)
 └── data/                         # git-ignored: raw sample, batch state, local copy of the lake
 ```
@@ -907,11 +915,67 @@ process on a laptop, so this is not a capacity statement); a quality check of "P
 **Cost:** $2.00 (labels: $0.21 pilot + $1.28 for the remaining 127 queries; judge pilot $0.51). Measured unit
 costs on Opus via batch: **≈ $0.010 per query labeled** (~30 products) and **≈ $0.010 per pairwise judgment**.
 
-## Remaining phases (roadmap)
+## Phase 12: Frontend demo (done)
 
-| Phase | Plan |
+A storefront for the search API (`web/`, Next.js 16 App Router, React 19, TypeScript; no UI library). Run
+`make search`, then `make web` and open **http://localhost:3000** (`make web-dev` for hot reload; `SEARCH_API`
+points it elsewhere).
+
+**What a shopper sees**
+
+- A search box with the case study's own example queries as one-click starting points.
+- A **corrected-query banner** ("Showing results for *brownie*. You searched for “brwonie”.").
+- **Related searches** from the logs, **filter facets** (category, brand, price range), **sort** (relevance,
+  price both ways), pagination, and a **"Pairs well with"** rail of complements.
+- Product cards whose actions fire the real interaction events: opening a card is a `click`, plus **Add to cart**
+  (`add_to_cart`) and **Buy now** (`purchase`). These feed the CTR and conversion metrics on the Phase 10 dashboard
+  and the session re-rank.
+- A **"How was this served?"** panel on every results page: the serving path (results cache, L1, L2, warm tier,
+  fast path or LLM fallback, in the same colors as the Grafana dashboard), server latency, confidence, the LLM
+  rewrite or the cached query that answered, the similarity on a warm-tier hit, and whether the re-ranker ran.
+
+**How it is built**
+
+- **The URL is the state.** Query, filters, sort and page live in the query string, so every view is a link and the
+  facets are plain links and a GET form, with no client JavaScript. The page is a Server Component that calls
+  `GET /v1/search` on the server, so the API needs no CORS. With Cache Components the header prerenders as a
+  static shell and the results stream in (`◐ Partial Prerender` in the build output).
+- **Only two client components:** the product card (events, sent with `keepalive` so a click survives navigation)
+  and a session-id cookie, which the server forwards as `sessionId` for the session-brand re-rank. The browser
+  posts events to `/api/v1/events`, which `next.config.ts` rewrites to the search API (same origin again).
+- Links set `prefetch={false}`: each facet link is a different search, and prefetching would run and log all of them.
+- **Facets are new in the API** (`facets` in the `/v1/search` response, `search_service/facets.py`, Tier 0 code):
+  counted over the top 100 results already hydrated, so they cost no extra query. Categories adapt to the
+  results: the options are the children of the deepest taxonomy path every result shares, so choosing one drills
+  down a level (coffee: *Grocery & Gourmet Food* 88, *Home & Kitchen* 8, …).
+- Light and dark themes follow the system setting; below 720 px the facets stack above a two-column grid.
+
+**Live check (2026-10-16)**, full stack, production build: the coffee page renders in **140 ms** end to end.
+Category and brand links narrow the results (brand → 3 results). `pmax=10` with high-to-low sort returns 12
+products, all ≤ $10 and in order; the rail's complements ignore shopper filters by design (Phase 7). A misspelled
+query shows the banner. A bad price filter shows the API's 422 message instead of an error page. An **Add to cart**
+posted through the storefront rewrite returned 202 and incremented
+`search_interactions_total{surface="results",type="add_to_cart"}`.
+
+**Dependencies:** `next` 16.4.2, `react` / `react-dom` 19.3.0, TypeScript 5.9, from `create-next-app@16.4.2`;
+`npm audit signatures` passes (17 packages with verified attestations). CI gains a `web` job: `npm ci`, signature
+audit, production build (which typechecks).
+
+**Not included:** a visual check in a browser: no browser was available in this session (no Chrome, no browser
+tool), so the layout was verified through the rendered HTML and live API calls, not by eye. Also missing: a
+product detail page and a cart page (the buttons record the events only), and frontend tests beyond the
+typechecked build.
+
+**Cost:** $0 (no new LLM calls: every query tried was already cached or answered by the fast path).
+
+## Next steps
+
+| Item | Why |
 |---|---|
-| **12. Frontend** | Next.js storefront: search, facets, sort, corrected-query banner, related searches, "Pairs well with", and a debug panel. |
+| Retrain or switch off the LightGBM re-ranker | Phase 11: net negative on graded relevance (44 better / 66 worse) |
+| Human review of the Opus golden-set grades | They are drafts (`reviewed: false`); metrics inherit any labeling bias |
+| Full LLM-judge run (147 queries, both orders, ≈ $3) | The 25-query pilot is too small to call a winner |
+| Visual QA of the storefront in a browser | Not possible in the build session |
 
 ---
 
@@ -1022,7 +1086,7 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 ## Testing
 
 ```bash
-make test              # 121 unit tests, no network, API calls or writes to real infrastructure
+make test              # 123 unit tests, no network, API calls or writes to real infrastructure
 make test-integration  # 11 tests against the running stack (SEARCH_URL, default http://localhost:8000)
 make lint     # ruff
 ```
@@ -1036,7 +1100,8 @@ CUDA packages off the runners.
 - `tests/test_common.py`: normalization, spell correction, semantic document format, response serialization.
 - `tests/test_ingestion.py`: taxonomy paths, attribute extraction, index documents, popularity prior, batch requests.
 - `tests/test_search.py`: filter parsing and clause placement, negation, RRF and the prior's limit, confidence,
-  the engine (spell correction, negation, price sort, event logging) and HTTP endpoints, all with fakes.
+  the engine (spell correction, negation, price sort, event logging), facets (counts, adaptive category drill-down)
+  and HTTP endpoints, all with fakes.
 - `tests/test_fallback.py`: compile (boost, not filter), keyword interleaving, rewrite confidence, memoization
   (including "no usable rewrite" and not memoizing gateway errors), fallback chosen over a weaker fast path,
   graceful degradation, the no-results floor, negations applied to fallback results.
@@ -1095,4 +1160,5 @@ write-back and gateway-outage behavior in [Phase 4](#phase-4-fallback-path-done)
 | `synth` | synthetic users and logs (+ 2,000 events to Kafka) |
 | `catalog-consumer` | run the price/stock freshness consumer |
 | `gateway` / `search` | run the gateway (8001) / search service (8000) |
+| `web` / `web-dev` | Phase 12: storefront on 3000, production build / hot reload |
 | `test` / `test-integration` / `lint` | unit tests / tests against the running stack / ruff |

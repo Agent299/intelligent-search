@@ -192,7 +192,7 @@ def test_http_search_and_events():
         r = client.get("/v1/search", params={"q": "snacks", "filters": '{"price_max": 6}', "pageSize": 1})
         assert r.status_code == 200
         body = r.json()
-        assert set(body) >= {"searchId", "results", "pagination", "relatedSearches"} and "debug" not in body
+        assert set(body) >= {"searchId", "results", "pagination", "relatedSearches", "facets"} and "debug" not in body
         assert client.get("/v1/search", params={"q": "snacks", "filters": "{"}).status_code == 422
         assert client.get("/v1/search", params={"q": "snacks", "sortBy": "cheapest"}).status_code == 422
         ok = {"searchId": "known", "type": "click", "productId": "p1"}
@@ -203,3 +203,37 @@ def test_http_search_and_events():
 
 def test_search_filters_default_hides_out_of_stock():
     assert {"term": {"in_stock": True}} in SearchFilters().product_index_clauses()
+
+
+# ---- facets (Phase 12) ----
+
+
+def _p(pid, brand, path, price):
+    return {"product_id": pid, "brand": brand, "category_path": path, "price": price}
+
+
+def test_facets_count_brands_and_offer_children_of_the_shared_category_path():
+    from search_service.facets import compute_facets
+    products = {
+        "a": _p("a", "Lays", "Food > Snacks > Chips", 3.0),
+        "b": _p("b", "Lays", "Food > Snacks > Chips > Baked", 4.5),
+        "c": _p("c", "Kind", "Food > Snacks > Bars", 1.5),
+        "d": _p("d", None, None, 9.0),
+    }
+    f = compute_facets(["a", "b", "c", "d", "gone"], products)
+    assert [(v.value, v.count) for v in f.brands] == [("Lays", 2), ("Kind", 1)]
+    # every categorized result shares "Food > Snacks", so the options are its children, as full prefixes
+    assert [(v.value, v.label, v.count) for v in f.categories] == [
+        ("Food > Snacks > Chips", "Chips", 2), ("Food > Snacks > Bars", "Bars", 1)]
+    assert (f.price_min, f.price_max) == (1.5, 9.0)
+
+
+def test_facets_drill_down_once_a_category_is_chosen_and_are_absent_without_results():
+    from search_service.facets import compute_facets
+    products = {"a": _p("a", "X", "Food > Snacks > Chips > Baked", 1.0),
+                "b": _p("b", "X", "Food > Snacks > Chips > Kettle", 2.0)}
+    f = compute_facets(["a", "b"], products)
+    assert [v.label for v in f.categories] == ["Baked", "Kettle"]
+    single = compute_facets(["a"], products)  # one leaf: nothing deeper to offer
+    assert single.categories == []
+    assert compute_facets([], products) is None

@@ -62,12 +62,26 @@ class SearchDebug(CamelModel):
     ranker: str | None = None                   # personalized re-rank applied: "lightgbm" | "linear" (Phase 8)
 
 
+class FacetValue(CamelModel):
+    value: str      # what goes back in `filters` (a full taxonomy prefix for categories)
+    label: str
+    count: int
+
+
+class SearchFacets(CamelModel):
+    brands: list[FacetValue] = Field(default_factory=list)
+    categories: list[FacetValue] = Field(default_factory=list)
+    price_min: float | None = None
+    price_max: float | None = None
+
+
 class SearchResponse(CamelModel):
     search_id: str
     corrected_query: str | None = None
     results: list[ProductResult]
     related_searches: list[str] = Field(default_factory=list)
     pairs_well_with: list[ProductResult] = Field(default_factory=list)
+    facets: SearchFacets | None = None          # over the top results (Phase 12 storefront)
     pagination: Pagination
     debug: SearchDebug | None = None
 
