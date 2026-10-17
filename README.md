@@ -931,6 +931,16 @@ of 25 verdicts flipped with the order. That agrees with the metrics (no overall 
 more. The plan's 500-query run was deferred to keep spend down; the full 147-query run, both orders, is estimated at
 ≈ $3.00 (`python -m eval.judge submit RUN --both-orders`).
 
+*A cheaper judge? (2026-10-17)* Haiku replayed the pilot's exact 50 judgments (`--replay RUN --model M`, compared
+with `python -m eval.judge agree REF RUN`) for $0.016. Where both judges picked a winner they agreed 91% of the time
+(2 opposite verdicts of 50; scores r = 0.71, Haiku about half a point harsher), and it showed no position-A bias
+(0.46). But it **flipped its verdict when A/B were swapped on 7 of 25 queries vs Opus's 3**, and it moved the
+headline from "even" (Opus: 16 full / 18 baseline / 16 ties) to "baseline wins" (7 / 21 / 22). Against the NDCG
+verdicts of the 19 pilot queries where the graded labels clearly differ, Opus agreed on 12 with 1 opposite, Haiku on
+11 with 3. So Haiku isn't a drop-in judge for a near-tie. **Decision: no full LLM-judge run.** Every product the
+systems show is graded, so the old-vs-new comparison is the paired per-query NDCG above (Tier 0, free). An LLM
+judge would only add holistic aspects (intent coverage, variety), not worth $1.50–3.00 for two systems this close.
+
 **Load test** (`make load-test`, `eval/load_test.py`): an open-loop asyncio + httpx client rather than Locust: it
 starts requests on a fixed schedule whether or not earlier ones finished, so overload shows up as latency instead of
 slowing arrivals, and it needs no new dependency. Queries are drawn from the logs weighted by frequency.
@@ -949,7 +959,7 @@ honest empty page, a negated ingredient is excluded, spell correction is reporte
 from a cache tier, click events are accepted and unknown searches rejected, bad filters are a 4xx, and `/metrics`
 exposes the business metrics. **All 11 pass** against the live stack (2026-10-16).
 
-**Not included:** human review of the Opus grades; the full LLM-judge run; a load test above 20 RPS (one local
+**Not included:** human review of the Opus grades; the full LLM-judge run (decided against, see above); a load test above 20 RPS (one local
 process on a laptop, so this is not a capacity statement); a quality check of "Pairs well with" complements.
 
 **Cost:** $2.00 (labels: $0.21 pilot + $1.28 for the remaining 127 queries; judge pilot $0.51). Measured unit
@@ -1014,7 +1024,6 @@ typechecked build.
 |---|---|
 | Personalization signal | The re-ranker now matches or slightly beats retrieval order, but personal features carry no weight: needs real repeat-behaviour logs |
 | Human review of the Opus golden-set grades | They are drafts (`reviewed: false`); metrics inherit any labeling bias |
-| Full LLM-judge run (147 queries, both orders, ≈ $3) | The 25-query pilot is too small to call a winner |
 | Visual QA of the storefront in a browser | Not possible in the build session |
 
 ---
@@ -1045,7 +1054,8 @@ All Anthropic API spend so far, measured from API usage (Batch API prices where 
 | 2026-10-16 | Re-ranker retrain: Haiku-vs-Opus label agreement pilot (621 grades) | Haiku 5.5 (batch) | $0.009 |
 | 2026-10-16 | Re-ranker retrain: training labels, 328 queries (8,212 grades) | Haiku 5.5 (batch) | $0.125 |
 | 2026-10-16 | Golden-set top-up: products the new ranking surfaced (145 grades) | Opus 5.5 (batch) | $0.091 |
-| | **Total** | | **≈ $4.84** |
+| 2026-10-17 | LLM-judge calibration: Haiku replay of the 50-judgment Opus pilot | Haiku 5.5 (batch) | $0.016 |
+| | **Total** | | **≈ $4.86** |
 
 Measured unit costs: catalog enrichment **$1.08 / 1k products on Sonnet vs $0.069 / 1k on Haiku** (~16× cheaper,
 comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per first-time query**, then memoized.
@@ -1100,6 +1110,7 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 | 42 | 2026-10-15 | Kafka lag from Redpanda's built-in metrics; Redis via `redis_exporter`; no Alertmanager | Lag needs no extra exporter (max offset − committed offset in PromQL); alert routing is environment-specific |
 | 43 | 2026-10-15 | Dashboard as code (`ops/grafana/dashboard.py`) with tests that every metric in the dashboard and alerts is exported, and that the committed JSON matches the generator | A renamed metric would otherwise leave an empty panel or an alert that can never fire, silently |
 | 44 | 2026-10-16 | Re-ranker trained on graded labels over captured serving candidates, not on synthetic clicks; Haiku grades training data, Opus grades the golden test set | The synthetic logs' shown lists don't resemble the retriever's candidates (Phase 11: the old model lost to retrieval order). Haiku agreed with Opus within one grade on 100% of 621 pilot products at ~1/22 the cost; the test set keeps the stronger grader |
+| 45 | 2026-10-17 | No full LLM-judge run; old vs new is the paired per-query NDCG over fully graded pools | Haiku as judge flipped with A/B order on 28% of queries (Opus 12%) and changed the headline; with every shown product graded, a code comparison answers the question for free, and the LLM judge's extra (holistic quality) isn't worth Sonnet/Opus prices for two near-tied systems |
 
 ---
 
@@ -1130,7 +1141,7 @@ comparable quality on spot checks); online rewrite **≈ $0.0001–0.0002 per fi
 ## Testing
 
 ```bash
-make test              # 126 unit tests, no network, API calls or writes to real infrastructure
+make test              # 127 unit tests, no network, API calls or writes to real infrastructure
 make test-integration  # 11 tests against the running stack (SEARCH_URL, default http://localhost:8000)
 make lint     # ruff
 ```
@@ -1167,7 +1178,8 @@ CUDA packages off the runners.
   cache outage falling through to the fast path, hot-list and L2 contents.
 - `tests/test_eval.py`: NDCG and Recall against graded labels (and agreement with the ranking module's NDCG),
   nearest-rank percentiles, typo generation, stratified pilots, pooling order, the label guardrail (every product
-  graded, unknown ids dropped), the judge mapping positions back to systems and counting order flips.
+  graded, unknown ids dropped), the judge mapping positions back to systems and counting order flips, and judge
+  agreement between two runs (per judgment, where both decided, and per query with position bias cancelled).
 - `tests/test_integration.py`: see [Phase 11](#phase-11-testing-and-evaluation-done); skipped unless `SEARCH_URL` is set.
 - `tests/test_gateway.py`: routing and cost policy, strict schemas, circuit breaker states, escalation on
   hallucinated taxonomy paths, breaker-open skipping, refusals, guardrails, judge, batch helpers, HTTP endpoints

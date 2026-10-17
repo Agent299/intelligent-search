@@ -76,3 +76,21 @@ def test_ndcg_matches_the_ranking_module():
 
     labels = {"a": 3, "b": 0, "c": 2}
     assert math.isclose(ndcg_at(["b", "c", "a"], labels), ndcg_at_k([0, 2, 3], [3, 2, 1]))
+
+
+def test_judge_agreement_compares_verdicts_per_judgment_and_per_query(monkeypatch):
+    ref = {"c1": _item("q1", True, 5, 3), "c2": _item("q1", False, 3, 5),   # full wins both orders
+           "c3": _item("q2", True, 4, 4)}                                    # tie
+    cand = {"c1": _item("q1", True, 4, 3), "c2": _item("q1", False, 4, 3),  # agrees, then reverses (A bias)
+            "c3": _item("q2", True, 3, 4)}                                   # decides where reference tied
+
+    class Job:
+        def __init__(self, run_id, stage):
+            self.items = ref if run_id == "ref" else cand
+
+    monkeypatch.setattr(judge, "BatchJob", Job)
+    r = judge.agreement("ref", "cand")
+    assert r["items"] == 3 and r["verdict_agreement"] == round(1 / 3, 3)
+    assert r["agreement_where_both_decided"] == 0.5 and r["opposite_verdicts"] == 1
+    # q1 margins over both orders: reference +4, candidate 1 - 1 = 0 (position bias cancels to a tie)
+    assert r["queries"] == 2 and r["query_verdict_agreement"] == 0.0
